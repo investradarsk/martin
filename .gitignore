@@ -1,0 +1,24 @@
+# Ignore everything by default in this mixed personal/work folder.
+*
+
+# Keep the Git metadata and this ignore file.
+!.gitignore
+
+# Keep the main site files.
+!index.html
+!og-image.png
+
+# Allow future web assets if you decide to add structured folders.
+!assets/
+!assets/**
+!css/
+!css/**
+!js/
+!js/**
+!images/
+!images/**
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
