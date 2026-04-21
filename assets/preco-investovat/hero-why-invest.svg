@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Prečo investovať</title>
+  <desc id="desc">Editorial ilustrácia zobrazujúca rozdiel medzi peniazmi na účte a investovaním.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09111f"/>
+      <stop offset="100%" stop-color="#152038"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dfa030"/>
+      <stop offset="100%" stop-color="#c8891a"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#26c58d"/>
+      <stop offset="100%" stop-color="#15a06a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="980" cy="140" r="180" fill="#c8891a" opacity=".08"/>
+  <circle cx="170" cy="610" r="220" fill="#15a06a" opacity=".07"/>
+  <g opacity=".12" stroke="#f0e8d5">
+    <path d="M80 120h1040"/>
+    <path d="M80 240h1040"/>
+    <path d="M80 360h1040"/>
+    <path d="M80 480h1040"/>
+    <path d="M80 600h1040"/>
+  </g>
+  <text x="90" y="120" fill="#dfa030" font-family="Georgia, serif" font-size="68" font-weight="700">Prečo investovať</text>
+  <text x="90" y="170" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="24" opacity=".8">Peniaze na účte chránia rezervu. Investovanie buduje budúcu hodnotu.</text>
+  <g transform="translate(90 255)">
+    <rect width="380" height="300" rx="26" fill="#0d1525" stroke="#f0e8d5" stroke-opacity=".08"/>
+    <text x="34" y="48" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="22" font-weight="700">Peniaze na účte</text>
+    <text x="34" y="84" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="15" opacity=".65">Bez rastu, pod tlakom inflácie</text>
+    <rect x="34" y="220" width="80" height="34" rx="8" fill="#c23b3b" opacity=".22"/>
+    <text x="74" y="242" fill="#c23b3b" font-family="Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">- kúpna sila</text>
+    <path d="M40 190h300" stroke="#f0e8d5" stroke-opacity=".15"/>
+    <rect x="54" y="154" width="56" height="36" rx="8" fill="#f0e8d5" opacity=".9"/>
+    <rect x="126" y="144" width="56" height="46" rx="8" fill="#f0e8d5" opacity=".76"/>
+    <rect x="198" y="132" width="56" height="58" rx="8" fill="#f0e8d5" opacity=".58"/>
+    <rect x="270" y="118" width="56" height="72" rx="8" fill="#f0e8d5" opacity=".38"/>
+  </g>
+  <g transform="translate(520 215)">
+    <rect width="590" height="360" rx="26" fill="#0d1525" stroke="#dfa030" stroke-opacity=".18"/>
+    <text x="38" y="54" fill="#dfa030" font-family="Arial, sans-serif" font-size="20" font-weight="700">Investovanie</text>
+    <text x="38" y="90" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="15" opacity=".68">Pravidelnosť + čas + rast ekonomiky</text>
+    <path d="M56 272 C136 246 180 230 256 192 C328 156 392 110 508 68" fill="none" stroke="url(#green)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M56 270 C120 248 178 242 250 228 C322 214 400 186 508 136" fill="none" stroke="#dfa030" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+    <circle cx="508" cy="68" r="11" fill="#26c58d"/>
+    <g fill="#f0e8d5" font-family="Arial, sans-serif" font-size="14" opacity=".55">
+      <text x="54" y="320">0 rokov</text>
+      <text x="176" y="320">5 rokov</text>
+      <text x="298" y="320">10 rokov</text>
+      <text x="420" y="320">20 rokov</text>
+    </g>
+    <g>
+      <rect x="372" y="236" width="176" height="66" rx="12" fill="#15a06a" opacity=".14"/>
+      <text x="392" y="264" fill="#26c58d" font-family="Arial, sans-serif" font-size="16" font-weight="700">Čas násobí výsledok</text>
+      <text x="392" y="288" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="14" opacity=".72">Aj malá suma má veľký efekt, keď má roky.</text>
+    </g>
+  </g>
+</svg>

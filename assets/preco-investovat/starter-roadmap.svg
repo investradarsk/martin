@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">Roadmap začiatku investovania</title>
+  <desc id="desc">Štvorkrokový plán pre začiatočníka od rezervy až po prvé pravidelné investície.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a101d"/>
+      <stop offset="100%" stop-color="#16233a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="620" fill="url(#bg)"/>
+  <text x="72" y="86" fill="#f0e8d5" font-family="Georgia, serif" font-size="44" font-weight="700">4 kroky, ako začať investovať</text>
+  <text x="72" y="124" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="20" opacity=".72">Jednoduchý plán pre človeka, ktorý nechce čakať na „dokonalý moment“.</text>
+  <g transform="translate(70 180)">
+    <path d="M130 74 H760" fill="none" stroke="#dfa030" stroke-width="4" stroke-dasharray="10 10" opacity=".4"/>
+    <g transform="translate(0 0)">
+      <circle cx="80" cy="74" r="48" fill="#dfa030" opacity=".16" stroke="#dfa030" stroke-opacity=".45"/>
+      <text x="80" y="82" fill="#dfa030" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">1</text>
+      <text x="0" y="160" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="22" font-weight="700">Rezerva</text>
+      <text x="0" y="194" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="15" opacity=".72">Najprv si odlož 3 až 6 mesiacov výdavkov.</text>
+    </g>
+    <g transform="translate(228 0)">
+      <circle cx="80" cy="74" r="48" fill="#26c58d" opacity=".16" stroke="#26c58d" stroke-opacity=".45"/>
+      <text x="80" y="82" fill="#26c58d" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">2</text>
+      <text x="0" y="160" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="22" font-weight="700">Cieľ</text>
+      <text x="0" y="194" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="15" opacity=".72">Urči si, či investuješ na 5, 10 alebo 20 rokov.</text>
+    </g>
+    <g transform="translate(456 0)">
+      <circle cx="80" cy="74" r="48" fill="#dfa030" opacity=".16" stroke="#dfa030" stroke-opacity=".45"/>
+      <text x="80" y="82" fill="#dfa030" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">3</text>
+      <text x="0" y="160" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="22" font-weight="700">Nástroj</text>
+      <text x="0" y="194" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="15" opacity=".72">Na štart bývajú najjednoduchšie ETF a pravidelné nákupy.</text>
+    </g>
+    <g transform="translate(684 0)">
+      <circle cx="80" cy="74" r="48" fill="#26c58d" opacity=".16" stroke="#26c58d" stroke-opacity=".45"/>
+      <text x="80" y="82" fill="#26c58d" font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">4</text>
+      <text x="0" y="160" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="22" font-weight="700">Disciplína</text>
+      <text x="0" y="194" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="15" opacity=".72">Automatizuj vklad a nechaj čas robiť svoju prácu.</text>
+    </g>
+  </g>
+  <rect x="72" y="470" width="856" height="92" rx="18" fill="#0d1525" stroke="#f0e8d5" stroke-opacity=".08"/>
+  <text x="102" y="510" fill="#dfa030" font-family="Arial, sans-serif" font-size="18" font-weight="700">Dôležité:</text>
+  <text x="102" y="540" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="16" opacity=".75">Nezačínaj investovať preto, že všetci niečo kupujú. Začni preto, že rozumieš plánu, horizontu a riziku.</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">Inflácia verzus investovanie</title>
+  <desc id="desc">Infografika ukazuje pokles kúpnej sily peňazí a rast investovaného kapitálu v čase.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#17243c"/>
+    </linearGradient>
+    <linearGradient id="inv" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#dfa030"/>
+      <stop offset="100%" stop-color="#15a06a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="620" fill="url(#bg)"/>
+  <text x="70" y="88" fill="#f0e8d5" font-family="Georgia, serif" font-size="48" font-weight="700">Inflácia verzus investovanie</text>
+  <text x="70" y="126" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="20" opacity=".72">Príklad: 200 € mesačne, 20 rokov, inflácia 3 %, investovanie 8 % p.a.</text>
+  <g opacity=".15" stroke="#f0e8d5">
+    <path d="M90 210h840"/>
+    <path d="M90 290h840"/>
+    <path d="M90 370h840"/>
+    <path d="M90 450h840"/>
+    <path d="M90 530h840"/>
+  </g>
+  <g fill="#f0e8d5" font-family="Arial, sans-serif" font-size="13" opacity=".55">
+    <text x="58" y="214">120k</text>
+    <text x="58" y="294">90k</text>
+    <text x="58" y="374">60k</text>
+    <text x="58" y="454">30k</text>
+    <text x="58" y="534">0</text>
+  </g>
+  <path d="M110 508 C190 500 248 476 330 438 C406 402 484 338 576 252 C650 182 720 152 870 118" fill="none" stroke="url(#inv)" stroke-width="9" stroke-linecap="round"/>
+  <path d="M110 454 C208 448 310 438 418 422 C530 404 636 382 748 354 C800 340 836 328 870 318" fill="none" stroke="#c23b3b" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="870" cy="118" r="10" fill="#15a06a"/>
+  <circle cx="870" cy="318" r="10" fill="#c23b3b"/>
+  <g font-family="Arial, sans-serif">
+    <rect x="654" y="88" width="212" height="64" rx="14" fill="#15a06a" opacity=".16"/>
+    <text x="674" y="115" fill="#26c58d" font-size="16" font-weight="700">Investovanie: ~118 589 €</text>
+    <text x="674" y="137" fill="#f0e8d5" font-size="13" opacity=".74">Dlhý horizont premieňa disciplínu na majetok.</text>
+    <rect x="654" y="288" width="212" height="64" rx="14" fill="#c23b3b" opacity=".16"/>
+    <text x="674" y="315" fill="#ff8484" font-size="16" font-weight="700">Kúpna sila: výrazne nižšia</text>
+    <text x="674" y="337" fill="#f0e8d5" font-size="13" opacity=".74">Hotovosť bez rastu stráca v čase svoju silu.</text>
+  </g>
+  <g fill="#f0e8d5" font-family="Arial, sans-serif" font-size="14" opacity=".6">
+    <text x="110" y="570">0 rokov</text>
+    <text x="286" y="570">5 rokov</text>
+    <text x="462" y="570">10 rokov</text>
+    <text x="638" y="570">15 rokov</text>
+    <text x="814" y="570">20 rokov</text>
+  </g>
+</svg>
