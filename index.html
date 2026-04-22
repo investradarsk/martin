@@ -10,7 +10,7 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  window.IR_ANALYTICS_ID = 'G-MG2T4FHW47';
+  window.IR_ANALYTICS_ID = 'G-5YCNRJGMBB';
   window.IR_ANALYTICS_LOADED = false;
   window.IR_ANALYTICS_DISABLED = true;
   window['ga-disable-' + window.IR_ANALYTICS_ID] = true;
@@ -735,8 +735,8 @@ document.addEventListener('DOMContentLoaded', loadPrices);
           <h1>Vidíte trh.<br><em>My vidíme</em><br>príležitosť.</h1>
           <p class="hero-sub">Denné investičné novinky, akciové analýzy, geopolitické komentáre a trade alerty pre investorov, ktorí chcú rozumieť trhu do hĺbky.</p>
           <div class="cta-row">
-            <button class="btn-fill" onclick="goTo('analyzy')">Čítať analýzy</button>
-            <button class="btn-ghost" onclick="goTo('novinky')">Dnešné novinky</button>
+            <a href="/#analyzy" class="btn-fill">Čítať analýzy</a>
+            <a href="/#novinky" class="btn-ghost">Dnešné novinky</a>
             <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-ghost">📖 Kúpiť knihu</a>
           </div>
           <p class="hero-note">Aktualizované denne &nbsp;·&nbsp; Slovensky &nbsp;·&nbsp; Jasne &nbsp;·&nbsp; <span class="live">Bez zbytočného šumu</span></p>
@@ -1999,6 +1999,11 @@ function initCookieConsent(){
 window.addEventListener('DOMContentLoaded',function(){
   initCookieConsent();
   var h=(location.hash||'').replace('#','');
+  if(h === 'cookies'){
+    goTo('home');
+    showCookieBanner();
+    return;
+  }
   if(handleArticleRoute(h)) return;
   if(PAGES.includes(h)) goTo(h); else goTo('home');
 });
