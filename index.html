@@ -386,11 +386,15 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   nav.open ul{display:flex;flex-direction:column;position:absolute;top:58px;left:0;right:0;background:rgba(7,11,22,.98);border-bottom:1px solid var(--wf);padding:8px 14px 14px;gap:2px;z-index:298}
   nav.open ul a{padding:10px 12px;font-size:12px}
   .nav-r .btn-ghost{display:none}
+  #page-novinky .container{padding:0 12px}
+  #page-novinky .page-header{padding:32px 0 24px;margin-bottom:24px}
   .fbar{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-bottom:24px;scrollbar-width:none}
   .fbar::-webkit-scrollbar{display:none}
   .fbar button{flex:0 0 auto}
   .novinky-layout{gap:20px}
-  .nf-item{grid-template-columns:1fr;gap:8px;padding:14px 0}
+  .nfeed{gap:10px}
+  .nf-item{grid-template-columns:1fr;gap:8px;padding:16px 14px;border:1px solid var(--wf);border-radius:var(--r);background:var(--navy2)}
+  .nf-item:last-child{border-bottom:1px solid var(--wf)}
   .nf-time{text-align:left;padding-top:0}
   .nf-text{font-size:13.5px}
   .art-grid{grid-template-columns:1fr}
