@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sk">
 <head>
 <meta charset="UTF-8">
@@ -2465,68 +2465,8 @@ var ARTICLES_META = {
 
 function goToArticle(key){
   var meta = ARTICLES_META[key];
-  var art  = ARTS[key];
-  if(!meta || !art){ return; }
-
-  var baseUrl = window.location.origin + window.location.pathname;
-  var articleUrl = baseUrl + '#' + meta.path;
-  var encUrl = encodeURIComponent(articleUrl);
-  var encTitle = encodeURIComponent(art.title);
-
-  var tags = (meta.tags||[]).map(function(t){ return '<span class="art-tag">'+t+'</span>'; }).join('');
-
-  var shareBar = '<div class="share-bar">'
-    + '<div class="share-label">Zdieľať článok</div>'
-    + '<div class="share-buttons">'
-    + '<button class="share-btn" onclick="copyLink(\''+articleUrl+'\',this)">🔗 Kopírovať odkaz</button>'
-    + '<a class="share-btn" href="https://twitter.com/intent/tweet?url='+encUrl+'&text='+encTitle+'" target="_blank" rel="noopener">đť•Ź Twitter / X</a>'
-    + '<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u='+encUrl+'" target="_blank" rel="noopener">f Facebook</a>'
-    + '<a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url='+encUrl+'" target="_blank" rel="noopener">in LinkedIn</a>'
-    + '<a class="share-btn" href="https://api.whatsapp.com/send?text='+encTitle+'%20'+encUrl+'" target="_blank" rel="noopener">đź“± WhatsApp</a>'
-    + '</div>'
-    + '<div class="share-url"><input class="share-url-input" readonly value="'+articleUrl+'" onclick="this.select()"></div>'
-    + '</div>';
-
-  var html = '<div class="article-eyebrow">'
-    + '<a onclick="goTo(\'home\')">Domov</a>'
-    + '<span style="color:rgba(240,232,213,.25)">/</span>'
-    + '<a onclick="goTo(\''+meta.section+'\')">'+meta.sectionLabel+'</a>'
-    + '<span style="color:rgba(240,232,213,.25)">/</span>'
-    + '<span style="color:var(--cream)">'+meta.cat+'</span>'
-    + '</div>'
-    + '<h1 class="article-h1">'+art.title+'</h1>'
-    + '<div class="article-meta-row">'
-    + '<span class="art-cat">'+meta.cat+'</span>'
-    + '<span>'+meta.date+'</span>'
-    + '<span>'+meta.readTime+' čítania</span>'
-    + '</div>'
-    + '<div class="article-tags-row">'+tags+'</div>'
-    + '<div class="article-body">'+art.body+'</div>'
-    + shareBar
-    + '<div class="article-nav">'
-    + '<button class="btn-ghost btn-sm" onclick="goTo(\''+meta.section+'\')">← Späť</button>'
-    + '<button class="btn-ghost btn-sm" onclick="goTo(\'home\')">Domov</button>'
-    + '</div>';
-
-  document.getElementById('article-content').innerHTML = html;
-
-  var pg = setActivePage('page-article');
-  if(pg){
-    pg.style.minHeight = '100vh';
-  }
-  window.scrollTo(0,0);
-
-  // Nav active
-  document.querySelectorAll('.nav-link').forEach(function(a){a.classList.remove('active');});
-  var nl = document.querySelector('.nav-link[data-page="'+meta.section+'"]');
-  if(nl) nl.classList.add('active');
-  document.getElementById('nav').classList.remove('open');
-  // Close modal if open
-  var m=document.getElementById('modal'); if(m)m.classList.remove('open'); document.body.style.overflow='';
-
-  // URL
-  try{ history.pushState({page:'article',key:key},'','#'+meta.path); }catch(e){}
-  updateSEO(ARTICLE_SEO[key]||{title:art.title,desc:art.body.replace(/<[^>]+>/g,' ').substring(0,160)}, BASE_URL+'#'+meta.path);
+  if(!meta){ return; }
+  window.location.href = '/' + meta.path + '/';
 }
 
 function copyLink(url, btn){
@@ -2924,6 +2864,7 @@ function updateSEO(seoData, url) {
 </script>
 </body>
 </html>
+
 
 
 
