@@ -433,6 +433,15 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 
 
 /* ── LATEST FEED ── */
+.latest-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.latest-side{background:var(--navy2);border:1px solid var(--wf);padding:22px;border-radius:var(--r)}
+.home-featured-card{background:var(--navy2);border:1px solid var(--amberb);padding:28px 32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;position:relative;border-radius:var(--r);overflow:hidden;cursor:pointer}
+.home-featured-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),rgba(200,137,26,.3),transparent)}
+.home-featured-eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.home-featured-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.2;margin-bottom:8px}
+.home-featured-perex{font-size:13.5px;color:var(--wd);line-height:1.7;margin-bottom:14px}
+.home-featured-meta{display:flex;gap:8px;flex-wrap:wrap}
+.home-featured-cta{white-space:nowrap;flex-shrink:0}
 .latest-item{display:grid;grid-template-columns:16px 1fr 20px;gap:14px;padding:14px 0;border-bottom:1px solid var(--wff);cursor:pointer;transition:background .18s;align-items:start}
 .latest-item:last-child{border-bottom:none}
 .latest-item:hover{background:var(--wff);margin:0 -16px;padding:14px 16px}
@@ -447,6 +456,8 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .li-perex{font-size:12.5px;color:var(--wd);line-height:1.55}
 .li-arrow{font-size:14px;color:rgba(240,232,213,.25);padding-top:4px;transition:color .18s;text-align:right}
 .latest-item:hover .li-arrow{color:var(--amberl)}
+@media(max-width:1020px){.latest-layout{grid-template-columns:1fr;gap:20px}}
+@media(max-width:640px){.home-featured-card{grid-template-columns:1fr;padding:22px}.home-featured-cta{width:100%}}
 
 
 /* ── ARTICLE PAGE ── */
@@ -754,13 +765,29 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   <!-- ČO JE NOVÉ -->
   <section style="padding:60px 0">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start">
-        <!-- Left: Latest feed -->
-        <div>
+      <div class="latest-layout">
+        <div id="home-featured-article" class="home-featured-card" onclick="goToArticle('co_je_investovanie')">
+          <div>
+            <div class="home-featured-eyebrow">
+              <span style="font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--amberl)">1. Základy investovania · Začni tu</span>
+              <span class="badge b-buy">Nový článok</span>
+            </div>
+            <div class="home-featured-title">Prečo investovať, aj keď nezačínaš s veľkou sumou</div>
+            <div class="home-featured-perex">Prečo hotovosť dlhodobo nestačí, čo spraví s peniazmi čas a ako si nastaviť jednoduchý prvý plán bez zbytočného stresu.</div>
+            <div class="home-featured-meta">
+              <span class="badge b-watch">Začiatočník</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--wd);padding:3px 0">📖 9 min čítania</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--amberl);padding:3px 0">21. apríl 2026</span>
+            </div>
+          </div>
+          <button class="btn-fill home-featured-cta" type="button" onclick="event.stopPropagation(); goToArticle('co_je_investovanie')">Čítať článok →</button>
+        </div>
+
+        <div class="latest-side">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
             <div>
               <div class="sec-label">Aktuálne · Práve pridané</div>
-              <h2 class="sec-title">Čo je nové na InvestRadar</h2>
+              <h2 class="sec-title" style="font-size:24px">Čo je nové</h2>
             </div>
           </div>
           <p style="font-size:13px;color:var(--wd);margin-bottom:20px">Každý nový článok, novinka, trade alert alebo earnings update sa objaví tu ako prvý.</p>
@@ -773,19 +800,6 @@ document.addEventListener('DOMContentLoaded', loadPrices);
             <button class="btn-ghost btn-sm" onclick="goTo('vzdelavanie')">Vzdelávanie →</button>
             <button class="btn-ghost btn-sm" onclick="goTo('earnings')">Earnings →</button>
           </div>
-        </div>
-        <!-- Right: Featured newest article -->
-        <div style="background:var(--navy2);border:1px solid var(--amberb);padding:22px;border-radius:var(--r);position:relative;overflow:hidden;cursor:pointer" onclick="goToArticle('co_je_investovanie')">
-          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)"></div>
-          <div style="font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amberl);margin-bottom:10px">📖 Nový článok · 21. apr 2026</div>
-          <div style="font-family:var(--serif);font-size:19px;font-weight:700;line-height:1.25;margin-bottom:8px;color:var(--cream)">Prečo investovať, aj keď nezačínaš s veľkou sumou</div>
-          <div style="font-size:12.5px;color:var(--wd);line-height:1.65;margin-bottom:14px">Inflácia, čas a disciplína v jednom článku. Prakticky a bez balastu, ktorý začiatočníkov zvyčajne odradí.</div>
-          <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
-            <span class="art-tag">1. Základy investovania</span>
-            <span class="art-tag">Začiatočník</span>
-            <span class="art-tag">9 min</span>
-          </div>
-          <div style="font-family:var(--mono);font-size:10px;color:var(--amberl);letter-spacing:.08em">Čítať článok →</div>
         </div>
       </div>
     </div>
@@ -1488,7 +1502,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     </div>
 
     <!-- Featured course card — z Notion -->
-    <div style="background:var(--navy2);border:1px solid var(--amberb);padding:28px 32px;margin-bottom:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;position:relative;border-radius:var(--r);overflow:hidden">
+    <div id="vz-featured-article" style="background:var(--navy2);border:1px solid var(--amberb);padding:28px 32px;margin-bottom:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;position:relative;border-radius:var(--r);overflow:hidden">
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),rgba(200,137,26,.3),transparent)"></div>
       <div>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
@@ -2494,7 +2508,7 @@ function renderLatest(){
     'analyza': 'var(--amberl)'
   };
   var html = '';
-  LATEST.forEach(function(item){
+  LATEST.slice(1).forEach(function(item){
     var col = typeColors[item.type] || 'var(--amberl)';
     html += '<div class="latest-item" onclick="'+item.action+'" tabindex="0" role="button">'
       + '<div class="li-left"><div class="li-dot" style="background:'+col+'"></div></div>'
@@ -2713,28 +2727,31 @@ ARTICLE_SEO['co_je_investovanie'] = {
 };
 
 document.addEventListener('DOMContentLoaded', function(){
-  var featured = document.querySelector('div[onclick="goToArticle(\'co_je_investovanie\')"]');
-  if (featured) {
-    var blocks = featured.querySelectorAll(':scope > div');
-    if (blocks[1]) blocks[1].textContent = '📖 Nový článok · ' + WHY_INVEST_ARTICLE.dateShort;
-    if (blocks[2]) blocks[2].textContent = WHY_INVEST_ARTICLE.title;
-    if (blocks[3]) blocks[3].textContent = 'Inflácia, čas a disciplína v jednom článku. Prakticky a bez balastu, ktorý začiatočníkov zvyčajne odradí.';
+  var homeFeatured = document.getElementById('home-featured-article');
+  if (homeFeatured) {
+    var homeTitle = homeFeatured.querySelector('.home-featured-title');
+    var homePerex = homeFeatured.querySelector('.home-featured-perex');
+    var homeMeta = homeFeatured.querySelector('.home-featured-meta');
+    if (homeTitle) homeTitle.textContent = WHY_INVEST_ARTICLE.title;
+    if (homePerex) homePerex.textContent = WHY_INVEST_ARTICLE.heroSummary;
+    if (homeMeta) {
+      var homeSpans = homeMeta.querySelectorAll('span');
+      if (homeSpans[1]) homeSpans[1].textContent = '📖 ' + WHY_INVEST_ARTICLE.readTime + ' čítania';
+      if (homeSpans[2]) homeSpans[2].textContent = WHY_INVEST_ARTICLE.dateLong;
+    }
   }
 
-  var heroButton = document.querySelector('.btn-fill[onclick="goToArticle(\'co_je_investovanie\')"]');
-  if (heroButton) {
-    var wrap = heroButton.parentElement;
-    if (wrap) {
-      var title = wrap.querySelector('div[style*="font-family:var(--serif);font-size:22px"]');
-      var perex = wrap.querySelector('div[style*="font-size:13.5px;color:var(--wd)"]');
-      var metaRow = wrap.querySelector('div[style*="display:flex;gap:8px;flex-wrap:wrap"]');
-      if (title) title.textContent = WHY_INVEST_ARTICLE.title;
-      if (perex) perex.textContent = 'Inflácia, čas a disciplína v jednom článku. Prakticky a bez balastu, ktorý začiatočníkov zvyčajne odradí.';
-      if (metaRow) {
-        var spans = metaRow.querySelectorAll('span');
-        if (spans[1]) spans[1].textContent = '📖 ' + WHY_INVEST_ARTICLE.readTime + ' čítania';
-        if (spans[2]) spans[2].textContent = WHY_INVEST_ARTICLE.dateLong;
-      }
+  var vzFeatured = document.getElementById('vz-featured-article');
+  if (vzFeatured) {
+    var title = vzFeatured.querySelector('div[style*="font-family:var(--serif);font-size:22px"]');
+    var perex = vzFeatured.querySelector('div[style*="font-size:13.5px;color:var(--wd)"]');
+    var metaRow = vzFeatured.querySelector('div[style*="display:flex;gap:8px;flex-wrap:wrap"]');
+    if (title) title.textContent = WHY_INVEST_ARTICLE.title;
+    if (perex) perex.textContent = 'Inflácia, čas a disciplína v jednom článku. Prakticky a bez balastu, ktorý začiatočníkov zvyčajne odradí.';
+    if (metaRow) {
+      var spans = metaRow.querySelectorAll('span');
+      if (spans[1]) spans[1].textContent = '📖 ' + WHY_INVEST_ARTICLE.readTime + ' čítania';
+      if (spans[2]) spans[2].textContent = WHY_INVEST_ARTICLE.dateLong;
     }
   }
 
