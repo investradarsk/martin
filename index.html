@@ -369,6 +369,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .today-layout{grid-template-columns:1fr}
   .index-panel{display:none}
   .novinky-layout{grid-template-columns:1fr}
+  .novinky-side{display:grid;gap:16px}
   .art-grid{grid-template-columns:1fr 1fr}
   .art-grid .span2{grid-column:span 2}
   .strip-grid{grid-template-columns:1fr 1fr}
@@ -386,17 +387,18 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   nav.open ul{display:flex;flex-direction:column;position:absolute;top:58px;left:0;right:0;background:rgba(7,11,22,.98);border-bottom:1px solid var(--wf);padding:8px 14px 14px;gap:2px;z-index:298}
   nav.open ul a{padding:10px 12px;font-size:12px}
   .nav-r .btn-ghost{display:none}
-  #page-novinky .container{padding:0 12px}
+  #page-novinky .container{padding:0 14px}
   #page-novinky .page-header{padding:32px 0 24px;margin-bottom:24px}
-  .fbar{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-bottom:24px;scrollbar-width:none}
-  .fbar::-webkit-scrollbar{display:none}
-  .fbar button{flex:0 0 auto}
-  .novinky-layout{gap:20px}
-  .nfeed{gap:10px}
-  .nf-item{grid-template-columns:1fr;gap:8px;padding:16px 14px;border:1px solid var(--wf);border-radius:var(--r);background:var(--navy2)}
+  #nf-bar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+  #nf-bar button{width:100%;padding:9px 10px;font-size:8px}
+  .novinky-layout{gap:18px}
+  .nfeed{gap:12px}
+  .nf-item{grid-template-columns:1fr;gap:10px;padding:16px;border:1px solid var(--wf);border-radius:var(--r);background:linear-gradient(180deg, rgba(13,21,37,.98) 0%, rgba(9,13,23,.98) 100%)}
   .nf-item:last-child{border-bottom:1px solid var(--wf)}
-  .nf-time{text-align:left;padding-top:0}
-  .nf-text{font-size:13.5px}
+  .nf-time{text-align:left;padding:0 0 8px;border-bottom:1px solid var(--wff);font-size:10px;line-height:1.7}
+  .nf-text{font-size:13.5px;line-height:1.68}
+  .nf-ticks{gap:6px}
+  .nf-tick{font-size:8px}
   .art-grid{grid-template-columns:1fr}
   .art-grid .span2{grid-column:span 1}
   .strip-grid{grid-template-columns:1fr 1fr}
@@ -408,6 +410,8 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .cookie-banner{left:12px;right:12px;bottom:12px;padding:16px}
 }
 @media(max-width:420px){
+  #page-novinky .container{padding:0 12px}
+  #nf-bar{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr}
   .strip-grid{grid-template-columns:1fr}
   .cta-row{flex-direction:column;align-items:flex-start}
@@ -427,7 +431,8 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .fbar button{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border:1px solid var(--wf);color:var(--wd);background:none;cursor:pointer;transition:all .18s;border-radius:var(--r)}
 .fbar button:hover,.fbar button.on{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
 /* novinky live feed */
-.novinky-layout{display:grid;grid-template-columns:1fr 260px;gap:32px;align-items:start}
+.novinky-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start}
+.novinky-main,.novinky-side{min-width:0}
 .nfeed{display:flex;flex-direction:column;gap:0}
 .nf-item{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--wff);cursor:default}
 .nf-item:last-child{border-bottom:none}
@@ -436,7 +441,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .nf-sector{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--amberl);margin-bottom:4px}
 .nf-text{font-size:14px;color:var(--wd);line-height:1.6;margin-bottom:7px}
 .nf-ticks{display:flex;gap:5px;flex-wrap:wrap}
-.nf-tick{font-family:var(--mono);font-size:8px;padding:2px 6px;border-radius:1px;border:1px solid}
+.nf-tick{font-family:var(--mono);font-size:8px;padding:3px 6px;border-radius:1px;border:1px solid;display:inline-flex;align-items:center;line-height:1.35;max-width:100%;word-break:break-word}
 .nf-tick.up{border-color:rgba(21,160,106,.3);color:var(--green);background:rgba(21,160,106,.07)}
 .nf-tick.dn{border-color:rgba(194,59,59,.3);color:var(--red);background:rgba(194,59,59,.07)}
 .nf-tick.nt{border-color:var(--wf);color:rgba(240,232,213,.4);background:var(--wff)}
@@ -930,7 +935,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     </div>
     <!-- index panel -->
     <div class="novinky-layout">
-      <div>
+      <div class="novinky-main">
         <div class="fbar" id="nf-bar">
           <button class="on" onclick="filterNov(this,'all')">Všetky</button>
           <button onclick="filterNov(this,'geo')">Geopolitika</button>
@@ -956,7 +961,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         </div>
       </div>
       <!-- Sidebar -->
-      <div>
+      <div class="novinky-side">
         <div class="index-panel" style="margin-bottom:16px">
           <div class="ip-title">Indexy · 20. apr 2026</div>
           <div class="ip-row"><div class="ip-name">S&P 500</div><div class="ip-right"><div class="ip-price dn">7 097.97</div><div class="ip-chg dn">−0.39%</div></div></div>
