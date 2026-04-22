@@ -368,6 +368,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .hcard{max-width:480px}
   .today-layout{grid-template-columns:1fr}
   .index-panel{display:none}
+  .novinky-layout{grid-template-columns:1fr}
   .art-grid{grid-template-columns:1fr 1fr}
   .art-grid .span2{grid-column:span 2}
   .strip-grid{grid-template-columns:1fr 1fr}
@@ -385,6 +386,13 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   nav.open ul{display:flex;flex-direction:column;position:absolute;top:58px;left:0;right:0;background:rgba(7,11,22,.98);border-bottom:1px solid var(--wf);padding:8px 14px 14px;gap:2px;z-index:298}
   nav.open ul a{padding:10px 12px;font-size:12px}
   .nav-r .btn-ghost{display:none}
+  .fbar{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;margin-bottom:24px;scrollbar-width:none}
+  .fbar::-webkit-scrollbar{display:none}
+  .fbar button{flex:0 0 auto}
+  .novinky-layout{gap:20px}
+  .nf-item{grid-template-columns:1fr;gap:8px;padding:14px 0}
+  .nf-time{text-align:left;padding-top:0}
+  .nf-text{font-size:13.5px}
   .art-grid{grid-template-columns:1fr}
   .art-grid .span2{grid-column:span 1}
   .strip-grid{grid-template-columns:1fr 1fr}
@@ -415,11 +423,12 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .fbar button{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border:1px solid var(--wf);color:var(--wd);background:none;cursor:pointer;transition:all .18s;border-radius:var(--r)}
 .fbar button:hover,.fbar button.on{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
 /* novinky live feed */
+.novinky-layout{display:grid;grid-template-columns:1fr 260px;gap:32px;align-items:start}
 .nfeed{display:flex;flex-direction:column;gap:0}
 .nf-item{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--wff);cursor:default}
 .nf-item:last-child{border-bottom:none}
 .nf-time{font-family:var(--mono);font-size:9px;color:rgba(240,232,213,.3);text-align:right;padding-top:3px;line-height:1.6}
-.nf-body{}
+.nf-body{min-width:0}
 .nf-sector{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--amberl);margin-bottom:4px}
 .nf-text{font-size:14px;color:var(--wd);line-height:1.6;margin-bottom:7px}
 .nf-ticks{display:flex;gap:5px;flex-wrap:wrap}
@@ -916,7 +925,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <p class="ph-sub">Kľúčové udalosti, makro dáta a pohyby, ktoré dnes ovplyvňujú akcie, sektory a sentiment. Aktualizované priebežne počas obchodného dňa.</p>
     </div>
     <!-- index panel -->
-    <div style="display:grid;grid-template-columns:1fr 260px;gap:32px;align-items:start">
+    <div class="novinky-layout">
       <div>
         <div class="fbar" id="nf-bar">
           <button class="on" onclick="filterNov(this,'all')">Všetky</button>
