@@ -17,6 +17,14 @@
 !js/**
 !images/
 !images/**
+!privacy-policy/
+!privacy-policy/**
+!disclaimer/
+!disclaimer/**
+!kontakt/
+!kontakt/**
+!o-nas/
+!o-nas/**
 
 # OS/editor noise
 .DS_Store

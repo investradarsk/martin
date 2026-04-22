@@ -7,14 +7,25 @@
 <meta name="description" content="Denné investičné novinky, akciové analýzy, geopolitické komentáre a trade alerty pre slovenských investorov.">
 <meta property="og:title" content="InvestRadar — Vidíte trh. My vidíme príležitosť.">
 <meta property="og:type" content="website">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MG2T4FHW47"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MG2T4FHW47');
+  window.IR_ANALYTICS_ID = 'G-MG2T4FHW47';
+  window.IR_ANALYTICS_LOADED = false;
+  window.IR_ANALYTICS_DISABLED = true;
+  window['ga-disable-' + window.IR_ANALYTICS_ID] = true;
+  function loadAnalytics(){
+    if(window.IR_ANALYTICS_LOADED) return;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.IR_ANALYTICS_ID;
+    document.head.appendChild(script);
+    window['ga-disable-' + window.IR_ANALYTICS_ID] = false;
+    window.IR_ANALYTICS_DISABLED = false;
+    gtag('js', new Date());
+    gtag('config', window.IR_ANALYTICS_ID, { anonymize_ip: true });
+    window.IR_ANALYTICS_LOADED = true;
+  }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -343,6 +354,13 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .footer-disc{font-size:10.5px;color:rgba(240,232,213,.25);line-height:1.65;max-width:640px}
 .footer-copy{font-family:var(--mono);font-size:10px;color:rgba(240,232,213,.28);white-space:nowrap}
 
+/* COOKIE CONSENT */
+.cookie-banner{position:fixed;left:20px;right:20px;bottom:20px;z-index:420;max-width:980px;margin:0 auto;background:rgba(7,11,22,.96);border:1px solid var(--amberb);box-shadow:0 18px 48px rgba(0,0,0,.35);padding:18px 20px;border-radius:var(--r);display:none}
+.cookie-banner.show{display:block}
+.cookie-copy{font-size:12.5px;color:var(--wd);line-height:1.72;max-width:720px}
+.cookie-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.cookie-link{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--amberl)}
+
 /* RESPONSIVE */
 @media(max-width:1020px){
   .hero-grid{grid-template-columns:1fr;gap:32px}
@@ -374,6 +392,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .footer-grid{grid-template-columns:1fr}
   section,.#today,#articles,#sectors,#book,#newsletter,#why{padding:44px 0}
   #stats-bar{display:none}
+  .cookie-banner{left:12px;right:12px;bottom:12px;padding:16px}
 }
 @media(max-width:420px){
   .why-grid{grid-template-columns:1fr}
@@ -698,6 +717,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     <li><a href="#" onclick="goTo('onas');return false;" class="nav-link" data-page="onas">O nás</a></li>
   </ul>
   <div class="nav-r">
+    <a href="#" onclick="goTo('kontakt');return false;" class="btn-ghost btn-sm">Kontakt</a>
     <a href="#" onclick="goTo('newsletter');return false;" class="btn-ghost btn-sm">Newsletter</a>
     <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-fill btn-sm">📖 Kúpiť knihu</a>
   </div>
@@ -1723,7 +1743,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <p>Ak sa prihlásiš na newsletter alebo nám napíšeš cez formulár, spracúvame údaje, ktoré nám sám poskytneš. Údaje používame výlučne na vybavenie tvojej žiadosti, komunikáciu s tebou alebo zasielanie obsahu, o ktorý si prejavil záujem.</p>
 
       <h2>6. Analytické nástroje a cookies</h2>
-      <p>Na stránke môže byť použitý analytický nástroj Google Analytics, ktorý pomáha merať návštevnosť a používanie webu. Takýto nástroj môže spracúvať technické údaje a informácie o správaní návštevníka na stránke. Ak bude na webe používaný cookie banner alebo nastavenie súhlasu, analytické cookies a súvisiace meranie sa budú riadiť týmto nastavením.</p>
+      <p>Na stránke môže byť použitý analytický nástroj Google Analytics, ktorý pomáha merať návštevnosť a používanie webu. Takýto nástroj môže spracúvať technické údaje a informácie o správaní návštevníka na stránke. Analytické cookies a súvisiace meranie sa na webe riadia nastavením súhlasu v cookie lište.</p>
 
       <h2>7. Komu môžu byť údaje sprístupnené</h2>
       <p>Údaje môžu byť v nevyhnutnom rozsahu sprístupnené našim zmluvným partnerom a poskytovateľom služieb, ktorí zabezpečujú prevádzku webu, formulárov, e-mailovej komunikácie, analytiky alebo distribúciu newslettera.</p>
@@ -1747,6 +1767,46 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 
       <h2>12. Zmeny týchto zásad</h2>
       <p>Tieto zásady môžeme priebežne aktualizovať. Aktuálne znenie je vždy zverejnené na tejto stránke.</p>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-disclaimer">
+  <div class="container" style="max-width:820px;padding-top:72px;padding-bottom:80px">
+    <div class="ph-label">InvestRadar · Právne</div>
+    <h1 class="ph-title" style="margin-bottom:10px">Disclaimer</h1>
+    <p class="ph-sub" style="max-width:none">Toto upozornenie vysvetľuje, ako treba vnímať obsah publikovaný na stránke InvestRadar, aké má limity a čo nepredstavuje z pohľadu investičného rozhodovania.</p>
+
+    <div class="article-body" style="margin-top:34px">
+      <div class="article-data-box">
+        <div class="md-item"><div class="md-l">Projekt</div><div class="md-v">InvestRadar</div></div>
+        <div class="md-item"><div class="md-l">Prevádzkovateľ</div><div class="md-v" style="font-size:12px">Martin Zábranský</div></div>
+        <div class="md-item"><div class="md-l">Posledná aktualizácia</div><div class="md-v">22. apríl 2026</div></div>
+      </div>
+
+      <h2>1. Informačný a vzdelávací charakter</h2>
+      <p>Informácie publikované na stránke InvestRadar.sk slúžia výhradne na informačné, komentátorské a vzdelávacie účely. Obsah nepredstavuje investičné odporúčanie, finančné poradenstvo ani individuálne odporúčanie na nákup alebo predaj cenných papierov, ETF, kryptomien alebo iných aktív.</p>
+
+      <h2>2. Nie je to personalizované odporúčanie</h2>
+      <p>Obsah na stránke nie je prispôsobený tvojej osobnej finančnej situácii, investičným cieľom, znalostiam, tolerancii rizika ani časovému horizontu. Každý návštevník by mal pred prijatím investičného rozhodnutia vykonať vlastný prieskum a podľa potreby sa poradiť s licencovaným finančným odborníkom.</p>
+
+      <h2>3. Riziko investovania</h2>
+      <p>Investovanie na finančných trhoch je spojené s rizikom vrátane kolísania cien, volatility, menového rizika, rizika likvidity a možnosti čiastočnej alebo úplnej straty kapitálu. Minulé výnosy, historické výsledky ani modelové scenáre nie sú zárukou budúcich výsledkov.</p>
+
+      <h2>4. Presnosť a aktuálnosť údajov</h2>
+      <p>Aj keď sa snažíme o čo najvyššiu presnosť a zrozumiteľnosť, nezaručujeme úplnosť, presnosť alebo aktuálnosť všetkých údajov na stránke v každom okamihu. Finančné trhy sa menia rýchlo a niektoré informácie môžu časom zastarať alebo sa ukázať ako nepresné.</p>
+
+      <h2>5. Vlastné pozície a konflikt záujmov</h2>
+      <p>Autor alebo prevádzkovateľ môže vlastniť pozície v niektorých tituloch, ktoré sú na stránke spomínané. Takáto skutočnosť sama osebe neznamená odporúčanie na nákup alebo predaj a návštevník by mal každú tézu posudzovať samostatne.</p>
+
+      <h2>6. Externé odkazy a tretie strany</h2>
+      <p>Stránka môže obsahovať odkazy na externé služby alebo platformy tretích strán. Za obsah, dostupnosť, bezpečnosť alebo podmienky týchto služieb InvestRadar nezodpovedá.</p>
+
+      <h2>7. Zodpovednosť</h2>
+      <p>Prevádzkovateľ stránky nenesie zodpovednosť za prípadné straty, škody alebo ušlý zisk vzniknuté použitím informácií uvedených na tejto stránke. Každé investičné rozhodnutie robí návštevník samostatne a na vlastnú zodpovednosť.</p>
+
+      <h2>8. Kontakt</h2>
+      <p>Ak máš otázku k tomuto upozorneniu alebo k fungovaniu stránky, môžeš nás kontaktovať cez stránku <a href="#" onclick="goTo('kontakt');return false;">Kontakt</a> alebo e-mailom na <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>.</p>
     </div>
   </div>
 </div>
@@ -1828,24 +1888,35 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <div class="footer-col">
         <h4>Platforma</h4>
         <a href="#" onclick="goTo('vzdelavanie');return false;">Vzdelávanie</a>
-        <a href="#" onclick="goTo('onas');return false;">O nás</a>
+        <a href="/o-nas/">O nás</a>
         <a href="#" onclick="goTo('newsletter');return false;">Newsletter</a>
         <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kúpiť knihu</a>
-        <a href="#" onclick="goTo('kontakt');return false;">Kontakt</a>
+        <a href="/kontakt/">Kontakt</a>
       </div>
       <div class="footer-col">
         <h4>Kontakt</h4>
         <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>
-        <a href="#" onclick="goTo('privacy');return false;">Ochrana osobných údajov</a>
+        <a href="/disclaimer/">Disclaimer</a>
+        <a href="/privacy-policy/">Ochrana osobných údajov</a>
         <a href="#" onclick="goTo('podmienky');return false;">Podmienky používania</a>
+        <a href="#" onclick="openCookieSettings();return false;">Nastavenie cookies</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-disc">Obsah InvestRadar má výlučne informačný a vzdelávací charakter a nepredstavuje investičné poradenstvo. Investovanie je spojené s rizikom straty kapitálu. © 2026 InvestRadar · Martin Zábranský</p>
+      <p class="footer-disc">Obsah InvestRadar má výlučne informačný a vzdelávací charakter a nepredstavuje investičné poradenstvo. Investovanie je spojené s rizikom straty kapitálu. Cookies pre analytiku sa načítajú až po udelení súhlasu. © 2026 InvestRadar · Martin Zábranský</p>
       <div class="footer-copy">© 2026 InvestRadar</div>
     </div>
   </div>
 </footer>
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Nastavenie cookies">
+  <div class="sec-label" style="margin-bottom:10px">InvestRadar · Cookies</div>
+  <p class="cookie-copy">Používame nevyhnutné cookies na fungovanie stránky a analytické cookies Google Analytics na meranie návštevnosti. Analytika sa aktivuje až po tvojom súhlase. Viac nájdeš v sekciách <a href="#" class="cookie-link" onclick="goTo('privacy');hideCookieBanner();return false;">Ochrana osobných údajov</a> a <a href="#" class="cookie-link" onclick="goTo('disclaimer');hideCookieBanner();return false;">Disclaimer</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn-fill btn-sm" onclick="acceptCookies()">Prijať analytické cookies</button>
+    <button class="btn-ghost btn-sm" onclick="declineCookies()">Len nevyhnutné</button>
+    <a href="#" class="cookie-link" onclick="goTo('kontakt');hideCookieBanner();return false;">Kontakt</a>
+  </div>
+</div>
 <div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
   <button class="modal-close" onclick="closeModal()">✕ Zavrieť</button>
   <div class="modal-wrap" id="mwrap"></div>
@@ -1859,7 +1930,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 })();
 
 // SPA Router
-var PAGES=['home','novinky','analyzy','alerty','sektory','earnings','vzdelavanie','onas','newsletter','kontakt','privacy','podmienky'];
+var PAGES=['home','novinky','analyzy','alerty','sektory','earnings','vzdelavanie','onas','newsletter','kontakt','privacy','disclaimer','podmienky'];
 function setActivePage(pageId){
   document.querySelectorAll('.page').forEach(function(p){
     p.classList.remove('active');
@@ -1890,7 +1961,43 @@ function goTo(id){
   try{history.pushState({page:id},'','#'+id);}catch(e){}
 }
 
+function showCookieBanner(){
+  var el = document.getElementById('cookie-banner');
+  if(el) el.classList.add('show');
+}
+function hideCookieBanner(){
+  var el = document.getElementById('cookie-banner');
+  if(el) el.classList.remove('show');
+}
+function acceptCookies(){
+  try{ localStorage.setItem('ir-cookie-consent','accepted'); }catch(e){}
+  loadAnalytics();
+  hideCookieBanner();
+}
+function declineCookies(){
+  try{ localStorage.setItem('ir-cookie-consent','declined'); }catch(e){}
+  hideCookieBanner();
+}
+function openCookieSettings(){
+  showCookieBanner();
+}
+function initCookieConsent(){
+  var consent = null;
+  try{ consent = localStorage.getItem('ir-cookie-consent'); }catch(e){}
+  if(consent === 'accepted'){
+    loadAnalytics();
+    hideCookieBanner();
+    return;
+  }
+  if(consent === 'declined'){
+    hideCookieBanner();
+    return;
+  }
+  showCookieBanner();
+}
+
 window.addEventListener('DOMContentLoaded',function(){
+  initCookieConsent();
   var h=(location.hash||'').replace('#','');
   if(handleArticleRoute(h)) return;
   if(PAGES.includes(h)) goTo(h); else goTo('home');
@@ -2547,6 +2654,7 @@ var PAGE_SEO = {
   kontakt:     { title:'Kontakt | InvestRadar', desc:'Máš otázku k analýze alebo záujem o spoluprácu? Napíš nám na investradarsk@gmail.com.' },
   newsletter:  { title:'Newsletter — InvestRadar', desc:'Získaj najnovšie články, komentáre k trhu a výber investičných tém priamo do emailu.' },
   privacy:     { title:'Ochrana osobných údajov | InvestRadar', desc:'Zásady ochrany osobných údajov pre návštevníkov webu InvestRadar vrátane informácií o formulároch, analytike a právach dotknutých osôb.' },
+  disclaimer:  { title:'Disclaimer | InvestRadar', desc:'Dôležité upozornenie k informačnému charakteru obsahu, investičným rizikám, zodpovednosti a limitom publikovaných informácií.' },
   podmienky:   { title:'Podmienky používania | InvestRadar', desc:'Podmienky používania webovej stránky InvestRadar, právne upozornenia a základné pravidlá používania obsahu.' }
 };
 
