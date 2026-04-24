@@ -7,6 +7,8 @@
 # Keep the main site files.
 !index.html
 !og-image.png
+!CNAME
+!.nojekyll
 
 # Allow future web assets if you decide to add structured folders.
 !assets/
@@ -31,6 +33,8 @@
 !kontakt/**
 !o-nas/
 !o-nas/**
+!.github/
+!.github/**
 
 # OS/editor noise
 .DS_Store
