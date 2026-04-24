@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<base href="/">
+<title>Denné investičné novinky | InvestRadar</title>
+<meta name="description" content="Denné investičné novinky, makro udalosti a pohyby trhu pre slovenských investorov.">
+<meta property="og:title" content="Denné investičné novinky | InvestRadar">
+<meta property="og:description" content="Kľúčové udalosti, makro dáta a pohyby, ktoré dnes ovplyvňujú akcie, sektory a sentiment.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://investradar.sk/novinky/">
+<meta property="og:image" content="https://investradar.sk/og-image.png">
+<link rel="canonical" href="https://investradar.sk/novinky/">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1814929798657503" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#070b16;--navy2:#0d1525;--navy3:#152038;--navy4:#1c2d4e;
+  --amber:#c8891a;--amberl:#dfa030;--amberd:rgba(200,137,26,.11);--amberb:rgba(200,137,26,.26);
+  --cream:#f0e8d5;--wd:rgba(240,232,213,.5);--wf:rgba(240,232,213,.09);--wff:rgba(240,232,213,.045);
+  --green:#15a06a;--red:#c23b3b;
+  --mono:'DM Mono',monospace;--serif:'Playfair Display',serif;--sans:'Instrument Sans',sans-serif;
+  --max:1440px;--r:2px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+b,strong{font-weight:600;color:var(--cream)}
+.up{color:var(--green)}
+.dn{color:var(--red)}
+
+.ticker{height:32px;background:var(--navy2);border-bottom:1px solid var(--wf);display:flex;overflow:hidden;position:sticky;top:0;z-index:300}
+.t-label{flex-shrink:0;padding:0 14px;display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--amberl);border-right:1px solid var(--wf);background:var(--navy2);z-index:2}
+.t-dot{width:5px;height:5px;border-radius:50%;background:var(--green)}
+.t-wrap{overflow:hidden;flex:1;display:flex;align-items:center}
+.t-track{display:flex;align-items:center;white-space:nowrap;animation:mscroll 60s linear infinite}
+.t-item{display:flex;align-items:center;gap:7px;padding:0 20px;border-right:1px solid var(--wff);font-family:var(--mono);font-size:10px}
+.t-sym{color:var(--cream);font-weight:500;letter-spacing:.04em}
+.t-px{color:rgba(240,232,213,.45);font-size:9px}
+@keyframes mscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+nav{position:sticky;top:32px;z-index:299;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,60px);border-bottom:1px solid var(--wf);backdrop-filter:blur(24px) saturate(1.4);background:rgba(7,11,22,.92)}
+.logo{display:flex;align-items:center;gap:9px;cursor:pointer}
+.logo img{height:44px;width:44px;object-fit:contain}
+.logo-t{font-family:var(--serif);font-size:20px;color:var(--cream);letter-spacing:-.01em}
+.logo-t b{color:var(--amberl);font-weight:700}
+nav ul{display:flex;gap:1px;list-style:none}
+nav ul a{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--wd);padding:7px 15px;border-radius:2px;transition:all .18s;display:block}
+nav ul a:hover,nav ul a.active{color:var(--amberl);background:var(--amberd)}
+.nav-r{display:flex;gap:8px;align-items:center}
+.btn-fill,.btn-ghost{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:8px 16px;cursor:pointer;border-radius:var(--r);transition:all .18s;display:inline-block}
+.btn-fill{background:var(--amber);color:var(--navy2);font-weight:500;border:none}
+.btn-ghost{padding:7px 14px;border:1px solid var(--amberb);color:var(--amberl);background:none}
+
+.container{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,3vw,34px)}
+.page-shell{padding:44px 0 64px}
+.page-header{padding:0 0 34px;border-bottom:1px solid var(--wf);margin-bottom:34px;max-width:980px}
+.ph-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amberl);margin-bottom:10px}
+.ph-title{font-family:var(--serif);font-size:clamp(32px,4.6vw,52px);font-weight:700;line-height:1.06;margin-bottom:10px}
+.ph-sub{font-size:15px;color:var(--wd);line-height:1.75}
+.novinky-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
+.novinky-main,.novinky-side{min-width:0}
+.fbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.fbar span{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border:1px solid var(--wf);color:var(--wd);background:none;border-radius:var(--r)}
+.fbar .on{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
+.nfeed{display:flex;flex-direction:column;gap:0}
+.nf-item{display:grid;grid-template-columns:82px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--wff)}
+.nf-time{font-family:var(--mono);font-size:9px;color:rgba(240,232,213,.32);text-align:right;padding-top:3px;line-height:1.7}
+.nf-body{min-width:0}
+.nf-text{font-size:15px;color:var(--wd);line-height:1.72;margin-bottom:8px}
+.nf-ticks{display:flex;gap:6px;flex-wrap:wrap}
+.nf-tick{font-family:var(--mono);font-size:8px;padding:3px 6px;border-radius:1px;border:1px solid;display:inline-flex;align-items:center;line-height:1.35;max-width:100%;word-break:break-word}
+.nf-tick.up{border-color:rgba(21,160,106,.3);color:var(--green);background:rgba(21,160,106,.07)}
+.nf-tick.dn{border-color:rgba(194,59,59,.3);color:var(--red);background:rgba(194,59,59,.07)}
+.nf-tick.nt{border-color:var(--wf);color:rgba(240,232,213,.4);background:var(--wff)}
+.side-card{background:var(--navy2);border:1px solid var(--wf);padding:18px;border-radius:var(--r)}
+.ip-title,.ee-title{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--amberl)}
+.ip-title{margin-bottom:14px}
+.ip-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:6px 0}
+.ip-name{font-size:12px;color:var(--wd)}
+.ip-right{text-align:right}
+.ip-price,.ip-chg{font-family:var(--mono);font-size:11px}
+.ip-bar{height:2px;border-radius:999px}
+.bar-up{background:linear-gradient(90deg,var(--green),transparent)}
+.bar-dn{background:linear-gradient(90deg,var(--red),transparent)}
+.econ-events{margin-top:16px;padding-top:16px;border-top:1px solid var(--wff)}
+.ee-title{margin-bottom:10px}
+.ee-item{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;padding:7px 0}
+.er-left{display:flex;gap:8px;align-items:flex-start}
+.ee-imp{width:6px;height:6px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.imp-hi{background:var(--red)}
+.imp-med{background:var(--amber)}
+.ee-name{font-size:12px;color:var(--wd);line-height:1.55}
+.ee-time{font-family:var(--mono);font-size:9px;color:rgba(240,232,213,.35);white-space:nowrap}
+
+footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
+.footer-brand{font-family:var(--serif);font-size:17px;margin-bottom:9px}
+.footer-brand b{color:var(--amberl)}
+.footer-desc{font-size:12.5px;color:var(--wd);line-height:1.7;max-width:270px}
+.footer-col h4{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--amberl);margin-bottom:12px}
+.footer-col a{display:block;font-size:12.5px;color:var(--wd);margin-bottom:7px;transition:.18s}
+.footer-col a:hover{color:var(--cream)}
+.footer-bottom{border-top:1px solid var(--wff);padding:18px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.footer-disc{font-size:10.5px;color:rgba(240,232,213,.25);line-height:1.65;max-width:640px}
+.footer-copy{font-family:var(--mono);font-size:10px;color:rgba(240,232,213,.28);white-space:nowrap}
+
+@media(max-width:1020px){
+  .novinky-layout{grid-template-columns:1fr}
+  .novinky-side{display:grid;gap:16px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+}
+@media(max-width:640px){
+  nav ul{display:none}
+  .nav-r .btn-ghost{display:none}
+  .container{padding:0}
+  .page-shell{padding:32px 0 52px}
+  .page-header{padding:0 12px 24px;margin-bottom:24px}
+  .ph-sub{font-size:13px}
+  .fbar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:0 12px 4px;margin-bottom:18px}
+  .fbar::-webkit-scrollbar{display:none}
+  .fbar span{white-space:nowrap;flex:0 0 auto}
+  .nfeed{gap:12px}
+  .nf-item{grid-template-columns:1fr;gap:10px;padding:16px 12px;border-top:1px solid var(--wf);border-bottom:1px solid var(--wf);border-left:none;border-right:none;background:linear-gradient(180deg,rgba(13,21,37,.98) 0%,rgba(9,13,23,.98) 100%)}
+  .nf-time{text-align:left;padding:0 0 8px;border-bottom:1px solid var(--wff)}
+  .novinky-side{display:none}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="ticker"><div class="t-label"><div class="t-dot"></div>Live</div><div class="t-wrap"><div class="t-track"><div class="t-item"><span class="t-sym">S&amp;P 500</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">XOM</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">S&amp;P 500</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">XOM</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">···</span></div></div></div></div>
+<nav aria-label="Hlavna navigacia"><a href="/" class="logo" aria-label="InvestRadar"><img src="/og-image.png" alt="Logo InvestRadar"><span class="logo-t">Invest<b>Radar</b></span></a><ul><li><a href="/novinky/" class="active">Novinky</a></li><li><a href="/#analyzy">Analyzy</a></li><li><a href="/#alerty">Trade Alerty</a></li><li><a href="/#sektory">Sektory</a></li><li><a href="/#earnings">Earnings</a></li><li><a href="/#vzdelavanie">Vzdelavanie</a></li><li><a href="/o-nas/">O nas</a></li></ul><div class="nav-r"><a href="/kontakt/" class="btn-ghost">Kontakt</a><a href="/#newsletter" class="btn-fill">Newsletter</a></div></nav>
+<main class="page-shell">
+  <div class="container">
+    <div class="page-header">
+      <div class="ph-label">InvestRadar · Novinky</div>
+      <h1 class="ph-title">Denne investicne novinky</h1>
+      <p class="ph-sub">Klucove udalosti, makro data a pohyby, ktore dnes ovplyvnuju akcie, sektory a sentiment. Tato verzia je samostatna URL stranka `/novinky/` so sirsim layoutom.</p>
+    </div>
+    <div class="novinky-layout">
+      <div class="novinky-main">
+        <div class="fbar">
+          <span class="on">Vsetky</span>
+          <span>Geopolitika</span>
+          <span>Energia</span>
+          <span>Makro</span>
+          <span>AI / Tech</span>
+          <span>Earnings</span>
+          <span>Obrana</span>
+          <span>Biotech</span>
+        </div>
+        <div class="nfeed">
+          <div class="nf-item"><div class="nf-time">20:31 SEC<br>24. apr 2026<br><span style="color:var(--green);font-size:8px">● NOVE</span></div><div class="nf-body"><div class="nf-text"><strong>Fed zrejme zostane opatrny, trh skrta stavky na skore cuty</strong> - silnejsie data z ekonomiky a stale zvysene cenove tlaky drzia ocakavania prveho znizenia sadzieb neskor v roku. Vyssie vynosy znovu vytvaraju tlak najma na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Nasdaq slabsi</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
+          <div class="nf-item"><div class="nf-time">19:42 SEC<br>24. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>NVIDIA a cipy znovu vedu trh, AI capex story ostava neporusena</strong> - semiconductor sektor rastol po dalsich spravach o expanzii datovych centier a pokracujucich objednavkach hyperscalerov. Investori dalej kupuju infra vrstvu AI.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
+          <div class="nf-item"><div class="nf-time">18:55 SEC<br>24. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Ropa koriguje cast rastov, no geopoliticka premia ostava v cene</strong> - po prudkom raste prislo vyberanie ziskov, ale trh stale sleduje rizika dodavok na Blizkom vychode. Energeticky sektor zostava citlivy na headlines.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
+          <div class="nf-item"><div class="nf-time">17:48 SEC<br>24. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Alphabet po vysledkoch podporil sentiment v reklame aj cloude</strong> - lepsie cisla z digitalnej reklamy a stabilny cloud biznis pomohli sentimentu v large-cap tech. Trh ocenuje disciplinu nakladov aj AI monetizaciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud growth solid</span></div></div></div>
+          <div class="nf-item"><div class="nf-time">16:36 SEC<br>24. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Wall Street bez jasneho smeru, rotacia pokracuje do value a defenzivy</strong> - indexy obchodovali zmiesane, ked investori balansuji vyssie sadzby a silne firemne vysledky. Utility, healthcare a energy boli stabilnejsie nez high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span><span class="nf-tick dn">Nasdaq -0.2%</span></div></div></div>
+        </div>
+      </div>
+      <aside class="novinky-side">
+        <div class="side-card">
+          <div class="ip-title">Indexy · 24. apr 2026</div>
+          <div class="ip-row"><div class="ip-name">S&amp;P 500</div><div class="ip-right"><div class="ip-price up">707.91</div><div class="ip-chg up">+0.89%</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:42%"></div></div>
+          <div class="ip-row"><div class="ip-name">NASDAQ</div><div class="ip-right"><div class="ip-price up">650.74</div><div class="ip-chg up">+1.60%</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:64%"></div></div>
+          <div class="ip-row"><div class="ip-name">DOW</div><div class="ip-right"><div class="ip-price up">492.69</div><div class="ip-chg up">+1.45%</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:58%"></div></div>
+          <div class="ip-row"><div class="ip-name">Russell 2000</div><div class="ip-right"><div class="ip-price up">275.18</div><div class="ip-chg up">+1.94%</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:72%"></div></div>
+          <div class="ip-row"><div class="ip-name">VIX</div><div class="ip-right"><div class="ip-price dn">19.49</div><div class="ip-chg dn">+11.50%</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-dn" style="width:80%"></div></div>
+          <div class="econ-events">
+            <div class="ee-title">Klucove udalosti</div>
+            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-hi"></div><div class="ee-name">US-Iran rokovania · Islamabad</div></div><div class="ee-time">dnes</div></div>
+            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-hi"></div><div class="ee-name">Tesla Q1 update zverejneny</div></div><div class="ee-time">22. apr</div></div>
+            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-hi"></div><div class="ee-name">Ceasefire expiruje</div></div><div class="ee-time">22. apr</div></div>
+            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-med"></div><div class="ee-name">P&amp;G / SLB vysledky</div></div><div class="ee-time">24. apr AM</div></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+<footer><div class="container"><div class="footer-grid"><div><div class="footer-brand">Invest<b>Radar</b></div><p class="footer-desc">Slovenska nezavisla investicna platforma. Denne novinky, analyzy, trade alerty a portfolio prehlady pre investorov, ktori chcu rozumiet trhu do hlbky.</p></div><div class="footer-col"><h4>Obsah</h4><a href="/novinky/">Novinky</a><a href="/#analyzy">Analyzy</a><a href="/#alerty">Trade alerty</a><a href="/#sektory">Sektory</a><a href="/#earnings">Earnings</a></div><div class="footer-col"><h4>Platforma</h4><a href="/#vzdelavanie">Vzdelavanie</a><a href="/o-nas/">O nas</a><a href="/#newsletter">Newsletter</a><a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kupit knihu</a><a href="/kontakt/">Kontakt</a></div><div class="footer-col"><h4>Kontakt</h4><a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a><a href="/disclaimer/">Disclaimer</a><a href="/privacy-policy/">Ochrana osobnych udajov</a></div></div><div class="footer-bottom"><p class="footer-disc">Obsah InvestRadar ma vylucne informacny a vzdelavaci charakter a nepredstavuje investicne poradenstvo. Investovanie je spojene s rizikom straty kapitalu.</p><div class="footer-copy">© 2026 InvestRadar</div></div></div></footer>
+</body>
+</html>
