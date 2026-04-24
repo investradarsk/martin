@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#070b16"/>
+  <rect x="80" y="80" width="1040" height="560" rx="28" fill="#0d1525" stroke="#253655"/>
+  <text x="120" y="150" fill="#dfa030" font-family="Georgia, serif" font-size="54">Ako si vybrať stratégiu</text>
+  <path d="M210 520V250M210 250h160M210 250h-120" stroke="#f0e8d5" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <text x="70" y="245" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="26">Riziko</text>
+  <text x="300" y="542" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="26">Časový horizont</text>
+  <g font-family="Arial, sans-serif" font-size="26">
+    <circle cx="390" cy="380" r="26" fill="#15a06a"/><text x="430" y="388" fill="#f0e8d5">Indexová</text>
+    <circle cx="520" cy="300" r="26" fill="#6ab0e8"/><text x="560" y="308" fill="#f0e8d5">Rastová</text>
+    <circle cx="670" cy="350" r="26" fill="#dfa030"/><text x="710" y="358" fill="#f0e8d5">Hodnotová</text>
+    <circle cx="800" cy="270" r="26" fill="#c23b3b"/><text x="840" y="278" fill="#f0e8d5">Dividendová</text>
+    <circle cx="930" cy="420" r="26" fill="#9b7cff"/><text x="970" y="428" fill="#f0e8d5">DCA</text>
+  </g>
+</svg>

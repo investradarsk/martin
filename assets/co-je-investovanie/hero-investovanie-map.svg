@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#070b16"/>
+  <rect x="70" y="70" width="1060" height="580" rx="28" fill="#0d1525" stroke="#253655"/>
+  <text x="110" y="150" fill="#dfa030" font-family="Georgia, serif" font-size="54">Z čoho sa skladá investovanie</text>
+  <g>
+    <circle cx="260" cy="360" r="90" fill="#152038" stroke="#dfa030"/><text x="216" y="368" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">Cieľ</text>
+    <circle cx="500" cy="260" r="90" fill="#152038" stroke="#15a06a"/><text x="468" y="268" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">Čas</text>
+    <circle cx="740" cy="360" r="90" fill="#152038" stroke="#6ab0e8"/><text x="678" y="368" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">Disciplína</text>
+    <circle cx="980" cy="260" r="90" fill="#152038" stroke="#c23b3b"/><text x="915" y="268" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">Zloženie</text>
+  </g>
+  <g stroke="#f0e8d5" stroke-width="5" opacity=".7">
+    <path d="M340 324L420 290"/><path d="M580 290L660 324"/><path d="M820 324L900 290"/>
+  </g>
+</svg>

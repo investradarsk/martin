@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#070b16"/>
+  <rect x="70" y="70" width="1060" height="580" rx="28" fill="#0d1525" stroke="#253655"/>
+  <text x="120" y="160" fill="#dfa030" font-family="Georgia, serif" font-size="56">ETF fond</text>
+  <text x="120" y="220" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">Jeden nákup, veľa firiem, menšie riziko jednej chyby.</text>
+  <g transform="translate(150 300)">
+    <rect x="0" y="40" width="400" height="220" rx="26" fill="#152038" stroke="#c8891a" stroke-width="3"/>
+    <path d="M40 70h320l-30 140H70z" fill="#c8891a" opacity=".18" stroke="#dfa030" stroke-width="3"/>
+    <circle cx="110" cy="130" r="26" fill="#15a06a"/>
+    <circle cx="200" cy="152" r="26" fill="#6ab0e8"/>
+    <circle cx="286" cy="124" r="26" fill="#c23b3b"/>
+    <circle cx="160" cy="208" r="26" fill="#dfa030"/>
+    <circle cx="255" cy="205" r="26" fill="#9b7cff"/>
+  </g>
+  <g transform="translate(680 280)">
+    <rect x="0" y="0" width="320" height="70" rx="18" fill="#152038" stroke="#253655"/>
+    <text x="34" y="44" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">Apple</text>
+    <rect x="0" y="92" width="320" height="70" rx="18" fill="#152038" stroke="#253655"/>
+    <text x="34" y="136" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">Microsoft</text>
+    <rect x="0" y="184" width="320" height="70" rx="18" fill="#152038" stroke="#253655"/>
+    <text x="34" y="228" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">Stovky ďalších</text>
+  </g>
+</svg>

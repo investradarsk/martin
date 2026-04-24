@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#070b16"/>
+  <rect x="90" y="180" width="320" height="220" rx="24" fill="#152038" stroke="#253655"/>
+  <text x="170" y="245" fill="#f0e8d5" font-family="Georgia, serif" font-size="46">Firma</text>
+  <rect x="790" y="180" width="320" height="220" rx="24" fill="#152038" stroke="#253655"/>
+  <text x="833" y="245" fill="#f0e8d5" font-family="Georgia, serif" font-size="46">Akcionár</text>
+  <path d="M430 290H770" stroke="#dfa030" stroke-width="8" stroke-linecap="round"/>
+  <path d="M745 262l50 28-50 28" fill="none" stroke="#dfa030" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="472" y="268" fill="#dfa030" font-family="Arial, sans-serif" font-size="30">vlastní podiel</text>
+  <text x="165" y="328" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="24">zisky, aktíva, zamestnanci</text>
+  <text x="833" y="328" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="24">dividendy, hlasovanie, rast</text>
+</svg>

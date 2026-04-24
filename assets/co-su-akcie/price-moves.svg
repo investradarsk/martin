@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#070b16"/>
+  <text x="90" y="120" fill="#dfa030" font-family="Georgia, serif" font-size="52">Čo hýbe cenou akcie</text>
+  <g font-family="Arial, sans-serif" font-size="28" fill="#f0e8d5">
+    <rect x="90" y="180" width="300" height="120" rx="22" fill="#152038" stroke="#253655"/><text x="140" y="250">Výsledky firmy</text>
+    <rect x="450" y="180" width="300" height="120" rx="22" fill="#152038" stroke="#253655"/><text x="510" y="250">Výhľad trhu</text>
+    <rect x="810" y="180" width="300" height="120" rx="22" fill="#152038" stroke="#253655"/><text x="872" y="250">Sentiment</text>
+    <rect x="270" y="400" width="300" height="120" rx="22" fill="#152038" stroke="#253655"/><text x="334" y="470">Úroky a makro</text>
+    <rect x="630" y="400" width="300" height="120" rx="22" fill="#152038" stroke="#253655"/><text x="716" y="470">Očakávania</text>
+  </g>
+  <g stroke="#dfa030" stroke-width="6" stroke-linecap="round">
+    <path d="M390 240H450"/><path d="M750 240H810"/><path d="M420 300V400"/><path d="M780 300V400"/>
+  </g>
+</svg>

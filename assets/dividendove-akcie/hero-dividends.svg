@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#070b16"/>
+  <rect x="90" y="120" width="430" height="460" rx="26" fill="#0d1525" stroke="#15a06a"/>
+  <rect x="680" y="120" width="430" height="460" rx="26" fill="#0d1525" stroke="#c23b3b"/>
+  <text x="180" y="200" fill="#f0e8d5" font-family="Georgia, serif" font-size="46">Zdravá dividenda</text>
+  <text x="785" y="200" fill="#f0e8d5" font-family="Georgia, serif" font-size="46">Dividendová pasca</text>
+  <text x="145" y="300" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">• stabilný cash flow</text>
+  <text x="145" y="360" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">• rozumný payout</text>
+  <text x="145" y="420" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">• priestor na rast</text>
+  <text x="735" y="300" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">• extrémny výnos</text>
+  <text x="735" y="360" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">• slabá bilancia</text>
+  <text x="735" y="420" fill="#f0e8d5" font-family="Arial, sans-serif" font-size="28">• tlak na zníženie</text>
+</svg>
