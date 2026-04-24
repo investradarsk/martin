@@ -2396,7 +2396,8 @@ var ARTICLES_META = {
   'acmr':     { path:'alerty/acmr-trade-alert', section:'alerty', sectionLabel:'Trade Alerty', cat:'Trade Alert · Semiconductor', date:'18. apríl 2026', readTime:'5 min', tags:['ACMR','WFE','Semi','Strong Buy'] },
   'watchlist':{ path:'analyzy/watchlist-ktos-acmr-panw', section:'analyzy', sectionLabel:'Analýzy', cat:'Watchlist', date:'18. apríl 2026', readTime:'3 min', tags:['KTOS','ACMR','PANW'] },
   'sp500':    { path:'analyzy/sp500-valuacie-rizika', section:'analyzy', sectionLabel:'Analýzy', cat:'Trh · Makro', date:'17. apríl 2026', readTime:'5 min', tags:['SPX','QQQ','VIX'] },
-  'psych':    { path:'vzdelavanie/psychologia-investora-fomo', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'Psychológia investora', date:'17. apríl 2026', readTime:'4 min', tags:['FOMO','disciplína','Kahneman'] }
+  'psych':    { path:'vzdelavanie/psychologia-investora-fomo', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'Psychológia investora', date:'17. apríl 2026', readTime:'4 min', tags:['FOMO','disciplína','Kahneman'] },
+  'dividendy':{ path:'vzdelavanie/dividendove-akcie-pasivny-prijem-alebo-pasca', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'Dividendy', date:'24. apríl 2026', readTime:'7 min', tags:['Dividendy','Pasívny príjem','Payout ratio','Portfólio'] }
 };
 
 function goToArticle(key){
@@ -2449,6 +2450,15 @@ var LATEST = [
     title: 'Prečo investovať, aj keď nezačínaš s veľkou sumou',
     perex: 'Inflácia, čas a disciplína v jednom článku. Prakticky a bez balastu, ktorý začiatočníkov zvyčajne odradí.',
     action: "goToArticle('preco_investovat')",
+    badge: 'Nový'
+  },
+  {
+    date: '24. apr 2026',
+    type: 'vzdelavanie',
+    typeLabel: 'Dividendy',
+    title: 'Dividendové akcie: pasívny príjem alebo pasca?',
+    perex: 'Kedy dividendy dávajú zmysel, prečo vysoký výnos nestačí a na čo sa pozerať pri výbere firmy.',
+    action: "goToArticle('dividendy')",
     badge: 'Nový'
   },
   {
