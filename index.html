@@ -397,6 +397,62 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .why-grid{grid-template-columns:repeat(3,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
 }
+@media(max-width:768px){
+  .news-item,
+  .timeline-item,
+  .daily-news-card,
+  .article-card,
+  .nf-item{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  .news-item h1,.news-item h2,.news-item h3,
+  .timeline-item h1,.timeline-item h2,.timeline-item h3,
+  .daily-news-card h1,.daily-news-card h2,.daily-news-card h3,
+  .news-item .nf-text,
+  .timeline-item .nf-text,
+  .daily-news-card .nf-text,
+  .article-card .nf-text,
+  .nf-text{
+    white-space:normal;
+    word-break:normal;
+    overflow-wrap:normal;
+    writing-mode:horizontal-tb;
+    line-height:1.2;
+  }
+  .timeline,
+  .news-grid,
+  .daily-news-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    width:100%;
+  }
+  .daily-news-grid{
+    gap:12px;
+  }
+  .daily-news-grid .nf-item{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .daily-news-grid .nf-time,
+  .daily-news-grid .nf-body{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  .daily-news-grid .nf-time{
+    text-align:left;
+    padding:0 0 8px;
+    border-bottom:1px solid var(--wff);
+  }
+  .daily-news-grid .nf-body,
+  .daily-news-grid .nf-text,
+  .daily-news-grid .nf-ticks{
+    min-width:0;
+  }
+}
 @media(max-width:640px){
   nav ul{display:none}
   .hamburger{display:flex}
@@ -840,12 +896,12 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         <div><div class="sec-label">Posledné potvrdené update-y</div><h2 class="sec-title">Čo práve rieši trh</h2></div>
         <button class="btn-ghost btn-sm" onclick="goTo('novinky')">Všetky novinky →</button>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-        <div class="nf-item"><div class="nf-time">20:31 SE&#268;<br>Makro / Fed</div><div class="nf-body"><div class="nf-text">Fed zrejme zostane opatrn&yacute; a trh &scaron;krt&aacute; st&aacute;vky na skor&eacute; zn&iacute;&#382;enie sadzieb. Silnej&scaron;ie d&aacute;ta a vy&scaron;&scaron;ie cenov&eacute; tlaky znovu tla&#269;ia najm&auml; na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
-        <div class="nf-item"><div class="nf-time">19:42 SE&#268;<br>AI / Tech</div><div class="nf-body"><div class="nf-text">NVIDIA a polovodi&#269;e znovu viedli trh, ke&#271;&#382;e AI capex story ost&aacute;va neporu&scaron;en&aacute;. Investori &#271;alej kupuj&uacute; infra vrstvu AI po spr&aacute;vach o expanzii d&aacute;tov&yacute;ch centier.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
-        <div class="nf-item"><div class="nf-time">18:55 SE&#268;<br>Energia</div><div class="nf-body"><div class="nf-text">Ropa korigovala &#269;as&#357; rastov, ale geopolitick&aacute; pr&eacute;mia ost&aacute;va v cene. Trh st&aacute;le sleduje rizik&aacute; dod&aacute;vok na Bl&iacute;zkom v&yacute;chode a energetika ost&aacute;va headline-driven.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
-        <div class="nf-item"><div class="nf-time">17:48 SE&#268;<br>Mega Cap Tech</div><div class="nf-body"><div class="nf-text">Alphabet po v&yacute;sledkoch podporil sentiment v reklame aj cloude. Trh ocenil discipl&iacute;nu v n&aacute;kladoch a pokra&#269;uj&uacute;cu AI monetiz&aacute;ciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud solid</span></div></div></div>
-        <div class="nf-item"><div class="nf-time">16:36 SE&#268;<br>Trhy</div><div class="nf-body"><div class="nf-text">Wall Street zostala bez jasn&eacute;ho smeru a rot&aacute;cia pokra&#269;ovala do value a defenz&iacute;vy. Utility, healthcare a energy p&ocirc;sobili stabilnej&scaron;ie ne&#382; high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span></div></div></div>
+      <div class="daily-news-grid news-grid timeline" style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">20:31 SE&#268;<br>Makro / Fed</div><div class="nf-body"><div class="nf-text">Fed zrejme zostane opatrn&yacute; a trh &scaron;krt&aacute; st&aacute;vky na skor&eacute; zn&iacute;&#382;enie sadzieb. Silnej&scaron;ie d&aacute;ta a vy&scaron;&scaron;ie cenov&eacute; tlaky znovu tla&#269;ia najm&auml; na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">19:42 SE&#268;<br>AI / Tech</div><div class="nf-body"><div class="nf-text">NVIDIA a polovodi&#269;e znovu viedli trh, ke&#271;&#382;e AI capex story ost&aacute;va neporu&scaron;en&aacute;. Investori &#271;alej kupuj&uacute; infra vrstvu AI po spr&aacute;vach o expanzii d&aacute;tov&yacute;ch centier.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">18:55 SE&#268;<br>Energia</div><div class="nf-body"><div class="nf-text">Ropa korigovala &#269;as&#357; rastov, ale geopolitick&aacute; pr&eacute;mia ost&aacute;va v cene. Trh st&aacute;le sleduje rizik&aacute; dod&aacute;vok na Bl&iacute;zkom v&yacute;chode a energetika ost&aacute;va headline-driven.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">17:48 SE&#268;<br>Mega Cap Tech</div><div class="nf-body"><div class="nf-text">Alphabet po v&yacute;sledkoch podporil sentiment v reklame aj cloude. Trh ocenil discipl&iacute;nu v n&aacute;kladoch a pokra&#269;uj&uacute;cu AI monetiz&aacute;ciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud solid</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">16:36 SE&#268;<br>Trhy</div><div class="nf-body"><div class="nf-text">Wall Street zostala bez jasn&eacute;ho smeru a rot&aacute;cia pokra&#269;ovala do value a defenz&iacute;vy. Utility, healthcare a energy p&ocirc;sobili stabilnej&scaron;ie ne&#382; high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span></div></div></div>
       </div>
     </div>
   </section>
