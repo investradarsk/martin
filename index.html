@@ -452,6 +452,64 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .daily-news-grid .nf-ticks{
     min-width:0;
   }
+  .timeline-item,
+  .news-item,
+  .daily-news-card,
+  #page-novinky .nf-item{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:flex-start;
+    gap:12px;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    padding:12px;
+    box-sizing:border-box;
+  }
+  .timeline-item .nf-time,
+  .news-item .nf-time,
+  .daily-news-card .nf-time,
+  .timeline-time,
+  .news-time,
+  .date-column,
+  #page-novinky .nf-time{
+    flex:0 0 72px !important;
+    width:72px !important;
+    min-width:72px !important;
+    max-width:72px !important;
+    text-align:left;
+    padding:0 !important;
+    border-bottom:none !important;
+  }
+  .timeline-item .nf-body,
+  .news-item .nf-body,
+  .daily-news-card .nf-body,
+  .timeline-content,
+  .news-content,
+  .text-column,
+  #page-novinky .nf-body{
+    flex:1 1 auto !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+  .timeline-item .nf-text,
+  .timeline-item h1,
+  .timeline-item h2,
+  .timeline-item h3,
+  .timeline-item p,
+  .news-item .nf-text,
+  .news-item h1,
+  .news-item h2,
+  .news-item p,
+  .daily-news-card .nf-text,
+  #page-novinky .nf-text{
+    white-space:normal !important;
+    word-break:normal !important;
+    overflow-wrap:break-word !important;
+    writing-mode:horizontal-tb !important;
+    line-height:1.45;
+  }
 }
 @media(max-width:640px){
   nav ul{display:none}
@@ -903,11 +961,11 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         <button class="btn-ghost btn-sm" onclick="goTo('novinky')">Všetky novinky →</button>
       </div>
       <div class="daily-news-grid news-grid timeline" style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">20:31 SE&#268;<br>Makro / Fed</div><div class="nf-body"><div class="nf-text">Fed zrejme zostane opatrn&yacute; a trh &scaron;krt&aacute; st&aacute;vky na skor&eacute; zn&iacute;&#382;enie sadzieb. Silnej&scaron;ie d&aacute;ta a vy&scaron;&scaron;ie cenov&eacute; tlaky znovu tla&#269;ia najm&auml; na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
-        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">19:42 SE&#268;<br>AI / Tech</div><div class="nf-body"><div class="nf-text">NVIDIA a polovodi&#269;e znovu viedli trh, ke&#271;&#382;e AI capex story ost&aacute;va neporu&scaron;en&aacute;. Investori &#271;alej kupuj&uacute; infra vrstvu AI po spr&aacute;vach o expanzii d&aacute;tov&yacute;ch centier.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
-        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">18:55 SE&#268;<br>Energia</div><div class="nf-body"><div class="nf-text">Ropa korigovala &#269;as&#357; rastov, ale geopolitick&aacute; pr&eacute;mia ost&aacute;va v cene. Trh st&aacute;le sleduje rizik&aacute; dod&aacute;vok na Bl&iacute;zkom v&yacute;chode a energetika ost&aacute;va headline-driven.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
-        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">17:48 SE&#268;<br>Mega Cap Tech</div><div class="nf-body"><div class="nf-text">Alphabet po v&yacute;sledkoch podporil sentiment v reklame aj cloude. Trh ocenil discipl&iacute;nu v n&aacute;kladoch a pokra&#269;uj&uacute;cu AI monetiz&aacute;ciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud solid</span></div></div></div>
-        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time">16:36 SE&#268;<br>Trhy</div><div class="nf-body"><div class="nf-text">Wall Street zostala bez jasn&eacute;ho smeru a rot&aacute;cia pokra&#269;ovala do value a defenz&iacute;vy. Utility, healthcare a energy p&ocirc;sobili stabilnej&scaron;ie ne&#382; high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time timeline-time news-time date-column">20:31 SE&#268;<br>Makro / Fed</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text">Fed zrejme zostane opatrn&yacute; a trh &scaron;krt&aacute; st&aacute;vky na skor&eacute; zn&iacute;&#382;enie sadzieb. Silnej&scaron;ie d&aacute;ta a vy&scaron;&scaron;ie cenov&eacute; tlaky znovu tla&#269;ia najm&auml; na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time timeline-time news-time date-column">19:42 SE&#268;<br>AI / Tech</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text">NVIDIA a polovodi&#269;e znovu viedli trh, ke&#271;&#382;e AI capex story ost&aacute;va neporu&scaron;en&aacute;. Investori &#271;alej kupuj&uacute; infra vrstvu AI po spr&aacute;vach o expanzii d&aacute;tov&yacute;ch centier.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time timeline-time news-time date-column">18:55 SE&#268;<br>Energia</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text">Ropa korigovala &#269;as&#357; rastov, ale geopolitick&aacute; pr&eacute;mia ost&aacute;va v cene. Trh st&aacute;le sleduje rizik&aacute; dod&aacute;vok na Bl&iacute;zkom v&yacute;chode a energetika ost&aacute;va headline-driven.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time timeline-time news-time date-column">17:48 SE&#268;<br>Mega Cap Tech</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text">Alphabet po v&yacute;sledkoch podporil sentiment v reklame aj cloude. Trh ocenil discipl&iacute;nu v n&aacute;kladoch a pokra&#269;uj&uacute;cu AI monetiz&aacute;ciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud solid</span></div></div></div>
+        <div class="nf-item news-item daily-news-card timeline-item"><div class="nf-time timeline-time news-time date-column">16:36 SE&#268;<br>Trhy</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text">Wall Street zostala bez jasn&eacute;ho smeru a rot&aacute;cia pokra&#269;ovala do value a defenz&iacute;vy. Utility, healthcare a energy p&ocirc;sobili stabilnej&scaron;ie ne&#382; high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span></div></div></div>
       </div>
     </div>
   </section>
@@ -1037,15 +1095,15 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         </div>
         <div class="nfeed" id="nov-feed">
 
-          <div class="nf-item" data-cat="makro"><div class="nf-time">20:31 SE&#268;<br>24. apr 2026<br><span style="color:var(--green);font-size:8px">&#9679; NOV&Eacute;</span></div><div class="nf-body"><div class="nf-text"><strong>Fed zrejme zostane opatrn&yacute;, trh &scaron;krt&aacute; st&aacute;vky na skor&eacute; cuty</strong> - silnej&scaron;ie d&aacute;ta z ekonomiky a st&aacute;le zv&yacute;&scaron;en&eacute; cenov&eacute; tlaky dr&#382;ia o&#269;ak&aacute;vania prv&eacute;ho zn&iacute;&#382;enia sadzieb nesk&ocirc;r v roku. Vy&scaron;&scaron;ie v&yacute;nosy znovu vytv&aacute;raj&uacute; tlak najm&auml; na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Nasdaq slab&scaron;&iacute;</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
+          <div class="nf-item timeline-item news-item daily-news-card" data-cat="makro"><div class="nf-time timeline-time news-time date-column">20:31 SE&#268;<br>24. apr 2026<br><span style="color:var(--green);font-size:8px">&#9679; NOV&Eacute;</span></div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Fed zrejme zostane opatrn&yacute;, trh &scaron;krt&aacute; st&aacute;vky na skor&eacute; cuty</strong> - silnej&scaron;ie d&aacute;ta z ekonomiky a st&aacute;le zv&yacute;&scaron;en&eacute; cenov&eacute; tlaky dr&#382;ia o&#269;ak&aacute;vania prv&eacute;ho zn&iacute;&#382;enia sadzieb nesk&ocirc;r v roku. Vy&scaron;&scaron;ie v&yacute;nosy znovu vytv&aacute;raj&uacute; tlak najm&auml; na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Nasdaq slab&scaron;&iacute;</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
 
-          <div class="nf-item" data-cat="ai"><div class="nf-time">19:42 SE&#268;<br>24. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>NVIDIA a &#269;ipy znovu ved&uacute; trh, AI capex story ost&aacute;va neporu&scaron;en&aacute;</strong> - semiconductor sektor r&aacute;stol po &#271;al&scaron;&iacute;ch spr&aacute;vach o expanzii d&aacute;tov&yacute;ch centier a pokra&#269;uj&uacute;cich objedn&aacute;vkach hyperscalerov. Investori &#271;alej kupuj&uacute; infra vrstvu AI.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
+          <div class="nf-item timeline-item news-item daily-news-card" data-cat="ai"><div class="nf-time timeline-time news-time date-column">19:42 SE&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>NVIDIA a &#269;ipy znovu ved&uacute; trh, AI capex story ost&aacute;va neporu&scaron;en&aacute;</strong> - semiconductor sektor r&aacute;stol po &#271;al&scaron;&iacute;ch spr&aacute;vach o expanzii d&aacute;tov&yacute;ch centier a pokra&#269;uj&uacute;cich objedn&aacute;vkach hyperscalerov. Investori &#271;alej kupuj&uacute; infra vrstvu AI.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
 
-          <div class="nf-item" data-cat="energia"><div class="nf-time">18:55 SE&#268;<br>24. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Ropa koriguje &#269;as&#357; rastov, no geopolitick&aacute; pr&eacute;mia ost&aacute;va v cene</strong> - po prudkom raste pri&scaron;lo vyberanie ziskov, ale trh st&aacute;le sleduje rizik&aacute; dod&aacute;vok na Bl&iacute;zkom v&yacute;chode. Energetick&yacute; sektor zost&aacute;va citliv&yacute; na headlines.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
+          <div class="nf-item timeline-item news-item daily-news-card" data-cat="energia"><div class="nf-time timeline-time news-time date-column">18:55 SE&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Ropa koriguje &#269;as&#357; rastov, no geopolitick&aacute; pr&eacute;mia ost&aacute;va v cene</strong> - po prudkom raste pri&scaron;lo vyberanie ziskov, ale trh st&aacute;le sleduje rizik&aacute; dod&aacute;vok na Bl&iacute;zkom v&yacute;chode. Energetick&yacute; sektor zost&aacute;va citliv&yacute; na headlines.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
 
-          <div class="nf-item" data-cat="earnings"><div class="nf-time">17:48 SE&#268;<br>24. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Alphabet po v&yacute;sledkoch podporil sentiment v reklame aj cloude</strong> - lep&scaron;ie &#269;&iacute;sla z digit&aacute;lnej reklamy a stabiln&yacute; cloud biznis pomohli sentimentu v large-cap tech. Trh oce&#328;uje discipl&iacute;nu n&aacute;kladov aj AI monetiz&aacute;ciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud growth solid</span></div></div></div>
+          <div class="nf-item timeline-item news-item daily-news-card" data-cat="earnings"><div class="nf-time timeline-time news-time date-column">17:48 SE&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Alphabet po v&yacute;sledkoch podporil sentiment v reklame aj cloude</strong> - lep&scaron;ie &#269;&iacute;sla z digit&aacute;lnej reklamy a stabiln&yacute; cloud biznis pomohli sentimentu v large-cap tech. Trh oce&#328;uje discipl&iacute;nu n&aacute;kladov aj AI monetiz&aacute;ciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud growth solid</span></div></div></div>
 
-          <div class="nf-item" data-cat="makro"><div class="nf-time">16:36 SE&#268;<br>24. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Wall Street bez jasn&eacute;ho smeru, rot&aacute;cia pokra&#269;uje do value a defenz&iacute;vy</strong> - indexy obchodovali zmie&scaron;ane, ke&#271; investori balansuj&uacute; vy&scaron;&scaron;ie sadzby a siln&eacute; firemn&eacute; v&yacute;sledky. Utility, healthcare a energy boli stabilnej&scaron;ie ne&#382; high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span><span class="nf-tick dn">Nasdaq -0.2%</span></div></div></div>
+          <div class="nf-item timeline-item news-item daily-news-card" data-cat="makro"><div class="nf-time timeline-time news-time date-column">16:36 SE&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Wall Street bez jasn&eacute;ho smeru, rot&aacute;cia pokra&#269;uje do value a defenz&iacute;vy</strong> - indexy obchodovali zmie&scaron;ane, ke&#271; investori balansuj&uacute; vy&scaron;&scaron;ie sadzby a siln&eacute; firemn&eacute; v&yacute;sledky. Utility, healthcare a energy boli stabilnej&scaron;ie ne&#382; high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span><span class="nf-tick dn">Nasdaq -0.2%</span></div></div></div>
 
         </div>
       </div>
@@ -1086,11 +1144,11 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent);border-radius:var(--r) var(--r) 0 0"></div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
         <span class="badge b-hot">⬤ Aktuálna téma</span>
-        <span style="font-family:var(--mono);font-size:9px;color:var(--wd)">Apr 19, 2026</span>
+        <span style="font-family:var(--mono);font-size:9px;color:var(--wd)">Apr 24, 2026</span>
       </div>
-      <div style="font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:6px">US-Irán: War Beta v obranných akciách</div>
-      <div style="font-size:13px;color:var(--wd);margin-bottom:16px">KTOS, AVAV, PANW — ako eskalácia pri Hormuzskom prielive vytvára asymetrické príležitosti.</div>
-      <button class="btn-fill btn-sm" onclick="goToArticle('defense')">Čítať analýzu →</button>
+      <div style="font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:6px">AI infraštruktúra 2.0: čo rastie po čipoch?</div>
+      <div style="font-size:13px;color:var(--wd);margin-bottom:16px">Energia, chladenie, grid, pamäte a dátové centrá. Mapa druhej vlny AI príležitostí mimo samotných GPU.</div>
+      <button class="btn-fill btn-sm" onclick="goToArticle('ai_infra')">Čítať analýzu →</button>
     </div>
     <div class="fbar" id="az-bar">
       <button class="on" onclick="filterAz(this,'all')">Všetky</button>
@@ -1103,6 +1161,13 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <button onclick="filterAz(this,'bio')">Biotech</button>
     </div>
     <div class="art-grid" id="az-grid">
+      <div class="art-card" data-az="ai" onclick="goToArticle('ai_infra')" tabindex="0" role="button">
+        <div class="art-meta"><span class="art-cat">AI / Tech · Infra</span><span class="art-dt">Apr 24, 2026</span><span class="badge b-hot">NOVÉ</span></div>
+        <div class="art-title">AI infraštruktúra 2.0: čo rastie po čipoch?</div>
+        <div class="art-perex">Druhá vlna AI už nie je len o GPU. Sledujeme energiu, chladenie, elektrickú sieť, HBM pamäte a firmy, ktoré obsluhujú dátové centrá.</div>
+        <div class="art-tags"><span class="art-tag">VRT</span><span class="art-tag">ETN</span><span class="art-tag">GEV</span><span class="art-tag">MU</span></div>
+        <div class="art-footer"><div class="art-more">Čítať viac <span>→</span></div><div class="art-author">Apr 24 · 14 min</div></div>
+      </div>
       <div class="art-card" data-az="semi" onclick="goToArticle('acmr')" tabindex="0" role="button">
         <div class="art-meta"><span class="art-cat">Semiconductors</span><span class="art-dt">Apr 18, 2026</span><span class="badge b-buy">BUY</span></div>
         <div class="art-title">ACMR — ACM Research: WFE cyklus + TSMC beat</div>
@@ -2518,6 +2583,7 @@ var ARTICLES_META = {
   'co_je_etf':          { path:'vzdelavanie/co-je-etf', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'7 min', tags:['ETF','Začiatočník','Diverzifikácia','Index'] },
   'co_su_akcie':        { path:'vzdelavanie/co-su-akcie', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'8 min', tags:['Akcie','Začiatočník','Firma','Burza'] },
   'strategia_investovania': { path:'vzdelavanie/strategia-investovania', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'8 min', tags:['Stratégia','Rast','Hodnota','ETF'] },
+  'ai_infra':  { path:'analyzy/ai-infrastruktura-2-0', section:'analyzy', sectionLabel:'Analýzy', cat:'Tech · AI infra', date:'24. apríl 2026', readTime:'14 min', tags:['AI infra','Dátové centrá','Energia','VRT','ETN'] },
   'defense':  { path:'analyzy/obranne-akcie-war-beta', section:'analyzy', sectionLabel:'Analýzy', cat:'Geopolitika', date:'19. apríl 2026', readTime:'4 min', tags:['LMT','NOC','KTOS','AVAV','War Beta'] },
   'oil':      { path:'analyzy/ropa-energeticke-akcie', section:'analyzy', sectionLabel:'Analýzy', cat:'Makro · Energia', date:'19. apríl 2026', readTime:'5 min', tags:['XOM','CVX','OXY'] },
   'ai':       { path:'analyzy/ai-akcie-nvda-amd-avgo', section:'analyzy', sectionLabel:'Analýzy', cat:'Tech · AI', date:'18. apríl 2026', readTime:'6 min', tags:['NVDA','AMD','AVGO','MRVL'] },
@@ -2575,6 +2641,15 @@ window.addEventListener('popstate',function(e){
 // type: 'analyza' | 'vzdelavanie' | 'novinka' | 'alert' | 'earnings'
 // action: goTo('page') alebo openModal('key') alebo openLesson('key')
 var LATEST = [
+  {
+    date: '24. apr 2026',
+    type: 'analyza',
+    typeLabel: 'Analýza · Nová',
+    title: 'AI infraštruktúra 2.0: čo rastie po čipoch?',
+    perex: 'Dátové centrá, energia, chladenie, grid a HBM pamäte v jednej mape toho, kde sa môže prelomiť ďalšia AI investičná vlna.',
+    action: "goToArticle('ai_infra')",
+    badge: 'Nové'
+  },
   {
     date: '21. apr 2026',
     type: 'vzdelavanie',
@@ -2750,6 +2825,7 @@ var PAGE_SEO = {
 
 var ARTICLE_SEO = {
   'co_je_investovanie': { title:'Čo je investovanie a prečo by mu mal rozumieť každý | InvestRadar', desc:'Jednoduché vysvetlenie investovania pre začiatočníkov: inflácia, pravidelnosť, dlhý horizont a prvé rozumné kroky bez zbytočného balastu.', keywords:'čo je investovanie, investovanie pre začiatočníkov, inflácia a investovanie, ETF akcie Slovensko', img:'https://investradar.sk/og-image.png' },
+  'ai_infra':  { title:'AI infraštruktúra 2.0: čo rastie po čipoch? | InvestRadar', desc:'Analýza druhej vlny AI boomu: energia, chladenie, siete, pamäte, dátové centrá a firmy, ktoré môžu rásť po čipoch.' },
   'defense':   { title:'Prečo rastú obranné akcie — LMT, NOC, KTOS, AVAV | InvestRadar', desc:'Geopolitické napätie pri Hormuzskom prielive. War Beta, Pentagon kontrakty a asymetrické príležitosti v obrannom sektore.' },
   'oil':       { title:'Ropa na $88 — XOM, CVX, OXY: kto profituje? | InvestRadar', desc:'Analýza dopadu vysokých cien ropy na marže, cash flow a valuácie energetických majors.' },
   'ai':        { title:'AI akcie NVDA, AMD, AVGO — atraktívne alebo prekúpené? | InvestRadar', desc:'Blackwell objednávky biú rekordy, no fwd P/E 35×. Kde ešte je priestor na vstup?' },
