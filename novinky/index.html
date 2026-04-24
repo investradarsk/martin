@@ -114,20 +114,50 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
 }
 @media(max-width:640px){
+  body{font-size:14px;line-height:1.6}
+
+  .ticker{height:30px}
+  .t-label{padding:0 10px;font-size:8px}
+  .t-item{padding:0 14px;font-size:9px}
+
+  nav{top:30px;height:auto;min-height:62px;padding:10px 14px;gap:10px}
   nav ul{display:none}
+  .logo{gap:8px;min-width:0}
+  .logo img{height:34px;width:34px}
+  .logo-t{font-size:18px;white-space:nowrap}
+  .nav-r{flex-shrink:0}
   .nav-r .btn-ghost{display:none}
+  .btn-fill{font-size:8px;padding:7px 10px;letter-spacing:.05em;white-space:nowrap}
+
   .container{padding:0}
-  .page-shell{padding:32px 0 52px}
-  .page-header{padding:0 12px 24px;margin-bottom:24px}
-  .ph-sub{font-size:13px}
-  .fbar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding:0 12px 4px;margin-bottom:18px}
+  .page-shell{padding:28px 0 46px}
+  .page-header{padding:0 12px 22px;margin-bottom:22px}
+  .ph-label{font-size:8px;margin-bottom:8px}
+  .ph-title{font-size:34px;line-height:1.05;margin-bottom:12px}
+  .ph-sub{font-size:13px;line-height:1.65}
+
+  .fbar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 0 18px;padding:0 12px 6px}
   .fbar::-webkit-scrollbar{display:none}
-  .fbar span{white-space:nowrap;flex:0 0 auto}
+  .fbar span{white-space:nowrap;flex:0 0 auto;font-size:8px;padding:6px 11px}
+
   .nfeed{gap:12px}
-  .nf-item{grid-template-columns:1fr;gap:10px;padding:16px 12px;border-top:1px solid var(--wf);border-bottom:1px solid var(--wf);border-left:none;border-right:none;background:linear-gradient(180deg,rgba(13,21,37,.98) 0%,rgba(9,13,23,.98) 100%)}
+  .nf-item{grid-template-columns:1fr;gap:10px;padding:16px 12px;border-top:1px solid var(--wf);border-bottom:1px solid var(--wf);border-left:none;border-right:none;border-radius:0;background:linear-gradient(180deg,rgba(13,21,37,.98) 0%,rgba(9,13,23,.98) 100%)}
   .nf-time{text-align:left;padding:0 0 8px;border-bottom:1px solid var(--wff)}
+  .nf-text{font-size:14px;line-height:1.62;margin-bottom:10px}
+  .nf-ticks{gap:5px}
+  .nf-tick{font-size:7.5px;padding:3px 6px}
+
   .novinky-side{display:none}
-  .footer-grid{grid-template-columns:1fr}
+  footer{padding-top:34px}
+  .footer-grid{grid-template-columns:1fr;gap:22px}
+  .footer-bottom{padding-bottom:22px}
+  .footer-copy{white-space:normal}
+}
+
+@media(max-width:380px){
+  .logo-t{font-size:16px}
+  .btn-fill{font-size:7.5px;padding:7px 8px}
+  .ph-title{font-size:30px}
 }
 </style>
 </head>
@@ -139,7 +169,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
     <div class="page-header">
       <div class="ph-label">InvestRadar · Novinky</div>
       <h1 class="ph-title">Denne investicne novinky</h1>
-      <p class="ph-sub">Klucove udalosti, makro data a pohyby, ktore dnes ovplyvnuju akcie, sektory a sentiment. Tato verzia je samostatna URL stranka `/novinky/` so sirsim layoutom.</p>
+      <p class="ph-sub">Klucove udalosti, makro data a pohyby, ktore dnes ovplyvnuju akcie, sektory a sentiment. Aktualizovane priebezne pocas obchodneho dna.</p>
     </div>
     <div class="novinky-layout">
       <div class="novinky-main">
