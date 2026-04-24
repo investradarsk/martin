@@ -1463,7 +1463,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     </div>
 
     <!-- Lessons grid -->
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px" id="vz-grid">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" id="vz-grid">
       <div class="art-card" data-vz="zaklady" onclick="goToArticle('preco_investovat')" tabindex="0" role="button" style="border-color:var(--amberb)">
         <div style="font-size:28px;margin-bottom:10px">📈</div>
         <div class="art-meta"><span class="art-cat">1. Základy investovania</span><span class="art-read">9 min</span><span class="badge b-buy">Nový</span></div>
@@ -1478,6 +1478,30 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         <div class="art-perex">Investovanie nie je len pre bohatých ani pre odborníkov. Prečo peniaze na účte nestačia, ako funguje inflácia a čo sa pri investovaní skutočne deje.</div>
         <div class="art-footer"><div class="art-more">Čítať <span>→</span></div></div>
       </div>
+      <div class="art-card" data-vz="zaklady" onclick="goToArticle('co_je_etf')" tabindex="0" role="button">
+        <div style="font-size:28px;margin-bottom:10px">📦</div>
+        <div class="art-meta"><span class="art-cat">1. Základy investovania</span><span class="art-read">7 min</span><span class="badge b-buy">Nový</span></div>
+        <div class="art-title">Čo je ETF fond a prečo je ideálny pre začiatočníkov</div>
+        <div class="art-perex">ETF ako košík stoviek firiem v jednom nákupe. Praktické vysvetlenie diverzifikácie bez zbytočného žargónu.</div>
+        <div class="art-footer"><div class="art-more">Čítať <span>→</span></div></div>
+      </div>
+      <div class="art-card" data-vz="zaklady" onclick="goToArticle('co_su_akcie')" tabindex="0" role="button">
+        <div style="font-size:28px;margin-bottom:10px">📊</div>
+        <div class="art-meta"><span class="art-cat">1. Základy investovania</span><span class="art-read">8 min</span><span class="badge b-buy">Nový</span></div>
+        <div class="art-title">Čo sú akcie: jednoduché vysvetlenie pre začiatočníkov</div>
+        <div class="art-perex">Čo vlastne kupuješ pri akcii, prečo ceny kolíšu a ako sa na firmy pozerať ako investor, nie len ako trader.</div>
+        <div class="art-footer"><div class="art-more">Čítať <span>→</span></div></div>
+      </div>
+      <div class="art-card" data-vz="zaklady" onclick="goToArticle('strategia_investovania')" tabindex="0" role="button">
+        <div style="font-size:28px;margin-bottom:10px">🧭</div>
+        <div class="art-meta"><span class="art-cat">1. Základy investovania</span><span class="art-read">8 min</span><span class="badge b-buy">Nový</span></div>
+        <div class="art-title">Stratégie investovania: ako si vybrať správny prístup</div>
+        <div class="art-perex">Rastová, hodnotová, dividendová či indexová stratégia. Ktorý rámec sedí tvojmu horizontu, riziku a disciplíne.</div>
+        <div class="art-footer"><div class="art-more">Čítať <span>→</span></div></div>
+      </div>
+    </div>
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+      <a href="/vzdelavanie/" class="btn-ghost btn-sm">Všetkých 5 článkov →</a>
     </div>
 
     <!-- Book CTA -->
@@ -2390,7 +2414,11 @@ window.addEventListener('load', function(){
 //  ARTICLE ROUTING
 // ════════════════════════════════════
 var ARTICLES_META = {
-  'co_je_investovanie': { path:'vzdelavanie/preco-investovat', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'21. apríl 2026', readTime:'9 min', tags:['Základy','Začiatočník','Inflácia','Čas','ETF'] },
+  'preco_investovat':   { path:'vzdelavanie/preco-investovat', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'21. apríl 2026', readTime:'9 min', tags:['Základy','Začiatočník','Inflácia','Čas','ETF'] },
+  'co_je_investovanie': { path:'vzdelavanie/co-je-investovanie', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'Základy investovania', date:'20. apríl 2026', readTime:'8 min', tags:['Základy','Začiatočník','Inflácia','ETF','Akcie'] },
+  'co_je_etf':          { path:'vzdelavanie/co-je-etf', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'7 min', tags:['ETF','Začiatočník','Diverzifikácia','Index'] },
+  'co_su_akcie':        { path:'vzdelavanie/co-su-akcie', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'8 min', tags:['Akcie','Začiatočník','Firma','Burza'] },
+  'strategia_investovania': { path:'vzdelavanie/strategia-investovania', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'8 min', tags:['Stratégia','Rast','Hodnota','ETF'] },
   'defense':  { path:'analyzy/obranne-akcie-war-beta', section:'analyzy', sectionLabel:'Analýzy', cat:'Geopolitika', date:'19. apríl 2026', readTime:'4 min', tags:['LMT','NOC','KTOS','AVAV','War Beta'] },
   'oil':      { path:'analyzy/ropa-energeticke-akcie', section:'analyzy', sectionLabel:'Analýzy', cat:'Makro · Energia', date:'19. apríl 2026', readTime:'5 min', tags:['XOM','CVX','OXY'] },
   'ai':       { path:'analyzy/ai-akcie-nvda-amd-avgo', section:'analyzy', sectionLabel:'Analýzy', cat:'Tech · AI', date:'18. apríl 2026', readTime:'6 min', tags:['NVDA','AMD','AVGO','MRVL'] },
@@ -2454,6 +2482,33 @@ var LATEST = [
     badge: 'Nový'
   },
   {
+    date: '23. apr 2026',
+    type: 'vzdelavanie',
+    typeLabel: 'Stratégia investovania',
+    title: 'Stratégie investovania: ako si vybrať správny prístup',
+    perex: 'Rastové, hodnotové, dividendové aj indexové prístupy zrozumiteľne na jednom mieste.',
+    action: "goToArticle('strategia_investovania')",
+    badge: 'Nový'
+  },
+  {
+    date: '23. apr 2026',
+    type: 'vzdelavanie',
+    typeLabel: '1. Základy investovania',
+    title: 'Čo sú akcie: jednoduché vysvetlenie pre začiatočníkov',
+    perex: 'Od vlastníctva firmy až po dôvody, prečo sa cena hýbe. Základ, ktorý dáva ďalším témam kontext.',
+    action: "goToArticle('co_su_akcie')",
+    badge: 'Nový'
+  },
+  {
+    date: '23. apr 2026',
+    type: 'vzdelavanie',
+    typeLabel: '1. Základy investovania',
+    title: 'Čo je ETF fond a prečo je ideálny pre začiatočníkov',
+    perex: 'Jednoduchý vstup do diverzifikácie a dlhodobého investovania bez výberu jednotlivých akcií.',
+    action: "goToArticle('co_je_etf')",
+    badge: 'Nový'
+  },
+  {
     date: '24. apr 2026',
     type: 'vzdelavanie',
     typeLabel: 'Dividendy',
@@ -2475,10 +2530,19 @@ var LATEST = [
     date: '20. apr 2026',
     type: 'earnings',
     typeLabel: 'Earnings · Tento týždeň',
-  title: 'Intel doplnený, P&G a SLB už s číslami',
-  perex: 'Aktuálny earnings týždeň je uzavretý od 24. do 22. apríla a chýbajúci Intel už má doplnené oficiálne výsledky.',
+    title: 'Intel doplnený, P&G a SLB už s číslami',
+    perex: 'Aktuálny earnings týždeň je uzavretý od 24. do 22. apríla a chýbajúci Intel už má doplnené oficiálne výsledky.',
     action: "goTo('earnings')",
     badge: 'Earnings'
+  },
+  {
+    date: '20. apr 2026',
+    type: 'vzdelavanie',
+    typeLabel: 'Základy investovania',
+    title: 'Čo je investovanie a prečo by mu mal rozumieť každý',
+    perex: 'Prvý článok v sérii: čo investovanie naozaj znamená a prečo peniaze na účte nestačia.',
+    action: "goToArticle('co_je_investovanie')",
+    badge: 'Základ'
   },
   {
     date: '18. apr 2026',
@@ -2726,6 +2790,36 @@ ARTICLES_META['preco_investovat'] = {
   date: WHY_INVEST_ARTICLE.dateLong,
   readTime: WHY_INVEST_ARTICLE.readTime,
   tags: WHY_INVEST_ARTICLE.tags
+};
+
+ARTICLES_META['co_je_etf'] = {
+  path: 'vzdelavanie/co-je-etf',
+  section: 'vzdelavanie',
+  sectionLabel: 'Vzdelávanie',
+  cat: '1. Základy investovania',
+  date: '23. apríl 2026',
+  readTime: '7 min',
+  tags: ['ETF', 'Začiatočník', 'Diverzifikácia', 'Index']
+};
+
+ARTICLES_META['co_su_akcie'] = {
+  path: 'vzdelavanie/co-su-akcie',
+  section: 'vzdelavanie',
+  sectionLabel: 'Vzdelávanie',
+  cat: '1. Základy investovania',
+  date: '23. apríl 2026',
+  readTime: '8 min',
+  tags: ['Akcie', 'Začiatočník', 'Firma', 'Burza']
+};
+
+ARTICLES_META['strategia_investovania'] = {
+  path: 'vzdelavanie/strategia-investovania',
+  section: 'vzdelavanie',
+  sectionLabel: 'Vzdelávanie',
+  cat: '1. Základy investovania',
+  date: '23. apríl 2026',
+  readTime: '8 min',
+  tags: ['Stratégia', 'Rast', 'Hodnota', 'ETF']
 };
 
 if (Array.isArray(LATEST) && LATEST[0]) {
