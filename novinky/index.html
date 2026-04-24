@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://investradar.sk/novinky/">
 <meta property="og:image" content="https://investradar.sk/og-image.png">
 <link rel="canonical" href="https://investradar.sk/novinky/">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1814929798657503" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-18149297h98657503" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -159,11 +159,17 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .btn-fill{font-size:7.5px;padding:7px 8px}
   .ph-title{font-size:30px}
 }
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:10}
+.hamburger span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:all .25s}
+nav.open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+nav.open .hamburger span:nth-child(2){opacity:0}
+nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 </style>
 </head>
 <body>
 <div class="ticker"><div class="t-label"><div class="t-dot"></div>Live</div><div class="t-wrap"><div class="t-track"><div class="t-item"><span class="t-sym">S&amp;P 500</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">XOM</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">S&amp;P 500</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">XOM</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">···</span></div></div></div></div>
-<nav aria-label="Hlavna navigacia"><a href="/" class="logo" aria-label="InvestRadar"><img src="/og-image.png" alt="Logo InvestRadar"><span class="logo-t">Invest<b>Radar</b></span></a><ul><li><a href="/novinky/" class="active">Novinky</a></li><li><a href="/#analyzy">Analyzy</a></li><li><a href="/#alerty">Trade Alerty</a></li><li><a href="/#sektory">Sektory</a></li><li><a href="/#earnings">Earnings</a></li><li><a href="/#vzdelavanie">Vzdelavanie</a></li><li><a href="/o-nas/">O nas</a></li></ul><div class="nav-r"><a href="/kontakt/" class="btn-ghost">Kontakt</a><a href="/#newsletter" class="btn-fill">Newsletter</a></div></nav>
+<nav aria-label="Hlavna navigacia"><a href="/" class="logo" aria-label="InvestRadar"><img src="/og-image.png" alt="Logo InvestRadar"><span class="logo-t">Invest<b>Radar</b></span></a><ul><li><a href="/novinky/" class="active">Novinky</a></li><li><a href="/#analyzy">Analyzy</a></li><li><a href="/#alerty">Trade Alerty</a></li><li><a href="/#sektory">Sektory</a></li><li><a href="/#earnings">Earnings</a></li><li><a href="/#vzdelavanie">Vzdelavanie</a></li><li><a href="/o-nas/">O nas</a></li></ul><div class="nav-r"><a href="/kontakt/" class="btn-ghost">Kontakt</a><a href="/#newsletter" class="btn-fill">Newsletter</a></div><button class="hamburger" id="ham-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')"><span></span><span></span><span></span></button></nav>
 <main class="page-shell">
   <div class="container">
     <div class="page-header">
@@ -217,5 +223,8 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   </div>
 </main>
 <footer><div class="container"><div class="footer-grid"><div><div class="footer-brand">Invest<b>Radar</b></div><p class="footer-desc">Slovenska nezavisla investicna platforma. Denne novinky, analyzy, trade alerty a portfolio prehlady pre investorov, ktori chcu rozumiet trhu do hlbky.</p></div><div class="footer-col"><h4>Obsah</h4><a href="/novinky/">Novinky</a><a href="/#analyzy">Analyzy</a><a href="/#alerty">Trade alerty</a><a href="/#sektory">Sektory</a><a href="/#earnings">Earnings</a></div><div class="footer-col"><h4>Platforma</h4><a href="/#vzdelavanie">Vzdelavanie</a><a href="/o-nas/">O nas</a><a href="/#newsletter">Newsletter</a><a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kupit knihu</a><a href="/kontakt/">Kontakt</a></div><div class="footer-col"><h4>Kontakt</h4><a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a><a href="/disclaimer/">Disclaimer</a><a href="/privacy-policy/">Ochrana osobnych udajov</a></div></div><div class="footer-bottom"><p class="footer-disc">Obsah InvestRadar ma vylucne informacny a vzdelavaci charakter a nepredstavuje investicne poradenstvo. Investovanie je spojene s rizikom straty kapitalu.</p><div class="footer-copy">© 2026 InvestRadar</div></div></div></footer>
+<script>
+document.querySelectorAll('nav ul a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('nav').classList.remove('open')})});
+</script>
 </body>
 </html>
