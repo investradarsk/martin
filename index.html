@@ -448,6 +448,8 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .page.active{display:block}
 @keyframes pfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 .page-header{padding:48px 0 36px;border-bottom:1px solid var(--wf);margin-bottom:48px}
+#page-novinky .container{max-width:1440px;padding:0 clamp(18px,3vw,34px)}
+#page-novinky .page-header{max-width:980px}
 .ph-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amberl);margin-bottom:10px}
 .ph-title{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:700;line-height:1.08;margin-bottom:8px}
 .ph-sub{font-size:14px;color:var(--wd);line-height:1.7}
@@ -456,7 +458,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .fbar button{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border:1px solid var(--wf);color:var(--wd);background:none;cursor:pointer;transition:all .18s;border-radius:var(--r)}
 .fbar button:hover,.fbar button.on{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
 /* novinky live feed */
-.novinky-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:32px;align-items:start}
+.novinky-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
 .novinky-main,.novinky-side{min-width:0}
 .nfeed{display:flex;flex-direction:column;gap:0}
 .nf-item{display:grid;grid-template-columns:72px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--wff);cursor:default}
