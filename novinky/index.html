@@ -238,39 +238,53 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
   <!-- X / Twitter Follow Card -->
   <div class="side-card" style="margin-top:20px;padding:0;overflow:hidden;border:1px solid rgba(240,232,213,.08);border-radius:4px;">
-    <div style="padding:14px 16px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amberl);border-bottom:1px solid rgba(240,232,213,.08);">Naše príspevky na X</div>
+    <div style="padding:14px 16px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amberl);border-bottom:1px solid rgba(240,232,213,.08);display:flex;align-items:center;justify-content:space-between;">
+      <span>Naše príspevky na X</span>
+      <a href="https://twitter.com/InvestRadarSK" target="_blank" rel="noopener" style="color:var(--amberl);text-decoration:none;font-size:8px;opacity:.7;">@InvestRadarSK ↗</a>
+    </div>
     <div id="x-feed-container" style="padding:16px;">
-      <div style="text-align:center;padding:20px 0;">
-        <svg width="28" height="28" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.6;margin-bottom:12px;display:block;margin-left:auto;margin-right:auto;"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.163 519.284ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.828Z" fill="rgba(240,232,213,0.5)"/></svg>
-        <div id="x-feed-posts" style="text-align:left;"></div>
-        <a href="https://twitter.com/InvestRadarSK" target="_blank" rel="noopener"
-           style="display:inline-block;margin-top:16px;padding:9px 20px;background:rgba(200,137,26,.15);border:1px solid rgba(200,137,26,.4);color:var(--amberl);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;">
-          Sledovať @InvestRadarSK →
-        </a>
+      <div id="x-feed-posts"></div>
+      <div id="x-feed-fallback" style="display:none;text-align:center;padding:16px 0;">
+        <svg width="24" height="24" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.4;display:block;margin:0 auto 12px;"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.163 519.284ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.828Z" fill="rgba(240,232,213,0.5)"/></svg>
+        <div style="font-size:11px;color:rgba(240,232,213,.4);margin-bottom:12px;">Pozrite naše príspevky priamo na X</div>
       </div>
+      <a href="https://twitter.com/InvestRadarSK" target="_blank" rel="noopener"
+         style="display:block;margin-top:12px;padding:9px 0;background:rgba(200,137,26,.12);border:1px solid rgba(200,137,26,.35);color:var(--amberl);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;text-align:center;">
+        Sledovať @InvestRadarSK →
+      </a>
     </div>
   </div>
   <script>
   (function(){
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://nitter.poast.org/InvestRadarSK/rss&api_key=&count=5')
-      .then(r=>r.json())
-      .then(data=>{
-        if(!data.items||!data.items.length) return;
-        const c=document.getElementById('x-feed-posts');
-        if(!c) return;
-        c.innerHTML=data.items.slice(0,5).map(item=>{
-          const txt=item.description.replace(/<[^>]+>/g,'').substring(0,140);
-          const dt=new Date(item.pubDate).toLocaleDateString('sk',{day:'numeric',month:'short'});
-          return `<div style="padding:10px 0;border-bottom:1px solid rgba(240,232,213,.06);">
-            <div style="font-size:12px;line-height:1.5;color:rgba(240,232,213,.85);">${txt}</div>
-            <div style="font-size:9px;color:rgba(240,232,213,.3);margin-top:4px;font-family:var(--mono);">${dt}</div>
-          </div>`;
-        }).join('');
-      }).catch(()=>{});
+    var nitterHosts=['nitter.net','nitter.privacydev.net','nitter.poast.org'];
+    var tried=0;
+    function tryFetch(idx){
+      if(idx>=nitterHosts.length){showFallback();return;}
+      var url='https://api.rss2json.com/v1/api.json?rss_url=https://'+nitterHosts[idx]+'/InvestRadarSK/rss&count=5';
+      fetch(url).then(function(r){return r.json();}).then(function(data){
+        if(data.status==='ok'&&data.items&&data.items.length>0){renderPosts(data.items);}
+        else{tryFetch(idx+1);}
+      }).catch(function(){tryFetch(idx+1);});
+    }
+    function renderPosts(items){
+      var c=document.getElementById('x-feed-posts');
+      if(!c)return;
+      c.innerHTML=items.slice(0,5).map(function(item){
+        var txt=item.description.replace(/<[^>]+>/g,'').substring(0,150);
+        var dt=new Date(item.pubDate).toLocaleDateString('sk',{day:'numeric',month:'short'});
+        return '<div style="padding:10px 0;border-bottom:1px solid rgba(240,232,213,.06);">'+
+          '<div style="font-size:12px;line-height:1.5;color:rgba(240,232,213,.85);">'+txt+'</div>'+
+          '<div style="font-size:9px;color:rgba(240,232,213,.3);margin-top:4px;font-family:var(--mono);">'+dt+'</div>'+
+          '</div>';
+      }).join('');
+    }
+    function showFallback(){
+      var f=document.getElementById('x-feed-fallback');
+      if(f)f.style.display='block';
+    }
+    tryFetch(0);
   })();
   </script>
-      </aside>
-    </div>
   </div>
 </main>
 <footer><div class="container"><div class="footer-grid"><div><div class="footer-brand">Invest<b>Radar</b></div><p class="footer-desc">Slovenska nezavisla investicna platforma. Denne novinky, analyzy, trade alerty a portfolio prehlady pre investorov, ktori chcu rozumiet trhu do hlbky.</p></div><div class="footer-col"><h4>Obsah</h4><a href="/novinky/">Novinky</a><a href="/#analyzy">Analyzy</a><a href="/#alerty">Trade alerty</a><a href="/#sektory">Sektory</a><a href="/#earnings">Earnings</a></div><div class="footer-col"><h4>Platforma</h4><a href="/#vzdelavanie">Vzdelavanie</a><a href="/o-nas/">O nas</a><a href="/#newsletter">Newsletter</a><a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kupit knihu</a><a href="/kontakt/">Kontakt</a></div><div class="footer-col"><h4>Kontakt</h4><a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a><a href="/disclaimer/">Disclaimer</a><a href="/privacy-policy/">Ochrana osobnych udajov</a></div></div><div class="footer-bottom"><p class="footer-disc">Obsah InvestRadar ma vylucne informacny a vzdelavaci charakter a nepredstavuje investicne poradenstvo. Investovanie je spojene s rizikom straty kapitalu.</p><div class="footer-copy">© 2026 InvestRadar</div></div></div></footer>
