@@ -255,7 +255,7 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   </div>
   <script>
   (function(){
-    fetch('/.netlify/functions/get-tweets')
+    fetch('/tweets.json')
       .then(function(r){return r.json();})
       .then(function(d){
         if(d.ok&&d.items&&d.items.length){render(d.items);}
