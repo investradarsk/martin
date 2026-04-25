@@ -230,5 +230,61 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 <script>
 document.querySelectorAll('nav ul a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('nav').classList.remove('open')})});
 </script>
+
+<script>
+// ── FINNHUB LIVE PRICES ──
+var FKEY = 'd7hpda1r01qirk40gv1g';
+
+var SYMS = [
+  {s:'SPY',  l:'S&P 500', d:true},
+  {s:'QQQ',  l:'NASDAQ',  d:true},
+  {s:'DIA',  l:'DOW',     d:true},
+  {s:'NVDA', l:'NVDA',    d:true},
+  {s:'ACMR', l:'ACMR',   d:true},
+  {s:'KTOS', l:'KTOS',   d:true},
+  {s:'LMT',  l:'LMT',    d:true},
+  {s:'AVAV', l:'AVAV',   d:true},
+  {s:'PANW', l:'PANW',   d:true}
+];
+
+var track = document.querySelector('.t-track');
+
+function updateTicker(data) {
+  if (!track) return;
+  track.innerHTML = '';
+  data.forEach(function(item) {
+    if (!item || item.c === undefined) return;
+    var pct = item.dp !== undefined ? item.dp.toFixed(2) : '0.00';
+    var cls = parseFloat(pct) >= 0 ? 'up' : 'dn';
+    var sign = parseFloat(pct) >= 0 ? '+' : '';
+    var div = document.createElement('div');
+    div.className = 't-item';
+    div.innerHTML = '<span class="t-sym">' + item.sym + '</span>'
+      + '<span class="t-px ' + cls + '">' + item.c.toFixed(2) + ' <span style="opacity:.65">' + sign + pct + '%</span></span>';
+    track.appendChild(div);
+  });
+  var clone = track.innerHTML;
+  track.innerHTML += clone;
+}
+
+function loadPrices() {
+  var results = [];
+  var pending = SYMS.length;
+  SYMS.forEach(function(sym, i) {
+    var url = 'https://finnhub.io/api/v1/quote?symbol=' + sym.s + '&token=' + FKEY;
+    fetch(url)
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        results[i] = { sym: sym.l, c: d.c, dp: d.dp };
+        pending--;
+        if (pending === 0) updateTicker(results);
+      })
+      .catch(function(){ pending--; });
+  });
+  setTimeout(loadPrices, 60000);
+}
+
+document.addEventListener('DOMContentLoaded', loadPrices);
+</script>
 </body>
 </html>
