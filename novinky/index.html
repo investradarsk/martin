@@ -238,16 +238,16 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
   <!-- X / Twitter Timeline -->
   <div class="side-card" style="margin-top:20px;padding:0;overflow:hidden;border:1px solid rgba(240,232,213,.08);border-radius:4px;">
-    <div style="padding:14px 16px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amberl);border-bottom:1px solid rgba(240,232,213,.08);">Naše príspevky na X</div>
-    <a class="twitter-timeline"
-       data-theme="dark"
-       data-chrome="noheader nofooter noborders transparent"
-       data-tweet-limit="5"
-       data-height="420"
-       href="https://twitter.com/InvestRadarSK">
-      Tweety od @InvestRadarSK
-    </a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div style="padding:14px 16px 10px;font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amberl);border-bottom:1px solid rgba(240,232,213,.08);display:flex;align-items:center;justify-content:space-between;">
+      <span>Naše príspevky na X</span>
+      <a href="https://twitter.com/InvestRadarSK" target="_blank" rel="noopener" style="color:var(--amberl);text-decoration:none;font-size:8px;opacity:.7;">@InvestRadarSK ↗</a>
+    </div>
+    <iframe
+      src="https://syndication.twitter.com/srv/timeline-profile/screen-name/InvestRadarSK?dnt=false&theme=dark&hideBorder=true&hideFooter=true&hideHeader=true&transparent=true&lang=sk"
+      style="width:100%;height:450px;border:none;display:block;background:transparent;"
+      loading="lazy"
+      title="InvestRadarSK na X"
+    ></iframe>
   </div>
       </aside>
     </div>
