@@ -433,7 +433,8 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   #nf-bar{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;padding:0 12px 4px;margin:0 0 20px}
   #nf-bar::-webkit-scrollbar{display:none}
   #nf-bar button{width:auto;flex:0 0 auto;padding:9px 12px;font-size:8px;white-space:nowrap}
-  .novinky-layout{gap:18px}
+  .novinky-layout{display:block;width:100%;gap:18px}
+  .nf-body{width:100%;min-width:0;overflow:hidden}
   .nfeed{gap:12px}
   .nf-item{grid-template-columns:1fr;gap:10px;padding:16px 12px;border-top:1px solid var(--wf);border-bottom:1px solid var(--wf);border-left:none;border-right:none;border-radius:0;background:linear-gradient(180deg, rgba(13,21,37,.98) 0%, rgba(9,13,23,.98) 100%)}
   .nf-item:last-child{border-bottom:1px solid var(--wf)}
@@ -443,12 +444,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .nf-tick{font-size:8px}
   .novinky-side{display:none}
   .nf-body,.nf-tick{overflow-wrap:anywhere}
-  #page-novinky .nf-text{
-    overflow-wrap:normal;
-    word-break:normal;
-    white-space:normal;
-    writing-mode:horizontal-tb;
-  }
+  #page-novinky .nf-text{overflow-wrap:break-word;word-break:break-word;white-space:normal;writing-mode:horizontal-tb}
   .art-grid{grid-template-columns:1fr}
   .art-grid .span2{grid-column:span 1}
   .strip-grid{grid-template-columns:1fr 1fr}
