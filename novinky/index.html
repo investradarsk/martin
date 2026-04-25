@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <base href="/">
-<title>Denné investičné novinky | InvestRadar</title>
-<meta name="description" content="Denné investičné novinky, makro udalosti a pohyby trhu pre slovenských investorov.">
-<meta property="og:title" content="Denné investičné novinky | InvestRadar">
-<meta property="og:description" content="Kľúčové udalosti, makro dáta a pohyby, ktoré dnes ovplyvňujú akcie, sektory a sentiment.">
+<title>Denne investicne novinky | InvestRadar</title>
+<meta name="description" content="Denne investicne novinky, makro udalosti a pohyby trhu pre slovenskych investorov.">
+<meta property="og:title" content="Denne investicne novinky | InvestRadar">
+<meta property="og:description" content="Klucove udalosti, makro data a pohyby, ktore dnes ovplyvnuju akcie, sektory a sentiment.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://investradar.sk/novinky/">
 <meta property="og:image" content="https://investradar.sk/og-image.png">
@@ -29,8 +29,10 @@ html{scroll-behavior:smooth}
 body{background:var(--navy);color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 b,strong{font-weight:600;color:var(--cream)}
+button{font:inherit}
 .up{color:var(--green)}
 .dn{color:var(--red)}
+.nt{color:rgba(240,232,213,.45)}
 
 .ticker{height:32px;background:var(--navy2);border-bottom:1px solid var(--wf);display:flex;overflow:hidden;position:sticky;top:0;z-index:300}
 .t-label{flex-shrink:0;padding:0 14px;display:flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--amberl);border-right:1px solid var(--wf);background:var(--navy2);z-index:2}
@@ -54,6 +56,7 @@ nav ul a:hover,nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .btn-fill,.btn-ghost{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:8px 16px;cursor:pointer;border-radius:var(--r);transition:all .18s;display:inline-block}
 .btn-fill{background:var(--amber);color:var(--navy2);font-weight:500;border:none}
 .btn-ghost{padding:7px 14px;border:1px solid var(--amberb);color:var(--amberl);background:none}
+.btn-ghost:hover{background:var(--amberd)}
 
 .container{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,3vw,34px)}
 .page-shell{padding:44px 0 64px}
@@ -66,16 +69,27 @@ nav ul a:hover,nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .fbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
 .fbar span{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border:1px solid var(--wf);color:var(--wd);background:none;border-radius:var(--r)}
 .fbar .on{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
+.feed-meta{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:16px;padding:12px 14px;border:1px solid var(--wf);background:var(--navy2)}
+.feed-meta-text{font-size:12px;color:var(--wd)}
+.feed-meta-text b{color:var(--cream)}
+.feed-meta-stamp{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amberl)}
 .nfeed{display:flex;flex-direction:column;gap:0}
 .nf-item{display:grid;grid-template-columns:82px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--wff)}
 .nf-time{font-family:var(--mono);font-size:9px;color:rgba(240,232,213,.32);text-align:right;padding-top:3px;line-height:1.7}
 .nf-body{min-width:0}
 .nf-text{font-size:15px;color:var(--wd);line-height:1.72;margin-bottom:8px}
+.nf-source{display:inline-flex;align-items:center;gap:6px;margin-bottom:10px;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--amberl)}
+.nf-source a{color:var(--amberl);text-decoration:none;border-bottom:1px solid transparent}
+.nf-source a:hover{border-color:var(--amberl)}
 .nf-ticks{display:flex;gap:6px;flex-wrap:wrap}
 .nf-tick{font-family:var(--mono);font-size:8px;padding:3px 6px;border-radius:1px;border:1px solid;display:inline-flex;align-items:center;line-height:1.35;max-width:100%;word-break:break-word}
 .nf-tick.up{border-color:rgba(21,160,106,.3);color:var(--green);background:rgba(21,160,106,.07)}
 .nf-tick.dn{border-color:rgba(194,59,59,.3);color:var(--red);background:rgba(194,59,59,.07)}
 .nf-tick.nt{border-color:var(--wf);color:rgba(240,232,213,.4);background:var(--wff)}
+.nfeed-actions{display:flex;justify-content:center;padding-top:24px}
+#load-more{min-width:190px}
+#load-more[hidden]{display:none}
+.nf-empty{padding:24px 0;color:var(--wd)}
 .side-card{background:var(--navy2);border:1px solid var(--wf);padding:18px;border-radius:var(--r)}
 .ip-title,.ee-title{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--amberl)}
 .ip-title{margin-bottom:14px}
@@ -115,11 +129,9 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 }
 @media(max-width:640px){
   body{font-size:14px;line-height:1.6}
-
   .ticker{height:30px}
   .t-label{padding:0 10px;font-size:8px}
   .t-item{padding:0 14px;font-size:9px}
-
   nav{top:30px;height:auto;min-height:62px;padding:10px 14px;gap:10px}
   nav ul{display:none}
   .hamburger{display:flex}
@@ -131,18 +143,16 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .nav-r{flex-shrink:0}
   .nav-r .btn-ghost{display:none}
   .btn-fill{font-size:8px;padding:7px 10px;letter-spacing:.05em;white-space:nowrap}
-
   .container{padding:0}
   .page-shell{padding:28px 0 46px}
   .page-header{padding:0 12px 22px;margin-bottom:22px}
   .ph-label{font-size:8px;margin-bottom:8px}
   .ph-title{font-size:34px;line-height:1.05;margin-bottom:12px}
   .ph-sub{font-size:13px;line-height:1.65}
-
   .fbar{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 0 18px;padding:0 12px 6px}
   .fbar::-webkit-scrollbar{display:none}
   .fbar span{white-space:nowrap;flex:0 0 auto;font-size:8px;padding:6px 11px}
-
+  .feed-meta{margin:0 12px 16px;flex-direction:column;align-items:flex-start}
   .novinky-layout{display:block;width:100%}
   .novinky-side{display:none}
   .novinky-main{width:100%;min-width:0;overflow:hidden}
@@ -151,19 +161,19 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .nf-body{width:100%;min-width:0;overflow:hidden}
   .nf-time{text-align:left;padding:0 0 8px;border-bottom:1px solid var(--wff)}
   .nf-text{font-size:14px;line-height:1.62;margin-bottom:10px;width:100%;word-break:break-word;overflow-wrap:anywhere;white-space:normal}
+  .nf-source{margin-bottom:12px;font-size:7.5px}
   .nf-ticks{gap:5px}
   .nf-tick{font-size:7.5px;padding:3px 6px}
-
+  .nfeed-actions{padding:12px}
+  #load-more{width:100%}
   .footer-grid{grid-template-columns:1fr;gap:20px}
   .footer-brand{margin-bottom:8px}
 }
-
 @media(max-width:380px){
   .logo-t{font-size:16px}
   .btn-fill{font-size:7.5px;padding:7px 8px}
   .ph-title{font-size:30px}
 }
-
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;z-index:10}
 .hamburger span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:all .25s}
 nav.open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -172,84 +182,57 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 </style>
 </head>
 <body>
-<div class="ticker"><div class="t-label"><div class="t-dot"></div>Live</div><div class="t-wrap"><div class="t-track"><div class="t-item"><span class="t-sym">S&amp;P 500</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">XOM</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">S&amp;P 500</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">XOM</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">···</span></div></div></div></div>
+<div class="ticker"><div class="t-label"><div class="t-dot"></div>Live</div><div class="t-wrap"><div class="t-track"><div class="t-item"><span class="t-sym">S&amp;P 500</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">INTC</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">S&amp;P 500</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">INTC</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">...</span></div></div></div></div>
 <nav aria-label="Hlavna navigacia"><a href="/" class="logo" aria-label="InvestRadar"><img src="/og-image.png" alt="Logo InvestRadar"><span class="logo-t">Invest<b>Radar</b></span></a><ul><li><a href="/novinky/" class="active">Novinky</a></li><li><a href="/#analyzy">Analyzy</a></li><li><a href="/#alerty">Trade Alerty</a></li><li><a href="/#sektory">Sektory</a></li><li><a href="/#earnings">Earnings</a></li><li><a href="/#vzdelavanie">Vzdelavanie</a></li><li><a href="/o-nas/">O nas</a></li></ul><div class="nav-r"><a href="/kontakt/" class="btn-ghost">Kontakt</a><a href="/#newsletter" class="btn-fill">Newsletter</a></div><button class="hamburger" id="ham-btn" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')"><span></span><span></span><span></span></button></nav>
 <main class="page-shell">
   <div class="container">
     <div class="page-header">
       <div class="ph-label">InvestRadar · Novinky</div>
       <h1 class="ph-title">Denne investicne novinky</h1>
-      <p class="ph-sub">Klucove udalosti, makro data a pohyby, ktore dnes ovplyvnuju akcie, sektory a sentiment. Aktualizovane priebezne pocas obchodneho dna, aktualne s 30 polozkami vo feede.</p>
+      <p class="ph-sub">Aktualny feed 30 investicnych noviniek postaveny na JSON datasete, s priebeznym nacitanim po 10 polozkach a s odkazom na zdroj pri kazdej sprave.</p>
     </div>
     <div class="novinky-layout">
       <div class="novinky-main">
         <div class="fbar">
           <span class="on">Vsetky</span>
-          <span>Geopolitika</span>
-          <span>Energia</span>
           <span>Makro</span>
           <span>AI / Tech</span>
+          <span>Energia</span>
+          <span>Fed</span>
           <span>Earnings</span>
-          <span>Obrana</span>
-          <span>Biotech</span>
+          <span>Indexy</span>
+          <span>Geopolitika</span>
         </div>
-        <div class="nfeed">
-          <div class="nf-item"><div class="nf-time">22:10 SEC<br>25. apr 2026<br><span style="color:var(--green);font-size:8px">● NOVE</span></div><div class="nf-body"><div class="nf-text"><strong>Fed zrejme zostane opatrny, trh skrta stavky na skore cuty</strong> - silnejsie data z ekonomiky a stale zvysene cenove tlaky drzia ocakavania prveho znizenia sadzieb neskor v roku. Vyssie vynosy znovu vytvaraju tlak najma na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Nasdaq slabsi</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">21:42 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>NVIDIA a cipy znovu vedu trh, AI capex story ostava neporusena</strong> - semiconductor sektor rastol po dalsich spravach o expanzii datovych centier a pokracujucich objednavkach hyperscalerov. Investori dalej kupuju infra vrstvu AI.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">21:15 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Ropa koriguje cast rastov, no geopoliticka premia ostava v cene</strong> - po prudkom raste prislo vyberanie ziskov, ale trh stale sleduje rizika dodavok na Blizkom vychode. Energeticky sektor zostava citlivy na headlines.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">20:58 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Alphabet po vysledkoch podporil sentiment v reklame aj cloude</strong> - lepsie cisla z digitalnej reklamy a stabilny cloud biznis pomohli sentimentu v large-cap tech. Trh ocenuje disciplinu nakladov aj AI monetizaciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud growth solid</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">20:36 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Wall Street bez jasneho smeru, rotacia pokracuje do value a defenzivy</strong> - indexy obchodovali zmiesane, ked investori balansuji vyssie sadzby a silne firemne vysledky. Utility, healthcare a energy boli stabilnejsie nez high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span><span class="nf-tick dn">Nasdaq -0.2%</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">20:11 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Banky zostavaju stabilne, no kreditne spready sa prestali zuzovat</strong> - financny sektor drzi podporu zo silnejsieho makra, ale trh je citlivejsi na komentare o kvalite uveroveho portfolia a kancelarskych nehnutelnostiach.</div><div class="nf-ticks"><span class="nf-tick nt">XLF mixed</span><span class="nf-tick dn">Credit watch</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">19:54 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Defense mená sa drzia vysoko po novych objednavkach a geopolitickom napati</strong> - investori ostavaju v sektore obrany pre viditelny backlog a dlhsi investicny cyklus, ktory podporuje rast trzieb aj marzi.</div><div class="nf-ticks"><span class="nf-tick up">LMT NOC RTX</span><span class="nf-tick up">Backlog support</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">19:31 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Biotech segment ziskava dych po niekolkych pozitivnych datach z klinickych studii</strong> - vybrane small a mid-cap mena reagovali prudkym rastom, zatial co cely sektor ostava volatilny a vysoko selektivny.</div><div class="nf-ticks"><span class="nf-tick up">XBI rebound</span><span class="nf-tick nt">High volatility</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">19:05 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Apple dodavatelsky retazec ostava pod drobnohladom po signaloch stabilizacie dopytu</strong> - trh hlada potvrdenie, ze objednavky komponentov sa odrazaju od dna a marze v hardveri sa prestavaju zhorsovat.</div><div class="nf-ticks"><span class="nf-tick nt">AAPL wait mode</span><span class="nf-tick up">Suppliers firmer</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">18:42 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Meta podporila online reklamu a sentiment v internetovom priestore</strong> - reklamny trh ostava odolny a investori zatvaraju cast short pozicii v digitalnych platformach po silnejsich cislach engagementu.</div><div class="nf-ticks"><span class="nf-tick up">META up</span><span class="nf-tick up">Ad market firm</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">18:19 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Zlato drzi cast bezpecnostnej premie, dolar ostava pevny</strong> - kombinacia vyssich sadzieb a geopolitickeho napatia vytvara zlozite prostredie, kde sa precious metals pohybuju viac na headlines nez na jednom makro faktore.</div><div class="nf-ticks"><span class="nf-tick nt">Gold elevated</span><span class="nf-tick up">DXY firm</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">17:58 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Retail mena su zmiesane, investor sleduje silu spotrebitela pred dalsimi vysledkami</strong> - diskontni predajcovia vyzeraju odolnejsie, kym discretionary segment ostava citlivy na ceny a financovanie domacnosti.</div><div class="nf-ticks"><span class="nf-tick nt">XRT mixed</span><span class="nf-tick dn">Consumer strain</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">17:36 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Cloud infra a kyberbezpecnost pokracuju v relativnej sile</strong> - firmy s opakujucimi sa prijmami a mission-critical produktmi zostavaju favoritmi pri rotacii v technologickom segmente.</div><div class="nf-ticks"><span class="nf-tick up">PANW CRWD</span><span class="nf-tick up">Recurring revenue</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">17:12 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Tesla ostava volatilna po mixe marz, cenovej politiky a ocakavani okolo FSD</strong> - cast trhu vidi zhorsenie automobilovej profitability, druha cast stavia na software opcionalitu a robotaxi narrativ.</div><div class="nf-ticks"><span class="nf-tick dn">TSLA volatile</span><span class="nf-tick nt">Margin debate</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">16:55 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Dividendove utility nachadzaju kupcov pri raste vynosov</strong> - defensivne sektory sa vracaju do hry ako stabilizator portfólia, najma pri neistote okolo dalsieho smerovania sadzieb.</div><div class="nf-ticks"><span class="nf-tick up">XLU bid</span><span class="nf-tick nt">Defensive flow</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">16:33 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Small caps sa snazia nadviazat na odraz, no financovanie ostava limit</strong> - Russell 2000 ma priestor na technicky rebound, ale vyssie naklady kapitalu stale brzdia sirsi re-rating segmentu.</div><div class="nf-ticks"><span class="nf-tick up">IWM bounce</span><span class="nf-tick dn">Funding pressure</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">16:10 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Semiconductor equipment mena benefituju z dlhsieho AI investicneho cyklu</strong> - investori sa pozeraju za vyrobcom cipov aj na dodavatelov strojov, testovania a memory infrastruktry.</div><div class="nf-ticks"><span class="nf-tick up">ASML LRCX AMAT</span><span class="nf-tick up">Capex cycle</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">15:52 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>EURUSD bez vacsieho trendu, dolar vsak ostava preferovanym bezpecnym pristavom</strong> - forex trh reaguje na rozdielne ocakavania monetarnej politiky a opatrny risk sentiment v globalnych aktivach.</div><div class="nf-ticks"><span class="nf-tick nt">DXY firm</span><span class="nf-tick nt">FX rangebound</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">15:34 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Healthcare giganti su znovu v hladaciku po defensivnom preskupeni portfólii</strong> - trh uprednostnuje stabilne cash flow, buybacky a mensiu citlivost na ekonomicky cyklus.</div><div class="nf-ticks"><span class="nf-tick up">LLY JNJ MRK</span><span class="nf-tick nt">Defensive quality</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">15:16 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Komoditne firmy sleduju Cinu a priemyselne kovy pre dalsi impulz</strong> - copper a industrial metals zostavaju citlive na kazdu zmenu v ocakavaniach infrastrukturnych stimulov a realitnej aktivity.</div><div class="nf-ticks"><span class="nf-tick nt">Copper watch</span><span class="nf-tick nt">China sensitive</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">14:58 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Netflix a streaming mena sa drzia po discipline v monetizacii a reklamnych balickoch</strong> - investori pozitivne vnimaju kombinaciu rastu pouzivatelov a postupneho rozvoja reklamneho biznisu.</div><div class="nf-ticks"><span class="nf-tick up">NFLX strong</span><span class="nf-tick up">Ads scaling</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">14:41 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Travel a leisure mena ostavaju citlive na cenu ropy a stav spotrebitela</strong> - aerolinky a cestovne tituly maju zmiesany obraz, kedze dopyt drzi, ale nakladove vstupy zostavaju nestabilne.</div><div class="nf-ticks"><span class="nf-tick nt">Travel mixed</span><span class="nf-tick dn">Fuel cost risk</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">14:23 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Software mena s profitabilitou outperformuju spekulativny SaaS segment</strong> - investori nadalej rozlisuju medzi firmami s disciplinovanym free cash flow a menami, ktore stale zeru kapital bez jasnej cesty k marzam.</div><div class="nf-ticks"><span class="nf-tick up">MSFT NOW</span><span class="nf-tick dn">Unprofitable SaaS</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">14:05 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Rast housing related akcii brzdi kombinacia hypotek a obmedzenej dostupnosti</strong> - builders ostavaju prekvapivo odolni, no trh zaujima, ako dlho vydrzi dopyt v prostredi drahsieho financovania.</div><div class="nf-ticks"><span class="nf-tick nt">Homebuilders resilient</span><span class="nf-tick dn">Mortgage drag</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">13:47 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Uran a nuclear theme sa drzia v hladaciku dlhodobych investorov</strong> - tema energetickej bezpecnosti a novych investicii do jadra udrziava zaujem o taziarov aj dodavatelov paliva.</div><div class="nf-ticks"><span class="nf-tick up">URA bid</span><span class="nf-tick up">Energy security</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">13:28 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Časť trhu presuva kapital z megacap tech do kvality mimo indexovych favoritov</strong> - rotacia nie je dramaticka, ale vidiet ju na relativnej vykonnosti industrialov, healthcare a selected financials.</div><div class="nf-ticks"><span class="nf-tick nt">Rotation watch</span><span class="nf-tick up">Broader market</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">13:09 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Earnings sezona drzi individualne mena v prudkych pohyboch bez ohladu na index</strong> - rozdiel medzi dobrou a slabou reakciou trhu po vysledkoch ostava vysoky, co zvysuje dolezitost guidancu a marz.</div><div class="nf-ticks"><span class="nf-tick nt">Post-earnings moves</span><span class="nf-tick nt">Guidance matters</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">12:51 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Fintech mena hladia na dalsi smer regulacie a stav spotrebitelskeho dopytu</strong> - platobne firmy su stabilnejsie, ale lending a buy-now-pay-later segment ostava citlivy na defaulty a refinancovanie.</div><div class="nf-ticks"><span class="nf-tick nt">Payments stable</span><span class="nf-tick dn">Credit risk</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">12:32 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Čipy pre auta a priemysel zaostavaju za AI winners, no valuacie uz vyzeraju triezvejsie</strong> - cast investorov vyckava na dno cyklu v automotive a industrial demand pred agresivnejsim vstupom.</div><div class="nf-ticks"><span class="nf-tick nt">Auto chips lag</span><span class="nf-tick nt">Valuation reset</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">12:14 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Crypto sentiment sa zlepsil spolu s risk appetite, no volatilita ostava vysoka</strong> - bitcoin a s nim spojene akcie profituju zo silneho retail flow, ale intradenne pohyby zostavaju ostre.</div><div class="nf-ticks"><span class="nf-tick up">BTC firm</span><span class="nf-tick nt">High beta</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">11:56 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Food a staples mena ziskavaju na relativnej sile pri hladani stability</strong> - pomalsi rast sa investorom kompenzuje predvidatelnejsimi cash flow a nizsou citlivostou na headlines z makra.</div><div class="nf-ticks"><span class="nf-tick up">Staples steady</span><span class="nf-tick nt">Low beta</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">11:38 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Priemyselne konglomeraty podporuje reshoring a dopyt po infrastrukture</strong> - investori sa vracaju k firmam so silnym backlogom, pricing power a expoziciou na obnovu kapacit doma.</div><div class="nf-ticks"><span class="nf-tick up">CAT GE HON</span><span class="nf-tick up">Reshoring theme</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">11:19 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Market breadth sa mierne zlepsuje, no leadership stale ostava uzky</strong> - viac akcii sa zapaja do rastu, ale megacap tech a AI infra mena maju nadalej rozhodujuci vplyv na indexy.</div><div class="nf-ticks"><span class="nf-tick up">Breadth better</span><span class="nf-tick nt">Leadership narrow</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">11:02 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Trh sleduje dalsie jadrove makro data pre potvrdenie dezinflačného trendu</strong> - ak sa cenove tlaky budu ochladzovat pomalsie, valuacie growth segmentu mozu zostat pod tlakom aj pri silnych firemnych vysledkoch.</div><div class="nf-ticks"><span class="nf-tick nt">Macro focus</span><span class="nf-tick dn">Rates sensitivity</span></div></div></div>
-          <div class="nf-item"><div class="nf-time">10:44 SEC<br>25. apr 2026</div><div class="nf-body"><div class="nf-text"><strong>Investori ostavaju selektivni a preferuju kvalitu pred sirkou trhu</strong> - momentum sa drzi vo firmach so silnou marzou, cenovou disciplinou a citatelnym vyhladom, kym spekulativne pribehy zaostavaju.</div><div class="nf-ticks"><span class="nf-tick up">Quality bid</span><span class="nf-tick dn">Speculative lag</span></div></div></div>
+        <div class="feed-meta">
+          <div class="feed-meta-text"><b>30 poloziek</b> v dynamickom feede. Start zobrazenia: 10 sprav, dalsie sa nacitavaju cez <b>Load more</b>.</div>
+          <div class="feed-meta-stamp">Update: 25. apr 2026</div>
+        </div>
+        <div class="nfeed" id="news-feed">
+          <div class="nf-empty">Nacitavam feed...</div>
+        </div>
+        <div class="nfeed-actions">
+          <button class="btn-ghost" id="load-more" type="button" hidden>Load more</button>
         </div>
       </div>
       <aside class="novinky-side">
         <div class="side-card">
           <div class="ip-title">Indexy · 25. apr 2026</div>
-          <div class="ip-row"><div class="ip-name">S&amp;P 500</div><div class="ip-right"><div class="ip-price up">707.91</div><div class="ip-chg up">+0.89%</div></div></div>
-          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:42%"></div></div>
-          <div class="ip-row"><div class="ip-name">NASDAQ</div><div class="ip-right"><div class="ip-price up">650.74</div><div class="ip-chg up">+1.60%</div></div></div>
-          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:64%"></div></div>
-          <div class="ip-row"><div class="ip-name">DOW</div><div class="ip-right"><div class="ip-price up">492.69</div><div class="ip-chg up">+1.45%</div></div></div>
-          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:58%"></div></div>
-          <div class="ip-row"><div class="ip-name">Russell 2000</div><div class="ip-right"><div class="ip-price up">275.18</div><div class="ip-chg up">+1.94%</div></div></div>
+          <div class="ip-row"><div class="ip-name">S&amp;P 500</div><div class="ip-right"><div class="ip-price up">rekord</div><div class="ip-chg up">tech lead</div></div></div>
           <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:72%"></div></div>
-          <div class="ip-row"><div class="ip-name">VIX</div><div class="ip-right"><div class="ip-price dn">19.49</div><div class="ip-chg dn">+11.50%</div></div></div>
-          <div style="padding:5px 0"><div class="ip-bar bar-dn" style="width:80%"></div></div>
+          <div class="ip-row"><div class="ip-name">NASDAQ</div><div class="ip-right"><div class="ip-price up">rekord</div><div class="ip-chg up">AI support</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:82%"></div></div>
+          <div class="ip-row"><div class="ip-name">DOW</div><div class="ip-right"><div class="ip-price nt">mixed</div><div class="ip-chg nt">lagging</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-up" style="width:41%"></div></div>
+          <div class="ip-row"><div class="ip-name">Ropa</div><div class="ip-right"><div class="ip-price nt">volatilna</div><div class="ip-chg dn">Iran focus</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-dn" style="width:68%"></div></div>
+          <div class="ip-row"><div class="ip-name">Fed cuts</div><div class="ip-right"><div class="ip-price dn">neskor</div><div class="ip-chg dn">repricing</div></div></div>
+          <div style="padding:5px 0"><div class="ip-bar bar-dn" style="width:63%"></div></div>
           <div class="econ-events">
-            <div class="ee-title">Klucove udalosti</div>
-            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-hi"></div><div class="ee-name">US-Iran rokovania · Islamabad</div></div><div class="ee-time">dnes</div></div>
-            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-hi"></div><div class="ee-name">Tesla Q1 update zverejneny</div></div><div class="ee-time">22. apr</div></div>
-            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-hi"></div><div class="ee-name">Ceasefire expiruje</div></div><div class="ee-time">22. apr</div></div>
-            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-med"></div><div class="ee-name">P&amp;G / SLB vysledky</div></div><div class="ee-time">24. apr AM</div></div>
+            <div class="ee-title">Klucove temy</div>
+            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-hi"></div><div class="ee-name">Intel blowout quarter a semiconductor rally</div></div><div class="ee-time">24-25 apr</div></div>
+            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-hi"></div><div class="ee-name">Ropa a geopolitika okolo Iranu</div></div><div class="ee-time">dnes</div></div>
+            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-med"></div><div class="ee-name">Alphabet AI partnerstva a nove cipy</div></div><div class="ee-time">22-25 apr</div></div>
+            <div class="ee-item"><div class="er-left"><div class="ee-imp imp-med"></div><div class="ee-name">Fed sentiment a repricing cutov</div></div><div class="ee-time">ongoing</div></div>
           </div>
         </div>
       </aside>
@@ -260,61 +243,91 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 <script>
 document.querySelectorAll('nav ul a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('nav').classList.remove('open')})});
 </script>
-
 <script>
-// ── FINNHUB LIVE PRICES ──
 var FKEY = 'd7hpda1r01qirk40gv00d7hpda1r01qirk40gv0g';
-
 var SYMS = [
-  {s:'SPY',  l:'S&P 500', d:true},
-  {s:'QQQ',  l:'NASDAQ',  d:true},
-  {s:'DIA',  l:'DOW',     d:true},
-  {s:'NVDA', l:'NVDA',    d:true},
-  {s:'ACMR', l:'ACMR',   d:true},
-  {s:'KTOS', l:'KTOS',   d:true},
-  {s:'LMT',  l:'LMT',    d:true},
-  {s:'AVAV', l:'AVAV',   d:true},
-  {s:'PANW', l:'PANW',   d:true}
+  {s:'SPY',l:'S&P 500'},
+  {s:'QQQ',l:'NASDAQ'},
+  {s:'DIA',l:'DOW'},
+  {s:'NVDA',l:'NVDA'},
+  {s:'INTC',l:'INTC'},
+  {s:'VIX',l:'VIX'}
 ];
-
 var track = document.querySelector('.t-track');
-
-function updateTicker(data) {
-  if (!track) return;
-  track.innerHTML = '';
-  data.forEach(function(item) {
-    if (!item || item.c === undefined) return;
-    var pct = item.dp !== undefined ? item.dp.toFixed(2) : '0.00';
-    var cls = parseFloat(pct) >= 0 ? 'up' : 'dn';
-    var sign = parseFloat(pct) >= 0 ? '+' : '';
-    var div = document.createElement('div');
-    div.className = 't-item';
-    div.innerHTML = '<span class="t-sym">' + item.sym + '</span>'
-      + '<span class="t-px ' + cls + '">' + item.c.toFixed(2) + ' <span style="opacity:.65">' + sign + pct + '%</span></span>';
+function updateTicker(data){
+  if(!track)return;
+  track.innerHTML='';
+  data.forEach(function(item){
+    if(!item||item.c===undefined)return;
+    var pct=item.dp!==undefined?item.dp.toFixed(2):'0.00';
+    var cls=parseFloat(pct)>=0?'up':'dn';
+    var sign=parseFloat(pct)>=0?'+':'';
+    var div=document.createElement('div');
+    div.className='t-item';
+    div.innerHTML='<span class="t-sym">'+item.sym+'</span><span class="t-px '+cls+'">'+item.c.toFixed(2)+' <span style="opacity:.65">'+sign+pct+'%</span></span>';
     track.appendChild(div);
   });
-  var clone = track.innerHTML;
-  track.innerHTML += clone;
+  track.innerHTML+=track.innerHTML;
 }
-
-function loadPrices() {
-  var results = [];
-  var pending = SYMS.length;
-  SYMS.forEach(function(sym, i) {
-    var url = 'https://finnhub.io/api/v1/quote?symbol=' + sym.s + '&token=' + FKEY;
-    fetch(url)
-      .then(function(r){ return r.json(); })
-      .then(function(d){
-        results[i] = { sym: sym.l, c: d.c, dp: d.dp };
-        pending--;
-        if (pending === 0) updateTicker(results);
-      })
-      .catch(function(){ pending--; });
+function loadPrices(){
+  var results=[];
+  var pending=SYMS.length;
+  SYMS.forEach(function(sym,i){
+    var url='https://finnhub.io/api/v1/quote?symbol='+sym.s+'&token='+FKEY;
+    fetch(url).then(function(r){return r.json();}).then(function(d){
+      results[i]={sym:sym.l,c:d.c,dp:d.dp};
+      pending--;
+      if(pending===0)updateTicker(results);
+    }).catch(function(){pending--;});
   });
-  setTimeout(loadPrices, 60000);
+  setTimeout(loadPrices,60000);
 }
 
-document.addEventListener('DOMContentLoaded', loadPrices);
+var newsState={items:[],shown:0,step:10};
+var feedEl=document.getElementById('news-feed');
+var loadMoreBtn=document.getElementById('load-more');
+function toneClass(tone){
+  if(tone==='up')return 'up';
+  if(tone==='dn')return 'dn';
+  return 'nt';
+}
+function renderNewsItem(item){
+  var badge=item.badge?'<br><span style="color:var(--green);font-size:8px">● '+item.badge+'</span>':'';
+  var tags=(item.tags||[]).map(function(tag){
+    return '<span class="nf-tick '+toneClass(tag.tone)+'">'+tag.label+'</span>';
+  }).join('');
+  return '<div class="nf-item">'
+    + '<div class="nf-time">'+item.time+'<br>'+item.date+badge+'</div>'
+    + '<div class="nf-body">'
+    + '<div class="nf-text"><strong>'+item.title+'</strong> - '+item.summary+'</div>'
+    + '<div class="nf-source">Zdroj: <a href="'+item.sourceUrl+'" target="_blank" rel="noopener">'+item.source+'</a></div>'
+    + '<div class="nf-ticks">'+tags+'</div>'
+    + '</div>'
+    + '</div>';
+}
+function renderNews(reset){
+  if(reset){newsState.shown=0;feedEl.innerHTML='';}
+  var nextItems=newsState.items.slice(newsState.shown,newsState.shown+newsState.step);
+  if(!nextItems.length&&newsState.shown===0){
+    feedEl.innerHTML='<div class="nf-empty">Feed je zatial prazdny.</div>';
+    loadMoreBtn.hidden=true;
+    return;
+  }
+  feedEl.insertAdjacentHTML('beforeend',nextItems.map(renderNewsItem).join(''));
+  newsState.shown+=nextItems.length;
+  loadMoreBtn.hidden=newsState.shown>=newsState.items.length;
+}
+function loadNews(){
+  fetch('/novinky/feed.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(data){
+    newsState.items=Array.isArray(data)?data:[];
+    renderNews(true);
+  }).catch(function(){
+    feedEl.innerHTML='<div class="nf-empty">Feed sa nepodarilo nacitat. Skus obnovit stranku.</div>';
+    loadMoreBtn.hidden=true;
+  });
+}
+loadMoreBtn.addEventListener('click',function(){renderNews(false);});
+document.addEventListener('DOMContentLoaded',function(){loadPrices();loadNews();});
 </script>
 </body>
 </html>
