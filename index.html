@@ -1956,6 +1956,10 @@ function setActivePage(pageId){
 
 function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
+  if(id==='novinky'){
+    window.location.href = BASE_URL + 'novinky/';
+    return;
+  }
   var pg=setActivePage('page-'+id);
   if(pg){
     window.scrollTo(0,0);
@@ -2015,6 +2019,10 @@ function initCookieConsent(){
 window.addEventListener('DOMContentLoaded',function(){
   initCookieConsent();
   var h=(location.hash||'').replace('#','');
+  if(h === 'novinky'){
+    window.location.replace(BASE_URL + 'novinky/');
+    return;
+  }
   if(h === 'cookies'){
     goTo('home');
     showCookieBanner();
