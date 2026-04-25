@@ -1,0 +1,393 @@
+[
+  {
+    "id": 1,
+    "time": "22:10 SEC",
+    "date": "25. apr 2026",
+    "badge": "NOVE",
+    "title": "Intel vystrelil po silnych vysledkoch a pomohol technologickemu sentimentu",
+    "summary": "Akcie Intelu prudko rastli po kvartalnych vysledkoch nad ocakavania a podporili sirsi apetyt po polovodicoch aj AI infrastrukture.",
+    "tags": [
+      { "label": "INTC +23.6%", "tone": "up" },
+      { "label": "Tech leadership", "tone": "up" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 2,
+    "time": "21:48 SEC",
+    "date": "25. apr 2026",
+    "title": "S&P 500 a Nasdaq uzavreli na novych rekordoch",
+    "summary": "Silny vykon polovodicov a velkych technologii posunul hlavne americke indexy na nove historicke maxima, aj ked Dow zaostal.",
+    "tags": [
+      { "label": "S&P record", "tone": "up" },
+      { "label": "Nasdaq record", "tone": "up" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 3,
+    "time": "21:25 SEC",
+    "date": "25. apr 2026",
+    "title": "Nvidia znovu tahala chip sektor a vratila sa do centra pozornosti",
+    "summary": "Silny dopyt po AI infrastrukture drzi investorov v najvacsej polovodicovej teme trhu a podporuje aj sirsi basket dodavatelov.",
+    "tags": [
+      { "label": "NVDA strength", "tone": "up" },
+      { "label": "AI infra", "tone": "up" }
+    ],
+    "source": "Yahoo Finance · 24. apr 2026",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+  },
+  {
+    "id": 4,
+    "time": "21:04 SEC",
+    "date": "25. apr 2026",
+    "title": "Ropa ostava nervozna, trh sleduje dalsi vyvoj vojny s Iranom",
+    "summary": "Ceny ropy pokracuju v prudkych pohyboch, ked obchodnici vyhodnocuju geopoliticke riziko pre dodavky a mozne dalsie kroky producentov.",
+    "tags": [
+      { "label": "Oil volatile", "tone": "nt" },
+      { "label": "Geopolitics", "tone": "dn" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 5,
+    "time": "20:46 SEC",
+    "date": "25. apr 2026",
+    "title": "Alphabet podporil trh po AI partnerstvach a novych cipovych oznamoch",
+    "summary": "Investorov povzbudili nove AI iniciativy Alphabetu, ktore zlepsili sentiment v megacap technologickom priestore.",
+    "tags": [
+      { "label": "GOOGL up", "tone": "up" },
+      { "label": "AI partnerships", "tone": "up" }
+    ],
+    "source": "The Motley Fool · 22. apr 2026",
+    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+  },
+  {
+    "id": 6,
+    "time": "20:21 SEC",
+    "date": "25. apr 2026",
+    "title": "Dow zaostaval, no rotacia do technologii udrzala rastovy ton trhu",
+    "summary": "Kym industrialne mena a cast value segmentu oddychovali, kapital sa vracal do polovodicov a velkych AI titulov.",
+    "tags": [
+      { "label": "Dow lag", "tone": "dn" },
+      { "label": "Semis lead", "tone": "up" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 7,
+    "time": "19:59 SEC",
+    "date": "25. apr 2026",
+    "title": "Intel prelomil svoje dot-com maximum a otestoval novu valuacnu fazu",
+    "summary": "Mimoriadne silna reakcia trhu na vysledky vytiahla Intel nad historicke urovne z prelomu tisicroci a znovu otvorila diskusiu o AI re-rate.",
+    "tags": [
+      { "label": "Historic breakout", "tone": "up" },
+      { "label": "AI rerate", "tone": "up" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 8,
+    "time": "19:36 SEC",
+    "date": "25. apr 2026",
+    "title": "Trh sledoval spravu o ukonceni trestneho vysetrovania okolo Jeromea Powella",
+    "summary": "Ulava v okoli Fedu pomohla sentimentu a odstranila jeden z kratkodobych headline riskov pre americke akcie.",
+    "tags": [
+      { "label": "Powell risk lower", "tone": "up" },
+      { "label": "Headline relief", "tone": "up" }
+    ],
+    "source": "Yahoo Finance · 24. apr 2026",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+  },
+  {
+    "id": 9,
+    "time": "19:12 SEC",
+    "date": "25. apr 2026",
+    "title": "Fed-cut stávky sa znovu posuvaju, vynosy tlmia cast growth valuacii",
+    "summary": "Odolne makro a vyssie cenove rizika drzia investorov opatrnych pri nacenovani skorých znizeni sadzieb.",
+    "tags": [
+      { "label": "US10Y focus", "tone": "nt" },
+      { "label": "Cuts repriced", "tone": "dn" }
+    ],
+    "source": "Trhova rekapitulacia · 25. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 10,
+    "time": "18:54 SEC",
+    "date": "25. apr 2026",
+    "title": "Semiconductor basket pokracuje v sile, sirka rally je vsak stale obmedzena",
+    "summary": "Zatial co chip leaderi nesu indexy vyssie, cast trhu stale zaostava a market breadth zostava zmiesany.",
+    "tags": [
+      { "label": "SOX up", "tone": "up" },
+      { "label": "Breadth mixed", "tone": "nt" }
+    ],
+    "source": "Yahoo Finance · 24. apr 2026",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+  },
+  {
+    "id": 11,
+    "time": "18:33 SEC",
+    "date": "25. apr 2026",
+    "title": "AI investicny pribeh stale prehlusuje obavy z vysokych capexov",
+    "summary": "Aj napriek debate o navratnosti obrovskych AI investicii sa kapital drzi v menach napojenych na infra vrstvu.",
+    "tags": [
+      { "label": "AI capex", "tone": "up" },
+      { "label": "Narrative strong", "tone": "up" }
+    ],
+    "source": "The Motley Fool · 22. apr 2026",
+    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+  },
+  {
+    "id": 12,
+    "time": "18:09 SEC",
+    "date": "25. apr 2026",
+    "title": "Velke technologie znovu ziskali leadership po kratkej faze rotacie",
+    "summary": "Megacap mena vratili trhu tah, co pomohlo najma Nasdaqu a AI orientovanym titulom.",
+    "tags": [
+      { "label": "Megacap lead", "tone": "up" },
+      { "label": "Nasdaq bias", "tone": "up" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 13,
+    "time": "17:48 SEC",
+    "date": "25. apr 2026",
+    "title": "Energeticky sektor ostava citlivy na kazdy geopoliticky headline",
+    "summary": "Aj mierna zmena retoriky v konflikte alebo pri rokovaniach okamzite meni kratkodoby smer energetickych akcii aj komodit.",
+    "tags": [
+      { "label": "Energy watch", "tone": "nt" },
+      { "label": "Headline risk", "tone": "dn" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 14,
+    "time": "17:26 SEC",
+    "date": "25. apr 2026",
+    "title": "Internetove platformy tazia z lepsieho reklamneho sentimentu",
+    "summary": "Silnejsi ton v digitalnej reklame podporuje velke platformy a zlepsuje naladu v online segmente.",
+    "tags": [
+      { "label": "Ads stronger", "tone": "up" },
+      { "label": "Platforms bid", "tone": "up" }
+    ],
+    "source": "The Motley Fool · 22. apr 2026",
+    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+  },
+  {
+    "id": 15,
+    "time": "17:04 SEC",
+    "date": "25. apr 2026",
+    "title": "Cloud a AI partnerstva zvysuju ochotu trhu platit premium valuacie",
+    "summary": "Investori su pripravení tolerovat vysoke nasobky tam, kde vidia silny rast objednavok, marz a strategickych partnerstiev.",
+    "tags": [
+      { "label": "Cloud premium", "tone": "up" },
+      { "label": "Growth quality", "tone": "up" }
+    ],
+    "source": "The Motley Fool · 22. apr 2026",
+    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+  },
+  {
+    "id": 16,
+    "time": "16:41 SEC",
+    "date": "25. apr 2026",
+    "title": "Downger sectorov ukazuje, ze rally nie je rovnako siroka napriec celym trhom",
+    "summary": "Ked leadership ostava sustredeny v technologickych a polovodicovych tituloch, value a tradicne cyklicke sektory kolisu viac.",
+    "tags": [
+      { "label": "Uneven rally", "tone": "nt" },
+      { "label": "Sector rotation", "tone": "nt" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 17,
+    "time": "16:18 SEC",
+    "date": "25. apr 2026",
+    "title": "Investorov nadalej zaujima, kto zaraba na AI najskor: hardware alebo platformy",
+    "summary": "Trh porovnava, ci vacsi ziskovy efekt prichadza okamzite cez cipy a servery, alebo neskor cez software a cloud monetizaciu.",
+    "tags": [
+      { "label": "Hardware first", "tone": "up" },
+      { "label": "Monetization debate", "tone": "nt" }
+    ],
+    "source": "Yahoo Finance · 24. apr 2026",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+  },
+  {
+    "id": 18,
+    "time": "15:56 SEC",
+    "date": "25. apr 2026",
+    "title": "Vyssie ceny ropy drzia inflacne obavy pri zivote",
+    "summary": "Aj ked ropa kolise, samotna uroveň cien je dost vysoka na to, aby komplikovala rychly navrat k nizsej inflacii.",
+    "tags": [
+      { "label": "Inflation risk", "tone": "dn" },
+      { "label": "Oil premium", "tone": "nt" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 19,
+    "time": "15:32 SEC",
+    "date": "25. apr 2026",
+    "title": "Trh sa znovu uci zit s prostredim vyssich sadzieb a silneho rastu ziskov v technologiach",
+    "summary": "Rastove mena dokazu stúpat aj pri vyšsich vynosoch, ak firmy prekvapuju vysledkami a guidanceom.",
+    "tags": [
+      { "label": "Higher-for-longer", "tone": "nt" },
+      { "label": "Earnings support", "tone": "up" }
+    ],
+    "source": "Trhova rekapitulacia · 25. apr 2026",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+  },
+  {
+    "id": 20,
+    "time": "15:08 SEC",
+    "date": "25. apr 2026",
+    "title": "Polovodice uz nie su len Nvidia pribeh, investori hladaju aj dalsich vitazov retazca",
+    "summary": "Po silnych vysledkoch Intelu a stalej sile AI tema sa pozornost rozsiruje aj na dalsich vyrobcov a vybavenie.",
+    "tags": [
+      { "label": "Broader semis", "tone": "up" },
+      { "label": "Supply chain", "tone": "up" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 21,
+    "time": "14:45 SEC",
+    "date": "25. apr 2026",
+    "title": "Kratkodoby pokoj na indexoch neznamena nizsiu intradennu volatilitu v jednotlivych tituloch",
+    "summary": "Aj pri rekordoch indexov ostava rozdiel medzi vitazmi a porazenymi po vysledkoch velmi vysoky.",
+    "tags": [
+      { "label": "Stock picking", "tone": "nt" },
+      { "label": "Volatility", "tone": "nt" }
+    ],
+    "source": "Yahoo Finance · 24. apr 2026",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+  },
+  {
+    "id": 22,
+    "time": "14:21 SEC",
+    "date": "25. apr 2026",
+    "title": "AI partnerstva a vlastne cipy zvysuju tlak na cloud konkurenciu",
+    "summary": "Kazdy vacsi oznam v AI infrastrukture prehlbuje sutaz medzi najvacsimi technologickymi platformami a ich ekosystemami.",
+    "tags": [
+      { "label": "Platform race", "tone": "up" },
+      { "label": "AI chips", "tone": "up" }
+    ],
+    "source": "The Motley Fool · 22. apr 2026",
+    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+  },
+  {
+    "id": 23,
+    "time": "13:58 SEC",
+    "date": "25. apr 2026",
+    "title": "Ak ropny sok pretrva, Fed moze ostat tvrdsi dlhsie, nez trh cakal",
+    "summary": "Geopolitikou hnane ceny energii znovu vstupuju do debaty o tom, kedy sa menova politika dokaze uvolnit.",
+    "tags": [
+      { "label": "Fed caution", "tone": "dn" },
+      { "label": "Energy inflation", "tone": "dn" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 24,
+    "time": "13:34 SEC",
+    "date": "25. apr 2026",
+    "title": "Recordy indexov nezmensili zaujem o defensivne segmenty mimo tech leadershipu",
+    "summary": "Cast portfolii stale kombinuje rastove AI mena s defenzivou pre pripad zhorsenia makra alebo dalsieho skoku v rope.",
+    "tags": [
+      { "label": "Barbell setup", "tone": "nt" },
+      { "label": "Defense + growth", "tone": "nt" }
+    ],
+    "source": "Trhova rekapitulacia · 25. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 25,
+    "time": "13:09 SEC",
+    "date": "25. apr 2026",
+    "title": "Nasdaq ostava najcitlivejsi na kombinaciu AI optimismu a pohybu vynosov",
+    "summary": "Kazdy posun v sadzbovych ocakavaniach alebo dalsi AI headline sa najrychlejsie pretavuje prave do technologickeho indexu.",
+    "tags": [
+      { "label": "Nasdaq beta", "tone": "nt" },
+      { "label": "Yield sensitivity", "tone": "dn" }
+    ],
+    "source": "Yahoo Finance · 24. apr 2026",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+  },
+  {
+    "id": 26,
+    "time": "12:46 SEC",
+    "date": "25. apr 2026",
+    "title": "Silny guidance je znovu dolezitejsi nez samotne prekonanie odhadov",
+    "summary": "Trh odmenuje firmy, ktore neponuknu len dobre cisla, ale aj presvedcivy pribeh na dalsie kvartaly.",
+    "tags": [
+      { "label": "Guidance matters", "tone": "up" },
+      { "label": "Earnings season", "tone": "nt" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 27,
+    "time": "12:22 SEC",
+    "date": "25. apr 2026",
+    "title": "Alphabetov AI push znovu zvysil tlak na interpretaciu valuacii megacap priestoru",
+    "summary": "Pri rychlom raste investicii a partnerstiev sa trh sustredi na to, kde pride najskor monetizacia a kto ziska dominantny podiel.",
+    "tags": [
+      { "label": "GOOGL theme", "tone": "up" },
+      { "label": "Valuation debate", "tone": "nt" }
+    ],
+    "source": "The Motley Fool · 22. apr 2026",
+    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+  },
+  {
+    "id": 28,
+    "time": "11:59 SEC",
+    "date": "25. apr 2026",
+    "title": "Relief v okoli Fedu a rekordy indexov pomohli risk sentimentu, nie vsak bez vyhrad",
+    "summary": "Kombinacia politickeho ukludnenia a silnych vysledkov zlepsila naladu, no ropa a sadzby stale predstavuju protivahu.",
+    "tags": [
+      { "label": "Risk-on", "tone": "up" },
+      { "label": "Macro overhang", "tone": "dn" }
+    ],
+    "source": "Yahoo Finance · 24. apr 2026",
+    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+  },
+  {
+    "id": 29,
+    "time": "11:36 SEC",
+    "date": "25. apr 2026",
+    "title": "Cipove firmy benefituju zo sirsej viery, ze AI dopyt je trvácnejsi, nez sa cakalo",
+    "summary": "Investori su ochotni platit za producentov a dodavatelov, ak veria, ze datacentrovy investicny cyklus nebude len kratkodoba vlna.",
+    "tags": [
+      { "label": "Datacenter cycle", "tone": "up" },
+      { "label": "AI durability", "tone": "up" }
+    ],
+    "source": "AP News · 24. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  },
+  {
+    "id": 30,
+    "time": "11:12 SEC",
+    "date": "25. apr 2026",
+    "title": "Zaver tyzdna potvrdil, ze leadership trhu zostava v technologii, rope a makro headlineoch",
+    "summary": "Na prelome 24. a 25. aprila 2026 dominovali obchodovaniu rekordy indexov, sila polovodicov, geopolitika v rope a opatrnost okolo Fedu.",
+    "tags": [
+      { "label": "Market wrap", "tone": "nt" },
+      { "label": "25 Apr 2026", "tone": "nt" }
+    ],
+    "source": "Kuratorsky feed InvestRadar · 25. apr 2026",
+    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+  }
+]
