@@ -143,18 +143,19 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .fbar::-webkit-scrollbar{display:none}
   .fbar span{white-space:nowrap;flex:0 0 auto;font-size:8px;padding:6px 11px}
 
-  .nfeed{gap:12px}
-  .nf-item{grid-template-columns:1fr;gap:10px;padding:16px 12px;border-top:1px solid var(--wf);border-bottom:1px solid var(--wf);border-left:none;border-right:none;border-radius:0;background:linear-gradient(180deg,rgba(13,21,37,.98) 0%,rgba(9,13,23,.98) 100%)}
+  .novinky-layout{display:block;width:100%}
+  .novinky-side{display:none}
+  .novinky-main{width:100%;min-width:0;overflow:hidden}
+  .nfeed{gap:12px;width:100%}
+  .nf-item{display:grid;grid-template-columns:1fr;gap:10px;padding:16px 12px;border-top:1px solid var(--wf);border-bottom:1px solid var(--wf);border-left:none;border-right:none;border-radius:0;background:linear-gradient(180deg,rgba(13,21,37,.98) 0%,rgba(9,13,23,.98) 100%);width:100%;box-sizing:border-box}
+  .nf-body{width:100%;min-width:0;overflow:hidden}
   .nf-time{text-align:left;padding:0 0 8px;border-bottom:1px solid var(--wff)}
-  .nf-text{font-size:14px;line-height:1.62;margin-bottom:10px}
+  .nf-text{font-size:14px;line-height:1.62;margin-bottom:10px;width:100%;word-break:break-word;overflow-wrap:anywhere;white-space:normal}
   .nf-ticks{gap:5px}
   .nf-tick{font-size:7.5px;padding:3px 6px}
 
-  .novinky-side{display:none}
-  footer{padding-top:34px}
-  .footer-grid{grid-template-columns:1fr;gap:22px}
-  .footer-bottom{padding-bottom:22px}
-  .footer-copy{white-space:normal}
+  .footer-grid{grid-template-columns:1fr;gap:20px}
+  .footer-brand{margin-bottom:8px}
 }
 
 @media(max-width:380px){
