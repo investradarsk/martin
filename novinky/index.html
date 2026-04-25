@@ -255,30 +255,24 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   </div>
   <script>
   (function(){
-    var sources=[
-      'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frsshub.app%2Ftwitter%2Fuser%2FInvestRadarSK&count=5',
-      'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Frsshub.rssforever.com%2Ftwitter%2Fuser%2FInvestRadarSK&count=5'
-    ];
-    var i=0;
-    function tryNext(){
-      if(i>=sources.length){showFallback();return;}
-      fetch(sources[i++]).then(function(r){return r.json();}).then(function(d){
-        if(d.status==='ok'&&d.items&&d.items.length){render(d.items);}else{tryNext();}
-      }).catch(function(){tryNext();});
-    }
+    fetch('/.netlify/functions/get-tweets')
+      .then(function(r){return r.json();})
+      .then(function(d){
+        if(d.ok&&d.items&&d.items.length){render(d.items);}
+        else{showFallback();}
+      }).catch(function(){showFallback();});
     function render(items){
       var c=document.getElementById('x-feed-posts');
       if(!c)return;
-      c.innerHTML=items.slice(0,5).map(function(it){
-        var t=it.description.replace(/<[^>]+>/g,'').trim().substring(0,160);
-        var d=new Date(it.pubDate).toLocaleDateString('sk',{day:'numeric',month:'short'});
+      c.innerHTML=items.map(function(it){
+        var t=(it.title||'').substring(0,160);
+        var d=it.pubDate?new Date(it.pubDate).toLocaleDateString('sk',{day:'numeric',month:'short'}):'';
         return '<div style="padding:10px 0;border-bottom:1px solid rgba(240,232,213,.05);"><div style="font-size:12px;line-height:1.5;color:rgba(240,232,213,.82);">'+t+'</div><div style="font-size:9px;color:rgba(240,232,213,.28);margin-top:4px;font-family:var(--mono);">'+d+'</div></div>';
       }).join('');
     }
     function showFallback(){var f=document.getElementById('x-feed-fallback');if(f)f.style.display='block';}
-    tryNext();
   })();
-  </script><div class="footer-col"><h4>Obsah</h4><a href="/novinky/">Novinky</a><a href="/#analyzy">Analyzy</a><a href="/#alerty">Trade alerty</a><a href="/#sektory">Sektory</a><a href="/#earnings">Earnings</a></div><div class="footer-col"><h4>Platforma</h4><a href="/#vzdelavanie">Vzdelavanie</a><a href="/o-nas/">O nas</a><a href="/#newsletter">Newsletter</a><a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kupit knihu</a><a href="/kontakt/">Kontakt</a></div><div class="footer-col"><h4>Kontakt</h4><a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a><a href="/disclaimer/">Disclaimer</a><a href="/privacy-policy/">Ochrana osobnych udajov</a></div></div><div class="footer-bottom"><p class="footer-disc">Obsah InvestRadar ma vylucne informacny a vzdelavaci charakter a nepredstavuje investicne poradenstvo. Investovanie je spojene s rizikom straty kapitalu.</p><div class="footer-copy">© 2026 InvestRadar</div></div></div></footer>
+  </script><div class="footer-col"><h4>Platforma</h4><a href="/#vzdelavanie">Vzdelavanie</a><a href="/o-nas/">O nas</a><a href="/#newsletter">Newsletter</a><a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kupit knihu</a><a href="/kontakt/">Kontakt</a></div><div class="footer-col"><h4>Kontakt</h4><a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a><a href="/disclaimer/">Disclaimer</a><a href="/privacy-policy/">Ochrana osobnych udajov</a></div></div><div class="footer-bottom"><p class="footer-disc">Obsah InvestRadar ma vylucne informacny a vzdelavaci charakter a nepredstavuje investicne poradenstvo. Investovanie je spojene s rizikom straty kapitalu.</p><div class="footer-copy">© 2026 InvestRadar</div></div></div></footer>
 <script>
 document.querySelectorAll('nav ul a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('nav').classList.remove('open')})});
 </script>
