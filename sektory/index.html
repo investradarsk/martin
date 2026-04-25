@@ -739,5 +739,17 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
     </div>
   </div>
 </footer>
-</body>
+
+<script>
+(function(){
+var K='d7hpda1r01qirk40gv00d7hpda1r01qirk40gv0g';
+var S=[{s:'SPY',l:'S&P 500'},{s:'QQQ',l:'NASDAQ'},{s:'DIA',l:'DOW'},{s:'NVDA',l:'NVDA'},{s:'ACMR',l:'ACMR'},{s:'KTOS',l:'KTOS'},{s:'LMT',l:'LMT'},{s:'AVAV',l:'AVAV'},{s:'PANW',l:'PANW'}];
+var track=document.querySelector('.t-track');
+if(!track)return;
+function fmt(n){return n>=1000?n.toLocaleString('en',{maximumFractionDigits:2}):n.toFixed(2);}
+function upd(data){track.innerHTML='';data.forEach(function(d){var dir=d.dp>=0?'up':'dn';var el=document.createElement('div');el.className='t-item';el.innerHTML='<span class="t-sym">'+d.l+'</span><span class="t-px '+dir+'">'+fmt(d.c)+'</span>';track.appendChild(el);});track.innerHTML+=track.innerHTML;}
+function load(){var pending=S.length,res=[];S.forEach(function(sym,i){fetch('https://finnhub.io/api/v1/quote?symbol='+sym.s+'&token='+K).then(function(r){return r.json();}).then(function(d){res[i]={l:sym.l,c:d.c||0,dp:d.dp||0};pending--;if(pending===0)upd(res);}).catch(function(){pending--;});});setTimeout(load,60000);}
+document.addEventListener('DOMContentLoaded',load);
+})();
+</script></body>
 </html>
