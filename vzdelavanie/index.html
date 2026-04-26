@@ -133,6 +133,13 @@ var track=document.querySelector('.t-track');
 function updateTicker(data){if(!track)return;track.innerHTML='';data.forEach(function(item){if(!item||item.c===undefined)return;var pct=item.dp!==undefined?item.dp.toFixed(2):'0.00';var cls=parseFloat(pct)>=0?'up':'dn';var sign=parseFloat(pct)>=0?'+':'';var div=document.createElement('div');div.className='t-item';div.innerHTML='<span class="t-sym">'+item.sym+'</span><span class="t-px '+cls+'">'+item.c.toFixed(2)+' <span style="opacity:.65">'+sign+pct+'%</span></span>';track.appendChild(div);});track.innerHTML+=track.innerHTML;}
 function loadPrices(){var r=[],p=SYMS.length;SYMS.forEach(function(s,i){fetch('https://finnhub.io/api/v1/quote?symbol='+s.s+'&token='+FKEY).then(function(res){return res.json();}).then(function(d){r[i]={sym:s.l,c:d.c,dp:d.dp};p--;if(p===0)updateTicker(r);}).catch(function(){p--;});});setTimeout(loadPrices,60000);}
 document.addEventListener('DOMContentLoaded',loadPrices);
+
+// Hamburger
+document.getElementById('hbg').addEventListener('click',function(){
+  var nav = document.querySelector('nav');
+  var isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
 </script>
 </body>
 </html>
