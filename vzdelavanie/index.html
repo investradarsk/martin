@@ -133,4 +133,5 @@ function updateTicker(data){if(!track)return;track.innerHTML='';data.forEach(fun
 function loadPrices(){var r=[],p=SYMS.length;SYMS.forEach(function(s,i){fetch('https://finnhub.io/api/v1/quote?symbol='+s.s+'&token='+FKEY).then(function(res){return res.json();}).then(function(d){r[i]={sym:s.l,c:d.c,dp:d.dp};p--;if(p===0)updateTicker(r);}).catch(function(){p--;});});setTimeout(loadPrices,60000);}
 document.addEventListener('DOMContentLoaded',loadPrices);
 </script>
-</body>`n</html>
+</body>
+</html>
