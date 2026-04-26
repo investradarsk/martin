@@ -2033,11 +2033,7 @@ window.addEventListener('DOMContentLoaded',function(){
     if('scrollRestoration' in history) history.scrollRestoration = 'manual';
   }catch(e){}
   var h=(location.hash||'').replace('#','');
-  var forceHome = false;
-  try{
-    forceHome = new URLSearchParams(location.search).get('view') === 'home';
-  }catch(e){}
-  if(forceHome){
+  if(h === 'top'){
     goTo('home');
     try{history.replaceState({page:'home'},'',BASE_URL);}catch(e){}
     setTimeout(function(){ window.scrollTo(0,0); }, 0);
