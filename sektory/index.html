@@ -157,6 +157,9 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 }
 @media(max-width:820px){
   nav ul{display:none}
+  .hamburger{display:flex}
+  nav.open ul{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(7,11,22,.98);border-bottom:1px solid var(--wf);padding:8px 14px 14px;gap:2px;z-index:298}
+  nav.open ul a{padding:10px 12px;font-size:12px}
   .hero-grid,.overview-grid,.matrix,.bucket-grid,.stats-grid,.hc-list,.mini-grid{grid-template-columns:1fr}
   .nav-r .btn-ghost{display:none}
   .footer-grid{grid-template-columns:1fr 1fr}
@@ -730,5 +733,12 @@ function upd(data){track.innerHTML='';data.forEach(function(d){var dir=d.dp>=0?'
 function load(){var pending=S.length,res=[];S.forEach(function(sym,i){fetch('https://finnhub.io/api/v1/quote?symbol='+sym.s+'&token='+K).then(function(r){return r.json();}).then(function(d){res[i]={l:sym.l,c:d.c||0,dp:d.dp||0};pending--;if(pending===0)upd(res);}).catch(function(){pending--;});});setTimeout(load,60000);}
 document.addEventListener('DOMContentLoaded',load);
 })();
+
+// Hamburger
+document.getElementById('hbg').addEventListener('click',function(){
+  var nav = document.querySelector('nav');
+  var isOpen = nav.classList.toggle('open');
+  nav.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
 </script></body>
 </html>
