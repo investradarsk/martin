@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Portfolio | InvestRadar</title>
+<meta name="description" content="Ako InvestRadar premýšľa o portfóliu, pozíciách, watchliste a riadení rizika.">
+<link rel="canonical" href="https://investradar.sk/portfolio/">
+<meta property="og:title" content="Portfolio | InvestRadar">
+<meta property="og:description" content="Rámec portfólia, watchlist a princípy riadenia rizika na InvestRadar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://investradar.sk/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#070b16;--navy2:#0d1525;--amber:#c8891a;--amberl:#dfa030;--amberd:rgba(200,137,26,.11);--amberb:rgba(200,137,26,.26);--cream:#f0e8d5;--wd:rgba(240,232,213,.6);--wf:rgba(240,232,213,.09);--wff:rgba(240,232,213,.045);--mono:'DM Mono',monospace;--serif:'Playfair Display',serif;--sans:'Instrument Sans',sans-serif;--max:1120px;--r:2px}
+body{background:var(--navy);color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:20;height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--wf);background:rgba(7,11,22,.94);backdrop-filter:blur(24px)}
+.logo{font-family:var(--serif);font-size:22px}.logo b{color:var(--amberl)}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--wd)}
+.hero{padding:88px 0 56px;border-bottom:1px solid var(--wf)}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amberl);margin-bottom:16px}
+h1{font-family:var(--serif);font-size:clamp(38px,5vw,58px);line-height:1.05;margin-bottom:16px}
+.sub{max-width:760px;font-size:16px;color:var(--wd)}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;padding:44px 0}
+.card{background:var(--navy2);border:1px solid var(--wf);border-radius:var(--r);padding:24px}
+.card h2{font-family:var(--serif);font-size:28px;margin-bottom:14px}
+.list{display:grid;gap:12px}
+.item{padding:14px 16px;background:var(--wff);border:1px solid var(--wf);border-radius:var(--r)}
+.item strong{display:block;margin-bottom:4px}
+.item p{color:var(--wd);font-size:13px}
+.pill{display:inline-block;margin-top:14px;padding:6px 10px;border:1px solid var(--amberb);background:var(--amberd);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--amberl)}
+footer{border-top:1px solid var(--wf);padding:22px 0 40px;color:rgba(240,232,213,.35);font-size:11px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <a class="logo" href="/">Invest<b>Radar</b></a>
+    <div class="nav-links">
+      <a href="/analyzy/">Analýzy</a>
+      <a href="/earnings/">Earnings</a>
+      <a href="/vzdelavanie/">Vzdelávanie</a>
+      <a href="/kontakt/">Kontakt</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">InvestRadar · Portfolio</div>
+      <h1>Portfólio nie je feed nápadov.<br>Je to disciplína.</h1>
+      <p class="sub">Táto stránka sumarizuje, ako InvestRadar premýšľa o rozložení kapitálu, watchliste, riziku a časovom horizonte. Nejde o verejné investičné odporúčanie ani live účet, ale o rámec rozhodovania, ktorý používame pri analýzach a trade alertoch.</p>
+    </div>
+  </section>
+  <section>
+    <div class="container grid">
+      <div class="card">
+        <h2>Rámec portfólia</h2>
+        <div class="list">
+          <div class="item"><strong>Core pozície</strong><p>Vysokokvalitné firmy, ktoré chceme držať dlhšie než jeden kvartál a kde je téza postavená na cash flow, vedení a odolnosti biznisu.</p></div>
+          <div class="item"><strong>Taktické setupy</strong><p>Trade alerty s jasným vstupom, stop-lossom, cieľom a časovým horizontom. Sú oddelené od dlhodobého jadra portfólia.</p></div>
+          <div class="item"><strong>Watchlist</strong><p>Zoznam mien, ktoré sledujeme bez potreby okamžite konať. Watchlist je nástroj disciplíny, nie zoznam FOMO kandidátov.</p></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Riziko</h2>
+        <div class="list">
+          <div class="item"><strong>Koncentrácia</strong><p>Nepreťažujeme jednu tému len preto, že práve funguje. AI, energia alebo defense majú svoje limity.</p></div>
+          <div class="item"><strong>Likvidita</strong><p>Small/mid-cap mená majú vyššiu asymetriu, ale aj ostrejšie drawdowny a nižšiu toleranciu k chybe.</p></div>
+          <div class="item"><strong>Makro režim</strong><p>Výnosy, ropa, dolár a earnings guidance často rozhodnú viac než samotný headline na sociálnych sieťach.</p></div>
+        </div>
+        <span class="pill">Obsah je informačný a vzdelávací</span>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">© 2026 InvestRadar · Martin Zábranský</div>
+</footer>
+</body>
+</html>

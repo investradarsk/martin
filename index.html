@@ -8,6 +8,7 @@
 <meta name="keywords" content="investovanie, akcie, analýzy, trade alerty, slovenské investovanie, investičné vzdelávanie">
 <meta name="theme-color" content="#070b16">
 <link id="canonical" rel="canonical" href="https://investradar.sk/">
+<link rel="preload" href="/assets/analyzy/trh-tyzden-hero.svg" as="image" type="image/svg+xml">
 <meta id="og-title" property="og:title" content="InvestRadar — Vidíte trh. My vidíme príležitosť.">
 <meta property="og:type" content="website">
 <meta id="og-desc" property="og:description" content="Denné investičné novinky, akciové analýzy, geopolitické komentáre a trade alerty pre slovenských investorov.">
@@ -130,6 +131,10 @@ nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .update-bar-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 1.8s ease-in-out infinite}
 .update-bar span{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--wd)}
 .update-bar .live{color:var(--green)}
+.trust-bar{margin-top:30px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--wf);border:1px solid var(--wf);border-radius:var(--r);overflow:hidden}
+.trust-item{padding:16px 18px;background:rgba(13,21,37,.88)}
+.trust-value{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.1;margin-bottom:4px}
+.trust-copy{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,232,213,.45)}
 
 /* HERO CARD */
 .hcard{background:var(--navy2);border:1px solid var(--wf);padding:22px;position:relative;border-radius:var(--r)}
@@ -325,6 +330,21 @@ nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .nl-input:focus{border-color:var(--amberb)}
 .nl-input::placeholder{color:rgba(240,232,213,.3)}
 .nl-note{font-size:11px;color:rgba(240,232,213,.3)}
+.founder-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:stretch}
+.founder-card,.founder-proof{background:var(--navy2);border:1px solid var(--wf);border-radius:var(--r)}
+.founder-card{padding:28px;display:grid;grid-template-columns:88px 1fr;gap:20px;align-items:start}
+.founder-avatar{width:88px;height:88px;border-radius:22px;background:linear-gradient(135deg,var(--amberd),rgba(21,160,106,.12));border:1px solid var(--amberb);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:30px;font-weight:700;color:var(--amberl);box-shadow:var(--shadow)}
+.founder-role{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--amberl);margin-bottom:8px}
+.founder-name{font-family:var(--serif);font-size:30px;line-height:1.05;margin-bottom:8px}
+.founder-bio{font-size:14px;color:var(--wd);line-height:1.8;margin-bottom:18px}
+.founder-points{display:flex;gap:8px;flex-wrap:wrap}
+.founder-pill{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--wf);background:var(--wff);color:rgba(240,232,213,.55)}
+.founder-proof{padding:24px}
+.founder-proof-grid{display:grid;gap:12px;margin-top:16px}
+.proof-item{padding:14px 16px;background:var(--wff);border:1px solid var(--wf);border-radius:var(--r)}
+.proof-kicker{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,232,213,.38);margin-bottom:4px}
+.proof-value{font-family:var(--serif);font-size:22px;line-height:1.15;margin-bottom:4px}
+.proof-copy{font-size:12.5px;color:var(--wd);line-height:1.6}
 
 /* WHY */
 #why{padding:68px 0;background:var(--navy2);border-top:1px solid var(--wf)}
@@ -382,6 +402,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 @media(max-width:1020px){
   .hero-grid{grid-template-columns:1fr;gap:32px}
   .hcard{max-width:480px}
+  .trust-bar{grid-template-columns:repeat(2,minmax(0,1fr))}
   .today-layout{grid-template-columns:1fr}
   .index-panel{display:none}
   .novinky-layout{grid-template-columns:1fr}
@@ -394,6 +415,8 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .earn-grid{grid-template-columns:1fr}
   .book-grid{grid-template-columns:1fr;gap:36px}
   .nl-inner{grid-template-columns:1fr}
+  .founder-grid{grid-template-columns:1fr}
+  .founder-card{grid-template-columns:1fr}
   .why-grid{grid-template-columns:repeat(3,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
 }
@@ -449,6 +472,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .art-grid .span2{grid-column:span 1}
   .strip-grid{grid-template-columns:1fr 1fr}
   .sectors-grid{grid-template-columns:1fr}
+  .trust-bar{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
   section,#today,#articles,#sectors,#book,#newsletter,#why{padding:44px 0}
@@ -698,7 +722,7 @@ function loadPrices(){
       if(p){
         html += '<div class="t-item">'
               + '<span class="t-sym">' + item.l + '</span>'
-              + '<span class="t-px">' + fmt(p, item.d) + '</span>'
+              + '<span class="t-px">' + fmt(p.price, item.d) + '</span>'
               + '<span style="font-size:8px;color:rgba(240,232,213,.3)">záver</span>'
               + '</div>';
       } else {
@@ -717,8 +741,32 @@ function loadPrices(){
       if(!p) return;
       var ve = document.getElementById(m.v);
       var ce = document.getElementById(m.c);
-      if(ve) ve.textContent = fmt(p, m.d);
+      if(ve) ve.textContent = fmt(p.price, m.d);
       if(ce){ ce.textContent = 'záver'; ce.style.color = 'rgba(240,232,213,.35)'; ce.style.fontSize='10px'; }
+    });
+  }
+
+  function pctClass(value){
+    if(value > 0.05) return 'up';
+    if(value < -0.05) return 'dn';
+    return 'flat';
+  }
+
+  function pctText(value){
+    var abs = Math.abs(value || 0).toFixed(1);
+    if(value > 0.05) return '+' + abs + '%';
+    if(value < -0.05) return '−' + abs + '%';
+    return '0.0%';
+  }
+
+  function updateLiveCards(){
+    document.querySelectorAll('[data-live-symbol]').forEach(function(node){
+      var symbol = node.getAttribute('data-live-symbol');
+      var p = loaded[symbol];
+      if(!p) return;
+      node.classList.remove('up','dn','flat');
+      node.classList.add(pctClass(p.dp || 0));
+      node.textContent = symbol + ' ' + pctText(p.dp || 0);
     });
   }
 
@@ -730,15 +778,22 @@ function loadPrices(){
         // pc = záver posledného dňa, c = aktuálna (alebo posledný záver ak burza zatvorená)
         var price = (d.c && d.c > 0) ? d.c : (d.pc && d.pc > 0 ? d.pc : 0);
         if(price > 0){
-          loaded[sym] = price;
+          loaded[sym] = { price: price, dp: d.dp || 0 };
           updateTicker();
           updateStats();
+          updateLiveCards();
           var dot = document.querySelector('.t-dot');
           if(dot) dot.style.background = 'var(--green)';
+          var note = document.getElementById('live-status-note');
+          if(note) note.textContent = 'Live ticker · Finnhub dáta';
         }
         cb();
       })
-      .catch(function(){ cb(); });
+      .catch(function(){
+        var note = document.getElementById('live-status-note');
+        if(note && !Object.keys(loaded).length) note.textContent = 'Live ticker · čakáme na dáta';
+        cb();
+      });
   }
 
   // Fetch one by one with 400ms gap to avoid rate limit
@@ -751,6 +806,13 @@ function loadPrices(){
     });
   }
   next();
+  setTimeout(function(){
+    if(Object.keys(loaded).length) return;
+    var dot = document.querySelector('.t-dot');
+    if(dot) dot.style.background = 'var(--amberl)';
+    var note = document.getElementById('live-status-note');
+    if(note) note.textContent = 'Live ticker · fallback režim';
+  }, 5000);
 }
 
 document.addEventListener('DOMContentLoaded', loadPrices);
@@ -768,6 +830,22 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     "name": "Martin Zábranský",
     "email": "investradarsk@gmail.com"
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "InvestRadar",
+  "url": "https://investradar.sk/",
+  "logo": "https://investradar.sk/og-image.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Martin Zábranský"
+  },
+  "sameAs": [
+    "https://zabransky.gumroad.com/l/investradar"
+  ]
 }
 </script>
 <div class="ticker">
@@ -800,18 +878,18 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   <!-- HERO -->
   <section id="hero">
     <div class="container">
-      <div class="update-bar"><div class="update-bar-dot"></div><span id="today-str">Aktualizované dnes</span><span style="color:rgba(240,232,213,.2)">·</span><span class="live">Live · NYSE otvorené</span></div>
+      <div class="update-bar"><div class="update-bar-dot"></div><span id="today-str">Posledná redakčná aktualizácia</span><span style="color:rgba(240,232,213,.2)">·</span><span class="live" id="live-status-note">Live ticker · Finnhub dáta</span></div>
       <div class="hero-grid">
         <div>
           <div class="hero-eyebrow"><div class="hero-eyebrow-line"></div><span>Slovenská investičná platforma</span></div>
-          <h1>Vidíte trh.<br><em>My vidíme</em><br>príležitosť.</h1>
-          <p class="hero-sub">Denné investičné novinky, akciové analýzy, geopolitické komentáre a trade alerty pre investorov, ktorí chcú rozumieť trhu do hĺbky.</p>
+          <h1>Investuj ako inštitúcie.<br><em>Mysli o krok</em><br>vpredu.</h1>
+          <p class="hero-sub">Denné analýzy akcií, earnings a investičné príležitosti pre investorov, ktorí chcú rozumieť trhu skôr než mainstream. Jasný podpis autora, slovenský kontext a dôraz na riziko aj disciplínu.</p>
           <div class="cta-row">
             <a href="#" onclick="goTo('analyzy');return false;" class="btn-fill">Čítať analýzy</a>
-            <a href="#" onclick="goTo('novinky');return false;" class="btn-ghost">Dnešné novinky</a>
+            <a href="#" onclick="goTo('newsletter');return false;" class="btn-ghost">Newsletter</a>
             <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-ghost">📖 Kúpiť knihu</a>
           </div>
-          <p class="hero-note">Aktualizované denne &nbsp;·&nbsp; Slovensky &nbsp;·&nbsp; Jasne &nbsp;·&nbsp; <span class="live">Bez zbytočného šumu</span></p>
+          <p class="hero-note">Pre začiatočníkov aj pokročilých &nbsp;·&nbsp; Slovensky &nbsp;·&nbsp; Nezávisle &nbsp;·&nbsp; <span class="live">Bez zbytočného šumu</span></p>
         </div>
         <div class="hcard" onclick="goToArticle('microsoft')" style="cursor:pointer">
           <div class="hc-top"><div class="hc-alert-tag">⬤ Nový Trade Alert</div><div class="hc-dt" id="hero-dt">Apr 24, 2026</div></div>
@@ -834,6 +912,12 @@ document.addEventListener('DOMContentLoaded', loadPrices);
             <div class="hc-target"><div class="hc-tl">Téza</div><div class="hc-tv">AI cloud</div></div>
           </div>
         </div>
+      </div>
+      <div class="trust-bar" aria-label="Dôveryhodnostné signály InvestRadar">
+        <div class="trust-item"><div class="trust-value">1000+</div><div class="trust-copy">Followerov a čitateľov</div></div>
+        <div class="trust-item"><div class="trust-value">Denne</div><div class="trust-copy">Novinky a aktualizácie</div></div>
+        <div class="trust-item"><div class="trust-value">SK</div><div class="trust-copy">Slovenský investičný projekt</div></div>
+        <div class="trust-item"><div class="trust-value">100%</div><div class="trust-copy">Nezávislé analýzy</div></div>
       </div>
     </div>
   </section>
@@ -863,7 +947,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   <section style="padding:56px 0;background:var(--navy2);border-top:1px solid var(--wf);border-bottom:1px solid var(--wf)">
     <div class="container">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px">
-        <div><div class="sec-label">Posledné potvrdené update-y</div><h2 class="sec-title">Čo práve rieši trh</h2></div>
+        <div><div class="sec-label">Posledné potvrdené update-y</div><h2 class="sec-title">Čo práve rieši trh</h2><div class="sec-sub" style="margin-top:10px;max-width:none">Posledná redakčná aktualizácia feedu: <strong style="color:var(--cream)">24. apríl 2026</strong>. Live ticker vyššie zostáva priamo napojený na Finnhub.</div></div>
         <button class="btn-ghost btn-sm" onclick="goTo('novinky')">Všetky novinky →</button>
       </div>
       <div class="daily-news-grid news-grid timeline" style="display:grid;grid-template-columns:1fr 1fr;gap:0">
@@ -883,21 +967,21 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   <section style="padding:60px 0">
     <div class="container">
       <div class="latest-layout">
-        <div id="home-featured-article" class="home-featured-card" onclick="goToArticle('preco_investovat')">
+        <div id="home-featured-article" class="home-featured-card" onclick="goToArticle('weekly_outlook')">
           <div>
             <div class="home-featured-eyebrow">
-              <span style="font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--amberl)">1. Základy investovania · Začni tu</span>
-              <span class="badge b-buy">Nový článok</span>
+              <span style="font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--amberl)">Analýzy · Featured</span>
+              <span class="badge b-buy">Najnovší článok</span>
             </div>
-            <div class="home-featured-title">Prečo investovať, aj keď nezačínaš s veľkou sumou</div>
-            <div class="home-featured-perex">Prečo hotovosť dlhodobo nestačí, čo spraví s peniazmi čas a ako si nastaviť jednoduchý prvý plán bez zbytočného stresu.</div>
+            <div class="home-featured-title">Čo očakávať na trhu zajtra a celý týždeň?</div>
+            <div class="home-featured-perex">Kľúčový týždeň pre akcie, ropu a Big Tech: čo sledovať od pondelka do piatka, kde je leadership a kde sa môže objaviť prvá slabosť.</div>
             <div class="home-featured-meta">
-              <span class="badge b-watch">Začiatočník</span>
-              <span style="font-family:var(--mono);font-size:9px;color:var(--wd);padding:3px 0">📖 9 min čítania</span>
-              <span style="font-family:var(--mono);font-size:9px;color:var(--amberl);padding:3px 0">21. apríl 2026</span>
+              <span class="badge b-watch">Trh · Makro</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--wd);padding:3px 0">📖 7 min čítania</span>
+              <span style="font-family:var(--mono);font-size:9px;color:var(--amberl);padding:3px 0">26. apríl 2026</span>
             </div>
           </div>
-          <button class="btn-fill home-featured-cta" type="button" onclick="event.stopPropagation(); goToArticle('preco_investovat')">Čítať článok →</button>
+          <button class="btn-fill home-featured-cta" type="button" onclick="event.stopPropagation(); goToArticle('weekly_outlook')">Čítať článok →</button>
         </div>
 
         <div class="latest-side">
@@ -978,6 +1062,62 @@ document.addEventListener('DOMContentLoaded', loadPrices);
           <div class="bc-sep"></div>
           <div class="bc-price">€6,90</div>
           <div class="bc-note">PDF · 63 strán · Okamžité stiahnutie</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="newsletter" style="padding:68px 0;border-top:1px solid var(--wf);border-bottom:1px solid var(--wf)">
+    <div class="container">
+      <div class="nl-box">
+        <div class="nl-inner">
+          <div>
+            <div class="sec-label">InvestRadar · Newsletter</div>
+            <div class="nl-h">Získaj top investičné nápady a nové analýzy zdarma.</div>
+            <p class="nl-text">Najnovšie analýzy, výber earnings, komentár k trhu a najzaujímavejšie investičné témy priamo do emailu. Bez spamu. Len to dôležité.</p>
+          </div>
+          <div>
+            <div data-fs-success style="display:none;font-family:var(--mono);font-size:12px;color:var(--green);padding:12px 0">✓ Prihlásenie úspešné! Čoskoro sa ozveme.</div>
+            <form id="nl-form-1" class="nl-form">
+              <div class="nl-row">
+                <input type="email" name="email" class="nl-input" placeholder="Tvoj email" autocomplete="email" data-fs-field required>
+                <button type="submit" class="btn-fill" data-fs-submit-btn>Prihlásiť sa</button>
+              </div>
+              <div class="nl-note">Zadarmo. Praktické. Slovensky.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="founder" style="padding:68px 0;border-top:1px solid var(--wf)">
+    <div class="container">
+      <div class="founder-grid">
+        <div class="founder-card">
+          <div class="founder-avatar" aria-hidden="true">MZ</div>
+          <div>
+            <div class="founder-role">Zakladateľ InvestRadar</div>
+            <div class="founder-name">Martin Zábranský</div>
+            <p class="founder-bio">12+ rokov sledujem trhy, akcie a makro. Denne hľadám príležitosti skôr než mainstream a prekladám ich do zrozumiteľných analýz pre slovenských investorov.</p>
+            <div class="founder-points">
+              <span class="founder-pill">US akcie</span>
+              <span class="founder-pill">Makro kontext</span>
+              <span class="founder-pill">Behaviorálne financie</span>
+              <span class="founder-pill">Nezávislý pohľad</span>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+              <a href="/o-nas/" class="btn-ghost btn-sm">Viac o projekte</a>
+              <a href="/kontakt/" class="btn-fill btn-sm">Napísať Martinovi</a>
+            </div>
+          </div>
+        </div>
+        <div class="founder-proof">
+          <div class="sec-label">Prečo InvestRadar</div>
+          <div class="sec-title" style="font-size:28px">Dôvera sa buduje konzistentnosťou</div>
+          <div class="founder-proof-grid">
+            <div class="proof-item"><div class="proof-kicker">Formát</div><div class="proof-value">Denný rytmus</div><div class="proof-copy">Novinky, analýzy, trade alerty a earnings na jednom mieste bez chaotického feedu.</div></div>
+            <div class="proof-item"><div class="proof-kicker">Prístup</div><div class="proof-value">Jasný autor</div><div class="proof-copy">Obsah nie je anonymný agregátor. Je podpísaný, vysvetlený a neskrýva riziká.</div></div>
+            <div class="proof-item"><div class="proof-kicker">Cieľ</div><div class="proof-value">Rozhodovať lepšie</div><div class="proof-copy">Nie len vedieť, čo sa stalo, ale pochopiť, čo to znamená pre kapitál a ďalší týždeň.</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -1227,10 +1367,10 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <p class="ph-sub">Sledujeme 6 kľúčových sektorov a ich investičné príbehy v kontexte makra, geopolitiky a earnings cyklu.</p>
     </div>
     <div class="sectors-grid">
-      <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">🛡️</span><div class="sc-num">01</div><div class="sc-sname">Obrana a drony</div><div class="sc-sdesc">Defence trade sa po prudkom raste ochladil. KTOS aj legacy primes mali ostrý red day, takže sektor je skôr o riadení ziskov než o bezhlavom chase.</div><div class="sc-tickers"><span class="sc-ticker dn">KTOS −12.1%</span><span class="sc-ticker dn">AVAV −0.2%</span><span class="sc-ticker dn">LMT −12.9%</span><span class="sc-ticker dn">NOC −12.9%</span></div></div>
-      <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">⚙️</span><div class="sc-num">02</div><div class="sc-sname">Polovodiče</div><div class="sc-sdesc">AI infraštruktúra stále ťahá sentiment. ACMR spravilo nový breakout nad pôvodný target, AMD výrazne outperformuje a watchlist sa rozširuje aj na UCTT.</div><div class="sc-tickers"><span class="sc-ticker up">ACMR +12.8%</span><span class="sc-ticker up">NVDA +0.5%</span><span class="sc-ticker up">AMD +9.3%</span><span class="sc-ticker up">UCTT +2.0%</span></div></div>
-      <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">🔐</span><div class="sc-num">03</div><div class="sc-sname">Kyberbezpečnosť</div><div class="sc-sdesc">Kyber mená ostávajú bidované, ale výkon sa rozchádza. PANW a CRWD dnes v zelenom, PLTR si po silnom behu berie pauzu.</div><div class="sc-tickers"><span class="sc-ticker up">PANW +3.6%</span><span class="sc-ticker up">CRWD +6.4%</span><span class="sc-ticker dn">PLTR −1.2%</span></div></div>
-      <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">⚡</span><div class="sc-num">04</div><div class="sc-sname">Energia</div><div class="sc-sdesc">Energia zostáva volatilná. USO dnes prudko rastie, ale majors sú zmiešané a Buffettov OXY drží sektor lepšie než XOM či CVX.</div><div class="sc-tickers"><span class="sc-ticker dn">XOM −1.1%</span><span class="sc-ticker up">OXY +1.8%</span><span class="sc-ticker dn">CVX −0.5%</span></div></div>
+      <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">🛡️</span><div class="sc-num">01</div><div class="sc-sname">Obrana a drony</div><div class="sc-sdesc">Defense mená ostávajú headline-driven. Rovnaké tickery nižšie berú live percentuálnu zmenu z rovnakého Finnhub feedu ako horný ticker.</div><div class="sc-tickers"><span class="sc-ticker flat" data-live-symbol="KTOS">KTOS 0.0%</span><span class="sc-ticker flat" data-live-symbol="AVAV">AVAV 0.0%</span><span class="sc-ticker flat" data-live-symbol="LMT">LMT 0.0%</span><span class="sc-ticker">NOC watch</span></div></div>
+      <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">⚙️</span><div class="sc-num">02</div><div class="sc-sname">Polovodiče</div><div class="sc-sdesc">AI infraštruktúra ostáva kľúčovou témou. Live feed synchronizujeme pre tie isté mená, ktoré sa zobrazujú aj v hornom tickeri.</div><div class="sc-tickers"><span class="sc-ticker flat" data-live-symbol="ACMR">ACMR 0.0%</span><span class="sc-ticker flat" data-live-symbol="NVDA">NVDA 0.0%</span><span class="sc-ticker">AMD watch</span><span class="sc-ticker">UCTT watch</span></div></div>
+      <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">🔐</span><div class="sc-num">03</div><div class="sc-sname">Kyberbezpečnosť</div><div class="sc-sdesc">Kyber je stále silný, ale selektívny. PANW a CRWD nižšie berú live percentuálnu zmenu z Finnhub feedu homepage.</div><div class="sc-tickers"><span class="sc-ticker flat" data-live-symbol="PANW">PANW 0.0%</span><span class="sc-ticker flat" data-live-symbol="CRWD">CRWD 0.0%</span><span class="sc-ticker">PLTR watch</span></div></div>
+      <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">⚡</span><div class="sc-num">04</div><div class="sc-sname">Energia</div><div class="sc-sdesc">Energia zostáva volatilná. XOM nižšie používame z rovnakého live feedu ako horný ticker, ostatné mená držíme ako tematický watchlist.</div><div class="sc-tickers"><span class="sc-ticker flat" data-live-symbol="XOM">XOM 0.0%</span><span class="sc-ticker">OXY watch</span><span class="sc-ticker">CVX watch</span></div></div>
       <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">🏥</span><div class="sc-num">05</div><div class="sc-sname">Zdravotníctvo</div><div class="sc-sdesc">Defenzíva dnes nevedie. Pharma je skôr rozdelená medzi slabší value healthcare a stále silné GLP-1 mená.</div><div class="sc-tickers"><span class="sc-ticker dn">JNJ −1.7%</span><span class="sc-ticker dn">ABBV −3.7%</span><span class="sc-ticker up">LLY +1.5%</span></div></div>
       <div class="sector-card" onclick="goTo('analyzy')"><span class="sc-icon">🚀</span><div class="sc-num">06</div><div class="sc-sname">Space tech</div><div class="sc-sdesc">Space ostáva vysokorizikové. RKLB drží trend, ASTS má po predchádzajúcom raste veľmi ostrú korekciu.</div><div class="sc-tickers"><span class="sc-ticker up">RKLB +1.6%</span><span class="sc-ticker dn">ASTS −13.3%</span></div></div>
     </div>
@@ -1805,7 +1945,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   <div class="container" style="max-width:640px;padding-top:80px;padding-bottom:80px">
     <div class="ph-label">InvestRadar · Odber</div>
     <h1 class="ph-title" style="margin-bottom:16px">Zostaň v obraze</h1>
-    <p style="font-size:15px;color:var(--wd);line-height:1.78;margin-bottom:32px">Získaj najnovšie články, komentáre k trhu a výber najzaujímavejších investičných tém priamo do emailu. Každý týždeň. Zadarmo. Bez spamu.</p>
+    <p style="font-size:15px;color:var(--wd);line-height:1.78;margin-bottom:32px">Získaj top investičné nápady, nové analýzy a najdôležitejší výber tém priamo do emailu. Každý týždeň. Zadarmo. Bez spamu.</p>
     <div class="nl-box" style="padding:32px">
       <div data-fs-success style="display:none;font-family:var(--mono);font-size:12px;color:var(--green);padding:12px 0">✓ Prihlásenie úspešné! Čoskoro sa ozveme.</div>
       <form id="nl-form-2" style="display:flex;flex-direction:column;gap:8px">
@@ -2119,9 +2259,8 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 <script>
 // Date
 (function(){
-  var d=new Date(),m=['január','február','marec','apríl','máj','jún','júl','august','september','október','november','december'],ms=['Jan','Feb','Mar','Apr','Máj','Jún','Júl','Aug','Sep','Okt','Nov','Dec'];
-  var s=document.getElementById('today-str'); if(s)s.textContent='Aktualizované '+d.getDate()+'. '+m[d.getMonth()]+' '+d.getFullYear();
-  var hd=document.getElementById('hero-dt'); if(hd)hd.textContent=ms[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();
+  var s=document.getElementById('today-str'); if(s)s.textContent='Posledná redakčná aktualizácia · 26. apríl 2026';
+  var hd=document.getElementById('hero-dt'); if(hd)hd.textContent='24. apr 2026';
 })();
 
 // SPA Router
@@ -2768,13 +2907,13 @@ window.addEventListener('popstate',function(e){
 // action: goTo('page') alebo openModal('key') alebo openLesson('key')
 var LATEST = [
   {
-    date: '24. apr 2026',
+    date: '26. apr 2026',
     type: 'analyza',
-    typeLabel: 'Analýza · Nová',
-    title: 'AI infraštruktúra 2.0: čo rastie po čipoch?',
-    perex: 'Dátové centrá, energia, chladenie, grid a HBM pamäte v jednej mape toho, kde sa môže prelomiť ďalšia AI investičná vlna.',
-    action: "goToArticle('ai_infra')",
-    badge: 'Nové'
+    typeLabel: 'Analýzy · Featured',
+    title: 'Čo očakávať na trhu zajtra a celý týždeň?',
+    perex: 'Kľúčový týždeň pre akcie, ropu a Big Tech: pondelok až piatok, leadership sektorov, riziká a signály pre ďalší smer trhu.',
+    action: "goToArticle('weekly_outlook')",
+    badge: 'Featured'
   },
   {
     date: '21. apr 2026',
@@ -3169,13 +3308,13 @@ ARTICLES_META['strategia_investovania'] = {
 
 if (Array.isArray(LATEST) && LATEST[0]) {
   LATEST[0] = {
-    date: WHY_INVEST_ARTICLE.dateShort,
-    type: 'vzdelavanie',
-    typeLabel: '1. Základy investovania',
-    title: WHY_INVEST_ARTICLE.title,
-    perex: WHY_INVEST_ARTICLE.summary,
-    action: "goToArticle('preco_investovat')",
-    badge: 'Nový'
+    date: '26. apr 2026',
+    type: 'analyza',
+    typeLabel: 'Analýzy · Featured',
+    title: 'Čo očakávať na trhu zajtra a celý týždeň?',
+    perex: 'Kľúčový týždeň pre akcie, ropu a Big Tech: pondelok až piatok, leadership sektorov, riziká a signály pre ďalší smer trhu.',
+    action: "goToArticle('weekly_outlook')",
+    badge: 'Featured'
   };
 }
 
@@ -3199,12 +3338,13 @@ document.addEventListener('DOMContentLoaded', function(){
     var homeTitle = homeFeatured.querySelector('.home-featured-title');
     var homePerex = homeFeatured.querySelector('.home-featured-perex');
     var homeMeta = homeFeatured.querySelector('.home-featured-meta');
-    if (homeTitle) homeTitle.textContent = WHY_INVEST_ARTICLE.title;
-    if (homePerex) homePerex.textContent = WHY_INVEST_ARTICLE.heroSummary;
+    if (homeTitle) homeTitle.textContent = 'Čo očakávať na trhu zajtra a celý týždeň?';
+    if (homePerex) homePerex.textContent = 'Kľúčový týždeň pre akcie, ropu a Big Tech: čo sledovať od pondelka do piatka, kde je leadership a kde sa môže objaviť prvá slabosť.';
     if (homeMeta) {
       var homeSpans = homeMeta.querySelectorAll('span');
-      if (homeSpans[1]) homeSpans[1].textContent = '📖 ' + WHY_INVEST_ARTICLE.readTime + ' čítania';
-      if (homeSpans[2]) homeSpans[2].textContent = WHY_INVEST_ARTICLE.dateLong;
+      if (homeSpans[0]) homeSpans[0].textContent = 'Trh · Makro';
+      if (homeSpans[1]) homeSpans[1].textContent = '📖 7 min čítania';
+      if (homeSpans[2]) homeSpans[2].textContent = '26. apríl 2026';
     }
   }
 

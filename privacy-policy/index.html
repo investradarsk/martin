@@ -99,7 +99,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0} 
   </div>
 </footer>
 <script>
-var FKEY='d7hpda1r01qirk40gv1g';
+var FKEY='d7hpda1r01qirk40gv00d7hpda1r01qirk40gv0g';
 var SYMS=[{s:'SPY',l:'S&P 500'},{s:'QQQ',l:'NASDAQ'},{s:'DIA',l:'DOW'},{s:'NVDA',l:'NVDA'},{s:'ACMR',l:'ACMR'},{s:'KTOS',l:'KTOS'},{s:'LMT',l:'LMT'},{s:'AVAV',l:'AVAV'},{s:'PANW',l:'PANW'}];
 var track=document.querySelector('.t-track');
 function updateTicker(data){if(!track)return;track.innerHTML='';data.forEach(function(item){if(!item||item.c===undefined)return;var pct=item.dp!==undefined?item.dp.toFixed(2):'0.00';var cls=parseFloat(pct)>=0?'up':'dn';var sign=parseFloat(pct)>=0?'+':'';var div=document.createElement('div');div.className='t-item';div.innerHTML='<span class="t-sym">'+item.sym+'</span><span class="t-px '+cls+'">'+item.c.toFixed(2)+' <span style="opacity:.65">'+sign+pct+'%</span></span>';track.appendChild(div);});track.innerHTML+=track.innerHTML;}

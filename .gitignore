@@ -9,6 +9,9 @@
 !og-image.png
 !CNAME
 !.nojekyll
+!robots.txt
+!sitemap.xml
+!ads.txt
 
 # Allow future web assets if you decide to add structured folders.
 !assets/
@@ -37,6 +40,16 @@
 !novinky/**
 !sektory/
 !sektory/**
+!portfolio/
+!portfolio/**
+!category/
+!category/**
+!tag/
+!tag/**
+!author/
+!author/**
+!2025/
+!2025/**
 !.github/
 !.github/**
 
