@@ -782,7 +782,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   <ul>
     <li><a href="/novinky/" class="nav-link" data-page="novinky">Novinky</a></li>
     <li><a href="/analyzy/" class="nav-link" data-page="analyzy">Analýzy</a></li>
-    <li><a href="/#alerty" class="nav-link" data-page="alerty">Trade Alerty</a></li>
+    <li><a href="/alerty/" class="nav-link" data-page="alerty">Trade Alerty</a></li>
     <li><a href="/sektory/" class="nav-link" data-page="sektory">Sektory</a></li>
     <li><a href="/#earnings" class="nav-link" data-page="earnings">Earnings</a></li>
     <li><a href="/vzdelavanie/" class="nav-link" data-page="vzdelavanie">Vzdelávanie</a></li>
@@ -1579,7 +1579,7 @@ function goTo(id){
     return;
   }
   if(id==='alerty'){
-    window.location.href = BASE_URL + '#alerty';
+    window.location.href = BASE_URL + 'alerty/';
     return;
   }
   var pg=setActivePage('page-'+id);
@@ -1641,16 +1641,8 @@ function initCookieConsent(){
 window.addEventListener('DOMContentLoaded',function(){
   initCookieConsent();
   var h=(location.hash||'').replace('#','');
-  if(!h){
-    window.location.replace(BASE_URL + '#alerty');
-    return;
-  }
   if(h === 'novinky'){
     window.location.replace(BASE_URL + 'novinky/');
-    return;
-  }
-  if(h === 'alerty'){
-    window.location.replace(BASE_URL + '#alerty');
     return;
   }
   if(h === 'cookies'){
@@ -2678,7 +2670,7 @@ function updateSEO(seoData, url) {
         <h4>Obsah</h4>
         <a href="#" onclick="goTo('novinky');return false;">Novinky</a>
         <a href="#" onclick="goTo('analyzy');return false;">Analýzy</a>
-        <a href="/#alerty">Trade alerty</a>
+        <a href="/alerty/">Trade alerty</a>
         <a href="/sektory/">Sektory</a>
         <a href="/#earnings">Earnings</a>
       </div>
