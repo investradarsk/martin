@@ -480,9 +480,9 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .ph-title{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:700;line-height:1.08;margin-bottom:8px}
 .ph-sub{font-size:14px;color:var(--wd);line-height:1.7}
 /* filter bar */
-.fbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
-.fbar button{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border:1px solid var(--wf);color:var(--wd);background:none;cursor:pointer;transition:all .18s;border-radius:var(--r)}
-.fbar button:hover,.fbar button.on{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
+.fbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;padding:10px;border:1px solid var(--wf);background:linear-gradient(180deg,rgba(13,21,37,.92),rgba(7,11,22,.92));border-radius:var(--r-lg)}
+.fbar button{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border:1px solid var(--wf);color:var(--wd);background:rgba(240,232,213,.03);cursor:pointer;transition:all .18s ease;border-radius:999px;white-space:nowrap}
+.fbar button:hover,.fbar button.on{border-color:var(--amberb);color:var(--amberl);background:linear-gradient(180deg,rgba(200,137,26,.16),rgba(200,137,26,.08));box-shadow:inset 0 0 0 1px rgba(223,160,48,.08);transform:translateY(-1px)}
 /* novinky live feed */
 .novinky-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:40px;align-items:start}
 .novinky-main,.novinky-side{min-width:0}
