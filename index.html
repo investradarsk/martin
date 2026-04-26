@@ -1987,7 +1987,9 @@ function goTo(id){
   var pageUrl = id === 'home' ? BASE_URL : BASE_URL + '#' + id;
   updateSEO(seo, pageUrl);
   // URL hash — ignoruj chybu ak pushState nie je podporovaný
-  try{history.pushState({page:id},'','#'+id);}catch(e){}
+  try{
+    history.pushState({page:id},'',id==='home' ? BASE_URL : '#'+id);
+  }catch(e){}
 }
 
 function showCookieBanner(){
@@ -2027,7 +2029,20 @@ function initCookieConsent(){
 
 window.addEventListener('DOMContentLoaded',function(){
   initCookieConsent();
+  try{
+    if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  }catch(e){}
   var h=(location.hash||'').replace('#','');
+  var forceHome = false;
+  try{
+    forceHome = new URLSearchParams(location.search).get('view') === 'home';
+  }catch(e){}
+  if(forceHome){
+    goTo('home');
+    try{history.replaceState({page:'home'},'',BASE_URL);}catch(e){}
+    setTimeout(function(){ window.scrollTo(0,0); }, 0);
+    return;
+  }
   if(h === 'novinky'){
     window.location.replace(BASE_URL + 'novinky/');
     return;
