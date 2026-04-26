@@ -1076,6 +1076,13 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <button onclick="filterAz(this,'bio')">Biotech</button>
     </div>
     <div class="art-grid" id="az-grid">
+      <div class="art-card" data-az="makro" onclick="goToArticle('weekly_outlook')" tabindex="0" role="button">
+        <div class="art-meta"><span class="art-cat">Trh · Týždenný výhľad</span><span class="art-dt">Apr 26, 2026</span><span class="badge b-hot">NOVÉ</span></div>
+        <div class="art-title">Čo očakávať na trhu zajtra a celý týždeň? Kľúčový týždeň pre akcie, ropu a Big Tech</div>
+        <div class="art-perex">Kompletný plán pondelok až piatok: futures, ropa, US10Y výnos, earnings Big Tech, VIX a sektorová rotácia naprieč trhom.</div>
+        <div class="art-tags"><span class="art-tag">S&P 500</span><span class="art-tag">Nasdaq</span><span class="art-tag">Ropa</span><span class="art-tag">Big Tech</span></div>
+        <div class="art-footer"><div class="art-more">Čítať viac <span>→</span></div><div class="art-author">Apr 26 · 7 min</div></div>
+      </div>
       <div class="art-card" data-az="ai" onclick="goToArticle('ai_infra')" tabindex="0" role="button">
         <div class="art-meta"><span class="art-cat">AI / Tech · Infra</span><span class="art-dt">Apr 24, 2026</span><span class="badge b-hot">NOVÉ</span></div>
         <div class="art-title">AI infraštruktúra 2.0: čo rastie po čipoch?</div>
@@ -2701,6 +2708,7 @@ var ARTICLES_META = {
   'co_je_etf':          { path:'vzdelavanie/co-je-etf', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'7 min', tags:['ETF','Začiatočník','Diverzifikácia','Index'] },
   'co_su_akcie':        { path:'vzdelavanie/co-su-akcie', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'8 min', tags:['Akcie','Začiatočník','Firma','Burza'] },
   'strategia_investovania': { path:'vzdelavanie/strategia-investovania', section:'vzdelavanie', sectionLabel:'Vzdelávanie', cat:'1. Základy investovania', date:'23. apríl 2026', readTime:'8 min', tags:['Stratégia','Rast','Hodnota','ETF'] },
+  'weekly_outlook': { path:'analyzy/co-ocakavat-na-trhu-zajtra-a-cely-tyzden', section:'analyzy', sectionLabel:'Analýzy', cat:'Trh · Týždenný výhľad', date:'26. apríl 2026', readTime:'7 min', tags:['S&P 500','Nasdaq','Ropa','Big Tech','VIX'] },
   'ai_infra':  { path:'analyzy/ai-infrastruktura-2-0', section:'analyzy', sectionLabel:'Analýzy', cat:'Tech · AI infra', date:'24. apríl 2026', readTime:'14 min', tags:['AI infra','Dátové centrá','Energia','VRT','ETN'] },
   'defense':  { path:'analyzy/obranne-akcie-war-beta', section:'analyzy', sectionLabel:'Analýzy', cat:'Geopolitika', date:'19. apríl 2026', readTime:'4 min', tags:['LMT','NOC','KTOS','AVAV','War Beta'] },
   'oil':      { path:'analyzy/ropa-energeticke-akcie', section:'analyzy', sectionLabel:'Analýzy', cat:'Makro · Energia', date:'19. apríl 2026', readTime:'5 min', tags:['XOM','CVX','OXY'] },
