@@ -1,0 +1,40 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1328"/>
+      <stop offset="1" stop-color="#101A34"/>
+    </linearGradient>
+    <linearGradient id="line" x1="220" y1="580" x2="1180" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2DE39A"/>
+      <stop offset="0.55" stop-color="#69C6FF"/>
+      <stop offset="1" stop-color="#F3B54A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="760" rx="20" fill="url(#bg)"/>
+  <g opacity="0.18" stroke="#B7C5E8">
+    <path d="M120 120H1280"/>
+    <path d="M120 220H1280"/>
+    <path d="M120 320H1280"/>
+    <path d="M120 420H1280"/>
+    <path d="M120 520H1280"/>
+    <path d="M120 620H1280"/>
+    <path d="M120 120V640"/>
+    <path d="M300 120V640"/>
+    <path d="M480 120V640"/>
+    <path d="M660 120V640"/>
+    <path d="M840 120V640"/>
+    <path d="M1020 120V640"/>
+    <path d="M1200 120V640"/>
+  </g>
+  <path d="M170 560L300 520L410 540L520 470L640 490L760 390L860 420L980 300L1090 320L1230 220" stroke="url(#line)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#F3B54A" opacity="0.9">
+    <circle cx="520" cy="470" r="8"/>
+    <circle cx="760" cy="390" r="8"/>
+    <circle cx="980" cy="300" r="8"/>
+    <circle cx="1230" cy="220" r="10"/>
+  </g>
+  <rect x="980" y="90" width="290" height="130" rx="12" fill="#111C35" stroke="#2A3A5F"/>
+  <text x="1005" y="130" fill="#EDE7D8" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">NASDAQ • OIL • AI</text>
+  <text x="1005" y="164" fill="#8FA2C9" font-family="Inter, Arial, sans-serif" font-size="18">Kľúčový týždeň pre trhy</text>
+  <text x="1005" y="194" fill="#2DE39A" font-family="Inter, Arial, sans-serif" font-size="17">Sleduj leadership a rotáciu</text>
+</svg>
