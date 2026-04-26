@@ -782,7 +782,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   <ul>
     <li><a href="/novinky/" class="nav-link" data-page="novinky">Novinky</a></li>
     <li><a href="/analyzy/" class="nav-link" data-page="analyzy">Analýzy</a></li>
-    <li><a href="/alerty/" class="nav-link" data-page="alerty">Trade Alerty</a></li>
+    <li><a href="/#alerty" class="nav-link" data-page="alerty">Trade Alerty</a></li>
     <li><a href="/sektory/" class="nav-link" data-page="sektory">Sektory</a></li>
     <li><a href="/#earnings" class="nav-link" data-page="earnings">Earnings</a></li>
     <li><a href="/vzdelavanie/" class="nav-link" data-page="vzdelavanie">Vzdelávanie</a></li>
@@ -1536,44 +1536,6 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 </div>
 
 </main>
-</main>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand">Invest<b>Radar</b></div>
-        <p class="footer-desc">Slovenská nezávislá investičná platforma. Denné novinky, analýzy, trade alerty a portfóliové prehľady pre investorov, ktorí chcú rozumieť trhu do hĺbky.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Obsah</h4>
-        <a href="#" onclick="goTo('novinky');return false;">Novinky</a>
-        <a href="#" onclick="goTo('analyzy');return false;">Analýzy</a>
-        <a href="#" onclick="goTo('alerty');return false;">Trade alerty</a>
-        <a href="/sektory/">Sektory</a>
-        <a href="/#earnings">Earnings</a>
-      </div>
-      <div class="footer-col">
-        <h4>Platforma</h4>
-        <a href="#" onclick="goTo('vzdelavanie');return false;">Vzdelávanie</a>
-        <a href="/o-nas/">O nás</a>
-        <a href="#" onclick="goTo('newsletter');return false;">Newsletter</a>
-        <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kúpiť knihu</a>
-        <a href="/kontakt/">Kontakt</a>
-      </div>
-      <div class="footer-col">
-        <h4>Kontakt</h4>
-        <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>
-        <a href="/disclaimer/">Disclaimer</a>
-        <a href="/privacy-policy/">Ochrana osobných údajov</a>
-        <a href="#" onclick="goTo('podmienky');return false;">Podmienky používania</a>
-        <a href="#" onclick="openCookieSettings();return false;">Nastavenie cookies</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-disc">Obsah InvestRadar má výlučne informačný a vzdelávací charakter a nepredstavuje investičné poradenstvo. Investovanie je spojené s rizikom straty kapitálu. Cookies pre analytiku sa načítajú až po udelení súhlasu. © 2026 InvestRadar · Martin Zábranský</p>
-      <div class="footer-copy">© 2026 InvestRadar</div>
-    </div>
-  </div>
-</footer>
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Nastavenie cookies">
   <div class="sec-label" style="margin-bottom:10px">InvestRadar · Cookies</div>
   <p class="cookie-copy">Používame nevyhnutné cookies na fungovanie stránky a analytické cookies Google Analytics na meranie návštevnosti. Analytika sa aktivuje až po tvojom súhlase. Viac nájdeš v sekciách <a href="#" class="cookie-link" onclick="goTo('privacy');hideCookieBanner();return false;">Ochrana osobných údajov</a> a <a href="#" class="cookie-link" onclick="goTo('disclaimer');hideCookieBanner();return false;">Disclaimer</a>.</p>
@@ -1614,6 +1576,10 @@ function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
   if(id==='novinky'){
     window.location.href = BASE_URL + 'novinky/';
+    return;
+  }
+  if(id==='alerty'){
+    window.location.href = BASE_URL + '#alerty';
     return;
   }
   var pg=setActivePage('page-'+id);
@@ -1675,8 +1641,16 @@ function initCookieConsent(){
 window.addEventListener('DOMContentLoaded',function(){
   initCookieConsent();
   var h=(location.hash||'').replace('#','');
+  if(!h){
+    window.location.replace(BASE_URL + '#alerty');
+    return;
+  }
   if(h === 'novinky'){
     window.location.replace(BASE_URL + 'novinky/');
+    return;
+  }
+  if(h === 'alerty'){
+    window.location.replace(BASE_URL + '#alerty');
     return;
   }
   if(h === 'cookies'){
@@ -2704,9 +2678,9 @@ function updateSEO(seoData, url) {
         <h4>Obsah</h4>
         <a href="#" onclick="goTo('novinky');return false;">Novinky</a>
         <a href="#" onclick="goTo('analyzy');return false;">Analýzy</a>
-        <a href="#" onclick="goTo('alerty');return false;">Trade alerty</a>
+        <a href="/#alerty">Trade alerty</a>
         <a href="/sektory/">Sektory</a>
-        <a href="#" onclick="goTo('earnings');return false;">Earnings</a>
+        <a href="/#earnings">Earnings</a>
       </div>
       <div class="footer-col">
         <h4>Platforma</h4>
