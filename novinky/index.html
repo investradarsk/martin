@@ -567,6 +567,10 @@ function setActivePage(pageId){
 
 function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
+  if(id==='home'){
+    window.location.href = BASE_URL;
+    return;
+  }
   if(id==='novinky'){
     window.location.href = BASE_URL + 'novinky/';
     return;
@@ -644,7 +648,7 @@ window.addEventListener('DOMContentLoaded',function(){
 });
 
 // Logo
-document.querySelector('.logo').addEventListener('click',function(e){e.preventDefault();goTo('home');});
+document.querySelector('.logo').addEventListener('click',function(e){e.preventDefault();window.location.href=BASE_URL;});
 
 // Hamburger
 document.getElementById('hbg').addEventListener('click',function(){
