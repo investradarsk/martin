@@ -1742,8 +1742,6 @@ function goTo(id){
   var seo = PAGE_SEO[id] || PAGE_SEO.home;
   var pageUrl = id === 'home' ? BASE_URL : BASE_URL + '#' + id;
   updateSEO(seo, pageUrl);
-  // URL hash — ignoruj chybu ak pushState nie je podporovaný
-  try{history.pushState({page:id},'','#'+id);}catch(e){}
 }
 
 function showCookieBanner(){
