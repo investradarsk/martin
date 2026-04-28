@@ -868,7 +868,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   </ul>
   <div class="nav-r">
     <a href="/kontakt/" class="btn-ghost btn-sm">Kontakt</a>
-    <a href="#" onclick="goTo('newsletter');return false;" class="btn-ghost btn-sm">Newsletter</a>
+    <a href="/novinky/" onclick="goTo('newsletter');return false;" class="btn-ghost btn-sm">Newsletter</a>
     <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-fill btn-sm">📖 Kúpiť knihu</a>
   </div>
   <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -885,8 +885,8 @@ document.addEventListener('DOMContentLoaded', loadPrices);
           <h1>Investuj ako inštitúcie.<br><em>Mysli o krok</em><br>vpredu.</h1>
           <p class="hero-sub">Denné analýzy akcií, earnings a investičné príležitosti pre investorov, ktorí chcú rozumieť trhu skôr než mainstream. Jasný podpis autora, slovenský kontext a dôraz na riziko aj disciplínu.</p>
           <div class="cta-row">
-            <a href="#" onclick="goTo('analyzy');return false;" class="btn-fill">Čítať analýzy</a>
-            <a href="#" onclick="goTo('newsletter');return false;" class="btn-ghost">Newsletter</a>
+            <a href="/analyzy/" onclick="goTo('analyzy');return false;" class="btn-fill">Čítať analýzy</a>
+            <a href="/novinky/" onclick="goTo('newsletter');return false;" class="btn-ghost">Newsletter</a>
             <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-ghost">📖 Kúpiť knihu</a>
           </div>
           <p class="hero-note">Pre začiatočníkov aj pokročilých &nbsp;·&nbsp; Slovensky &nbsp;·&nbsp; Nezávisle &nbsp;·&nbsp; <span class="live">Bez zbytočného šumu</span></p>
@@ -2141,7 +2141,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <p>Prevádzkovateľ stránky nenesie zodpovednosť za prípadné straty, škody alebo ušlý zisk vzniknuté použitím informácií uvedených na tejto stránke. Každé investičné rozhodnutie robí návštevník samostatne a na vlastnú zodpovednosť.</p>
 
       <h2>8. Kontakt</h2>
-      <p>Ak máš otázku k tomuto upozorneniu alebo k fungovaniu stránky, môžeš nás kontaktovať cez stránku <a href="#" onclick="goTo('kontakt');return false;">Kontakt</a> alebo e-mailom na <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>.</p>
+      <p>Ak máš otázku k tomuto upozorneniu alebo k fungovaniu stránky, môžeš nás kontaktovať cez stránku <a href="/kontakt/" onclick="goTo('kontakt');return false;">Kontakt</a> alebo e-mailom na <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>.</p>
     </div>
   </div>
 </div>
@@ -2214,17 +2214,17 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       </div>
       <div class="footer-col">
         <h4>Obsah</h4>
-        <a href="#" onclick="goTo('novinky');return false;">Novinky</a>
-        <a href="#" onclick="goTo('analyzy');return false;">Analýzy</a>
-        <a href="#" onclick="goTo('alerty');return false;">Trade alerty</a>
+        <a href="/novinky/" onclick="goTo('novinky');return false;">Novinky</a>
+        <a href="/analyzy/" onclick="goTo('analyzy');return false;">Analýzy</a>
+        <a href="/alerty/" onclick="goTo('alerty');return false;">Trade alerty</a>
         <a href="/sektory/">Sektory</a>
         <a href="/#earnings">Earnings</a>
       </div>
       <div class="footer-col">
         <h4>Platforma</h4>
-        <a href="#" onclick="goTo('vzdelavanie');return false;">Vzdelávanie</a>
+        <a href="/vzdelavanie/" onclick="goTo('vzdelavanie');return false;">Vzdelávanie</a>
         <a href="/o-nas/">O nás</a>
-        <a href="#" onclick="goTo('newsletter');return false;">Newsletter</a>
+        <a href="/novinky/" onclick="goTo('newsletter');return false;">Newsletter</a>
         <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kúpiť knihu</a>
         <a href="/kontakt/">Kontakt</a>
       </div>
@@ -2233,8 +2233,8 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>
         <a href="/disclaimer/">Disclaimer</a>
         <a href="/privacy-policy/">Ochrana osobných údajov</a>
-        <a href="#" onclick="goTo('podmienky');return false;">Podmienky používania</a>
-        <a href="#" onclick="openCookieSettings();return false;">Nastavenie cookies</a>
+        <a href="/podmienky/" onclick="goTo('podmienky');return false;">Podmienky používania</a>
+        <a href="javascript:void(0)" onclick="document.getElementById('cookie-banner').style.display='flex'" onclick="openCookieSettings();return false;">Nastavenie cookies</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -2245,11 +2245,11 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 </footer>
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Nastavenie cookies">
   <div class="sec-label" style="margin-bottom:10px">InvestRadar · Cookies</div>
-  <p class="cookie-copy">Používame nevyhnutné cookies na fungovanie stránky a analytické cookies Google Analytics na meranie návštevnosti. Analytika sa aktivuje až po tvojom súhlase. Viac nájdeš v sekciách <a href="#" class="cookie-link" onclick="goTo('privacy');hideCookieBanner();return false;">Ochrana osobných údajov</a> a <a href="#" class="cookie-link" onclick="goTo('disclaimer');hideCookieBanner();return false;">Disclaimer</a>.</p>
+  <p class="cookie-copy">Používame nevyhnutné cookies na fungovanie stránky a analytické cookies Google Analytics na meranie návštevnosti. Analytika sa aktivuje až po tvojom súhlase. Viac nájdeš v sekciách <a href="/privacy-policy/" class="cookie-link" onclick="goTo('privacy');hideCookieBanner();return false;">Ochrana osobných údajov</a> a <a href="/privacy-policy/" class="cookie-link" onclick="goTo('disclaimer');hideCookieBanner();return false;">Disclaimer</a>.</p>
   <div class="cookie-actions">
     <button class="btn-fill btn-sm" onclick="acceptCookies()">Prijať analytické cookies</button>
     <button class="btn-ghost btn-sm" onclick="declineCookies()">Len nevyhnutné</button>
-    <a href="#" class="cookie-link" onclick="goTo('kontakt');hideCookieBanner();return false;">Kontakt</a>
+    <a href="/kontakt/" class="cookie-link" onclick="goTo('kontakt');hideCookieBanner();return false;">Kontakt</a>
   </div>
 </div>
 <div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
