@@ -554,19 +554,19 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 var BASE_URL = 'https://investradar.sk/';
 var PAGES=['home','novinky','analyzy','alerty','sektory','earnings','vzdelavanie','onas','newsletter','kontakt','privacy','disclaimer','podmienky'];
 var ROUTES={
-  home: BASE_URL,
-  novinky: BASE_URL + 'novinky/',
-  analyzy: BASE_URL + 'analyzy/',
-  alerty: BASE_URL + 'alerty/',
-  sektory: BASE_URL + 'sektory/',
-  earnings: BASE_URL + 'earnings/',
-  vzdelavanie: BASE_URL + 'vzdelavanie/',
-  onas: BASE_URL + 'o-nas/',
-  newsletter: BASE_URL + 'newsletter/',
-  kontakt: BASE_URL + 'kontakt/',
-  privacy: BASE_URL + 'privacy-policy/',
-  disclaimer: BASE_URL + 'disclaimer/',
-  podmienky: BASE_URL + 'podmienky/'
+  home: '/',
+  novinky: '/novinky/',
+  analyzy: '/analyzy/',
+  alerty: '/alerty/',
+  sektory: '/sektory/',
+  earnings: '/earnings/',
+  vzdelavanie: '/vzdelavanie/',
+  onas: '/o-nas/',
+  newsletter: '/newsletter/',
+  kontakt: '/kontakt/',
+  privacy: '/privacy-policy/',
+  disclaimer: '/disclaimer/',
+  podmienky: '/podmienky/'
 };
 function setActivePage(pageId){
   document.querySelectorAll('.page').forEach(function(p){
