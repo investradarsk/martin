@@ -592,8 +592,6 @@ function goTo(id){
   var seo = PAGE_SEO[id] || PAGE_SEO.home;
   var pageUrl = id === 'home' ? BASE_URL : BASE_URL + '#' + id;
   updateSEO(seo, pageUrl);
-  // URL hash — ignoruj chybu ak pushState nie je podporovaný
-  try{history.pushState({page:id},'','#'+id);}catch(e){}
 }
 
 function showCookieBanner(){
@@ -648,9 +646,7 @@ window.addEventListener('DOMContentLoaded',function(){
 });
 
 // Logo
-document.querySelector('.logo').addEventListener('click',function(e){
-  e.preventDefault();
-  window.location.replace(BASE_URL + '#top');
+document.querySelector('.logo').addEventListener('c  // standalone novinky page — no hash routing neededtion.replace(BASE_URL + '#top');
 });
 
 // Hamburger
