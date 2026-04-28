@@ -1792,7 +1792,11 @@ window.addEventListener('DOMContentLoaded',function(){
     return;
   }
   if(handleArticleRoute(h)) return;
-  // standalone analyzy page — no hash routing needed
+  // Standalone analyzy page — show content directly without hash routing
+  var pg = document.getElementById('page-analyzy');
+  if(pg) pg.style.display = 'block';
+  var nl = document.querySelector('.nav-link[data-page="analyzy"]');
+  if(nl) nl.classList.add('active');
 });
 
 // Logo
