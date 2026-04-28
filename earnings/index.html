@@ -2158,8 +2158,6 @@ function goTo(id){
   var seo = PAGE_SEO[id] || PAGE_SEO.home;
   var pageUrl = id === 'home' ? BASE_URL : BASE_URL + '#' + id;
   updateSEO(seo, pageUrl);
-  // URL hash — ignoruj chybu ak pushState nie je podporovaný
-  try{history.pushState({page:id},'','#'+id);}catch(e){}
 }
 
 function showCookieBanner(){
@@ -2212,7 +2210,7 @@ window.addEventListener('DOMContentLoaded',function(){
   if(handleArticleRoute(h)) return;
   if(PAGES.includes(h)) goTo(h); else goTo('earnings');
 });
-
+  // standalone earnings page — no hash routing needed
 // Logo
 document.querySelector('.logo').addEventListener('click',function(e){e.preventDefault();goTo('home');});
 
