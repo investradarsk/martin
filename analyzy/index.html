@@ -1705,6 +1705,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 })();
 
 // SPA Router
+var BASE_URL = 'https://investradar.sk/';
 var PAGES=['home','novinky','analyzy','alerty','sektory','earnings','vzdelavanie','onas','newsletter','kontakt','privacy','disclaimer','podmienky'];
 var ROUTES={
   home: BASE_URL,
@@ -2505,8 +2506,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 // ── SEO / Open Graph updater ──
-var BASE_URL = 'https://investradar.sk/';
-
 var PAGE_SEO = {
   home:        { title:'InvestRadar — Vidíte trh. My vidíme príležitosť.', desc:'Denné investičné novinky, akciové analýzy, geopolitické komentáre a trade alerty pre slovenských investorov.', img:'https://investradar.sk/og-image.png' },
   novinky:     { title:'Denné investičné novinky | InvestRadar', desc:'Kľúčové udalosti, makro dáta a pohyby, ktoré dnes ovplyvňujú akcie, sektory a sentiment investorov.', img:'https://investradar.sk/og-image.png' },
