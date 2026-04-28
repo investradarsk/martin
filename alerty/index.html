@@ -2,9 +2,188 @@
 <html lang="sk">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=/#alerty">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Trade Alerty | InvestRadar</title>
+<meta name="description" content="Aktívne trade alerty InvestRadar na samostatnej URL bez hash navigácie.">
+<link rel="canonical" href="https://investradar.sk/alerty/">
+<meta property="og:title" content="Trade Alerty | InvestRadar">
+<meta property="og:description" content="Aktívne trade alerty so vstupom, stop-lossom a cieľom na jednom mieste.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://investradar.sk/alerty/">
+<meta property="og:image" content="https://investradar.sk/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trade Alerty | InvestRadar">
+<meta name="twitter:description" content="Aktívne trade alerty so vstupom, stop-lossom a cieľom na jednom mieste.">
+<meta name="twitter:image" content="https://investradar.sk/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#070b16;--navy2:#0d1525;--navy3:#152038;--amber:#c8891a;--amberl:#dfa030;--amberd:rgba(200,137,26,.11);--amberb:rgba(200,137,26,.26);
+  --cream:#f0e8d5;--wd:rgba(240,232,213,.58);--wf:rgba(240,232,213,.09);--green:#15a06a;
+  --mono:'DM Mono',monospace;--serif:'Playfair Display',serif;--sans:'Instrument Sans',sans-serif;--max:1180px;--r:2px;
+}
+body{background:var(--navy);color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.7}
+a{color:inherit;text-decoration:none}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,60px);border-bottom:1px solid var(--wf);background:rgba(7,11,22,.92)}
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:44px;width:44px;object-fit:contain}
+.logo-t{font-family:var(--serif);font-size:20px}
+.logo-t b{color:var(--amberl)}
+nav ul{display:flex;gap:1px;list-style:none}
+nav ul a{font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--wd);padding:7px 15px;border-radius:2px;display:block}
+nav ul a:hover,nav ul a.active{color:var(--amberl);background:var(--amberd)}
+.nav-r{display:flex;gap:8px;align-items:center}
+.btn-fill,.btn-ghost{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:8px 16px;border-radius:var(--r);display:inline-block}
+.btn-fill{background:var(--amber);color:var(--navy2);font-weight:500}
+.btn-ghost{padding:7px 14px;border:1px solid var(--amberb);color:var(--amberl)}
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
+.hero{padding:72px 0 36px;border-bottom:1px solid var(--wf)}
+.eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--amberl);margin-bottom:12px}
+h1{font-family:var(--serif);font-size:clamp(34px,5vw,58px);line-height:1.04;margin-bottom:14px}
+.hero p{max-width:760px;color:var(--wd);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:36px 0 72px}
+.card{background:var(--navy2);border:1px solid var(--wf);padding:24px;position:relative}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.tag{font-family:var(--mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border:1px solid rgba(21,160,106,.28);background:rgba(21,160,106,.12);color:var(--green)}
+.date{font-family:var(--mono);font-size:9px;color:rgba(240,232,213,.35)}
+.sym{font-family:var(--serif);font-size:34px;line-height:1;margin-bottom:6px}
+.company{font-size:13px;color:var(--wd);margin-bottom:14px}
+.thesis{font-size:14px;color:var(--wd);margin-bottom:16px}
+.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:18px}
+.metric{background:rgba(240,232,213,.03);border:1px solid var(--wf);padding:11px 12px}
+.metric .l{font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,232,213,.35);margin-bottom:4px}
+.metric .v{font-family:var(--mono);font-size:14px}
+.helper{padding:24px;border:1px solid var(--wf);background:var(--navy3);margin-bottom:72px}
+.helper h2{font-family:var(--serif);font-size:24px;margin-bottom:10px}
+.helper p{color:var(--wd);margin-bottom:12px}
+footer{border-top:1px solid var(--wf);padding:36px 0}
+.footer-copy{color:var(--wd);font-size:13px}
+@media (max-width:900px){nav{height:auto;flex-wrap:wrap;padding:14px 18px;gap:12px}nav ul{flex-wrap:wrap}.grid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+<nav aria-label="Hlavná navigácia">
+  <a href="/" class="logo" aria-label="InvestRadar">
+    <img src="/og-image.png" alt="Logo InvestRadar">
+    <span class="logo-t">Invest<b>Radar</b></span>
+  </a>
+  <ul>
+    <li><a href="/novinky/">Novinky</a></li>
+    <li><a href="/analyzy/">Analýzy</a></li>
+    <li><a href="/alerty/" class="active">Trade Alerty</a></li>
+    <li><a href="/sektory/">Sektory</a></li>
+    <li><a href="/earnings/">Earnings</a></li>
+    <li><a href="/vzdelavanie/">Vzdelávanie</a></li>
+    <li><a href="/o-nas/">O nás</a></li>
+  </ul>
+  <div class="nav-r">
+    <a href="/kontakt/" class="btn-ghost">Kontakt</a>
+    <a href="/newsletter/" class="btn-ghost">Newsletter</a>
+  </div>
+</nav>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">InvestRadar · Trade Alerty</div>
+      <h1>Aktívne setupy na samostatnej URL</h1>
+      <p>Trade Alerty už smerujú na čistú URL <strong>/alerty/</strong> bez hash navigácie. Nižšie sú aktuálne setupy s rýchlym prehľadom a odkazom na detail.</p>
+    </div>
+  </section>
+  <section class="container">
+    <div class="grid">
+      <article class="card">
+        <div class="meta"><span class="tag">Aktívny</span><span class="date">24. apr 2026</span></div>
+        <div class="sym">MSFT</div>
+        <div class="company">Microsoft · AI cloud compounder</div>
+        <p class="thesis">Konzervatívnejší growth setup na Azure, enterprise software a AI monetizáciu.</p>
+        <div class="metrics">
+          <div class="metric"><div class="l">Vstup</div><div class="v">$405 – $425</div></div>
+          <div class="metric"><div class="l">Cieľ</div><div class="v">$560</div></div>
+          <div class="metric"><div class="l">Stop-loss</div><div class="v">$360</div></div>
+          <div class="metric"><div class="l">R/R</div><div class="v">1:3.0</div></div>
+        </div>
+        <a href="/alerty/microsoft-trade-alert/" class="btn-fill">Otvoriť alert</a>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="tag">Aktívny</span><span class="date">24. apr 2026</span></div>
+        <div class="sym">AVAV</div>
+        <div class="company">AeroVironment · defense tech a drony</div>
+        <p class="thesis">Defense momentum setup naviazaný na dopyt po dronoch a defence software.</p>
+        <div class="metrics">
+          <div class="metric"><div class="l">Vstup</div><div class="v">$150 – $165</div></div>
+          <div class="metric"><div class="l">Cieľ</div><div class="v">$230</div></div>
+          <div class="metric"><div class="l">Stop-loss</div><div class="v">$132</div></div>
+          <div class="metric"><div class="l">R/R</div><div class="v">1:3.3</div></div>
+        </div>
+        <a href="/alerty/avav-trade-alert/" class="btn-fill">Otvoriť alert</a>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="tag">Aktívny</span><span class="date">24. apr 2026</span></div>
+        <div class="sym">MELI</div>
+        <div class="company">MercadoLibre · LatAm e-commerce a fintech</div>
+        <p class="thesis">Kvalitný compounder s kombináciou e-commerce, payments a logistiky v rastovom regióne.</p>
+        <div class="metrics">
+          <div class="metric"><div class="l">Vstup</div><div class="v">$1,680 – $1,760</div></div>
+          <div class="metric"><div class="l">Cieľ</div><div class="v">$2,150</div></div>
+          <div class="metric"><div class="l">Stop-loss</div><div class="v">$1,520</div></div>
+          <div class="metric"><div class="l">R/R</div><div class="v">1:2.6</div></div>
+        </div>
+        <a href="/alerty/meli-trade-alert/" class="btn-fill">Otvoriť alert</a>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="tag">Aktívny</span><span class="date">24. apr 2026</span></div>
+        <div class="sym">S</div>
+        <div class="company">SentinelOne · AI cybersecurity setup</div>
+        <p class="thesis">Selektívny cyber setup s fokusom na AI-native security platformu a rast ARR.</p>
+        <div class="metrics">
+          <div class="metric"><div class="l">Vstup</div><div class="v">$18.20 – $19.40</div></div>
+          <div class="metric"><div class="l">Cieľ</div><div class="v">$26.50</div></div>
+          <div class="metric"><div class="l">Stop-loss</div><div class="v">$16.10</div></div>
+          <div class="metric"><div class="l">R/R</div><div class="v">1:2.9</div></div>
+        </div>
+        <a href="/alerty/sentinelone-trade-alert/" class="btn-fill">Otvoriť alert</a>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="tag">Aktívny</span><span class="date">18. apr 2026</span></div>
+        <div class="sym">ACMR</div>
+        <div class="company">ACM Research · semiconductor equipment</div>
+        <p class="thesis">WFE recovery a atraktívna valuácia v segmente, kde trh ešte plne nedocenil rastový profil.</p>
+        <div class="metrics">
+          <div class="metric"><div class="l">Vstup</div><div class="v">$22 – $24</div></div>
+          <div class="metric"><div class="l">Cieľ</div><div class="v">$40.50</div></div>
+          <div class="metric"><div class="l">Stop-loss</div><div class="v">$19.50</div></div>
+          <div class="metric"><div class="l">R/R</div><div class="v">1:5.0</div></div>
+        </div>
+        <a href="/alerty/acmr-trade-alert/" class="btn-fill">Otvoriť alert</a>
+      </article>
+      <article class="card">
+        <div class="meta"><span class="tag">Nový</span><span class="date">28. apr 2026</span></div>
+        <div class="sym">UMAC</div>
+        <div class="company">UMAC · drony a defense</div>
+        <p class="thesis">Nový defense setup zameraný na dronový ekosystém a vyššiu citlivosť na geopolitický flow.</p>
+        <div class="metrics">
+          <div class="metric"><div class="l">Detail</div><div class="v">Nový alert</div></div>
+          <div class="metric"><div class="l">Sekcia</div><div class="v">Defense</div></div>
+          <div class="metric"><div class="l">URL</div><div class="v">/alerty/…</div></div>
+          <div class="metric"><div class="l">Formát</div><div class="v">Trade setup</div></div>
+        </div>
+        <a href="/alerty/umac-drony-defense/" class="btn-fill">Otvoriť alert</a>
+      </article>
+    </div>
+    <div class="helper">
+      <h2>Ako čítať trade alert</h2>
+      <p>Najskôr si pozri tézu, potom vstupnú zónu a až nakoniec risk management. Ak setup nesedí tvojmu profilu alebo časovému horizontu, je úplne v poriadku ho len sledovať.</p>
+      <a href="/kontakt/" class="btn-ghost">Otázka k alertu</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-copy">Obsah InvestRadar má výlučne informačný a vzdelávací charakter a nepredstavuje investičné poradenstvo. © 2026 InvestRadar</div>
+  </div>
+</footer>
 </body>
 </html>

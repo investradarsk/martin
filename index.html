@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sk">
 <head>
 <meta charset="UTF-8">
@@ -860,9 +860,9 @@ document.addEventListener('DOMContentLoaded', loadPrices);
   <ul>
     <li><a href="/novinky/" class="nav-link" data-page="novinky">Novinky</a></li>
     <li><a href="/analyzy/" class="nav-link" data-page="analyzy">Analýzy</a></li>
-    <li><a href="/alerty/" class="nav-link" data-page="alerty" onclick="goTo('alerty');return false;" onclick="goTo('alerty');return false;">Trade Alerty</a></li>
+    <li><a href="/alerty/" class="nav-link" data-page="alerty">Trade Alerty</a></li>
     <li><a href="/sektory/" class="nav-link" data-page="sektory">Sektory</a></li>
-    <li><a href="/#earnings" class="nav-link" data-page="earnings" onclick="goTo('earnings');return false;" onclick="goTo('earnings');return false;">Earnings</a></li>
+    <li><a href="/earnings/" class="nav-link" data-page="earnings" onclick="goTo('earnings');return false;" onclick="goTo('earnings');return false;">Earnings</a></li>
     <li><a href="/vzdelavanie/" class="nav-link" data-page="vzdelavanie">Vzdelávanie</a></li>
     <li><a href="/o-nas/" class="nav-link" data-page="onas">O nás</a></li>
   </ul>
@@ -2218,7 +2218,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         <h4>Obsah</h4>
         <a href="/novinky/" onclick="goTo('novinky');return false;">Novinky</a>
         <a href="/analyzy/" onclick="goTo('analyzy');return false;">Analýzy</a>
-        <a href="/alerty/" onclick="goTo('alerty');return false;">Trade alerty</a>
+        <a href="/alerty/">Trade alerty</a>
         <a href="/sektory/">Sektory</a>
         <a href="/earnings/">Earnings</a>
       </div>
@@ -2267,6 +2267,21 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 
 // SPA Router
 var PAGES=['home','novinky','analyzy','alerty','sektory','earnings','vzdelavanie','onas','newsletter','kontakt','privacy','disclaimer','podmienky'];
+var ROUTES={
+  home: BASE_URL,
+  novinky: BASE_URL + 'novinky/',
+  analyzy: BASE_URL + 'analyzy/',
+  alerty: BASE_URL + 'alerty/',
+  sektory: BASE_URL + 'sektory/',
+  earnings: BASE_URL + 'earnings/',
+  vzdelavanie: BASE_URL + 'vzdelavanie/',
+  onas: BASE_URL + 'o-nas/',
+  newsletter: BASE_URL + 'newsletter/',
+  kontakt: BASE_URL + 'kontakt/',
+  privacy: BASE_URL + 'privacy-policy/',
+  disclaimer: BASE_URL + 'disclaimer/',
+  podmienky: BASE_URL + 'podmienky/'
+};
 function setActivePage(pageId){
   document.querySelectorAll('.page').forEach(function(p){
     p.classList.remove('active');
@@ -2282,37 +2297,25 @@ function setActivePage(pageId){
 
 function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
-  if(id==='novinky'){
-    window.location.href = BASE_URL + 'novinky/';
-    return;
-  }
-  if(id==='earnings'){
-    window.location.href = BASE_URL + 'earnings/';
+  if(ROUTES[id] && id !== 'home'){
+    window.location.href = ROUTES[id];
     return;
   }
   var pg=setActivePage('page-'+id);
   if(pg){
     window.scrollTo(0,0);
   }
-  // Aktualizuj nav
   document.querySelectorAll('.nav-link').forEach(function(a){a.classList.remove('active');});
   var nl=document.querySelector('.nav-link[data-page="'+id+'"]');
   if(nl)nl.classList.add('active');
-  // Zatvori hamburger menu
   var navEl=document.getElementById('nav');
   if(navEl){
     navEl.classList.remove('open');
     navEl.setAttribute('aria-expanded','false');
   }
   var seo = PAGE_SEO[id] || PAGE_SEO.home;
-  var pageUrl = id === 'home' ? BASE_URL : BASE_URL + '#' + id;
-  updateSEO(seo, pageUrl);
-  // URL hash — ignoruj chybu ak pushState nie je podporovaný
-  try{
-    history.pushState({page:id},'',id==='home' ? BASE_URL : '#'+id);
-  }catch(e){}
+  updateSEO(seo, BASE_URL);
 }
-
 function showCookieBanner(){
   var el = document.getElementById('cookie-banner');
   if(el) el.classList.add('show');
@@ -2356,36 +2359,23 @@ window.addEventListener('DOMContentLoaded',function(){
   var h=(location.hash||'').replace('#','');
   if(h === 'top'){
     goTo('home');
-    try{history.replaceState({page:'home'},'',BASE_URL);}catch(e){}
     setTimeout(function(){ window.scrollTo(0,0); }, 0);
     return;
   }
-  if(h === 'novinky'){
-    window.location.replace(BASE_URL + 'novinky/');
-    return;
-  }
   if(h === 'cookies'){
-    goTo('home');
-    showCookieBanner();
+    window.location.replace(BASE_URL + 'privacy-policy/');
     return;
   }
   if(handleArticleRoute(h)) return;
-  if(PAGES.includes(h)){
-    if(h==='earnings'){
-      var pg=setActivePage('page-earnings');
-      if(pg) window.scrollTo(0,0);
-      document.querySelectorAll('.nav-link').forEach(function(a){a.classList.remove('active');});
-      var nl=document.querySelector('.nav-link[data-page="earnings"]');
-      if(nl)nl.classList.add('active');
-      updateSEO(PAGE_SEO.earnings, BASE_URL + '#earnings');
-    } else {
-      goTo(h);
-    }
-  } else goTo('home');
+  if(PAGES.includes(h) && ROUTES[h] && h !== 'home'){
+    window.location.replace(ROUTES[h]);
+    return;
+  }
+  goTo('home');
 });
 
 // Logo
-document.querySelector('.logo').addEventListener('click',function(e){e.preventDefault();goTo('home');});
+document.querySelector('.logo').addEventListener('click',function(e){e.preventDefault();window.location.replace(BASE_URL);});
 
 // Hamburger
 document.getElementById('hbg').addEventListener('click',function(){
@@ -2899,7 +2889,15 @@ window.addEventListener('popstate',function(e){
   if(e.state&&e.state.key){ goToArticle(e.state.key); return; }
   var h=(location.hash||'').replace('#','');
   if(handleArticleRoute(h)) return;
-  goTo(e.state&&e.state.page?e.state.page:'home');
+  if(h && ROUTES[h] && h !== 'home'){
+    window.location.replace(ROUTES[h]);
+    return;
+  }
+  if(e.state&&e.state.page&&ROUTES[e.state.page]&&e.state.page!=='home'){
+    window.location.replace(ROUTES[e.state.page]);
+    return;
+  }
+  goTo('home');
 });
 
 

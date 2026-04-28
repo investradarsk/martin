@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sk">
 <head>
 <meta charset="UTF-8">
@@ -784,7 +784,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     <li><a href="/analyzy/" class="nav-link" data-page="analyzy">Analýzy</a></li>
     <li><a href="/alerty/" class="nav-link" data-page="alerty">Trade Alerty</a></li>
     <li><a href="/sektory/" class="nav-link" data-page="sektory">Sektory</a></li>
-    <li><a href="/#earnings" class="nav-link" data-page="earnings">Earnings</a></li>
+    <li><a href="/earnings/" class="nav-link" data-page="earnings">Earnings</a></li>
     <li><a href="/vzdelavanie/" class="nav-link" data-page="vzdelavanie">Vzdelávanie</a></li>
     <li><a href="/o-nas/" class="nav-link" data-page="onas">O nás</a></li>
   </ul>
@@ -1658,7 +1658,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         <a href="#" onclick="goTo('analyzy');return false;">Analýzy</a>
         <a href="#" onclick="goTo('alerty');return false;">Trade alerty</a>
         <a href="/sektory/">Sektory</a>
-        <a href="/#earnings">Earnings</a>
+        <a href="/earnings/">Earnings</a>
       </div>
       <div class="footer-col">
         <h4>Platforma</h4>
@@ -1706,6 +1706,21 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 
 // SPA Router
 var PAGES=['home','novinky','analyzy','alerty','sektory','earnings','vzdelavanie','onas','newsletter','kontakt','privacy','disclaimer','podmienky'];
+var ROUTES={
+  home: BASE_URL,
+  novinky: BASE_URL + 'novinky/',
+  analyzy: BASE_URL + 'analyzy/',
+  alerty: BASE_URL + 'alerty/',
+  sektory: BASE_URL + 'sektory/',
+  earnings: BASE_URL + 'earnings/',
+  vzdelavanie: BASE_URL + 'vzdelavanie/',
+  onas: BASE_URL + 'o-nas/',
+  newsletter: BASE_URL + 'newsletter/',
+  kontakt: BASE_URL + 'kontakt/',
+  privacy: BASE_URL + 'privacy-policy/',
+  disclaimer: BASE_URL + 'disclaimer/',
+  podmienky: BASE_URL + 'podmienky/'
+};
 function setActivePage(pageId){
   document.querySelectorAll('.page').forEach(function(p){
     p.classList.remove('active');
@@ -1721,29 +1736,25 @@ function setActivePage(pageId){
 
 function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
-  if(id==='novinky'){
-    window.location.href = BASE_URL + 'novinky/';
+  if(ROUTES[id]){
+    window.location.href = ROUTES[id];
     return;
   }
   var pg=setActivePage('page-'+id);
   if(pg){
     window.scrollTo(0,0);
   }
-  // Aktualizuj nav
   document.querySelectorAll('.nav-link').forEach(function(a){a.classList.remove('active');});
   var nl=document.querySelector('.nav-link[data-page="'+id+'"]');
   if(nl)nl.classList.add('active');
-  // Zatvori hamburger menu
   var navEl=document.getElementById('nav');
   if(navEl){
     navEl.classList.remove('open');
     navEl.setAttribute('aria-expanded','false');
   }
   var seo = PAGE_SEO[id] || PAGE_SEO.home;
-  var pageUrl = id === 'home' ? BASE_URL : BASE_URL + '#' + id;
-  updateSEO(seo, pageUrl);
+  updateSEO(seo, BASE_URL);
 }
-
 function showCookieBanner(){
   var el = document.getElementById('cookie-banner');
   if(el) el.classList.add('show');
@@ -1782,21 +1793,20 @@ function initCookieConsent(){
 window.addEventListener('DOMContentLoaded',function(){
   initCookieConsent();
   var h=(location.hash||'').replace('#','');
-  if(h === 'novinky'){
-    window.location.replace(BASE_URL + 'novinky/');
+  if(h === 'top'){
+    window.location.replace(BASE_URL);
     return;
   }
   if(h === 'cookies'){
-    goTo('home');
-    showCookieBanner();
+    window.location.replace(BASE_URL + 'privacy-policy/');
     return;
   }
   if(handleArticleRoute(h)) return;
-  // Standalone analyzy page — show content directly without hash routing
-  var pg = document.getElementById('page-analyzy');
-  if(pg) pg.style.display = 'block';
-  var nl = document.querySelector('.nav-link[data-page="analyzy"]');
-  if(nl) nl.classList.add('active');
+  if(PAGES.includes(h) && ROUTES[h]){
+    window.location.replace(ROUTES[h]);
+    return;
+  }
+  goTo('analyzy');
 });
 
 // Logo
@@ -2314,7 +2324,15 @@ window.addEventListener('popstate',function(e){
   if(e.state&&e.state.key){ goToArticle(e.state.key); return; }
   var h=(location.hash||'').replace('#','');
   if(handleArticleRoute(h)) return;
-  goTo(e.state&&e.state.page?e.state.page:'home');
+  if(h && ROUTES[h]){
+    window.location.replace(ROUTES[h]);
+    return;
+  }
+  if(e.state&&e.state.page&&ROUTES[e.state.page]){
+    window.location.replace(ROUTES[e.state.page]);
+    return;
+  }
+  goTo('home');
 });
 
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Newsletter | InvestRadar</title>
+<meta name="description" content="Prihlásenie na InvestRadar newsletter na samostatnej URL bez hash navigácie.">
+<link rel="canonical" href="https://investradar.sk/newsletter/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#070b16;--navy2:#0d1525;--amber:#c8891a;--amberl:#dfa030;--amberb:rgba(200,137,26,.26);--cream:#f0e8d5;--wd:rgba(240,232,213,.58);--wf:rgba(240,232,213,.09);--green:#15a06a;--mono:'DM Mono',monospace;--serif:'Playfair Display',serif;--sans:'Instrument Sans',sans-serif;--max:760px;--r:2px}
+body{background:var(--navy);color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.7}
+a{color:inherit;text-decoration:none}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--wf);background:rgba(7,11,22,.92)}
+.logo{display:flex;align-items:center;gap:10px}.logo img{height:44px;width:44px}.logo-t{font-family:var(--serif);font-size:20px}.logo-t b{color:var(--amberl)}
+.btn-ghost,.btn-fill{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:8px 16px;border-radius:var(--r);display:inline-block}
+.btn-ghost{border:1px solid var(--amberb);color:var(--amberl)}.btn-fill{background:var(--amber);color:#0d1525;border:none;cursor:pointer}
+.container{max-width:var(--max);margin:0 auto;padding:72px 20px}
+.label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--amberl);margin-bottom:12px}
+h1{font-family:var(--serif);font-size:clamp(34px,5vw,54px);line-height:1.04;margin-bottom:14px}
+.sub{font-size:16px;color:var(--wd);margin-bottom:28px}
+.card{background:var(--navy2);border:1px solid var(--wf);padding:28px}
+.points{display:grid;gap:10px;margin-bottom:24px}.points div{padding:12px 14px;background:rgba(240,232,213,.03);border:1px solid var(--wf);color:var(--wd)}
+form{display:grid;gap:10px}[data-fs-success]{display:none;font-family:var(--mono);font-size:12px;color:var(--green);padding:12px 0}
+input{width:100%;padding:14px 16px;background:#09101d;border:1px solid var(--wf);color:var(--cream);font:inherit}
+.note{font-size:12px;color:rgba(240,232,213,.42)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+</style>
+</head>
+<body>
+<nav aria-label="Hlavná navigácia">
+  <a href="/" class="logo" aria-label="InvestRadar">
+    <img src="/og-image.png" alt="Logo InvestRadar">
+    <span class="logo-t">Invest<b>Radar</b></span>
+  </a>
+  <div style="display:flex;gap:8px;align-items:center">
+    <a href="/alerty/" class="btn-ghost">Trade Alerty</a>
+    <a href="/kontakt/" class="btn-ghost">Kontakt</a>
+  </div>
+</nav>
+<main class="container">
+  <div class="label">InvestRadar · Newsletter</div>
+  <h1>Zostaň v obraze bez hash linkov</h1>
+  <p class="sub">Prihlásenie na newsletter už má vlastnú URL <strong>/newsletter/</strong>. Posielame výber najdôležitejších tém, nové analýzy a čerstvý obsah.</p>
+  <div class="card">
+    <div class="points">
+      <div>Nové analýzy a trade alerty na jednom mieste.</div>
+      <div>Makro, sektorové témy a to najdôležitejšie z trhu bez balastu.</div>
+      <div>Odhlásenie kedykoľvek jedným klikom.</div>
+    </div>
+    <div data-fs-success>✓ Prihlásenie úspešné. Čoskoro sa ozveme.</div>
+    <form id="nl-form-standalone">
+      <input type="email" name="email" placeholder="Tvoj email" autocomplete="email" required>
+      <button type="submit" class="btn-fill">Prihlásiť sa</button>
+      <div class="note">Bez spamu. Len výber toho najdôležitejšieho.</div>
+    </form>
+    <div class="actions">
+      <a href="/novinky/" class="btn-ghost">Pozrieť novinky</a>
+      <a href="/kontakt/" class="btn-ghost">Otázka k odberu</a>
+    </div>
+  </div>
+</main>
+<script>
+window.formspree = window.formspree || function(){(formspree.q=formspree.q||[]).push(arguments);};
+window.addEventListener('load', function(){
+  if(document.getElementById('nl-form-standalone')){
+    formspree('initForm', { formElement:'#nl-form-standalone', formId:'xrerlywp' });
+  }
+});
+</script>
+</body>
+</html>
