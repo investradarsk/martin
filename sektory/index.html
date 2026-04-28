@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <base href="/">
 <title>Sektory a firmy | InvestRadar</title>
-<meta name="description" content="Kompletný sektorový prehľad InvestRadar: technológie, polovodiče, AI infra, kyberbezpečnosť, energia, obrana, healthcare, financie, priemysel, consumer, utility a space tech.">
-<meta name="keywords" content="sektory, akcie, firmy, ETF, polovodiče, kyberbezpečnosť, energia, obrana, healthcare, financie, InvestRadar">
+<meta name="description" content="Prehladny sektorovy hub InvestRadar: najdolezitejsie sektory, ETF, lidri, rizika a watchlisty na jednej stranke.">
+<meta name="keywords" content="sektory, akcie, firmy, ETF, polovodice, kyberbezpecnost, energia, obrana, healthcare, financie, InvestRadar">
 <meta property="og:title" content="Sektory a firmy | InvestRadar">
-<meta property="og:description" content="Najširší sektorový prehľad na webe InvestRadar: kľúčové témy, ETF, podsektory, firmy a watchlisty na jednej stránke.">
+<meta property="og:description" content="Prehladne rozdelenie sektorov, ETF, lidrov a watchlistov na jednej URL.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://investradar.sk/sektory/">
 <meta property="og:image" content="https://investradar.sk/og-image.png">
@@ -19,15 +19,21 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#070b16;--navy2:#0d1525;--navy3:#152038;--navy4:#1c2d4e;
-  --amber:#c8891a;--amberl:#dfa030;--amberd:rgba(200,137,26,.11);--amberb:rgba(200,137,26,.26);
-  --cream:#f0e8d5;--wd:rgba(240,232,213,.58);--wf:rgba(240,232,213,.09);--wff:rgba(240,232,213,.045);
-  --green:#15a06a;--red:#c23b3b;--blue:#6ea8ff;
+  --navy:#070b16;--navy2:#0d1525;--navy3:#152038;--navy4:#1d2d4a;
+  --amber:#c8891a;--amberl:#dfa030;--amberd:rgba(200,137,26,.12);--amberb:rgba(200,137,26,.26);
+  --cream:#f0e8d5;--wd:rgba(240,232,213,.68);--wf:rgba(240,232,213,.09);--wff:rgba(240,232,213,.045);
+  --green:#1ea672;--red:#cb4a4a;--blue:#6ea8ff;
   --mono:'DM Mono',monospace;--serif:'Playfair Display',serif;--sans:'Instrument Sans',sans-serif;
-  --max:1460px;--r:2px;
+  --max:1380px;--r:2px;
 }
 html{scroll-behavior:smooth}
-body{background:var(--navy);color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden}
+body{
+  background:
+    radial-gradient(circle at top left,rgba(200,137,26,.08),transparent 26%),
+    radial-gradient(circle at right 20%,rgba(110,168,255,.05),transparent 24%),
+    var(--navy);
+  color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden
+}
 a{color:inherit;text-decoration:none}
 b,strong{font-weight:600;color:var(--cream)}
 .up{color:var(--green)}
@@ -56,88 +62,100 @@ nav ul a:hover,nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .btn-fill{background:var(--amber);color:var(--navy2);font-weight:500;border:none}
 .btn-ghost{padding:7px 14px;border:1px solid var(--amberb);color:var(--amberl);background:none}
 
+.hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:8px;cursor:pointer}
+.hamburger span{display:block;width:20px;height:1px;background:var(--cream)}
+
 .container{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,3vw,34px)}
-.page-shell{padding:44px 0 68px}
-.hero{padding:0 0 28px;border-bottom:1px solid var(--wf);margin-bottom:32px}
-.hero-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amberl);margin-bottom:12px}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.9fr);gap:28px;align-items:start}
-.hero-title{font-family:var(--serif);font-size:clamp(34px,5.2vw,62px);line-height:1.03;letter-spacing:-.03em;margin-bottom:14px}
+.page-shell{padding:42px 0 72px}
+.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,.85fr);gap:20px;margin-bottom:22px}
+.hero-panel,.hero-side,.section-card,.sector-card,.insight-card,.table-wrap,.cta-box{
+  background:linear-gradient(180deg,rgba(15,21,37,.94),rgba(8,12,21,.98));
+  border:1px solid var(--wf);border-radius:var(--r)
+}
+.hero-panel{padding:30px;position:relative;overflow:hidden}
+.hero-panel::before,.hero-side::before,.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
+.hero-side{padding:22px;position:relative;overflow:hidden}
+.eyebrow,.section-label,.pill,.metric-label,.scan-label,.sector-kind,.cta-label,.table-label{
+  font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase
+}
+.eyebrow,.section-label,.cta-label,.table-label{color:var(--amberl)}
+.hero-title{font-family:var(--serif);font-size:clamp(34px,5.2vw,62px);line-height:1.02;letter-spacing:-.03em;max-width:760px;margin-bottom:14px}
 .hero-title em{font-style:italic;color:var(--amberl)}
-.hero-sub{font-size:15px;color:var(--wd);line-height:1.8;max-width:880px}
-.hero-note{margin-top:14px;font-size:12px;color:rgba(240,232,213,.34)}
-.hero-card{background:linear-gradient(180deg,rgba(21,32,56,.88),rgba(10,15,27,.95));border:1px solid var(--amberb);padding:22px;border-radius:var(--r);position:relative;overflow:hidden}
-.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
-.hc-label{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--amberl);margin-bottom:14px}
-.hc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.hc-item{background:var(--wff);border:1px solid var(--wf);padding:12px}
-.hc-n{font-family:var(--mono);font-size:17px;color:var(--cream);margin-bottom:4px}
-.hc-t{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:rgba(240,232,213,.4)}
+.hero-sub{font-size:15px;color:var(--wd);line-height:1.85;max-width:760px;margin-bottom:18px}
+.hero-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.flow-step{background:var(--wff);border:1px solid var(--wf);padding:14px}
+.flow-step strong{display:block;font-size:13px;margin-bottom:4px}
+.flow-step p{font-size:12px;color:var(--wd);line-height:1.6}
+.hero-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+.metric{background:var(--wff);border:1px solid var(--wf);padding:12px}
+.metric-value{font-family:var(--mono);font-size:18px;color:var(--cream);margin-bottom:3px}
+.metric-label{color:rgba(240,232,213,.4)}
+.metric-note{font-size:12px;color:var(--wd);line-height:1.5;margin-top:5px}
 
-.jumpbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
-.jumpbar a{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:7px 12px;border:1px solid var(--wf);color:var(--wd);background:none;border-radius:var(--r)}
-.jumpbar a:hover{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
+.quick-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.quick-links a{padding:8px 12px;border:1px solid var(--wf);background:var(--navy2);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--wd)}
+.quick-links a:hover{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
 
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:34px}
-.stat-card{background:var(--navy2);border:1px solid var(--wf);padding:16px;border-radius:var(--r)}
-.stat-label{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,232,213,.36);margin-bottom:4px}
-.stat-value{font-family:var(--mono);font-size:20px;color:var(--amberl);margin-bottom:5px}
-.stat-text{font-size:12px;color:var(--wd);line-height:1.55}
+.section{margin-bottom:18px}
+.section-card{padding:22px}
+.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;flex-wrap:wrap;margin-bottom:16px}
+.section-title{font-family:var(--serif);font-size:clamp(24px,3.2vw,38px);line-height:1.08}
+.section-sub{max-width:820px;font-size:13.5px;color:var(--wd);line-height:1.78}
 
-.section{margin-bottom:42px}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:18px}
-.section-label{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--amberl)}
-.section-title{font-family:var(--serif);font-size:clamp(24px,3.2vw,38px);line-height:1.1}
-.section-sub{font-size:13.5px;color:var(--wd);max-width:840px;line-height:1.75}
+.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.focus-card{background:var(--navy2);border:1px solid var(--wf);padding:18px;display:flex;flex-direction:column;gap:12px}
+.focus-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.focus-title{font-family:var(--serif);font-size:22px}
+.pill{padding:5px 8px;border:1px solid var(--amberb);background:var(--amberd);color:var(--amberl);white-space:nowrap}
+.focus-copy{font-size:13px;color:var(--wd);line-height:1.72}
+.focus-strip{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.focus-box{background:var(--wff);border:1px solid var(--wf);padding:10px}
+.scan-label{color:rgba(240,232,213,.38);margin-bottom:4px}
+.scan-value{font-size:12.5px;line-height:1.55}
+.chip-row,.company-list{display:flex;flex-wrap:wrap;gap:6px}
+.chip,.company{font-family:var(--mono);font-size:8px;padding:4px 7px;border:1px solid var(--wf);background:var(--wff);color:rgba(240,232,213,.58)}
+.chip.on{border-color:var(--amberb);background:var(--amberd);color:var(--amberl)}
 
-.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.overview-card{background:var(--navy2);border:1px solid var(--wf);padding:18px;border-radius:var(--r);display:flex;flex-direction:column;gap:10px}
-.ov-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.ov-icon{font-size:22px}
-.ov-num{font-family:var(--mono);font-size:9px;color:rgba(240,232,213,.32)}
-.ov-title{font-family:var(--serif);font-size:20px}
-.ov-text{font-size:13px;color:var(--wd);line-height:1.68;flex:1}
-.tag-row{display:flex;gap:6px;flex-wrap:wrap}
-.tag{font-family:var(--mono);font-size:8px;padding:3px 6px;border:1px solid var(--wf);background:var(--wff);color:rgba(240,232,213,.46);border-radius:1px}
-.tag.on{border-color:var(--amberb);background:var(--amberd);color:var(--amberl)}
+.nav-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.nav-card{display:block;background:var(--navy2);border:1px solid var(--wf);padding:14px;transition:.18s}
+.nav-card:hover{border-color:var(--amberb);transform:translateY(-1px)}
+.nav-card strong{display:block;font-size:13.5px;margin-bottom:4px}
+.nav-card span{display:block;font-size:12px;color:var(--wd);line-height:1.55}
 
-.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.detail-card{background:linear-gradient(180deg,rgba(13,21,37,.95) 0%,rgba(8,12,21,.98) 100%);border:1px solid var(--wf);padding:20px;border-radius:var(--r)}
-.detail-card:target{border-color:var(--amberb);box-shadow:0 0 0 1px rgba(200,137,26,.12) inset}
-.d-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
-.d-title{font-family:var(--serif);font-size:24px;line-height:1.1}
-.d-score{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--amberl);padding:5px 8px;border:1px solid var(--amberb);background:var(--amberd);white-space:nowrap}
-.d-copy{font-size:13.5px;color:var(--wd);line-height:1.75;margin-bottom:14px}
-.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.mini-box{background:var(--wff);border:1px solid var(--wf);padding:10px}
-.mini-label{font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:rgba(240,232,213,.38);margin-bottom:4px}
-.mini-val{font-size:12.5px;color:var(--cream);line-height:1.55}
-.bullet-list{margin:0 0 12px 18px}
-.bullet-list li{font-size:13px;color:var(--wd);line-height:1.72;margin-bottom:5px}
-.subhead{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amberl);margin:14px 0 8px}
-.company-list{display:flex;gap:6px;flex-wrap:wrap}
-.company{font-family:var(--mono);font-size:8px;padding:4px 7px;border:1px solid var(--wf);background:var(--wff);color:rgba(240,232,213,.54);border-radius:1px}
+.sector-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.sector-card{padding:20px}
+.sector-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
+.sector-title{font-family:var(--serif);font-size:24px;line-height:1.08}
+.sector-kind{color:var(--amberl);margin-bottom:2px}
+.sector-summary{font-size:13.5px;color:var(--wd);line-height:1.75;margin-bottom:14px}
+.sector-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.sector-box{background:var(--wff);border:1px solid var(--wf);padding:10px}
+.sector-box b{display:block;font-size:12px;margin-bottom:4px}
+.sector-box span{font-size:12px;color:var(--wd);line-height:1.55}
+.sector-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.sector-points ul{margin-left:18px}
+.sector-points li{font-size:12.5px;color:var(--wd);line-height:1.65;margin-bottom:5px}
 
-.table-wrap{background:var(--navy2);border:1px solid var(--wf);border-radius:var(--r);overflow:auto}
-table{width:100%;border-collapse:collapse;min-width:920px}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.insight-card{padding:18px}
+.insight-card h3{font-family:var(--serif);font-size:22px;margin-bottom:8px}
+.insight-card p{font-size:13px;color:var(--wd);line-height:1.72;margin-bottom:10px}
+.insight-card ul{margin-left:18px}
+.insight-card li{font-size:13px;color:var(--wd);line-height:1.7;margin-bottom:5px}
+
+.table-wrap{overflow:auto}
+.table-head{padding:18px 18px 0}
+table{width:100%;border-collapse:collapse;min-width:980px}
 th,td{padding:12px 14px;border-bottom:1px solid var(--wff);vertical-align:top;text-align:left}
 th{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amberl);background:rgba(200,137,26,.06)}
 td{font-size:12.5px;color:var(--wd);line-height:1.65}
 tr:last-child td{border-bottom:none}
 .td-main{color:var(--cream);font-weight:600}
 
-.bucket-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.bucket{background:var(--navy2);border:1px solid var(--wf);padding:18px;border-radius:var(--r)}
-.bucket h3{font-family:var(--serif);font-size:22px;margin-bottom:10px}
-.bucket p{font-size:13px;color:var(--wd);line-height:1.72;margin-bottom:10px}
-.bucket ul{margin:0 0 10px 18px}
-.bucket li{font-size:13px;color:var(--wd);line-height:1.72;margin-bottom:5px}
-
-.cta-box{background:linear-gradient(135deg,rgba(20,32,58,.95),rgba(10,15,27,.98));border:1px solid var(--amberb);padding:26px;border-radius:var(--r);position:relative;overflow:hidden}
-.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
-.cta-label{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--amberl);margin-bottom:10px}
-.cta-title{font-family:var(--serif);font-size:28px;margin-bottom:8px}
-.cta-text{font-size:14px;color:var(--wd);line-height:1.75;max-width:880px;margin-bottom:16px}
-.cta-actions{display:flex;gap:10px;flex-wrap:wrap}
+.cta-box{padding:26px;position:relative;overflow:hidden}
+.cta-title{font-family:var(--serif);font-size:30px;line-height:1.08;margin-bottom:8px}
+.cta-text{max-width:900px;font-size:14px;color:var(--wd);line-height:1.8;margin-bottom:16px}
+.cta-actions{display:flex;flex-wrap:wrap;gap:10px}
 
 footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px}
@@ -152,15 +170,16 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .footer-copy{font-family:var(--mono);font-size:10px;color:rgba(240,232,213,.28);white-space:nowrap}
 
 @media(max-width:1180px){
-  .hero-grid,.overview-grid,.matrix,.bucket-grid{grid-template-columns:1fr 1fr}
-  .stats-grid{grid-template-columns:1fr 1fr}
+  .hero,.focus-grid,.nav-grid,.insight-grid{grid-template-columns:1fr 1fr}
+  .sector-grid{grid-template-columns:1fr}
 }
-@media(max-width:820px){
+@media(max-width:920px){
   nav ul{display:none}
   .hamburger{display:flex}
   nav.open ul{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(7,11,22,.98);border-bottom:1px solid var(--wf);padding:8px 14px 14px;gap:2px;z-index:298}
   nav.open ul a{padding:10px 12px;font-size:12px}
-  .hero-grid,.overview-grid,.matrix,.bucket-grid,.stats-grid,.hc-list,.mini-grid{grid-template-columns:1fr}
+  .hero,.hero-flow,.hero-metrics,.focus-grid,.nav-grid,.insight-grid,.sector-meta,.sector-points{grid-template-columns:1fr}
+  .focus-strip{grid-template-columns:1fr}
   .nav-r .btn-ghost{display:none}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
@@ -173,36 +192,36 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .logo img{height:34px;width:34px}
   .logo-t{font-size:18px;white-space:nowrap}
   .btn-fill{font-size:8px;padding:7px 10px;letter-spacing:.05em;white-space:nowrap}
-  .page-shell{padding:28px 0 46px}
+  .page-shell{padding:26px 0 48px}
   .container{padding:0 12px}
+  .hero-panel,.hero-side,.section-card,.sector-card,.insight-card,.cta-box{padding:18px}
   .footer-grid{grid-template-columns:1fr}
-  .section{margin-bottom:34px}
 }
 </style>
 </head>
 <body>
 <div class="ticker">
   <div class="t-label"><div class="t-dot"></div>Live</div>
-  <div class="t-wrap"><div class="t-track" id="ticker-track"><div class="t-item"><span class="t-sym">S&P 500</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">ACMR</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">KTOS</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">LMT</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">AVAV</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">PANW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">XOM</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">GLD</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">OIL</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">MSFT</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">CRWD</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">S&P 500</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">ACMR</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">KTOS</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">LMT</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">AVAV</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">PANW</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">XOM</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">GLD</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">VIX</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">OIL</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">MSFT</span><span class="t-px" style="opacity:.35">···</span></div><div class="t-item"><span class="t-sym">CRWD</span><span class="t-px" style="opacity:.35">···</span></div></div></div></div>
+  <div class="t-wrap"><div class="t-track" id="ticker-track"><div class="t-item"><span class="t-sym">S&P 500</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">ACMR</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">KTOS</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">LMT</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">AVAV</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">PANW</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">S&P 500</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">ACMR</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">KTOS</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">LMT</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">AVAV</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">PANW</span><span class="t-px" style="opacity:.35">...</span></div></div></div>
 </div>
-<nav id="nav" aria-label="Hlavná navigácia" aria-expanded="false">
+<nav id="nav" aria-label="Hlavna navigacia" aria-expanded="false">
   <a href="/" class="logo" aria-label="InvestRadar">
-    <img src="data:image/png;base64,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" alt="Logo InvestRadar">
+    <img src="data:image/png;base64,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" alt="Logo InvestRadar">
     <span class="logo-t">Invest<b>Radar</b></span>
   </a>
   <ul>
     <li><a href="/novinky/" class="nav-link" data-page="novinky">Novinky</a></li>
-    <li><a href="/analyzy/" class="nav-link" data-page="analyzy">Analýzy</a></li>
+    <li><a href="/analyzy/" class="nav-link" data-page="analyzy">Analyzy</a></li>
     <li><a href="/alerty/" class="nav-link" data-page="alerty">Trade Alerty</a></li>
     <li><a href="/sektory/" class="nav-link" data-page="sektory">Sektory</a></li>
     <li><a href="/earnings/" class="nav-link" data-page="earnings">Earnings</a></li>
-    <li><a href="/vzdelavanie/" class="nav-link" data-page="vzdelavanie">Vzdelávanie</a></li>
-    <li><a href="/o-nas/" class="nav-link" data-page="onas">O nás</a></li>
+    <li><a href="/vzdelavanie/" class="nav-link" data-page="vzdelavanie">Vzdelavanie</a></li>
+    <li><a href="/o-nas/" class="nav-link" data-page="onas">O nas</a></li>
   </ul>
   <div class="nav-r">
     <a href="/kontakt/" class="btn-ghost btn-sm">Kontakt</a>
     <a href="#" onclick="goTo('newsletter');return false;" class="btn-ghost btn-sm">Newsletter</a>
-    <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-fill btn-sm">📖 Kúpiť knihu</a>
+    <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-fill btn-sm">Kupit knihu</a>
   </div>
   <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -210,460 +229,544 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 <main class="page-shell">
   <div class="container">
     <section class="hero">
-      <div class="hero-label">InvestRadar · Sektorový hub</div>
-      <div class="hero-grid">
-        <div>
-          <h1 class="hero-title">Sektory, firmy a <em>watchlisty</em> na jednej URL</h1>
-          <p class="hero-sub">Táto stránka slúži ako centrálny sektorový prehľad pre InvestRadar. Nájdeš tu hlavné investičné témy, podsektory, ETF, široký zoznam verejne obchodovaných firiem, kľúčové katalyzátory aj riziká. Je to navrhnuté tak, aby si vedel rýchlo prepnúť z makro témy do konkrétneho tickeru a späť.</p>
-          <p class="hero-note">Praktický workflow: najprv si vyber sektor, potom pozri ETF a lídrov, následne si z watchlistu vytiahni 3 až 5 mien na detailnejšiu analýzu.</p>
-        </div>
-        <aside class="hero-card">
-          <div class="hc-label">Čo je na stránke</div>
-          <div class="hc-list">
-            <div class="hc-item"><div class="hc-n">12</div><div class="hc-t">hlavných sektorov</div></div>
-            <div class="hc-item"><div class="hc-n">90+</div><div class="hc-t">sledovaných firiem</div></div>
-            <div class="hc-item"><div class="hc-n">18</div><div class="hc-t">ETF a benchmarkov</div></div>
-            <div class="hc-item"><div class="hc-n">4</div><div class="hc-t">režimy trhu</div></div>
+      <div class="hero-panel">
+        <div class="eyebrow">InvestRadar · sektorovy hub</div>
+        <h1 class="hero-title">Sektory, firmy a <em>watchlisty</em> bez chaosu</h1>
+        <p class="hero-sub">Sekciu som preusporiadal na rychly pracovy hub. Najprv vidis, kde je momentum, potom sa jednym klikom dostanes na konkretny sektor a v kazdej karte mas rovnaku logiku: preco sledovat, co kontrolovat, ake ETF pouzit a ktore tickery mat na radare.</p>
+        <div class="hero-flow">
+          <div class="flow-step">
+            <strong>1. Vyber temu</strong>
+            <p>Pozri fokus sektory a vyfiltruj si len to, co dava zmysel pre aktualny rezim trhu.</p>
           </div>
-        </aside>
+          <div class="flow-step">
+            <strong>2. Skenuj kartu</strong>
+            <p>Na jednom mieste mas ETF, lidrov, satelity, katalyzatory aj hlavne rizika.</p>
+          </div>
+          <div class="flow-step">
+            <strong>3. Prejdi na analyzu</strong>
+            <p>Zo sektora si vytiahni 3 az 5 mien a az potom chod do detailu alebo trade alertu.</p>
+          </div>
+        </div>
       </div>
+
+      <aside class="hero-side">
+        <div class="eyebrow">Rychly scan</div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="metric-value">12</div>
+            <div class="metric-label">hlavnych sektorov</div>
+            <div class="metric-note">Rozdelene na prioritne a doplnkove, aby oko neskenovalo vsetko naraz.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">90+</div>
+            <div class="metric-label">tickerov</div>
+            <div class="metric-note">Lidri su oddeleni od 2. linie, takze rychlo vidis jadro sektora.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">6</div>
+            <div class="metric-label">fokus tem</div>
+            <div class="metric-note">Najdolezitejsie sektory pre aktualne investicne narativy.</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value">1</div>
+            <div class="metric-label">jednotna sablona</div>
+            <div class="metric-note">Kazda karta ma rovnaky format, preto je orientacia ovela rychlejsia.</div>
+          </div>
+        </div>
+      </aside>
     </section>
 
-    <div class="jumpbar">
-      <a href="#mapa">Mapa sektorov</a>
-      <a href="#detaily">Detailné prehľady</a>
-      <a href="#matica">Matica ETF</a>
-      <a href="#rezimy">Režimy trhu</a>
-      <a href="#watchlist">Watchlist bucket</a>
+    <div class="quick-links">
+      <a href="#fokus">Fokus sektory</a>
+      <a href="#navigator">Rychly vyber</a>
+      <a href="#detaily">Sektorove karty</a>
+      <a href="#matica">Porovnanie ETF</a>
+      <a href="#rezimy">Rezim trhu</a>
+      <a href="#watchlist">Watchlisty</a>
     </div>
 
     <section class="section">
-      <div class="stats-grid">
-        <div class="stat-card"><div class="stat-label">Najcyklickejšie</div><div class="stat-value">Semis / Priemysel</div><div class="stat-text">Najsilnejšie reagujú na capex, PMI, objednávky a vývoj dopytu po AI infra.</div></div>
-        <div class="stat-card"><div class="stat-label">Najdefenzívnejšie</div><div class="stat-value">Healthcare / Utility</div><div class="stat-text">Zvyknú držať lepšie pri spomaľovaní rastu, nižšom rizikovom apetíte a vyššej volatilite.</div></div>
-        <div class="stat-card"><div class="stat-label">Najviac viazané na komodity</div><div class="stat-value">Energia / Materiály</div><div class="stat-text">Ropa, plyn, crack spready, meď, urán a geopolitika vedia otočiť sentiment veľmi rýchlo.</div></div>
-        <div class="stat-card"><div class="stat-label">Najviac story-driven</div><div class="stat-value">Space / Defence / AI</div><div class="stat-text">Tieto segmenty často obchodujú naratív skôr než čisté short-term čísla.</div></div>
+      <div class="section-card">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Co sa zmenilo</div>
+            <h2 class="section-title">Menej balastu, viac orientacie</h2>
+          </div>
+          <p class="section-sub">Povodna verzia mala vela textu a malo hierarchie. Teraz ide stranka od najdolezitejsieho k menej dolezitemu: najprv fokus, potom navigacia, potom standardizovane detailne karty a az nakoniec porovnavacia tabulka.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="mapa">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Rýchla orientácia</div>
-          <h2 class="section-title">Mapa sektorov</h2>
+    <section class="section" id="fokus">
+      <div class="section-card">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Prva vrstva</div>
+            <h2 class="section-title">Fokus sektory</h2>
+          </div>
+          <p class="section-sub">Toto je najpraktickejsi vstup do stranky. Najprv si zisti, kde je aktualne najviac sily, kde je najlepsi narativ a kde sa oplati hladat konkretne akcie.</p>
         </div>
-        <p class="section-sub">Každá karta nižšie sumarizuje dominantnú tému, typické ETF a výber tickerov. Kliknutím v navigácii sa vieš presunúť na detailný blok daného sektora.</p>
-      </div>
 
-      <div class="overview-grid">
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">⚙️</span><span class="ov-num">01</span></div>
-          <div class="ov-title">Polovodiče</div>
-          <div class="ov-text">Core engine rastových trhov. Sleduj foundry, memory, wafer fab equipment a power semis.</div>
-          <div class="tag-row"><span class="tag on">SMH</span><span class="tag">NVDA</span><span class="tag">AMD</span><span class="tag">AVGO</span><span class="tag">TSM</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🧠</span><span class="ov-num">02</span></div>
-          <div class="ov-title">AI infra & cloud</div>
-          <div class="ov-text">Hyperscaleri, servery, networking a datacentrové REIT-y. Citlivé na capex guidance a dopyt po GPU.</div>
-          <div class="tag-row"><span class="tag on">QQQ</span><span class="tag">MSFT</span><span class="tag">AMZN</span><span class="tag">META</span><span class="tag">ANET</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🔐</span><span class="ov-num">03</span></div>
-          <div class="ov-title">Kyberbezpečnosť</div>
-          <div class="ov-text">Sekulárny rast podporený AI attack surface, cloud migráciou a reguláciou. Watch je valuation vs. tempo rastu.</div>
-          <div class="tag-row"><span class="tag on">HACK</span><span class="tag">PANW</span><span class="tag">CRWD</span><span class="tag">ZS</span><span class="tag">S</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">⚡</span><span class="ov-num">04</span></div>
-          <div class="ov-title">Energia</div>
-          <div class="ov-text">Majors, E&P, oil services, LNG a elektrifikácia. Kľúčové sú ropa, plyn, OPEC a geopolitické prirážky.</div>
-          <div class="tag-row"><span class="tag on">XLE</span><span class="tag">XOM</span><span class="tag">CVX</span><span class="tag">SLB</span><span class="tag">OXY</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🛡️</span><span class="ov-num">05</span></div>
-          <div class="ov-title">Obrana & drony</div>
-          <div class="ov-text">Defence spending, missiles, electronics, drones a space-linked defence. Často reaguje na headline risk.</div>
-          <div class="tag-row"><span class="tag on">ITA</span><span class="tag">LMT</span><span class="tag">NOC</span><span class="tag">KTOS</span><span class="tag">AVAV</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🏥</span><span class="ov-num">06</span></div>
-          <div class="ov-title">Healthcare</div>
-          <div class="ov-text">Big pharma, medtech, poistitelia a biotech. Dôležité sú patent cliffs, pricing a výsledky klinických štúdií.</div>
-          <div class="tag-row"><span class="tag on">XLV</span><span class="tag">LLY</span><span class="tag">JNJ</span><span class="tag">ISRG</span><span class="tag">UNH</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🏦</span><span class="ov-num">07</span></div>
-          <div class="ov-title">Financie</div>
-          <div class="ov-text">Banky, brokers, payment rails, asset managers a alternatívny kapitál. Citlivé na sadzby, kredit a aktivitu na trhu.</div>
-          <div class="tag-row"><span class="tag on">XLF</span><span class="tag">JPM</span><span class="tag">GS</span><span class="tag">MA</span><span class="tag">KKR</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🏭</span><span class="ov-num">08</span></div>
-          <div class="ov-title">Priemysel</div>
-          <div class="ov-text">Automation, aerospace, rail, logistics a capital goods. Sleduj backlog, orders a marže.</div>
-          <div class="tag-row"><span class="tag on">XLI</span><span class="tag">GE</span><span class="tag">CAT</span><span class="tag">PH</span><span class="tag">ETN</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🛒</span><span class="ov-num">09</span></div>
-          <div class="ov-title">Consumer</div>
-          <div class="ov-text">Retail, e-commerce, travel, luxury a digital ads. V centre je sila spotrebiteľa a pricing power.</div>
-          <div class="tag-row"><span class="tag on">XLY</span><span class="tag">AMZN</span><span class="tag">MELI</span><span class="tag">BKNG</span><span class="tag">COST</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🔌</span><span class="ov-num">10</span></div>
-          <div class="ov-title">Utility & power</div>
-          <div class="ov-text">Prenosové siete, regulated utility, independent power a jadrové témy. AI datacentrá tu menia demand story.</div>
-          <div class="tag-row"><span class="tag on">XLU</span><span class="tag">NEE</span><span class="tag">CEG</span><span class="tag">VST</span><span class="tag">DUK</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">🚀</span><span class="ov-num">11</span></div>
-          <div class="ov-title">Space tech</div>
-          <div class="ov-text">Launch, satellite broadband, earth observation a defence-space prepojenia. Vysoké riziko, vysoká volatilita.</div>
-          <div class="tag-row"><span class="tag on">ARKX</span><span class="tag">RKLB</span><span class="tag">ASTS</span><span class="tag">LUNR</span><span class="tag">PL</span></div>
-        </article>
-        <article class="overview-card">
-          <div class="ov-top"><span class="ov-icon">⛏️</span><span class="ov-num">12</span></div>
-          <div class="ov-title">Materiály & komodity</div>
-          <div class="ov-text">Meď, oceľ, hnojivá, zlato a urán. Super pre makro a capex rotácie, ale sentiment býva prudko cyklický.</div>
-          <div class="tag-row"><span class="tag on">XLB</span><span class="tag">FCX</span><span class="tag">NEM</span><span class="tag">NUE</span><span class="tag">CCJ</span></div>
-        </article>
+        <div class="focus-grid">
+          <article class="focus-card">
+            <div class="focus-top">
+              <h3 class="focus-title">Polovodice</h3>
+              <div class="pill">Top momentum</div>
+            </div>
+            <p class="focus-copy">Jadro growth trhu. Najcitlivejsie na AI capex, HBM memory, foundry utilization a equipment spend.</p>
+            <div class="focus-strip">
+              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">SMH, SOXX, SOX</div></div>
+              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">capex, supply, valuation</div></div>
+            </div>
+            <div class="chip-row"><span class="chip on">NVDA</span><span class="chip">AMD</span><span class="chip">AVGO</span><span class="chip">TSM</span><span class="chip">ASML</span></div>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-top">
+              <h3 class="focus-title">AI infra & cloud</h3>
+              <div class="pill">Compounder</div>
+            </div>
+            <p class="focus-copy">Vrstva nad polovodicmi, kde sa rozhoduje o monetizacii AI cez cloud, networking a datacentra.</p>
+            <div class="focus-strip">
+              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">QQQ, IGV, SRVR</div></div>
+              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">cloud growth, capex guide</div></div>
+            </div>
+            <div class="chip-row"><span class="chip on">MSFT</span><span class="chip">AMZN</span><span class="chip">META</span><span class="chip">ANET</span><span class="chip">VRT</span></div>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-top">
+              <h3 class="focus-title">Obrana & drony</h3>
+              <div class="pill">Headline beta</div>
+            </div>
+            <p class="focus-copy">Silny geopoliticky narativ, backlog, NATO spending a rastuci vyznam dronov, ISR a defense electronics.</p>
+            <div class="focus-strip">
+              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">ITA, PPA, XAR</div></div>
+              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">rozpocty, backlog, kontrakty</div></div>
+            </div>
+            <div class="chip-row"><span class="chip on">LMT</span><span class="chip">RTX</span><span class="chip">NOC</span><span class="chip">KTOS</span><span class="chip">AVAV</span></div>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-top">
+              <h3 class="focus-title">Energia</h3>
+              <div class="pill">Macro lever</div>
+            </div>
+            <p class="focus-copy">Cash flow, buybacky a geopolitika. Sektor, ktory vie rychlo prebrat leadership pri rope a LNG.</p>
+            <div class="focus-strip">
+              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">XLE, XOP, OIH</div></div>
+              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">ropa, OPEC, FCF</div></div>
+            </div>
+            <div class="chip-row"><span class="chip on">XOM</span><span class="chip">CVX</span><span class="chip">COP</span><span class="chip">SLB</span><span class="chip">OXY</span></div>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-top">
+              <h3 class="focus-title">Kyberbezpecnost</h3>
+              <div class="pill">Quality growth</div>
+            </div>
+            <p class="focus-copy">Odolnejsi spend nez bezny enterprise software. Dobry sektor na hladanie kvalitneho rastu.</p>
+            <div class="focus-strip">
+              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">HACK, CIBR, BUG</div></div>
+              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">billings, platform play</div></div>
+            </div>
+            <div class="chip-row"><span class="chip on">PANW</span><span class="chip">CRWD</span><span class="chip">ZS</span><span class="chip">FTNT</span><span class="chip">NET</span></div>
+          </article>
+
+          <article class="focus-card">
+            <div class="focus-top">
+              <h3 class="focus-title">Utility & power</h3>
+              <div class="pill">Defenziva+</div>
+            </div>
+            <p class="focus-copy">Uz to nie je len nudna utility story. AI datacentra a grid investicie menia profil rastu.</p>
+            <div class="focus-strip">
+              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">XLU, GRID, URNM</div></div>
+              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">power demand, yields</div></div>
+            </div>
+            <div class="chip-row"><span class="chip on">CEG</span><span class="chip">VST</span><span class="chip">NEE</span><span class="chip">DUK</span><span class="chip">BWXT</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="navigator">
+      <div class="section-card">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Druha vrstva</div>
+            <h2 class="section-title">Rychly vyber sektorov</h2>
+          </div>
+          <p class="section-sub">Kazda karta ta posunie na detail. Najprv su prioritne temy, pod nimi doplnkove sektory pre sirsi watchlist a rotaciu.</p>
+        </div>
+
+        <div class="nav-grid">
+          <a class="nav-card" href="#semis"><strong>Polovodice</strong><span>AI capex, foundries, equipment</span></a>
+          <a class="nav-card" href="#ai"><strong>AI infra & cloud</strong><span>Hyperscaleri, networking, datacentra</span></a>
+          <a class="nav-card" href="#cyber"><strong>Kyberbezpecnost</strong><span>Cloud security, XDR, identity</span></a>
+          <a class="nav-card" href="#defence"><strong>Obrana & drony</strong><span>Backlog, kontrakty, geopolitika</span></a>
+          <a class="nav-card" href="#energy"><strong>Energia</strong><span>Ropa, LNG, buybacky, FCF</span></a>
+          <a class="nav-card" href="#utility"><strong>Utility & power</strong><span>Grid, nuclear, datacentra</span></a>
+          <a class="nav-card" href="#healthcare"><strong>Healthcare</strong><span>Pharma, devices, managed care</span></a>
+          <a class="nav-card" href="#financials"><strong>Financie</strong><span>Rates, credit, capital markets</span></a>
+          <a class="nav-card" href="#industrials"><strong>Priemysel</strong><span>Automation, infra, backlog</span></a>
+          <a class="nav-card" href="#consumer"><strong>Consumer</strong><span>Retail, travel, e-commerce</span></a>
+          <a class="nav-card" href="#materials"><strong>Materialy</strong><span>Med, zlato, uran, ocel</span></a>
+          <a class="nav-card" href="#space"><strong>Space tech</strong><span>Launch, satcom, frontier risk</span></a>
+        </div>
       </div>
     </section>
 
     <section class="section" id="detaily">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Jadro stránky</div>
-          <h2 class="section-title">Detailné sektorové prehľady</h2>
+      <div class="section-card">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Hlavna cast</div>
+            <h2 class="section-title">Standardizovane sektorove karty</h2>
+          </div>
+          <p class="section-sub">Kazdy sektor ma rovnaky format: co je tema, co sledovat, ETF, lidri, satelity, katalyzatory a rizika. To je hlavny dovod, preco je tato verzia ovela prehladnejsia.</p>
         </div>
-        <p class="section-sub">Každý sektor obsahuje investičnú tézu, katalyzátory, riziká, ETF a rozšírený zoznam firiem. Zámerne je to postavené široko, aby si mal čo najviac možností na ďalší výber.</p>
-      </div>
 
-      <div class="matrix">
-        <article class="detail-card" id="semis">
-          <div class="d-head"><h3 class="d-title">Polovodiče</h3><div class="d-score">High beta growth</div></div>
-          <p class="d-copy">Najdôležitejší sektor dnešného growth trhu. Rozdelený je na designers, foundries, memory, equipment a analog/power hráčov. Najväčší driver je AI capex, ale netreba ignorovať ani automotive, industrial a smartphone cyklus.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">SMH, SOXX, SOX index</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">AI GPU, HBM memory, wafer fab equipment</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: hyperscaler capex, foundry utilization, HBM supply, enterprise AI adoption.</li>
-            <li>Riziká: export controls, inventory correction, vyššie valuácie, slabší end-demand mimo AI.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">NVDA</span><span class="company">AMD</span><span class="company">AVGO</span><span class="company">TSM</span><span class="company">ASML</span><span class="company">LRCX</span><span class="company">AMAT</span><span class="company">KLAC</span><span class="company">MU</span><span class="company">ARM</span><span class="company">QCOM</span><span class="company">TXN</span><span class="company">NXPI</span><span class="company">ON</span><span class="company">MRVL</span><span class="company">ACMR</span><span class="company">UCTT</span>
-          </div>
-        </article>
+        <div class="sector-grid">
+          <article class="sector-card" id="semis">
+            <div class="sector-head">
+              <div><div class="sector-kind">Growth leader</div><h3 class="sector-title">Polovodice</h3></div>
+              <div class="pill">High beta</div>
+            </div>
+            <p class="sector-summary">Najdolezitejsi sektor dnesneho growth trhu. Driverom je AI capex, HBM memory, foundry utilization a wafer fab equipment.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>SMH, SOXX, SOX</span></div>
+              <div class="sector-box"><b>Lidri</b><span>NVDA, AMD, AVGO, TSM</span></div>
+              <div class="sector-box"><b>Satelity</b><span>ASML, MU, MRVL, ACMR</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>hyperscaler capex</li><li>HBM supply</li><li>enterprise AI adoption</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>export controls</li><li>inventory correction</li><li>prilis vysoke valuacie</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">NVDA</span><span class="company">AMD</span><span class="company">AVGO</span><span class="company">TSM</span><span class="company">ASML</span><span class="company">LRCX</span><span class="company">AMAT</span><span class="company">MU</span><span class="company">MRVL</span><span class="company">ACMR</span></div>
+          </article>
 
-        <article class="detail-card" id="ai">
-          <div class="d-head"><h3 class="d-title">AI infra & cloud</h3><div class="d-score">Secular compounder</div></div>
-          <p class="d-copy">Tu sa stretáva softvér, cloud, networking, serverová infra a datacentrový ekosystém. Je to širší layer nad polovodičmi a býva to miesto, kde sa AI monetizácia začne premietať do revenue mixu.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">QQQ, IGV, CLOU, SRVR</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Hyperscaler capex, inference, networking, datacentrá</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: rast Azure, AWS a Google Cloud, inferenčné workloady, sieťové upgrady, AI software attach.</li>
-            <li>Riziká: preplatené multiple, slabšia monetizácia AI funkcií, tlak na marže pri vysokom capexe.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">MSFT</span><span class="company">AMZN</span><span class="company">GOOGL</span><span class="company">META</span><span class="company">ORCL</span><span class="company">ANET</span><span class="company">DELL</span><span class="company">SMCI</span><span class="company">VRT</span><span class="company">EQIX</span><span class="company">DLR</span><span class="company">NOW</span><span class="company">SNOW</span><span class="company">MDB</span><span class="company">DDOG</span>
-          </div>
-        </article>
+          <article class="sector-card" id="ai">
+            <div class="sector-head">
+              <div><div class="sector-kind">Secular compounder</div><h3 class="sector-title">AI infra & cloud</h3></div>
+              <div class="pill">Core theme</div>
+            </div>
+            <p class="sector-summary">Vrstva nad polovodicmi, kde sa AI investicie menia na realne revenue cez cloud, networking, servery a datacentra.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>QQQ, IGV, SRVR</span></div>
+              <div class="sector-box"><b>Lidri</b><span>MSFT, AMZN, META, GOOGL</span></div>
+              <div class="sector-box"><b>Satelity</b><span>ANET, VRT, DLR, DELL</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>rast cloud divizii</li><li>inference workloads</li><li>AI software attach</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>slaba monetizacia AI</li><li>tlak na marze</li><li>capex bez ROI</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">MSFT</span><span class="company">AMZN</span><span class="company">GOOGL</span><span class="company">META</span><span class="company">ANET</span><span class="company">VRT</span><span class="company">DLR</span><span class="company">EQIX</span><span class="company">SMCI</span><span class="company">DELL</span></div>
+          </article>
 
-        <article class="detail-card" id="cyber">
-          <div class="d-head"><h3 class="d-title">Kyberbezpečnosť</h3><div class="d-score">Quality growth</div></div>
-          <p class="d-copy">Jedna z najčistejších sekulárnych tém. Security spend býva odolnejší než bežný enterprise software, lebo firmy nemôžu vypnúť ochranu infraštruktúry, identity a endpointov.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">HACK, CIBR, BUG</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Cloud security, identity, XDR, SASE</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: vyšší počet útokov, konsolidácia vendorov, AI security, federálne a enterprise kontrakty.</li>
-            <li>Riziká: dlhé sales cykly, tlak konkurencie, vysoké revenue multiple, zlé guidance pri slabšom IT spend.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">PANW</span><span class="company">CRWD</span><span class="company">ZS</span><span class="company">FTNT</span><span class="company">S</span><span class="company">OKTA</span><span class="company">CYBR</span><span class="company">TENB</span><span class="company">RPD</span><span class="company">NET</span><span class="company">SAIL</span><span class="company">SENTINELONE</span>
-          </div>
-        </article>
+          <article class="sector-card" id="cyber">
+            <div class="sector-head">
+              <div><div class="sector-kind">Quality growth</div><h3 class="sector-title">Kyberbezpecnost</h3></div>
+              <div class="pill">Resilient spend</div>
+            </div>
+            <p class="sector-summary">Jedna z najcistejsich sekularnych tem. Security spend je casto odolnejsi nez bezny enterprise software.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>HACK, CIBR, BUG</span></div>
+              <div class="sector-box"><b>Lidri</b><span>PANW, CRWD, FTNT</span></div>
+              <div class="sector-box"><b>Satelity</b><span>ZS, NET, OKTA, S</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>rast utokov</li><li>platform consolidation</li><li>AI security</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>slabsie billings</li><li>drahe multiple</li><li>silna konkurencia</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">PANW</span><span class="company">CRWD</span><span class="company">FTNT</span><span class="company">ZS</span><span class="company">NET</span><span class="company">OKTA</span><span class="company">S</span><span class="company">CYBR</span></div>
+          </article>
 
-        <article class="detail-card" id="energy">
-          <div class="d-head"><h3 class="d-title">Energia</h3><div class="d-score">Macro sensitive</div></div>
-          <p class="d-copy">Energia je mixom cash flow, geopolitiky a disciplíny na strane ponuky. Dá sa hrať cez majors, E&P, services, LNG exportérov aj utility/power link cez elektrifikáciu a AI demand.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">XLE, OIH, XOP, AMLP</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Ropa, LNG, oil services, free cash flow</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: OPEC politika, napätie na Blízkom východe, LNG kontrakty, buybacky a dividendy.</li>
-            <li>Riziká: pád ropy, recesia, slabší China demand, tlak na rafinérske marže a services spend.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">XOM</span><span class="company">CVX</span><span class="company">COP</span><span class="company">OXY</span><span class="company">EOG</span><span class="company">DVN</span><span class="company">FANG</span><span class="company">SLB</span><span class="company">HAL</span><span class="company">BKR</span><span class="company">LNG</span><span class="company">KMI</span><span class="company">WMB</span>
-          </div>
-        </article>
+          <article class="sector-card" id="defence">
+            <div class="sector-head">
+              <div><div class="sector-kind">Geopolitical premium</div><h3 class="sector-title">Obrana & drony</h3></div>
+              <div class="pill">Narrative strong</div>
+            </div>
+            <p class="sector-summary">Mix dlhych kontraktov, backlogu a headline-driven pohybov. Popri legacy primes rastie vyznam dronov, elektroniky a missile defense.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>ITA, PPA, XAR</span></div>
+              <div class="sector-box"><b>Lidri</b><span>LMT, RTX, NOC, GD</span></div>
+              <div class="sector-box"><b>Satelity</b><span>KTOS, AVAV, LDOS, HII</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>NATO spend</li><li>doplnenie zasob</li><li>dronove kontrakty</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>oneskorenie kontraktov</li><li>program risk</li><li>ostre valuacie po rally</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">LMT</span><span class="company">RTX</span><span class="company">NOC</span><span class="company">GD</span><span class="company">KTOS</span><span class="company">AVAV</span><span class="company">LDOS</span><span class="company">HII</span></div>
+          </article>
 
-        <article class="detail-card" id="defence">
-          <div class="d-head"><h3 class="d-title">Obrana & drony</h3><div class="d-score">Geopolitical premium</div></div>
-          <p class="d-copy">Defence je kombinácia dlhých kontraktov, backlogu a headline-driven pohybov. Popri legacy primes rastie význam dronov, elektroniky, ISR a missile defence.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">ITA, PPA, XAR</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Missiles, drones, defense electronics, backlog</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: vyššie obranné rozpočty NATO, dopĺňanie zásob munície, dronové platformy, space-defence synergie.</li>
-            <li>Riziká: valuácie po ostrom rally, oneskorenie kontraktov, program risk a tlak na marže pri fixed-price projektoch.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">LMT</span><span class="company">NOC</span><span class="company">RTX</span><span class="company">GD</span><span class="company">KTOS</span><span class="company">AVAV</span><span class="company">LDOS</span><span class="company">HII</span><span class="company">BA</span><span class="company">TXT</span>
-          </div>
-        </article>
+          <article class="sector-card" id="energy">
+            <div class="sector-head">
+              <div><div class="sector-kind">Macro sensitive</div><h3 class="sector-title">Energia</h3></div>
+              <div class="pill">Cash flow</div>
+            </div>
+            <p class="sector-summary">Energia je mix cash flow, geopolitiky a discipliny na strane ponuky. Da sa hrat cez majors, E&P aj oil services.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>XLE, XOP, OIH</span></div>
+              <div class="sector-box"><b>Lidri</b><span>XOM, CVX, COP</span></div>
+              <div class="sector-box"><b>Satelity</b><span>OXY, SLB, HAL, LNG</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>OPEC politika</li><li>LNG kontrakty</li><li>buybacky a dividendy</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>pad ropy</li><li>recesia</li><li>slabsi China demand</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">XOM</span><span class="company">CVX</span><span class="company">COP</span><span class="company">OXY</span><span class="company">EOG</span><span class="company">SLB</span><span class="company">HAL</span><span class="company">LNG</span></div>
+          </article>
 
-        <article class="detail-card" id="healthcare">
-          <div class="d-head"><h3 class="d-title">Healthcare</h3><div class="d-score">Defensive + innovation</div></div>
-          <p class="d-copy">Healthcare nie je jeden sektor, ale celý ekosystém: pharma, medtech, biotech, distribúcia a managed care. V jednom balíku vieš mať defenzívu aj extrémne vysokorizikové biotech mená.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">XLV, IBB, XBI</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">GLP-1, devices, robotics, reimbursement</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: pipeline dáta, GLP-1 adoption, margin mix v medtech, M&A v biotech.</li>
-            <li>Riziká: patent cliffs, pricing pressure, politické zásahy, klinické neúspechy.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">LLY</span><span class="company">NVO</span><span class="company">JNJ</span><span class="company">MRK</span><span class="company">ABBV</span><span class="company">PFE</span><span class="company">ISRG</span><span class="company">ABT</span><span class="company">SYK</span><span class="company">BSX</span><span class="company">UNH</span><span class="company">ELV</span><span class="company">VRTX</span><span class="company">REGN</span>
-          </div>
-        </article>
+          <article class="sector-card" id="utility">
+            <div class="sector-head">
+              <div><div class="sector-kind">Defensive with upside</div><h3 class="sector-title">Utility & power</h3></div>
+              <div class="pill">Grid story</div>
+            </div>
+            <p class="sector-summary">Segment sa meni z cistej defenzivy na rastovejsiu temu vdaka energetickemu dopytu datacentier, jadru a modernizacii siete.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>XLU, GRID, URNM</span></div>
+              <div class="sector-box"><b>Lidri</b><span>CEG, VST, NEE</span></div>
+              <div class="sector-box"><b>Satelity</b><span>DUK, SO, AEP, BWXT</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>rast spotreby elektriny</li><li>jadrove kontrakty</li><li>grid spend</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>vyssie vynosy</li><li>regulacne zasahy</li><li>execution risk</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">CEG</span><span class="company">VST</span><span class="company">NEE</span><span class="company">DUK</span><span class="company">SO</span><span class="company">AEP</span><span class="company">BWXT</span><span class="company">CCJ</span></div>
+          </article>
 
-        <article class="detail-card" id="financials">
-          <div class="d-head"><h3 class="d-title">Financie</h3><div class="d-score">Rates & credit</div></div>
-          <p class="d-copy">Finančný sektor žije zo sadzieb, kreditnej kvality, kapitálových trhov a sentimentu investorov. Iné faktory hýbu bankami, iné asset managermi a úplne iné platobnými sieťami.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">XLF, KRE, KBE, IAI</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">NII, trading, M&A, payment volumes, credit</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: steepening výnosovej krivky, silný trading, IPO/M&A reštart, stabilný consumer credit.</li>
-            <li>Riziká: komerčné reality, vyššie rezervy, regulačný tlak, slabšia deal activity.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">JPM</span><span class="company">BAC</span><span class="company">GS</span><span class="company">MS</span><span class="company">WFC</span><span class="company">BLK</span><span class="company">KKR</span><span class="company">BX</span><span class="company">APO</span><span class="company">MA</span><span class="company">V</span><span class="company">COF</span><span class="company">SCHW</span>
-          </div>
-        </article>
+          <article class="sector-card" id="healthcare">
+            <div class="sector-head">
+              <div><div class="sector-kind">Defensive + innovation</div><h3 class="sector-title">Healthcare</h3></div>
+              <div class="pill">Stability</div>
+            </div>
+            <p class="sector-summary">Pharma, medtech, biotech aj managed care v jednom baliku. Vie ponuknut defenzivu aj inovacny rast.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>XLV, IBB, XBI</span></div>
+              <div class="sector-box"><b>Lidri</b><span>LLY, JNJ, MRK, ISRG</span></div>
+              <div class="sector-box"><b>Satelity</b><span>NVO, BSX, VRTX, UNH</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>pipeline data</li><li>GLP-1 adoption</li><li>M&A v biotech</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>patent cliffs</li><li>pricing pressure</li><li>klinicke neuspechy</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">LLY</span><span class="company">NVO</span><span class="company">JNJ</span><span class="company">MRK</span><span class="company">ISRG</span><span class="company">ABT</span><span class="company">BSX</span><span class="company">VRTX</span><span class="company">UNH</span></div>
+          </article>
 
-        <article class="detail-card" id="industrials">
-          <div class="d-head"><h3 class="d-title">Priemysel</h3><div class="d-score">Broad cycle</div></div>
-          <p class="d-copy">Priemysel je veľmi široký kôš: aerospace, automation, electrification, logistics a machinery. Je výborný na sledovanie reálnej ekonomiky, backlogu a capexu podnikov.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">XLI, PAVE, AIRR</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Infrastructure spend, automation, reshoring</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: vyššie objednávky, infra projekty, factory automation, aerospace backlog.</li>
-            <li>Riziká: slabý PMI, nižšie objednávky, dlhšie cykly schvaľovania capexu, tlak vstupov.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">GE</span><span class="company">CAT</span><span class="company">DE</span><span class="company">PH</span><span class="company">ETN</span><span class="company">HON</span><span class="company">EMR</span><span class="company">ROK</span><span class="company">URI</span><span class="company">TT</span><span class="company">CPRT</span><span class="company">ODFL</span>
-          </div>
-        </article>
+          <article class="sector-card" id="financials">
+            <div class="sector-head">
+              <div><div class="sector-kind">Rates & credit</div><h3 class="sector-title">Financie</h3></div>
+              <div class="pill">Macro read</div>
+            </div>
+            <p class="sector-summary">Banky, brokers, asset manageri a payment rails maju rozne drivere, no vsetko stoji na sadzbach, kredite a aktivite kapitalovych trhov.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>XLF, KRE, KBE, IAI</span></div>
+              <div class="sector-box"><b>Lidri</b><span>JPM, GS, MS, BLK</span></div>
+              <div class="sector-box"><b>Satelity</b><span>KKR, BX, APO, MA</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>steepening krivky</li><li>trading activity</li><li>IPO/M&A restart</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>CRE expozicia</li><li>vyssie rezervy</li><li>regulacny tlak</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">JPM</span><span class="company">GS</span><span class="company">MS</span><span class="company">BLK</span><span class="company">KKR</span><span class="company">BX</span><span class="company">APO</span><span class="company">MA</span><span class="company">V</span></div>
+          </article>
 
-        <article class="detail-card" id="consumer">
-          <div class="d-head"><h3 class="d-title">Consumer</h3><div class="d-score">Demand pulse</div></div>
-          <p class="d-copy">Spotrebiteľský sektor dáva veľmi dobré čítanie o tom, ako je na tom domácnosť, pricing power aj ochota platiť za premium služby. Kombinuje retail, e-commerce, travel aj luxury.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">XLY, XLP, ONLN, AWAY</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Consumer health, ads, travel demand, margin mix</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: silný low unemployment backdrop, digital ads, medzinárodná expanzia, loyalty programy.</li>
-            <li>Riziká: slabšia domácnosť, tlak na discretionary spend, promo aktivita, FX a clá.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">AMZN</span><span class="company">MELI</span><span class="company">COST</span><span class="company">WMT</span><span class="company">HD</span><span class="company">LOW</span><span class="company">BKNG</span><span class="company">ABNB</span><span class="company">RCL</span><span class="company">NKE</span><span class="company">LULU</span><span class="company">SBUX</span>
-          </div>
-        </article>
+          <article class="sector-card" id="industrials">
+            <div class="sector-head">
+              <div><div class="sector-kind">Broad cycle</div><h3 class="sector-title">Priemysel</h3></div>
+              <div class="pill">PMI play</div>
+            </div>
+            <p class="sector-summary">Siroky kos aerospace, automation, logistics a machinery. Vyborny sektor na citanie realnej ekonomiky a firemneho capexu.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>XLI, PAVE, AIRR</span></div>
+              <div class="sector-box"><b>Lidri</b><span>GE, CAT, ETN, PH</span></div>
+              <div class="sector-box"><b>Satelity</b><span>DE, HON, URI, ROK</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>objednavky a backlog</li><li>infra projekty</li><li>factory automation</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>slaby PMI</li><li>nizsi capex</li><li>vstupne naklady</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">GE</span><span class="company">CAT</span><span class="company">ETN</span><span class="company">PH</span><span class="company">DE</span><span class="company">HON</span><span class="company">URI</span><span class="company">ROK</span></div>
+          </article>
 
-        <article class="detail-card" id="utility">
-          <div class="d-head"><h3 class="d-title">Utility & power</h3><div class="d-score">Defensive with upside</div></div>
-          <p class="d-copy">Tento segment sa mení z nudnej defenzívy na rastovejšiu tému vďaka energetickému dopytu datacentier, grid modernizácii, jadru a elektrifikácii priemyslu.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">XLU, PUI, GRID, URNM</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Power demand, nuclear, regulated assets, grid spend</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: rast spotreby elektriny, dátové centrá, nové jadrové kontrakty, výstavba prenosu.</li>
-            <li>Riziká: vyššie výnosy dlhopisov, regulačné zásahy, povolenia a execution risk.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">NEE</span><span class="company">CEG</span><span class="company">VST</span><span class="company">DUK</span><span class="company">SO</span><span class="company">AEP</span><span class="company">PCG</span><span class="company">EXC</span><span class="company">CCJ</span><span class="company">BWXT</span>
-          </div>
-        </article>
+          <article class="sector-card" id="consumer">
+            <div class="sector-head">
+              <div><div class="sector-kind">Demand pulse</div><h3 class="sector-title">Consumer</h3></div>
+              <div class="pill">Pricing test</div>
+            </div>
+            <p class="sector-summary">Dava citanie zdravia spotrebitela, pricing power a ochoty minut peniaze na retail, travel a premium sluzby.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>XLY, XLP, ONLN</span></div>
+              <div class="sector-box"><b>Lidri</b><span>AMZN, COST, WMT, MELI</span></div>
+              <div class="sector-box"><b>Satelity</b><span>BKNG, ABNB, NKE, LULU</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>silny consumer</li><li>digital ads</li><li>travel demand</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>slabsi discretionary spend</li><li>promo tlak</li><li>FX a cla</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">AMZN</span><span class="company">MELI</span><span class="company">COST</span><span class="company">WMT</span><span class="company">BKNG</span><span class="company">ABNB</span><span class="company">NKE</span><span class="company">LULU</span></div>
+          </article>
 
-        <article class="detail-card" id="space">
-          <div class="d-head"><h3 class="d-title">Space tech</h3><div class="d-score">Speculative frontier</div></div>
-          <p class="d-copy">Space mená sú viac venture-like než klasické large-cap akcie. Dáva zmysel pracovať s menšími pozíciami a jasne definovaným rizikom. Najviac sleduj kontrakty, cadence launchov a financovanie.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">ARKX</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Launch cadence, satcom, defense-space, funding</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: úspešné misie, nové vládne kontrakty, satelitná kapacita, zlepšenie economics.</li>
-            <li>Riziká: cash burn, dilúcia, technické zlyhanie, extrémna headline volatilita.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">RKLB</span><span class="company">ASTS</span><span class="company">LUNR</span><span class="company">PL</span><span class="company">SPIR</span><span class="company">BKSY</span><span class="company">IRDM</span><span class="company">GSAT</span>
-          </div>
-        </article>
+          <article class="sector-card" id="materials">
+            <div class="sector-head">
+              <div><div class="sector-kind">Commodity leverage</div><h3 class="sector-title">Materialy</h3></div>
+              <div class="pill">Reflation</div>
+            </div>
+            <p class="sector-summary">Dobry sektor na hranie reflacie, infra spendu a nedostatku surovin, ale s vysokou citlivostou na Cinu, dolar a ceny komodit.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>XLB, COPX, GDX, URNM</span></div>
+              <div class="sector-box"><b>Lidri</b><span>FCX, NEM, NUE</span></div>
+              <div class="sector-box"><b>Satelity</b><span>SCCO, STLD, MOS, CCJ</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>rast medi</li><li>slabsi dolar</li><li>jadrove kontrakty</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>China slowdown</li><li>prebytok zasob</li><li>prudke zmeny cien</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">FCX</span><span class="company">NEM</span><span class="company">NUE</span><span class="company">SCCO</span><span class="company">STLD</span><span class="company">MOS</span><span class="company">CF</span><span class="company">CCJ</span></div>
+          </article>
 
-        <article class="detail-card" id="materials">
-          <div class="d-head"><h3 class="d-title">Materiály & komodity</h3><div class="d-score">Commodity leverage</div></div>
-          <p class="d-copy">Materiály sú dobré na hranie reflácie, infra spendu a nedostatku surovín. Sú však veľmi citlivé na Čínu, dolár, zásoby a priemyselný cyklus.</p>
-          <div class="mini-grid">
-            <div class="mini-box"><div class="mini-label">ETF / benchmark</div><div class="mini-val">XLB, COPX, GDX, URNM</div></div>
-            <div class="mini-box"><div class="mini-label">Core téma</div><div class="mini-val">Copper, gold, uranium, steel, fertilizers</div></div>
-          </div>
-          <ul class="bullet-list">
-            <li>Katalyzátory: rast medi, slabší dolár, infra capex, jadrové kontrakty a supply constraints.</li>
-            <li>Riziká: China slowdown, slabší priemysel, prebytok zásob, prudké zmeny cien komodít.</li>
-          </ul>
-          <div class="subhead">Firmy</div>
-          <div class="company-list">
-            <span class="company">FCX</span><span class="company">SCCO</span><span class="company">NUE</span><span class="company">STLD</span><span class="company">NEM</span><span class="company">AEM</span><span class="company">MOS</span><span class="company">CF</span><span class="company">CCJ</span><span class="company">UEC</span>
-          </div>
-        </article>
+          <article class="sector-card" id="space">
+            <div class="sector-head">
+              <div><div class="sector-kind">Speculative frontier</div><h3 class="sector-title">Space tech</h3></div>
+              <div class="pill">High risk</div>
+            </div>
+            <p class="sector-summary">Viac venture-like nez klasicke large-cap akcie. Oplati sa mensia pozicia, disciplina a jasne definovane riziko.</p>
+            <div class="sector-meta">
+              <div class="sector-box"><b>ETF</b><span>ARKX</span></div>
+              <div class="sector-box"><b>Lidri</b><span>RKLB, ASTS</span></div>
+              <div class="sector-box"><b>Satelity</b><span>LUNR, PL, SPIR, BKSY</span></div>
+            </div>
+            <div class="sector-points">
+              <div><div class="scan-label">Katalyzatory</div><ul><li>uspesne misie</li><li>vladne kontrakty</li><li>zlepsenie economics</li></ul></div>
+              <div><div class="scan-label">Rizika</div><ul><li>cash burn</li><li>dilucia</li><li>technicke zlyhanie</li></ul></div>
+            </div>
+            <div class="company-list"><span class="company">RKLB</span><span class="company">ASTS</span><span class="company">LUNR</span><span class="company">PL</span><span class="company">SPIR</span><span class="company">BKSY</span><span class="company">IRDM</span></div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section" id="matica">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Rýchly prehľad</div>
-          <h2 class="section-title">Matica sektorov, ETF a lídrov</h2>
-        </div>
-        <p class="section-sub">Ak chceš rýchlo prepojiť makro príbeh s konkrétnym nástrojom, táto tabuľka je najpraktickejšia časť stránky.</p>
-      </div>
       <div class="table-wrap">
+        <div class="table-head">
+          <div class="table-label">Porovnanie</div>
+          <h2 class="section-title">Matica sektorov, ETF a lidrov</h2>
+          <p class="section-sub">Ked chces uplne rychlo prepojit makro pribeh s konkretnym nastrojom, tu mas najkratsiu verziu celej stranky.</p>
+        </div>
         <table>
           <thead>
             <tr>
               <th>Sektor</th>
               <th>ETF / benchmark</th>
-              <th>Lídri</th>
-              <th>2. línia / satelity</th>
-              <th>Čo sledovať</th>
+              <th>Lidri</th>
+              <th>2. linia</th>
+              <th>Co sledovat</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td class="td-main">Polovodiče</td><td>SMH, SOXX, SOX</td><td>NVDA, AMD, AVGO, TSM</td><td>MU, ARM, MRVL, ACMR, UCTT</td><td>AI capex, HBM, foundry utilization, export controls</td></tr>
-            <tr><td class="td-main">AI infra & cloud</td><td>QQQ, IGV, CLOU, SRVR</td><td>MSFT, AMZN, GOOGL, META</td><td>ANET, DELL, SMCI, VRT, DLR</td><td>Cloud growth, capex guide, networking, AI monetizácia</td></tr>
-            <tr><td class="td-main">Kyberbezpečnosť</td><td>HACK, CIBR, BUG</td><td>PANW, CRWD, FTNT</td><td>ZS, S, CYBR, OKTA, NET</td><td>Billings, platform consolidation, federal spend</td></tr>
-            <tr><td class="td-main">Energia</td><td>XLE, OIH, XOP, AMLP</td><td>XOM, CVX, COP</td><td>OXY, SLB, HAL, LNG, DVN</td><td>Ropa, OPEC, LNG, buybacky, FCF</td></tr>
-            <tr><td class="td-main">Obrana</td><td>ITA, PPA, XAR</td><td>LMT, RTX, NOC, GD</td><td>KTOS, AVAV, LDOS, HII</td><td>Backlog, NATO spend, missile demand, drones</td></tr>
-            <tr><td class="td-main">Healthcare</td><td>XLV, IBB, XBI</td><td>LLY, JNJ, MRK, ISRG</td><td>NVO, BSX, ABT, VRTX, UNH</td><td>Pipeline dáta, GLP-1, pricing, medtech volumes</td></tr>
-            <tr><td class="td-main">Financie</td><td>XLF, KBE, KRE, IAI</td><td>JPM, GS, MS, BLK</td><td>KKR, BX, APO, MA, V, COF</td><td>NII, capital markets, rezervy, yield curve</td></tr>
-            <tr><td class="td-main">Priemysel</td><td>XLI, PAVE, AIRR</td><td>GE, CAT, ETN, PH</td><td>DE, HON, EMR, ROK, URI</td><td>Orders, PMI, backlog, infra spend, automation</td></tr>
-            <tr><td class="td-main">Consumer</td><td>XLY, XLP, ONLN, AWAY</td><td>AMZN, COST, WMT, MELI</td><td>BKNG, ABNB, NKE, LULU, SBUX</td><td>Consumer health, promo pressure, travel, ads</td></tr>
-            <tr><td class="td-main">Utility & power</td><td>XLU, GRID, PUI, URNM</td><td>NEE, CEG, VST</td><td>DUK, SO, AEP, CCJ, BWXT</td><td>Power demand, AI datacentrá, nuclear, yields</td></tr>
-            <tr><td class="td-main">Space tech</td><td>ARKX</td><td>RKLB, ASTS</td><td>LUNR, PL, SPIR, BKSY</td><td>Launch cadence, kontrakty, financovanie, execution</td></tr>
-            <tr><td class="td-main">Materiály</td><td>XLB, COPX, GDX, URNM</td><td>FCX, NEM, NUE</td><td>SCCO, STLD, MOS, CF, CCJ</td><td>Meď, zlato, urán, China demand, infra cycle</td></tr>
+            <tr><td class="td-main">Polovodice</td><td>SMH, SOXX, SOX</td><td>NVDA, AMD, AVGO, TSM</td><td>ASML, MU, MRVL, ACMR</td><td>AI capex, HBM, foundry utilization, valuation</td></tr>
+            <tr><td class="td-main">AI infra & cloud</td><td>QQQ, IGV, SRVR</td><td>MSFT, AMZN, META, GOOGL</td><td>ANET, VRT, DLR, DELL</td><td>cloud growth, capex guide, networking, AI monetizacia</td></tr>
+            <tr><td class="td-main">Kyberbezpecnost</td><td>HACK, CIBR, BUG</td><td>PANW, CRWD, FTNT</td><td>ZS, NET, OKTA, S</td><td>billings, platform consolidation, federal spend</td></tr>
+            <tr><td class="td-main">Obrana & drony</td><td>ITA, PPA, XAR</td><td>LMT, RTX, NOC, GD</td><td>KTOS, AVAV, LDOS, HII</td><td>backlog, NATO spend, kontrakty, drony</td></tr>
+            <tr><td class="td-main">Energia</td><td>XLE, XOP, OIH</td><td>XOM, CVX, COP</td><td>OXY, SLB, HAL, LNG</td><td>ropa, OPEC, LNG, FCF, buybacky</td></tr>
+            <tr><td class="td-main">Utility & power</td><td>XLU, GRID, URNM</td><td>CEG, VST, NEE</td><td>DUK, SO, AEP, BWXT</td><td>power demand, AI datacentra, yields, nuclear</td></tr>
+            <tr><td class="td-main">Healthcare</td><td>XLV, IBB, XBI</td><td>LLY, JNJ, MRK, ISRG</td><td>NVO, BSX, VRTX, UNH</td><td>pipeline data, GLP-1, pricing, medtech volumes</td></tr>
+            <tr><td class="td-main">Financie</td><td>XLF, KRE, KBE, IAI</td><td>JPM, GS, MS, BLK</td><td>KKR, BX, APO, MA</td><td>NII, credit, trading, yield curve</td></tr>
+            <tr><td class="td-main">Priemysel</td><td>XLI, PAVE, AIRR</td><td>GE, CAT, ETN, PH</td><td>DE, HON, URI, ROK</td><td>orders, PMI, backlog, infra spend</td></tr>
+            <tr><td class="td-main">Consumer</td><td>XLY, XLP, ONLN</td><td>AMZN, COST, WMT, MELI</td><td>BKNG, ABNB, NKE, LULU</td><td>consumer health, promo pressure, travel, ads</td></tr>
+            <tr><td class="td-main">Materialy</td><td>XLB, COPX, GDX, URNM</td><td>FCX, NEM, NUE</td><td>SCCO, STLD, MOS, CCJ</td><td>med, zlato, uran, China demand</td></tr>
+            <tr><td class="td-main">Space tech</td><td>ARKX</td><td>RKLB, ASTS</td><td>LUNR, PL, SPIR, BKSY</td><td>launch cadence, kontrakty, financovanie</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section class="section" id="rezimy">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Kontext</div>
-          <h2 class="section-title">Ktoré sektory zvyknú fungovať v rôznych režimoch trhu</h2>
+      <div class="section-card">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Kontext</div>
+            <h2 class="section-title">Ktore sektory zvyknu fungovat v roznych rezimoch trhu</h2>
+          </div>
+          <p class="section-sub">Nie je to tvrde pravidlo, ale velmi prakticka mapa na prve rozhodnutie, kam sa pozerat najskor.</p>
         </div>
-        <p class="section-sub">Nie každý sektor funguje v každom prostredí. Toto je praktická orientačná mapa, nie tvrdé pravidlo.</p>
-      </div>
-      <div class="bucket-grid">
-        <div class="bucket">
-          <h3>Risk-on rast</h3>
-          <p>Keď klesá volatilita a trh verí v zrýchlenie ziskov, dominujú high-beta témy.</p>
-          <ul>
-            <li>Polovodiče</li>
-            <li>AI infra & cloud</li>
-            <li>Kyberbezpečnosť</li>
-            <li>Space tech</li>
-          </ul>
-        </div>
-        <div class="bucket">
-          <h3>Reflácia a capex</h3>
-          <p>Keď sa zlepšujú PMI, objednávky a rastie priemyselná aktivita, vedú skôr hmotnejšie biznisy.</p>
-          <ul>
-            <li>Priemysel</li>
-            <li>Energia</li>
-            <li>Materiály</li>
-            <li>Obrana</li>
-          </ul>
-        </div>
-        <div class="bucket">
-          <h3>Defenzíva</h3>
-          <p>Keď rast slabne alebo je trh nervózny, kapitál sa zvykne sťahovať do stabilnejších cash flow.</p>
-          <ul>
-            <li>Healthcare</li>
-            <li>Utility & power</li>
-            <li>Consumer staples cez XLP</li>
-            <li>Vybrané large-cap financie s kvalitným kapitálom</li>
-          </ul>
+
+        <div class="insight-grid">
+          <article class="insight-card">
+            <h3>Risk-on rast</h3>
+            <p>Pri nizkej volatilite a viere v rast ziskov zvyknu dominovat high-beta temy.</p>
+            <ul>
+              <li>Polovodice</li>
+              <li>AI infra & cloud</li>
+              <li>Kyberbezpecnost</li>
+              <li>Space tech</li>
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>Reflacia a capex</h3>
+            <p>Ked sa zlepsuju PMI a objednavky, casto vedu hmotnejsie biznisy a komoditne temy.</p>
+            <ul>
+              <li>Priemysel</li>
+              <li>Energia</li>
+              <li>Materialy</li>
+              <li>Obrana</li>
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>Defenziva</h3>
+            <p>Ked je trh nervozny alebo rast slabne, kapital sa casto presuva do stabilnejsich cash flow.</p>
+            <ul>
+              <li>Healthcare</li>
+              <li>Utility & power</li>
+              <li>Consumer staples cez XLP</li>
+              <li>Vybrane large-cap financie</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="watchlist">
-      <div class="section-head">
-        <div>
-          <div class="section-label">Praktické použitie</div>
-          <h2 class="section-title">Watchlist bucket podľa štýlu</h2>
+      <div class="section-card">
+        <div class="section-head">
+          <div>
+            <div class="section-label">Prakticke pouzitie</div>
+            <h2 class="section-title">Watchlisty podla stylu</h2>
+          </div>
+          <p class="section-sub">Ak nechces sledovat prilis vela mien naraz, toto je jednoduchsi a rychlejsi sposob ako si stranku realne pouzivat.</p>
         </div>
-        <p class="section-sub">Ak nechceš sledovať priveľa mien naraz, toto je jednoduché rozdelenie podľa typu setupu.</p>
-      </div>
-      <div class="bucket-grid">
-        <div class="bucket">
-          <h3>Core kvalita</h3>
-          <p>Najvhodnejšie mená na dlhšie sledovanie a opakované vstupy.</p>
-          <ul>
-            <li>MSFT, NVDA, TSM, ASML</li>
-            <li>PANW, CRWD</li>
-            <li>LLY, ISRG</li>
-            <li>JPM, BLK</li>
-          </ul>
-        </div>
-        <div class="bucket">
-          <h3>Cyklický trade</h3>
-          <p>Mená, ktoré sa výraznejšie hýbu podľa makra, komodít a sentimentu.</p>
-          <ul>
-            <li>SLB, OXY, FCX, NUE</li>
-            <li>CAT, PH, ETN, URI</li>
-            <li>KTOS, AVAV</li>
-            <li>COF, GS</li>
-          </ul>
-        </div>
-        <div class="bucket">
-          <h3>Vysoký rast / vyššie riziko</h3>
-          <p>Skôr satelitné pozície a mená, kde treba viac rešpektovať volatilitu.</p>
-          <ul>
-            <li>ACMR, UCTT, MRVL, ARM</li>
-            <li>S, NET, OKTA</li>
-            <li>RKLB, ASTS, LUNR</li>
-            <li>SMCI, VRT, DELL</li>
-          </ul>
+
+        <div class="insight-grid">
+          <article class="insight-card">
+            <h3>Core kvalita</h3>
+            <p>Firmy vhodne na dlhsie sledovanie a opakovane vstupy, ked sektor znovu dostane momentum.</p>
+            <ul>
+              <li>MSFT, NVDA, TSM, ASML</li>
+              <li>PANW, CRWD</li>
+              <li>LLY, ISRG</li>
+              <li>JPM, BLK</li>
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>Cyklicky trade</h3>
+            <p>Mena, ktore sa hyria podla makra, komodit a sentimentu a potrebuju lepsie nacasovanie.</p>
+            <ul>
+              <li>SLB, OXY, FCX, NUE</li>
+              <li>CAT, ETN, PH, URI</li>
+              <li>KTOS, AVAV</li>
+              <li>GS, COF</li>
+            </ul>
+          </article>
+          <article class="insight-card">
+            <h3>Vyssi rast / vyssie riziko</h3>
+            <p>Satelitne pozicie, kde treba vacsi respekt k volatilite a prisnejsie riadenie rizika.</p>
+            <ul>
+              <li>ACMR, MRVL, ARM, UCTT</li>
+              <li>S, NET, OKTA</li>
+              <li>RKLB, ASTS, LUNR</li>
+              <li>SMCI, VRT, DELL</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
@@ -671,11 +774,11 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
     <section class="section">
       <div class="cta-box">
         <div class="cta-label">InvestRadar workflow</div>
-        <div class="cta-title">Najprv sektor, potom firma, až potom trade</div>
-        <div class="cta-text">Toto je presne dôvod, prečo má stránka `Sektory` vlastnú URL. Vieš sa k nej vracať ako k rozcestníku: z noviniek si vyberieš tému, tu si nájdeš relevantný sektor a firmy, a následne ideš do konkrétnych analýz alebo trade alertov.</div>
+        <div class="cta-title">Najprv sektor, potom firma, az potom trade</div>
+        <div class="cta-text">Sekcia `Sektory` teraz funguje ako skutocny rozcestnik. Z noviniek alebo makro temy sa sem vratis, rychlo si vyberies sektor, skontrolujes lidrov a satelity a az potom ides do analyz alebo trade alertov.</div>
         <div class="cta-actions">
-          <a href="/analyzy/" class="btn-fill">Prejsť na analýzy</a>
-          <a href="/novinky/" class="btn-ghost">Otvoriť novinky</a>
+          <a href="/analyzy/" class="btn-fill">Prejst na analyzy</a>
+          <a href="/novinky/" class="btn-ghost">Otvorit novinky</a>
           <a href="/alerty/" class="btn-ghost">Trade alerty</a>
         </div>
       </div>
@@ -688,35 +791,35 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
     <div class="footer-grid">
       <div>
         <div class="footer-brand">Invest<b>Radar</b></div>
-        <p class="footer-desc">Slovenská nezávislá investičná platforma. Denné novinky, analýzy, trade alerty a portfóliové prehľady pre investorov, ktorí chcú rozumieť trhu do hĺbky.</p>
+        <p class="footer-desc">Slovenska nezavisla investicna platforma. Denne novinky, analyzy, trade alerty a portfoliove prehlady pre investorov, ktori chcu rozumiet trhu do hlbky.</p>
       </div>
       <div class="footer-col">
         <h4>Obsah</h4>
         <a href="#" onclick="goTo('novinky');return false;">Novinky</a>
-        <a href="#" onclick="goTo('analyzy');return false;">Analýzy</a>
+        <a href="#" onclick="goTo('analyzy');return false;">Analyzy</a>
         <a href="#" onclick="goTo('alerty');return false;">Trade alerty</a>
         <a href="/sektory/">Sektory</a>
         <a href="/earnings/">Earnings</a>
       </div>
       <div class="footer-col">
         <h4>Platforma</h4>
-        <a href="#" onclick="goTo('vzdelavanie');return false;">Vzdelávanie</a>
-        <a href="/o-nas/">O nás</a>
+        <a href="#" onclick="goTo('vzdelavanie');return false;">Vzdelavanie</a>
+        <a href="/o-nas/">O nas</a>
         <a href="#" onclick="goTo('newsletter');return false;">Newsletter</a>
-        <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kúpiť knihu</a>
+        <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kupit knihu</a>
         <a href="/kontakt/">Kontakt</a>
       </div>
       <div class="footer-col">
         <h4>Kontakt</h4>
         <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>
         <a href="/disclaimer/">Disclaimer</a>
-        <a href="/privacy-policy/">Ochrana osobných údajov</a>
-        <a href="#" onclick="goTo('podmienky');return false;">Podmienky používania</a>
+        <a href="/privacy-policy/">Ochrana osobnych udajov</a>
+        <a href="#" onclick="goTo('podmienky');return false;">Podmienky pouzivania</a>
         <a href="#" onclick="openCookieSettings();return false;">Nastavenie cookies</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-disc">Obsah InvestRadar má výlučne informačný a vzdelávací charakter a nepredstavuje investičné poradenstvo. Investovanie je spojené s rizikom straty kapitálu. Cookies pre analytiku sa načítajú až po udelení súhlasu. © 2026 InvestRadar · Martin Zábranský</p>
+      <p class="footer-disc">Obsah InvestRadar ma vylucne informacny a vzdelavaci charakter a nepredstavuje investicne poradenstvo. Investovanie je spojene s rizikom straty kapitalu. Cookies pre analytiku sa nacitaju az po udeleni suhlasu. © 2026 InvestRadar · Martin Zabransky</p>
       <div class="footer-copy">© 2026 InvestRadar</div>
     </div>
   </div>
@@ -734,11 +837,36 @@ function load(){var pending=S.length,res=[];S.forEach(function(sym,i){fetch('htt
 document.addEventListener('DOMContentLoaded',load);
 })();
 
-// Hamburger
+var ROUTES={
+  home:'/',
+  novinky:'/novinky/',
+  analyzy:'/analyzy/',
+  alerty:'/alerty/',
+  sektory:'/sektory/',
+  earnings:'/earnings/',
+  vzdelavanie:'/vzdelavanie/',
+  newsletter:'/newsletter/',
+  podmienky:'/podmienky/'
+};
+function goTo(id){
+  if(ROUTES[id]){
+    window.location.href=ROUTES[id];
+  }
+}
+function openCookieSettings(){
+  var banner=document.getElementById('cookie-banner');
+  if(banner){
+    banner.classList.add('show');
+    return;
+  }
+  window.location.href='/privacy-policy/';
+}
+
 document.getElementById('hbg').addEventListener('click',function(){
-  var nav = document.querySelector('nav');
-  var isOpen = nav.classList.toggle('open');
-  nav.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  var nav=document.querySelector('nav');
+  var isOpen=nav.classList.toggle('open');
+  nav.setAttribute('aria-expanded',isOpen?'true':'false');
 });
-</script></body>
+</script>
+</body>
 </html>
