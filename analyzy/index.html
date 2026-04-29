@@ -731,10 +731,6 @@ function loadPrices(){
         var price = (d.c && d.c > 0) ? d.c : (d.pc && d.pc > 0 ? d.pc : 0);
         if(price > 0){
           loaded[sym] = price;
-          updateTicker();
-          updateStats();
-          var dot = document.querySelector('.t-dot');
-          if(dot) dot.style.background = 'var(--green)';
         }
         cb();
       })
@@ -744,7 +740,13 @@ function loadPrices(){
   // Fetch one by one with 400ms gap to avoid rate limit
   var i = 0;
   function next(){
-    if(i >= SYMS.length) return;
+    if(i >= SYMS.length){
+      updateTicker();
+      updateStats();
+      var dot = document.querySelector('.t-dot');
+      if(dot) dot.style.background = 'var(--green)';
+      return;
+    }
     fetchSym(SYMS[i].s, function(){
       i++;
       setTimeout(next, 400);
