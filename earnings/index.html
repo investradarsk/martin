@@ -2241,7 +2241,7 @@ function setActivePage(pageId){
 
 function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
-  if(ROUTES[id]){
+  if(ROUTES[id] && id !== 'earnings'){
     window.location.href = ROUTES[id];
     return;
   }
@@ -2308,6 +2308,10 @@ window.addEventListener('DOMContentLoaded',function(){
     return;
   }
   if(handleArticleRoute(h)) return;
+  if(h === 'earnings' || !h){
+    goTo('earnings');
+    return;
+  }
   if(PAGES.includes(h)) goTo(h); else goTo('earnings');
 });
   // standalone earnings page — no hash routing needed
@@ -2825,8 +2829,16 @@ window.addEventListener('popstate',function(e){
   if(e.state&&e.state.key){ goToArticle(e.state.key); return; }
   var h=(location.hash||'').replace('#','');
   if(handleArticleRoute(h)) return;
+  if(h === 'earnings'){
+    goTo('earnings');
+    return;
+  }
   if(h && ROUTES[h]){
     window.location.replace(ROUTES[h]);
+    return;
+  }
+  if(e.state&&e.state.page==='earnings'){
+    goTo('earnings');
     return;
   }
   if(e.state&&e.state.page&&ROUTES[e.state.page]){
