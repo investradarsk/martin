@@ -1,393 +1,393 @@
 [
   {
     "id": 1,
-    "time": "22:10 SEC",
-    "date": "25. apr 2026",
+    "time": "22:34 CEST",
+    "date": "28. apr 2026",
     "badge": "NOVE",
-    "title": "Intel vystrelil po silnych vysledkoch a pomohol technologickemu sentimentu",
-    "summary": "Akcie Intelu prudko rastli po kvartalnych vysledkoch nad ocakavania a podporili sirsi apetyt po polovodicoch aj AI infrastrukture.",
+    "title": "Wall Street ustupil z rekordov, ked AI akcie a ropa zatlacili na sentiment",
+    "summary": "S&P 500 aj Nasdaq v utorok oslabili po vyberani ziskov v AI tituloch a dalsom raste cien ropy, co zhorsilo naladu napriec rastovym segmentom.",
     "tags": [
-      { "label": "INTC +23.6%", "tone": "up" },
-      { "label": "Tech leadership", "tone": "up" }
+      { "label": "AI selloff", "tone": "dn" },
+      { "label": "Oil risk", "tone": "dn" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "AP News - 28. apr 2026",
+    "sourceUrl": "https://apnews.com/article/1901470c64a6055c80656fad64f863e5"
   },
   {
     "id": 2,
-    "time": "21:48 SEC",
-    "date": "25. apr 2026",
-    "title": "S&P 500 a Nasdaq uzavreli na novych rekordoch",
-    "summary": "Silny vykon polovodicov a velkych technologii posunul hlavne americke indexy na nove historicke maxima, aj ked Dow zaostal.",
+    "time": "22:08 CEST",
+    "date": "28. apr 2026",
+    "title": "Obavy z rastu OpenAI poslali nizsie Oracle, CoreWeave aj dalsie AI mena",
+    "summary": "Sprava o slabsom internom tempe rastu OpenAI znovu otvorila otazku, ci sa obrie AI capexy dokazu pretavit do dostatocnych vynosov pre cely ekosystem.",
     "tags": [
-      { "label": "S&P record", "tone": "up" },
-      { "label": "Nasdaq record", "tone": "up" }
+      { "label": "ORCL lower", "tone": "dn" },
+      { "label": "CRWV lower", "tone": "dn" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Yahoo Finance / Reuters - 28. apr 2026",
+    "sourceUrl": "https://au.finance.yahoo.com/news/oracle-coreweave-back-openai-after-report-says-chatgpt-developer-missed-sales-user-targets-130600514.html"
   },
   {
     "id": 3,
-    "time": "21:25 SEC",
-    "date": "25. apr 2026",
-    "title": "Nvidia znovu tahala chip sektor a vratila sa do centra pozornosti",
-    "summary": "Silny dopyt po AI infrastrukture drzi investorov v najvacsej polovodicovej teme trhu a podporuje aj sirsi basket dodavatelov.",
+    "time": "21:42 CEST",
+    "date": "28. apr 2026",
+    "title": "Americka spotrebitelska dovera sa v aprili jemne zlepsila na 92.8 bodu",
+    "summary": "Consumer Confidence od Conference Board opat mierne vzrastol, co potvrdzuje stabilny stav domaceho dopytu pred nabitym makro tyzdnom.",
     "tags": [
-      { "label": "NVDA strength", "tone": "up" },
-      { "label": "AI infra", "tone": "up" }
+      { "label": "Confidence 92.8", "tone": "up" },
+      { "label": "US consumer", "tone": "nt" }
     ],
-    "source": "Yahoo Finance · 24. apr 2026",
-    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+    "source": "The Conference Board - 28. apr 2026",
+    "sourceUrl": "https://www.prnewswire.com/news-releases/us-consumer-confidence-edged-up-again-in-april-302755679.html"
   },
   {
     "id": 4,
-    "time": "21:04 SEC",
-    "date": "25. apr 2026",
-    "title": "Ropa ostava nervozna, trh sleduje dalsi vyvoj vojny s Iranom",
-    "summary": "Ceny ropy pokracuju v prudkych pohyboch, ked obchodnici vyhodnocuju geopoliticke riziko pre dodavky a mozne dalsie kroky producentov.",
+    "time": "21:18 CEST",
+    "date": "28. apr 2026",
+    "title": "Coca-Cola odstartovala kvartal silnym rastom trzieb aj ziskovosti",
+    "summary": "Firma reportovala medzirocny rast trzieb o 12 percent a EPS o 18 percent, co podporuje defenzivny consumer staples segment.",
     "tags": [
-      { "label": "Oil volatile", "tone": "nt" },
-      { "label": "Geopolitics", "tone": "dn" }
+      { "label": "KO results", "tone": "up" },
+      { "label": "Staples strength", "tone": "up" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Coca-Cola IR - 28. apr 2026",
+    "sourceUrl": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-027723/a2026q1earningsreleaseex-9.htm"
   },
   {
     "id": 5,
-    "time": "20:46 SEC",
-    "date": "25. apr 2026",
-    "title": "Alphabet podporil trh po AI partnerstvach a novych cipovych oznamoch",
-    "summary": "Investorov povzbudili nove AI iniciativy Alphabetu, ktore zlepsili sentiment v megacap technologickom priestore.",
+    "time": "20:56 CEST",
+    "date": "28. apr 2026",
+    "title": "Coca-Cola pridala aj rast objemov a zisk podielu na trhu",
+    "summary": "Global unit case volume vzrastol o 3 percenta a manazment hovori o silnom zaciatku roka, co zmiernuje obavy z tlaku na spotrebny dopyt.",
     "tags": [
-      { "label": "GOOGL up", "tone": "up" },
-      { "label": "AI partnerships", "tone": "up" }
+      { "label": "Volume +3%", "tone": "up" },
+      { "label": "Market share", "tone": "up" }
     ],
-    "source": "The Motley Fool · 22. apr 2026",
-    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+    "source": "Coca-Cola IR - 28. apr 2026",
+    "sourceUrl": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-027723/a2026q1earningsreleaseex-9.htm"
   },
   {
     "id": 6,
-    "time": "20:21 SEC",
-    "date": "25. apr 2026",
-    "title": "Dow zaostaval, no rotacia do technologii udrzala rastovy ton trhu",
-    "summary": "Kym industrialne mena a cast value segmentu oddychovali, kapital sa vracal do polovodicov a velkych AI titulov.",
+    "time": "20:31 CEST",
+    "date": "28. apr 2026",
+    "title": "UPS reportoval trzby 21.2 miliardy USD a potvrdil celorocny vyhlad",
+    "summary": "Balikovy gigant ukazal slabsi domaci dopyt, ale zaroven reaffirmoval ciel pre rok 2026, co je pre trh signal stability marzi aj cash flow.",
     "tags": [
-      { "label": "Dow lag", "tone": "dn" },
-      { "label": "Semis lead", "tone": "up" }
+      { "label": "UPS guidance", "tone": "nt" },
+      { "label": "Revenue 21.2B", "tone": "nt" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "UPS IR - 28. apr 2026",
+    "sourceUrl": "https://investors.ups.com/news-events/press-releases/detail/2158/ups-releases-1q-2026-earnings"
   },
   {
     "id": 7,
-    "time": "19:59 SEC",
-    "date": "25. apr 2026",
-    "title": "Intel prelomil svoje dot-com maximum a otestoval novu valuacnu fazu",
-    "summary": "Mimoriadne silna reakcia trhu na vysledky vytiahla Intel nad historicke urovne z prelomu tisicroci a znovu otvorila diskusiu o AI re-rate.",
+    "time": "20:06 CEST",
+    "date": "28. apr 2026",
+    "title": "International segment UPS rastol, domaci biznis vsak zostal pod tlakom",
+    "summary": "Medzinarodne trzby UPS vzrastli o 3.8 percenta, no v USA firma stale citi pokles objemov a potrebu transformacie siete.",
     "tags": [
-      { "label": "Historic breakout", "tone": "up" },
-      { "label": "AI rerate", "tone": "up" }
+      { "label": "International +3.8%", "tone": "up" },
+      { "label": "US volume soft", "tone": "dn" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "UPS IR - 28. apr 2026",
+    "sourceUrl": "https://investors.ups.com/news-events/press-releases/detail/2158/ups-releases-1q-2026-earnings"
   },
   {
     "id": 8,
-    "time": "19:36 SEC",
-    "date": "25. apr 2026",
-    "title": "Trh sledoval spravu o ukonceni trestneho vysetrovania okolo Jeromea Powella",
-    "summary": "Ulava v okoli Fedu pomohla sentimentu a odstranila jeden z kratkodobych headline riskov pre americke akcie.",
+    "time": "19:42 CEST",
+    "date": "28. apr 2026",
+    "title": "Spotify presiahol 760 milionov aktivnych pouzivatelov mesacne",
+    "summary": "Hudobna platforma vstupila do roka so silnym user momentum a potvrdila, ze personalizacia a novy free experience nadalej zvysuju engagement.",
     "tags": [
-      { "label": "Powell risk lower", "tone": "up" },
-      { "label": "Headline relief", "tone": "up" }
+      { "label": "761M MAU", "tone": "up" },
+      { "label": "User growth", "tone": "up" }
     ],
-    "source": "Yahoo Finance · 24. apr 2026",
-    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+    "source": "Spotify Newsroom - 28. apr 2026",
+    "sourceUrl": "https://newsroom.spotify.com/2026-04-28/spotify-q1-2026-earnings/"
   },
   {
     "id": 9,
-    "time": "19:12 SEC",
-    "date": "25. apr 2026",
-    "title": "Fed-cut stávky sa znovu posuvaju, vynosy tlmia cast growth valuacii",
-    "summary": "Odolne makro a vyssie cenove rizika drzia investorov opatrnych pri nacenovani skorých znizeni sadzieb.",
+    "time": "19:18 CEST",
+    "date": "28. apr 2026",
+    "title": "Spotify ukazal aj rast premium predplatitelov a vyssiu marzu",
+    "summary": "Premium subscribers vzrastli na 293 milionov a gross margin sa zlepsila na 33 percent, co podporuje pribeh disciplinovaneho rastu.",
     "tags": [
-      { "label": "US10Y focus", "tone": "nt" },
-      { "label": "Cuts repriced", "tone": "dn" }
+      { "label": "293M subs", "tone": "up" },
+      { "label": "Margin 33%", "tone": "up" }
     ],
-    "source": "Trhova rekapitulacia · 25. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Spotify Newsroom - 28. apr 2026",
+    "sourceUrl": "https://newsroom.spotify.com/2026-04-28/spotify-q1-2026-earnings/"
   },
   {
     "id": 10,
-    "time": "18:54 SEC",
-    "date": "25. apr 2026",
-    "title": "Semiconductor basket pokracuje v sile, sirka rally je vsak stale obmedzena",
-    "summary": "Zatial co chip leaderi nesu indexy vyssie, cast trhu stale zaostava a market breadth zostava zmiesany.",
+    "time": "18:53 CEST",
+    "date": "28. apr 2026",
+    "title": "Visa po zatvoreni trhu zverejnila vysledky za fiskalny druhy kvartal",
+    "summary": "Platobny gigant otvoril dalsiu cast earnings tyzdna a trh bude hladat potvrdenie, ze spotrebne platby a cross-border aktivita zostavaju odolne.",
     "tags": [
-      { "label": "SOX up", "tone": "up" },
-      { "label": "Breadth mixed", "tone": "nt" }
+      { "label": "Visa results", "tone": "nt" },
+      { "label": "Payments watch", "tone": "nt" }
     ],
-    "source": "Yahoo Finance · 24. apr 2026",
-    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+    "source": "Visa IR - 28. apr 2026",
+    "sourceUrl": "https://investor.visa.com/news/news-details/2026/Visa-Fiscal-Second-Quarter-2026-Financial-Results/default.aspx"
   },
   {
     "id": 11,
-    "time": "18:33 SEC",
-    "date": "25. apr 2026",
-    "title": "AI investicny pribeh stale prehlusuje obavy z vysokych capexov",
-    "summary": "Aj napriek debate o navratnosti obrovskych AI investicii sa kapital drzi v menach napojenych na infra vrstvu.",
+    "time": "18:29 CEST",
+    "date": "28. apr 2026",
+    "title": "GM zverejnil kvartalne vysledky a ponechal vyplatu dividendy",
+    "summary": "General Motors rano publikoval Q1 cisla a potvrdil disciplinu v navrate kapitalu, co je dolezite pre sentiment v autosketore.",
     "tags": [
-      { "label": "AI capex", "tone": "up" },
-      { "label": "Narrative strong", "tone": "up" }
+      { "label": "GM results", "tone": "nt" },
+      { "label": "Dividend", "tone": "up" }
     ],
-    "source": "The Motley Fool · 22. apr 2026",
-    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+    "source": "GM Investor Relations - 28. apr 2026",
+    "sourceUrl": "https://investor.gm.com/news-releases/news-release-details/gm-releases-2026-first-quarter-results-declares-quarterly"
   },
   {
     "id": 12,
-    "time": "18:09 SEC",
-    "date": "25. apr 2026",
-    "title": "Velke technologie znovu ziskali leadership po kratkej faze rotacie",
-    "summary": "Megacap mena vratili trhu tah, co pomohlo najma Nasdaqu a AI orientovanym titulom.",
+    "time": "18:04 CEST",
+    "date": "28. apr 2026",
+    "title": "Robinhood bol pod drobnohladom pred zverejnenim Q1 cisel po zatvoreni trhu",
+    "summary": "Retail broker mal reportovat po close, a investori sledovali najma trading aktivitu, net deposits a monetizaciu produktov Gold a crypto.",
     "tags": [
-      { "label": "Megacap lead", "tone": "up" },
-      { "label": "Nasdaq bias", "tone": "up" }
+      { "label": "HOOD earnings", "tone": "nt" },
+      { "label": "Retail trading", "tone": "nt" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Robinhood IR - 28. apr 2026",
+    "sourceUrl": "https://investors.robinhood.com/node/15491/pdf"
   },
   {
     "id": 13,
-    "time": "17:48 SEC",
-    "date": "25. apr 2026",
-    "title": "Energeticky sektor ostava citlivy na kazdy geopoliticky headline",
-    "summary": "Aj mierna zmena retoriky v konflikte alebo pri rokovaniach okamzite meni kratkodoby smer energetickych akcii aj komodit.",
+    "time": "22:16 CEST",
+    "date": "27. apr 2026",
+    "title": "S&P 500 a Nasdaq v pondelok zapisali dalsie rekordy napriek drahsej rope",
+    "summary": "Americke indexy sa udrzali pri maximach, aj ked geopoliticke riziko v energetike brzdilo este silnejsiu risk-on naladu.",
     "tags": [
-      { "label": "Energy watch", "tone": "nt" },
-      { "label": "Headline risk", "tone": "dn" }
+      { "label": "Fresh highs", "tone": "up" },
+      { "label": "Oil higher", "tone": "dn" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "AP News - 27. apr 2026",
+    "sourceUrl": "https://apnews.com/article/3e4d531c5ffa6b2ea91eb8a3c84b5822"
   },
   {
     "id": 14,
-    "time": "17:26 SEC",
-    "date": "25. apr 2026",
-    "title": "Internetove platformy tazia z lepsieho reklamneho sentimentu",
-    "summary": "Silnejsi ton v digitalnej reklame podporuje velke platformy a zlepsuje naladu v online segmente.",
+    "time": "21:47 CEST",
+    "date": "27. apr 2026",
+    "title": "Trh spomalil rekordnu rally, ked sa pred mega-cap vysledkami zdvihla opatrnost",
+    "summary": "Pondelkovy rast bol umiernenejsi a investori pred tyzdnom nabitym vysledkami zvazovali, ci megacaps znovu podrzia valuacie indexov.",
     "tags": [
-      { "label": "Ads stronger", "tone": "up" },
-      { "label": "Platforms bid", "tone": "up" }
+      { "label": "Earnings week", "tone": "nt" },
+      { "label": "Megacap focus", "tone": "nt" }
     ],
-    "source": "The Motley Fool · 22. apr 2026",
-    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+    "source": "AP News - 27. apr 2026",
+    "sourceUrl": "https://apnews.com/article/3e4d531c5ffa6b2ea91eb8a3c84b5822"
   },
   {
     "id": 15,
-    "time": "17:04 SEC",
-    "date": "25. apr 2026",
-    "title": "Cloud a AI partnerstva zvysuju ochotu trhu platit premium valuacie",
-    "summary": "Investori su pripravení tolerovat vysoke nasobky tam, kde vidia silny rast objednavok, marz a strategickych partnerstiev.",
+    "time": "21:23 CEST",
+    "date": "27. apr 2026",
+    "title": "Yahoo rekapitulacia: rekordy drzali, ropa vsak znovu testovala nervy trhu",
+    "summary": "Akciovy trh vstupil do klucoveho tyzdna s dobrym tonom, no akykolvek posun v okoli Iranu ostaval okamzitym triggerom pre energiu aj indexy.",
     "tags": [
-      { "label": "Cloud premium", "tone": "up" },
-      { "label": "Growth quality", "tone": "up" }
+      { "label": "Risk-on", "tone": "up" },
+      { "label": "Geopolitics", "tone": "dn" }
     ],
-    "source": "The Motley Fool · 22. apr 2026",
-    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+    "source": "Yahoo Finance - 27. apr 2026",
+    "sourceUrl": "https://au.finance.yahoo.com/news/stock-market-today-monday-april-27-232226050.html/"
   },
   {
     "id": 16,
-    "time": "16:41 SEC",
-    "date": "25. apr 2026",
-    "title": "Downger sectorov ukazuje, ze rally nie je rovnako siroka napriec celym trhom",
-    "summary": "Ked leadership ostava sustredeny v technologickych a polovodicovych tituloch, value a tradicne cyklicke sektory kolisu viac.",
+    "time": "20:58 CEST",
+    "date": "27. apr 2026",
+    "title": "Big Tech earnings mali byt podla trhu rozhodujucim testom celej rally",
+    "summary": "Microsoft, Meta, Amazon, Alphabet aj Apple vstupovali do tyzdna, v ktorom sa malo ukazat, ci su sucasne valuacie stale obhajitelne.",
     "tags": [
-      { "label": "Uneven rally", "tone": "nt" },
-      { "label": "Sector rotation", "tone": "nt" }
+      { "label": "Big Tech test", "tone": "nt" },
+      { "label": "Valuations", "tone": "nt" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Forbes - 27. apr 2026",
+    "sourceUrl": "https://www.forbes.com/sites/bill_stone/2026/04/27/big-tech-earnings-will-set-the-tone-for-markets-this-week/"
   },
   {
     "id": 17,
-    "time": "16:18 SEC",
-    "date": "25. apr 2026",
-    "title": "Investorov nadalej zaujima, kto zaraba na AI najskor: hardware alebo platformy",
-    "summary": "Trh porovnava, ci vacsi ziskovy efekt prichadza okamzite cez cipy a servery, alebo neskor cez software a cloud monetizaciu.",
+    "time": "20:35 CEST",
+    "date": "27. apr 2026",
+    "title": "Kalendar vysledkov upozornil na jeden z najdolezitejsich tyzdnov celej sezony",
+    "summary": "Trh cakal dense flow reportov od velkych technologii, financii aj consumer mien, co zvysovalo pravdepodobnost vyssich pohybov indexov.",
     "tags": [
-      { "label": "Hardware first", "tone": "up" },
-      { "label": "Monetization debate", "tone": "nt" }
+      { "label": "Heavy calendar", "tone": "nt" },
+      { "label": "Volatility", "tone": "dn" }
     ],
-    "source": "Yahoo Finance · 24. apr 2026",
-    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+    "source": "Kiplinger - 27. apr 2026",
+    "sourceUrl": "https://www.kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks"
   },
   {
     "id": 18,
-    "time": "15:56 SEC",
-    "date": "25. apr 2026",
-    "title": "Vyssie ceny ropy drzia inflacne obavy pri zivote",
-    "summary": "Aj ked ropa kolise, samotna uroveň cien je dost vysoka na to, aby komplikovala rychly navrat k nizsej inflacii.",
+    "time": "20:10 CEST",
+    "date": "27. apr 2026",
+    "title": "Iran ponukol znovuotvorenie Hormuzu, ak skonci blokada a vojna",
+    "summary": "Region ostal v krehkej rovnovage a investori sledovali, ci diplomaticka ponuka moze realne znizit ropny risk premium.",
     "tags": [
-      { "label": "Inflation risk", "tone": "dn" },
-      { "label": "Oil premium", "tone": "nt" }
+      { "label": "Hormuz watch", "tone": "nt" },
+      { "label": "Oil sensitivity", "tone": "dn" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "AP News - 27. apr 2026",
+    "sourceUrl": "https://apnews.com/article/374d81d1aac6d8f19c21e1d1e10ab103"
   },
   {
     "id": 19,
-    "time": "15:32 SEC",
-    "date": "25. apr 2026",
-    "title": "Trh sa znovu uci zit s prostredim vyssich sadzieb a silneho rastu ziskov v technologiach",
-    "summary": "Rastove mena dokazu stúpat aj pri vyšsich vynosoch, ak firmy prekvapuju vysledkami a guidanceom.",
+    "time": "19:44 CEST",
+    "date": "27. apr 2026",
+    "title": "Aj po ceasefire ostavali ceny ropy citlive na kazdy titulek z Blizkeho vychodu",
+    "summary": "Standoff medzi USA a Iranom drzal energeticky trh v napati a nedovolil investorom uplne ignorovat geopoliticke riziko.",
     "tags": [
-      { "label": "Higher-for-longer", "tone": "nt" },
-      { "label": "Earnings support", "tone": "up" }
+      { "label": "Ceasefire fragile", "tone": "dn" },
+      { "label": "Energy risk", "tone": "dn" }
     ],
-    "source": "Trhova rekapitulacia · 25. apr 2026",
-    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+    "source": "AP / KSAT - 27. apr 2026",
+    "sourceUrl": "https://www.ksat.com/news/world/2026/04/27/the-latest-oil-prices-go-up-over-stalled-us-iran-talks/"
   },
   {
     "id": 20,
-    "time": "15:08 SEC",
-    "date": "25. apr 2026",
-    "title": "Polovodice uz nie su len Nvidia pribeh, investori hladaju aj dalsich vitazov retazca",
-    "summary": "Po silnych vysledkoch Intelu a stalej sile AI tema sa pozornost rozsiruje aj na dalsich vyrobcov a vybavenie.",
+    "time": "19:18 CEST",
+    "date": "27. apr 2026",
+    "title": "Nucor prekvapil silnym prvym kvartalom a rekordnymi dodavkami oceliarni",
+    "summary": "Americky steel leader reportoval zisk 743 milionov USD a manazment vyzdvihol rekordne shipmenty v steel mills segmente.",
     "tags": [
-      { "label": "Broader semis", "tone": "up" },
-      { "label": "Supply chain", "tone": "up" }
+      { "label": "NUE results", "tone": "up" },
+      { "label": "Steel demand", "tone": "up" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Nucor IR - 27. apr 2026",
+    "sourceUrl": "https://investors.nucor.com/news/news-details/2026/Nucor-Reports-Results-for-the-First-Quarter-of-2026/default.aspx"
   },
   {
     "id": 21,
-    "time": "14:45 SEC",
-    "date": "25. apr 2026",
-    "title": "Kratkodoby pokoj na indexoch neznamena nizsiu intradennu volatilitu v jednotlivych tituloch",
-    "summary": "Aj pri rekordoch indexov ostava rozdiel medzi vitazmi a porazenymi po vysledkoch velmi vysoky.",
+    "time": "18:54 CEST",
+    "date": "27. apr 2026",
+    "title": "Nucor ukazal aj trzby 9.5 miliardy USD, co podporilo cyklicky materialovy segment",
+    "summary": "Silne cisla z tradicneho priemyselneho mena pripomenuli, ze earnings sezona nie je len o technologickych gigantoch.",
     "tags": [
-      { "label": "Stock picking", "tone": "nt" },
-      { "label": "Volatility", "tone": "nt" }
+      { "label": "Sales 9.5B", "tone": "up" },
+      { "label": "Cyclicals", "tone": "up" }
     ],
-    "source": "Yahoo Finance · 24. apr 2026",
-    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+    "source": "Nucor IR - 27. apr 2026",
+    "sourceUrl": "https://investors.nucor.com/news/news-details/2026/Nucor-Reports-Results-for-the-First-Quarter-of-2026/default.aspx"
   },
   {
     "id": 22,
-    "time": "14:21 SEC",
-    "date": "25. apr 2026",
-    "title": "AI partnerstva a vlastne cipy zvysuju tlak na cloud konkurenciu",
-    "summary": "Kazdy vacsi oznam v AI infrastrukture prehlbuje sutaz medzi najvacsimi technologickymi platformami a ich ekosystemami.",
+    "time": "18:28 CEST",
+    "date": "27. apr 2026",
+    "title": "Makro kalendar pred tyzdnom varoval pred hustym sledom klucovych dat",
+    "summary": "Pred investormi stali consumer confidence, FOMC, Q1 GDP aj payrolls, teda kombinacia, ktora mohla hybat sadzbami aj valuaciami.",
     "tags": [
-      { "label": "Platform race", "tone": "up" },
-      { "label": "AI chips", "tone": "up" }
+      { "label": "Fed week", "tone": "nt" },
+      { "label": "Macro heavy", "tone": "nt" }
     ],
-    "source": "The Motley Fool · 22. apr 2026",
-    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+    "source": "S&P Global - 27. apr 2026",
+    "sourceUrl": "https://www.spglobal.com/content/dam/spglobal/mi/en/documents/news-insights/research/2026/04/6209421_6209385_0.1.pdf"
   },
   {
     "id": 23,
-    "time": "13:58 SEC",
-    "date": "25. apr 2026",
-    "title": "Ak ropny sok pretrva, Fed moze ostat tvrdsi dlhsie, nez trh cakal",
-    "summary": "Geopolitikou hnane ceny energii znovu vstupuju do debaty o tom, kedy sa menova politika dokaze uvolnit.",
+    "time": "17:56 CEST",
+    "date": "26. apr 2026",
+    "title": "Bloomberg: tyzden vysledkov v hodnote 16 bilionov USD mal rozhodnut o osude rally",
+    "summary": "Vikendovy vyhlad zvyraznil, ze najvacsie technologicke firmy niesli neumerne velku cast vykonnosti indexov a dalsi smer trhu zavisi od ich guidance.",
     "tags": [
-      { "label": "Fed caution", "tone": "dn" },
-      { "label": "Energy inflation", "tone": "dn" }
+      { "label": "16T week", "tone": "nt" },
+      { "label": "Market test", "tone": "nt" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Bloomberg - 26. apr 2026",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-04-26/big-tech-s-16-trillion-earnings-week-is-make-or-break-for-rally?srnd=phx-industries"
   },
   {
     "id": 24,
-    "time": "13:34 SEC",
-    "date": "25. apr 2026",
-    "title": "Recordy indexov nezmensili zaujem o defensivne segmenty mimo tech leadershipu",
-    "summary": "Cast portfolii stale kombinuje rastove AI mena s defenzivou pre pripad zhorsenia makra alebo dalsieho skoku v rope.",
+    "time": "17:31 CEST",
+    "date": "26. apr 2026",
+    "title": "Pozornost sa cez vikend presuvala z geopolitiky na earnings guidance megacapov",
+    "summary": "Po rekordoch na indexoch sa trh zacal pripravovat na moment pravdy, ked mali velke technologicke mena potvrdit AI aj cloud investicny pribeh.",
     "tags": [
-      { "label": "Barbell setup", "tone": "nt" },
-      { "label": "Defense + growth", "tone": "nt" }
+      { "label": "Guidance risk", "tone": "nt" },
+      { "label": "Megacaps", "tone": "nt" }
     ],
-    "source": "Trhova rekapitulacia · 25. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Bloomberg - 26. apr 2026",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-04-26/big-tech-s-16-trillion-earnings-week-is-make-or-break-for-rally?srnd=phx-industries"
   },
   {
     "id": 25,
-    "time": "13:09 SEC",
-    "date": "25. apr 2026",
-    "title": "Nasdaq ostava najcitlivejsi na kombinaciu AI optimismu a pohybu vynosov",
-    "summary": "Kazdy posun v sadzbovych ocakavaniach alebo dalsi AI headline sa najrychlejsie pretavuje prave do technologickeho indexu.",
+    "time": "17:06 CEST",
+    "date": "26. apr 2026",
+    "title": "Diplomacia medzi USA a Iranom ostavala cez vikend nejasna",
+    "summary": "Navrat iranskeho ministra do Pakistanu a zmienky o moznych telefonickych rozhovoroch potvrdzovali, ze deeskalacia este nie je definitivna.",
     "tags": [
-      { "label": "Nasdaq beta", "tone": "nt" },
-      { "label": "Yield sensitivity", "tone": "dn" }
+      { "label": "Talks fluid", "tone": "nt" },
+      { "label": "Headline risk", "tone": "dn" }
     ],
-    "source": "Yahoo Finance · 24. apr 2026",
-    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+    "source": "AP News - 26. apr 2026",
+    "sourceUrl": "https://apnews.com/article/9f7bcaf20c42b56d3dba4b504936f7ee"
   },
   {
     "id": 26,
-    "time": "12:46 SEC",
-    "date": "25. apr 2026",
-    "title": "Silny guidance je znovu dolezitejsi nez samotne prekonanie odhadov",
-    "summary": "Trh odmenuje firmy, ktore neponuknu len dobre cisla, ale aj presvedcivy pribeh na dalsie kvartaly.",
+    "time": "16:42 CEST",
+    "date": "26. apr 2026",
+    "title": "Ropa ostavala extremne citliva na kazdu spravu okolo Hormuzu",
+    "summary": "Aj cez vikend bolo zrejme, ze energeticky trh zostava najrychlejsim kanalom, cez ktory geopolitika prenasa stres do akcii a vynosov.",
     "tags": [
-      { "label": "Guidance matters", "tone": "up" },
-      { "label": "Earnings season", "tone": "nt" }
+      { "label": "Crude focus", "tone": "dn" },
+      { "label": "Hormuz", "tone": "dn" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "AP / KSAT - 26. apr 2026",
+    "sourceUrl": "https://www.ksat.com/news/world/2026/04/27/the-latest-oil-prices-go-up-over-stalled-us-iran-talks/"
   },
   {
     "id": 27,
-    "time": "12:22 SEC",
-    "date": "25. apr 2026",
-    "title": "Alphabetov AI push znovu zvysil tlak na interpretaciu valuacii megacap priestoru",
-    "summary": "Pri rychlom raste investicii a partnerstiev sa trh sustredi na to, kde pride najskor monetizacia a kto ziska dominantny podiel.",
+    "time": "16:17 CEST",
+    "date": "26. apr 2026",
+    "title": "Tyzden dopredu: investori chystali fokus na confidence, Fed, GDP a ISM/jobs",
+    "summary": "Makro vyhlad ukazoval, ze okrem vysledkov pride aj seria dat, ktora moze menit ocakavania okolo sadzieb a rastu ekonomiky.",
     "tags": [
-      { "label": "GOOGL theme", "tone": "up" },
-      { "label": "Valuation debate", "tone": "nt" }
+      { "label": "Macro week", "tone": "nt" },
+      { "label": "Rate path", "tone": "nt" }
     ],
-    "source": "The Motley Fool · 22. apr 2026",
-    "sourceUrl": "https://www.fool.com/coverage/stock-market-today/2026/04/22/stock-market-today-april-22-alphabet-helps-lead-u-s-markets-higher-after-unveiling-new-ai-chips-and-partnerships/"
+    "source": "S&P Global - 26. apr 2026",
+    "sourceUrl": "https://www.spglobal.com/content/dam/spglobal/mi/en/documents/news-insights/research/2026/04/6209421_6209385_0.1.pdf"
   },
   {
     "id": 28,
-    "time": "11:59 SEC",
-    "date": "25. apr 2026",
-    "title": "Relief v okoli Fedu a rekordy indexov pomohli risk sentimentu, nie vsak bez vyhrad",
-    "summary": "Kombinacia politickeho ukludnenia a silnych vysledkov zlepsila naladu, no ropa a sadzby stale predstavuju protivahu.",
+    "time": "15:51 CEST",
+    "date": "26. apr 2026",
+    "title": "Sirka trhu ostavala krehka a zavisla od vykonu najvacsich technologii",
+    "summary": "Pred otvorenim noveho tyzdna bolo zrejme, ze bez potvrdenia od megacapov bude udrzanie rekordov pre indexy ovela tazsie.",
     "tags": [
-      { "label": "Risk-on", "tone": "up" },
-      { "label": "Macro overhang", "tone": "dn" }
+      { "label": "Breadth thin", "tone": "dn" },
+      { "label": "Tech-led", "tone": "nt" }
     ],
-    "source": "Yahoo Finance · 24. apr 2026",
-    "sourceUrl": "https://ca.finance.yahoo.com/news/stock-market-today-dow-sp-500-nasdaq-futures-hold-steady-after-israel-and-lebanon-announce-three-week-ceasefire-extension-224547634.html"
+    "source": "Bloomberg - 26. apr 2026",
+    "sourceUrl": "https://www.bloomberg.com/news/articles/2026-04-26/big-tech-s-16-trillion-earnings-week-is-make-or-break-for-rally?srnd=phx-industries"
   },
   {
     "id": 29,
-    "time": "11:36 SEC",
-    "date": "25. apr 2026",
-    "title": "Cipove firmy benefituju zo sirsej viery, ze AI dopyt je trvácnejsi, nez sa cakalo",
-    "summary": "Investori su ochotni platit za producentov a dodavatelov, ak veria, ze datacentrovy investicny cyklus nebude len kratkodoba vlna.",
+    "time": "15:26 CEST",
+    "date": "26. apr 2026",
+    "title": "AI investicny pribeh smeroval do dalsieho stress testu",
+    "summary": "Cloud a platformove firmy mali v najblizsich dnoch ukazat, ci vysoke vydavky do AI infrastruktury uz priniesli viditelny navrat v trzbach a marziach.",
     "tags": [
-      { "label": "Datacenter cycle", "tone": "up" },
-      { "label": "AI durability", "tone": "up" }
+      { "label": "AI capex", "tone": "nt" },
+      { "label": "Monetization", "tone": "nt" }
     ],
-    "source": "AP News · 24. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "Forbes - 27. apr 2026",
+    "sourceUrl": "https://www.forbes.com/sites/bill_stone/2026/04/27/big-tech-earnings-will-set-the-tone-for-markets-this-week/"
   },
   {
     "id": 30,
-    "time": "11:12 SEC",
-    "date": "25. apr 2026",
-    "title": "Zaver tyzdna potvrdil, ze leadership trhu zostava v technologii, rope a makro headlineoch",
-    "summary": "Na prelome 24. a 25. aprila 2026 dominovali obchodovaniu rekordy indexov, sila polovodicov, geopolitika v rope a opatrnost okolo Fedu.",
+    "time": "15:02 CEST",
+    "date": "26. apr 2026",
+    "title": "Energia zostavala najjasnejsim krizovym rizikom pre akciovy trh",
+    "summary": "Aj ked indexy vstupovali do tyzdna blizko maxim, ropa a logisticke napatie v regione ostavali hlavnym zdrojom potencialnej volatility.",
     "tags": [
-      { "label": "Market wrap", "tone": "nt" },
-      { "label": "25 Apr 2026", "tone": "nt" }
+      { "label": "Energy risk", "tone": "dn" },
+      { "label": "Volatility", "tone": "dn" }
     ],
-    "source": "Kuratorsky feed InvestRadar · 25. apr 2026",
-    "sourceUrl": "https://apnews.com/article/75bd462d6795062bed788709d647dc68"
+    "source": "AP News - 26. apr 2026",
+    "sourceUrl": "https://apnews.com/article/9f7bcaf20c42b56d3dba4b504936f7ee"
   }
 ]
