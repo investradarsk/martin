@@ -742,7 +742,7 @@ function renderNovinkyFeed(){
 }
 
 function loadNovinkyFeed(){
-  fetch('feed.json', { cache: 'no-store' })
+  fetch('/novinky/feed.json', { cache: 'no-store' })
     .then(function(response){
       if(!response.ok) throw new Error('Feed request failed');
       return response.json();
