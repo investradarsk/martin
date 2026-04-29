@@ -2239,9 +2239,22 @@ function setActivePage(pageId){
   return pg;
 }
 
+function activateStandaloneEarnings(){
+  setActivePage('page-earnings');
+  document.querySelectorAll('.nav-link').forEach(function(a){a.classList.remove('active');});
+  var nl=document.querySelector('.nav-link[data-page="earnings"]');
+  if(nl)nl.classList.add('active');
+  updateSEO(PAGE_SEO.earnings || PAGE_SEO.home, BASE_URL.replace(/\/$/, '') + ROUTES.earnings);
+}
+
 function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
-  if(ROUTES[id] && id !== 'earnings'){
+  if(id === 'earnings'){
+    activateStandaloneEarnings();
+    window.scrollTo(0,0);
+    return;
+  }
+  if(ROUTES[id]){
     window.location.href = ROUTES[id];
     return;
   }
@@ -2303,16 +2316,16 @@ window.addEventListener('DOMContentLoaded',function(){
     return;
   }
   if(h === 'cookies'){
-    goTo('home');
+    activateStandaloneEarnings();
     showCookieBanner();
     return;
   }
   if(handleArticleRoute(h)) return;
-  if(h === 'earnings' || !h){
-    goTo('earnings');
+  if(!h || h === 'earnings'){
+    activateStandaloneEarnings();
     return;
   }
-  if(PAGES.includes(h)) goTo(h); else goTo('earnings');
+  if(PAGES.includes(h)) goTo(h); else activateStandaloneEarnings();
 });
   // standalone earnings page — no hash routing needed
 // Logo
@@ -2829,8 +2842,8 @@ window.addEventListener('popstate',function(e){
   if(e.state&&e.state.key){ goToArticle(e.state.key); return; }
   var h=(location.hash||'').replace('#','');
   if(handleArticleRoute(h)) return;
-  if(h === 'earnings'){
-    goTo('earnings');
+  if(!h || h === 'earnings'){
+    activateStandaloneEarnings();
     return;
   }
   if(h && ROUTES[h]){
@@ -2838,14 +2851,14 @@ window.addEventListener('popstate',function(e){
     return;
   }
   if(e.state&&e.state.page==='earnings'){
-    goTo('earnings');
+    activateStandaloneEarnings();
     return;
   }
   if(e.state&&e.state.page&&ROUTES[e.state.page]){
     window.location.replace(ROUTES[e.state.page]);
     return;
   }
-  goTo('home');
+  activateStandaloneEarnings();
 });
 
 
