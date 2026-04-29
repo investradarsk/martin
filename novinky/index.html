@@ -443,26 +443,12 @@ nav.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
           <button onclick="filterNov(this,'ai')">AI / Tech</button>
           <button onclick="filterNov(this,'earnings')">Earnings</button>
         </div>
+        <div class="feed-meta" id="nov-feed-meta">
+          <div class="feed-meta-text">Načítavam aktuálny feed noviniek…</div>
+          <div class="feed-meta-stamp">LIVE JSON FEED</div>
+        </div>
         <div class="nfeed" id="nov-feed">
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="energia"><div class="nf-time timeline-time news-time date-column">23:59 SEL&#268;<br>24. apr 2026<br><span style="color:var(--green);font-size:8px">&#9679; NOV&Eacute;</span></div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>USA nepred&#314;&#382;ia v&yacute;nimky pre ir&aacute;nsku ani rusk&uacute; ropu na mori</strong> - minister financi&iacute; Scott Bessent povedal AP, &#382;e Washington nepo&#269;&iacute;ta s &#271;al&scaron;&iacute;m pred&#314;&#382;en&iacute;m waiverov. Trh to vn&iacute;ma ako faktor, ktor&yacute; m&ocirc;&#382;e dr&#382;a&#357; ceny ropy a energetick&uacute; volatilitu vy&scaron;&scaron;ie.</div><div class="nf-ticks"><span class="nf-tick nt">Brent nad $100</span><span class="nf-tick dn">Waivers off</span><span class="nf-tick nt">Oil supply risk</span></div></div></div>
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="ai"><div class="nf-time timeline-time news-time date-column">22:16 SEL&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Nasdaq vysko&#269;il o 1.6 % a Intel po siln&yacute;ch v&yacute;sledkoch pridal 23.6 %</strong> - AP uviedla, &#382;e Intel za&#382;il najlep&scaron;&iacute; de&#328; od roku 1987 a pomohol vytiahnu&#357; technologick&yacute; sektor vy&scaron;&scaron;ie. S&amp;P 500 z&aacute;rove&#328; uzavrel na novom maxime.</div><div class="nf-ticks"><span class="nf-tick up">INTC +23.6%</span><span class="nf-tick up">Nasdaq +1.6%</span><span class="nf-tick up">S&amp;P 500 ATH</span></div></div></div>
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="makro"><div class="nf-time timeline-time news-time date-column">20:31 SEL&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Fed zrejme zostane opatrn&yacute;, trh &scaron;krt&aacute; st&aacute;vky na skor&eacute; cuty</strong> - silnej&scaron;ie d&aacute;ta z ekonomiky a st&aacute;le zv&yacute;&scaron;en&eacute; cenov&eacute; tlaky dr&#382;ia o&#269;ak&aacute;vania prv&eacute;ho zn&iacute;&#382;enia sadzieb nesk&ocirc;r v roku. Vy&scaron;&scaron;ie v&yacute;nosy znovu vytv&aacute;raj&uacute; tlak najm&auml; na growth segment.</div><div class="nf-ticks"><span class="nf-tick nt">US10Y 4.63%</span><span class="nf-tick dn">Nasdaq slab&scaron;&iacute;</span><span class="nf-tick dn">Cuts priced lower</span></div></div></div>
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="ai"><div class="nf-time timeline-time news-time date-column">20:13 SEL&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Alphabet prehlbuje AI preteky, do Anthropicu m&aacute; investova&#357; a&#382; 40 mili&aacute;rd USD</strong> - Reuters informoval, &#382;e Google-parent Alphabet zvy&scaron;uje st&aacute;vku na AI partnera aj rivala z&aacute;rove&#328;. Spr&aacute;va podporila sentiment okolo large-cap AI a cloud ekosyst&eacute;mu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL</span><span class="nf-tick up">Anthropic</span><span class="nf-tick nt">$40B AI deal</span></div></div></div>
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="ai"><div class="nf-time timeline-time news-time date-column">19:42 SEL&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>NVIDIA a &#269;ipy znovu ved&uacute; trh, AI capex story ost&aacute;va neporu&scaron;en&aacute;</strong> - semiconductor sektor r&aacute;stol po &#271;al&scaron;&iacute;ch spr&aacute;vach o expanzii d&aacute;tov&yacute;ch centier a pokra&#269;uj&uacute;cich objedn&aacute;vkach hyperscalerov. Investori &#271;alej kupuj&uacute; infra vrstvu AI.</div><div class="nf-ticks"><span class="nf-tick up">NVDA AMD AVGO</span><span class="nf-tick up">SOX +1.4%</span></div></div></div>
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="energia"><div class="nf-time timeline-time news-time date-column">18:55 SEL&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Ropa koriguje &#269;as&#357; rastov, no geopolitick&aacute; pr&eacute;mia ost&aacute;va v cene</strong> - po prudkom raste pri&scaron;lo vyberanie ziskov, ale trh st&aacute;le sleduje rizik&aacute; dod&aacute;vok na Bl&iacute;zkom v&yacute;chode. Energetick&yacute; sektor zost&aacute;va citliv&yacute; na headlines.</div><div class="nf-ticks"><span class="nf-tick nt">Brent $101.8</span><span class="nf-tick nt">WTI $96.4</span></div></div></div>
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="earnings"><div class="nf-time timeline-time news-time date-column">17:48 SEL&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Alphabet po v&yacute;sledkoch podporil sentiment v reklame aj cloude</strong> - lep&scaron;ie &#269;&iacute;sla z digit&aacute;lnej reklamy a stabiln&yacute; cloud biznis pomohli sentimentu v large-cap tech. Trh oce&#328;uje discipl&iacute;nu n&aacute;kladov aj AI monetiz&aacute;ciu.</div><div class="nf-ticks"><span class="nf-tick up">GOOGL +4% AH</span><span class="nf-tick up">Cloud growth solid</span></div></div></div>
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="makro"><div class="nf-time timeline-time news-time date-column">16:36 SEL&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>Wall Street bez jasn&eacute;ho smeru, rot&aacute;cia pokra&#269;uje do value a defenz&iacute;vy</strong> - indexy obchodovali zmie&scaron;ane, ke&#271; investori balansuj&uacute; vy&scaron;&scaron;ie sadzby a siln&eacute; firemn&eacute; v&yacute;sledky. Utility, healthcare a energy boli stabilnej&scaron;ie ne&#382; high-beta tech.</div><div class="nf-ticks"><span class="nf-tick nt">S&amp;P 500 flat</span><span class="nf-tick up">Dow +0.3%</span><span class="nf-tick dn">Nasdaq -0.2%</span></div></div></div>
-
-          <div class="nf-item timeline-item news-item daily-news-card" data-cat="makro"><div class="nf-time timeline-time news-time date-column">16:26 SEL&#268;<br>24. apr 2026</div><div class="nf-body timeline-content news-content text-column"><div class="nf-text"><strong>D&ocirc;vera americk&yacute;ch spotrebite&#318;ov klesla v apr&iacute;li na 49.8</strong> - Reuters upozornil, &#382;e fin&aacute;lne d&aacute;ta University of Michigan ukazuj&uacute; pokles sentimentu pre infl&aacute;ciu a geopolitick&eacute; nap&auml;tie. Spotrebite&#318; zost&aacute;va slab&yacute;m miestom makro obrazu.</div><div class="nf-ticks"><span class="nf-tick dn">Sentiment 49.8</span><span class="nf-tick dn">Inflation fears</span></div></div></div>
-
+          <div class="nf-empty">Načítavam aktuálne správy…</div>
         </div>
       </div>
       <!-- Sidebar -->
@@ -654,6 +640,7 @@ window.addEventListener('DOMContentLoaded',function(){
     return;
   }
   goTo('novinky');
+  loadNovinkyFeed();
 });
 
 // Logo
@@ -684,12 +671,114 @@ document.addEventListener('click',function(e){
 });
 
 // Filter: Novinky
+var NOVINKY_ITEMS = [];
+var NOVINKY_FILTER = 'all';
+
+function escapeHtml(str){
+  return String(str || '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#39;');
+}
+
+function inferNovCategory(item){
+  var text = [
+    item.title || '',
+    item.summary || '',
+    item.source || '',
+    (item.tags || []).map(function(tag){ return tag.label || ''; }).join(' ')
+  ].join(' ').toLowerCase();
+
+  if(/earnings|results|vysledk|quarter|q1|q2|eps|revenue|guidance|ir\b|investor relations|newsroom/.test(text)) return 'earnings';
+  if(/ropa|oil|iran|hormuz|geopolit|brent|wti|energy/.test(text)) return 'energia';
+  if(/ai|openai|nvidia|chip|cloud|oracle|coreweave|spotify|tech|semiconductor|visa|payments/.test(text)) return 'ai';
+  return 'makro';
+}
+
+function renderNovinkyFeed(){
+  var feedEl = document.getElementById('nov-feed');
+  var metaEl = document.getElementById('nov-feed-meta');
+  if(!feedEl) return;
+
+  var items = NOVINKY_ITEMS.filter(function(item){
+    return NOVINKY_FILTER === 'all' || item._cat === NOVINKY_FILTER;
+  });
+
+  if(metaEl){
+    var latestDate = NOVINKY_ITEMS[0] ? NOVINKY_ITEMS[0].date : 'bez dát';
+    metaEl.innerHTML =
+      '<div class="feed-meta-text">Zobrazených <b>' + items.length + '</b> z <b>' + NOVINKY_ITEMS.length + '</b> správ. Posledná redakčná aktualizácia: <b>' + escapeHtml(latestDate) + '</b>.</div>' +
+      '<div class="feed-meta-stamp">/novinky/feed.json</div>';
+  }
+
+  if(!items.length){
+    feedEl.innerHTML = '<div class="nf-empty">Pre tento filter sa nenašli žiadne správy.</div>';
+    return;
+  }
+
+  feedEl.innerHTML = items.map(function(item){
+    var timeBlock = escapeHtml(item.time) + '<br>' + escapeHtml(item.date);
+    if(item.badge){
+      timeBlock += '<br><span style="color:var(--green);font-size:8px">&#9679; ' + escapeHtml(item.badge) + '</span>';
+    }
+    var sourceHtml = item.sourceUrl
+      ? '<div class="nf-source"><a href="' + escapeHtml(item.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(item.source) + '</a></div>'
+      : '<div class="nf-source">' + escapeHtml(item.source || '') + '</div>';
+    var tagsHtml = (item.tags || []).map(function(tag){
+      var tone = /^(up|dn|nt)$/.test(tag.tone) ? tag.tone : 'nt';
+      return '<span class="nf-tick ' + tone + '">' + escapeHtml(tag.label) + '</span>';
+    }).join('');
+    return '<div class="nf-item" data-cat="' + escapeHtml(item._cat) + '">' +
+      '<div class="nf-time">' + timeBlock + '</div>' +
+      '<div class="nf-body">' +
+      '<div class="nf-text"><strong>' + escapeHtml(item.title) + '</strong> - ' + escapeHtml(item.summary) + '</div>' +
+      sourceHtml +
+      '<div class="nf-ticks">' + tagsHtml + '</div>' +
+      '</div>' +
+      '</div>';
+  }).join('');
+}
+
+function loadNovinkyFeed(){
+  fetch('feed.json', { cache: 'no-store' })
+    .then(function(response){
+      if(!response.ok) throw new Error('Feed request failed');
+      return response.json();
+    })
+    .then(function(items){
+      NOVINKY_ITEMS = (Array.isArray(items) ? items : []).map(function(item){
+        item._cat = inferNovCategory(item);
+        return item;
+      });
+      renderNovinkyFeed();
+    })
+    .catch(function(){
+      var feedEl = document.getElementById('nov-feed');
+      var metaEl = document.getElementById('nov-feed-meta');
+      if(metaEl){
+        metaEl.innerHTML =
+          '<div class="feed-meta-text">Aktuálny feed sa nepodarilo načítať.</div>' +
+          '<div class="feed-meta-stamp">FALLBACK</div>';
+      }
+      if(feedEl){
+        feedEl.innerHTML = '<div class="nf-empty">Feed sa nepodarilo načítať. Skús stránku obnoviť o chvíľu znova.</div>';
+      }
+    });
+}
+
 function filterNov(btn,cat){
+  NOVINKY_FILTER = cat;
+  document.querySelectorAll('#nf-bar button').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  if(NOVINKY_ITEMS.length){
+    renderNovinkyFeed();
+    return;
+  }
   document.querySelectorAll('#nov-feed .nf-item').forEach(function(el){
     el.style.display=(cat==='all'||el.dataset.cat===cat)?'':'none';
   });
-  document.querySelectorAll('#nf-bar button').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
 }
 // Filter: Analyzy
 function filterAz(btn,cat){
