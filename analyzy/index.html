@@ -808,11 +808,11 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent);border-radius:var(--r) var(--r) 0 0"></div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
         <span class="badge b-hot">⬤ Aktuálna téma</span>
-        <span style="font-family:var(--mono);font-size:9px;color:var(--wd)">Apr 24, 2026</span>
+        <span style="font-family:var(--mono);font-size:9px;color:var(--wd)">Apr 28, 2026</span>
       </div>
-      <div style="font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:6px">AI infraštruktúra 2.0: čo rastie po čipoch?</div>
-      <div style="font-size:13px;color:var(--wd);margin-bottom:16px">Energia, chladenie, grid, pamäte a dátové centrá. Mapa druhej vlny AI príležitostí mimo samotných GPU.</div>
-      <button class="btn-fill btn-sm" onclick="goToArticle('ai_infra')">Čítať analýzu →</button>
+      <div style="font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:6px">UAE odchádza z OPEC: čo to znamená pre ropu a globálnu ekonomiku</div>
+      <div style="font-size:13px;color:var(--wd);margin-bottom:16px">Krátkodobý ropný šok cez Hormuz, strednodobo slabšia disciplína OPEC, vyššia volatilita Brent a nové inflačné riziká.</div>
+      <button class="btn-fill btn-sm" onclick="goToArticle('uae_opec')">Čítať analýzu →</button>
     </div>
     <div class="fbar" id="az-bar">
       <button class="on" onclick="filterAz(this,'all')">Všetky</button>
@@ -825,6 +825,13 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <button onclick="filterAz(this,'bio')">Biotech</button>
     </div>
     <div class="art-grid" id="az-grid">
+      <div class="art-card" data-az="makro" onclick="goToArticle('uae_opec')" tabindex="0" role="button">
+        <div class="art-meta"><span class="art-cat">Makro · Energia</span><span class="art-dt">Apr 28, 2026</span><span class="badge b-hot">NOVÉ</span></div>
+        <div class="art-title">UAE odchádza z OPEC: čo to znamená pre ropu, infláciu a globálnu ekonomiku</div>
+        <div class="art-perex">Dlhá economics analýza: prečo dnes ropa nemusí klesať, ale prečo môže byť strednodobo slabší OPEC bearish pre Brent.</div>
+        <div class="art-tags"><span class="art-tag">OPEC</span><span class="art-tag">UAE</span><span class="art-tag">Brent</span><span class="art-tag">Inflácia</span></div>
+        <div class="art-footer"><div class="art-more">Čítať viac <span>→</span></div><div class="art-author">Apr 28 · 12 min</div></div>
+      </div>
       <div class="art-card" data-az="makro" onclick="goToArticle('weekly_outlook')" tabindex="0" role="button">
         <div class="art-meta"><span class="art-cat">Trh · Týždenný výhľad</span><span class="art-dt">Apr 26, 2026</span><span class="badge b-hot">NOVÉ</span></div>
         <div class="art-title">Čo očakávať na trhu zajtra a celý týždeň? Kľúčový týždeň pre akcie, ropu a Big Tech</div>
@@ -1581,7 +1588,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <p>Prevádzkovateľ stránky nenesie zodpovednosť za prípadné straty, škody alebo ušlý zisk vzniknuté použitím informácií uvedených na tejto stránke. Každé investičné rozhodnutie robí návštevník samostatne a na vlastnú zodpovednosť.</p>
 
       <h2>8. Kontakt</h2>
-      <p>Ak máš otázku k tomuto upozorneniu alebo k fungovaniu stránky, môžeš nás kontaktovať cez stránku <a href="#" onclick="goTo('kontakt');return false;">Kontakt</a> alebo e-mailom na <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>.</p>
+      <p>Ak máš otázku k tomuto upozorneniu alebo k fungovaniu stránky, môžeš nás kontaktovať cez stránku <a href="/kontakt/">Kontakt</a> alebo e-mailom na <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>.</p>
     </div>
   </div>
 </div>
