@@ -5,32 +5,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <base href="/">
 <title>Sektory a firmy | InvestRadar</title>
-<meta name="description" content="Prehladny sektorovy hub InvestRadar: najdolezitejsie sektory, ETF, lidri, rizika a watchlisty na jednej stranke.">
+<meta name="description" content="Jednoduchy prehlad sektorov InvestRadar: ETF, lidri, co sledovat a rychly vyber akcii na jednom mieste.">
 <meta name="keywords" content="sektory, akcie, firmy, ETF, polovodice, kyberbezpecnost, energia, obrana, healthcare, financie, InvestRadar">
 <meta property="og:title" content="Sektory a firmy | InvestRadar">
-<meta property="og:description" content="Prehladne rozdelenie sektorov, ETF, lidrov a watchlistov na jednej URL.">
+<meta property="og:description" content="Jednoduchy a rychly sektorovy prehlad bez balastu.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://investradar.sk/sektory/">
 <meta property="og:image" content="https://investradar.sk/og-image.png">
 <link rel="canonical" href="https://investradar.sk/sektory/">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1814929798657503" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#070b16;--navy2:#0d1525;--navy3:#152038;--navy4:#1d2d4a;
+  --navy:#070b16;--navy2:#0d1525;--navy3:#152038;
   --amber:#c8891a;--amberl:#dfa030;--amberd:rgba(200,137,26,.12);--amberb:rgba(200,137,26,.26);
   --cream:#f0e8d5;--wd:rgba(240,232,213,.68);--wf:rgba(240,232,213,.09);--wff:rgba(240,232,213,.045);
-  --green:#1ea672;--red:#cb4a4a;--blue:#6ea8ff;
+  --green:#1ea672;--red:#cb4a4a;
   --mono:'DM Mono',monospace;--serif:'Playfair Display',serif;--sans:'Instrument Sans',sans-serif;
-  --max:1380px;--r:2px;
+  --max:1280px;--r:2px;
 }
 html{scroll-behavior:smooth}
 body{
   background:
-    radial-gradient(circle at top left,rgba(200,137,26,.08),transparent 26%),
-    radial-gradient(circle at right 20%,rgba(110,168,255,.05),transparent 24%),
+    radial-gradient(circle at top left,rgba(200,137,26,.08),transparent 24%),
     var(--navy);
   color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden
 }
@@ -55,106 +54,59 @@ nav{position:sticky;top:32px;z-index:299;height:72px;display:flex;align-items:ce
 .logo-t{font-family:var(--serif);font-size:20px;color:var(--cream);letter-spacing:-.01em}
 .logo-t b{color:var(--amberl);font-weight:700}
 nav ul{display:flex;gap:1px;list-style:none}
-nav ul a{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--wd);padding:7px 15px;border-radius:2px;transition:all .18s;display:block}
+nav ul a{font-size:12px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--wd);padding:7px 15px;border-radius:2px;transition:all .18s;display:block}
 nav ul a:hover,nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .nav-r{display:flex;gap:8px;align-items:center}
 .btn-fill,.btn-ghost{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;padding:8px 16px;cursor:pointer;border-radius:var(--r);transition:all .18s;display:inline-block}
 .btn-fill{background:var(--amber);color:var(--navy2);font-weight:500;border:none}
 .btn-ghost{padding:7px 14px;border:1px solid var(--amberb);color:var(--amberl);background:none}
-
 .hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;padding:8px;cursor:pointer}
 .hamburger span{display:block;width:20px;height:1px;background:var(--cream)}
 
-.container{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,3vw,34px)}
-.page-shell{padding:42px 0 72px}
-.hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(320px,.85fr);gap:20px;margin-bottom:22px}
-.hero-panel,.hero-side,.section-card,.sector-card,.insight-card,.table-wrap,.cta-box{
+.container{max-width:var(--max);margin:0 auto;padding:0 clamp(18px,3vw,32px)}
+.page-shell{padding:38px 0 70px}
+.hero,.section-box,.sector-card,.cta-box{
   background:linear-gradient(180deg,rgba(15,21,37,.94),rgba(8,12,21,.98));
   border:1px solid var(--wf);border-radius:var(--r)
 }
-.hero-panel{padding:30px;position:relative;overflow:hidden}
-.hero-panel::before,.hero-side::before,.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
-.hero-side{padding:22px;position:relative;overflow:hidden}
-.eyebrow,.section-label,.pill,.metric-label,.scan-label,.sector-kind,.cta-label,.table-label{
-  font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase
+.hero,.section-box,.cta-box{padding:24px}
+.hero{margin-bottom:16px}
+.eyebrow,.section-label{
+  font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--amberl)
 }
-.eyebrow,.section-label,.cta-label,.table-label{color:var(--amberl)}
-.hero-title{font-family:var(--serif);font-size:clamp(34px,5.2vw,62px);line-height:1.02;letter-spacing:-.03em;max-width:760px;margin-bottom:14px}
+.hero-title{font-family:var(--serif);font-size:clamp(34px,5.1vw,58px);line-height:1.03;letter-spacing:-.03em;max-width:760px;margin:10px 0 12px}
 .hero-title em{font-style:italic;color:var(--amberl)}
-.hero-sub{font-size:15px;color:var(--wd);line-height:1.85;max-width:760px;margin-bottom:18px}
-.hero-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.flow-step{background:var(--wff);border:1px solid var(--wf);padding:14px}
-.flow-step strong{display:block;font-size:13px;margin-bottom:4px}
-.flow-step p{font-size:12px;color:var(--wd);line-height:1.6}
-.hero-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
-.metric{background:var(--wff);border:1px solid var(--wf);padding:12px}
-.metric-value{font-family:var(--mono);font-size:18px;color:var(--cream);margin-bottom:3px}
-.metric-label{color:rgba(240,232,213,.4)}
-.metric-note{font-size:12px;color:var(--wd);line-height:1.5;margin-top:5px}
+.hero-sub{max-width:760px;font-size:15px;color:var(--wd);line-height:1.8}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.hero-chip,.mini-chip{font-family:var(--mono);font-size:9px;padding:6px 10px;border:1px solid var(--wf);background:var(--wff);color:var(--wd)}
+.hero-chip.on{border-color:var(--amberb);background:var(--amberd);color:var(--amberl)}
 
-.quick-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.quick-links a{padding:8px 12px;border:1px solid var(--wf);background:var(--navy2);font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--wd)}
-.quick-links a:hover{border-color:var(--amberb);color:var(--amberl);background:var(--amberd)}
+.section{margin-bottom:16px}
+.section-box{margin-bottom:16px}
+.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;flex-wrap:wrap;margin-bottom:14px}
+.section-title{font-family:var(--serif);font-size:clamp(24px,3vw,36px);line-height:1.08}
+.section-sub{max-width:760px;font-size:13.5px;color:var(--wd);line-height:1.75}
 
-.section{margin-bottom:18px}
-.section-card{padding:22px}
-.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;flex-wrap:wrap;margin-bottom:16px}
-.section-title{font-family:var(--serif);font-size:clamp(24px,3.2vw,38px);line-height:1.08}
-.section-sub{max-width:820px;font-size:13.5px;color:var(--wd);line-height:1.78}
+.sectors-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sector-card{padding:18px}
+.sector-card h3{font-family:var(--serif);font-size:22px;line-height:1.08;margin-bottom:10px}
+.sector-copy{font-size:13px;color:var(--wd);line-height:1.7;margin-bottom:12px}
+.mini-list{display:grid;gap:8px}
+.mini-row{background:var(--wff);border:1px solid var(--wf);padding:10px}
+.mini-row b{display:block;font-size:11px;margin-bottom:3px}
+.mini-row span{font-size:12px;color:var(--wd);line-height:1.55}
 
-.focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.focus-card{background:var(--navy2);border:1px solid var(--wf);padding:18px;display:flex;flex-direction:column;gap:12px}
-.focus-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.focus-title{font-family:var(--serif);font-size:22px}
-.pill{padding:5px 8px;border:1px solid var(--amberb);background:var(--amberd);color:var(--amberl);white-space:nowrap}
-.focus-copy{font-size:13px;color:var(--wd);line-height:1.72}
-.focus-strip{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.focus-box{background:var(--wff);border:1px solid var(--wf);padding:10px}
-.scan-label{color:rgba(240,232,213,.38);margin-bottom:4px}
-.scan-value{font-size:12.5px;line-height:1.55}
-.chip-row,.company-list{display:flex;flex-wrap:wrap;gap:6px}
-.chip,.company{font-family:var(--mono);font-size:8px;padding:4px 7px;border:1px solid var(--wf);background:var(--wff);color:rgba(240,232,213,.58)}
-.chip.on{border-color:var(--amberb);background:var(--amberd);color:var(--amberl)}
+.simple-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.simple-card{background:var(--navy2);border:1px solid var(--wf);padding:18px}
+.simple-card h3{font-family:var(--serif);font-size:22px;margin-bottom:8px}
+.simple-card p{font-size:13px;color:var(--wd);line-height:1.72}
+.simple-card ul{margin:10px 0 0 18px}
+.simple-card li{font-size:13px;color:var(--wd);line-height:1.7;margin-bottom:5px}
 
-.nav-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.nav-card{display:block;background:var(--navy2);border:1px solid var(--wf);padding:14px;transition:.18s}
-.nav-card:hover{border-color:var(--amberb);transform:translateY(-1px)}
-.nav-card strong{display:block;font-size:13.5px;margin-bottom:4px}
-.nav-card span{display:block;font-size:12px;color:var(--wd);line-height:1.55}
-
-.sector-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.sector-card{padding:20px}
-.sector-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:12px}
-.sector-title{font-family:var(--serif);font-size:24px;line-height:1.08}
-.sector-kind{color:var(--amberl);margin-bottom:2px}
-.sector-summary{font-size:13.5px;color:var(--wd);line-height:1.75;margin-bottom:14px}
-.sector-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
-.sector-box{background:var(--wff);border:1px solid var(--wf);padding:10px}
-.sector-box b{display:block;font-size:12px;margin-bottom:4px}
-.sector-box span{font-size:12px;color:var(--wd);line-height:1.55}
-.sector-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-.sector-points ul{margin-left:18px}
-.sector-points li{font-size:12.5px;color:var(--wd);line-height:1.65;margin-bottom:5px}
-
-.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.insight-card{padding:18px}
-.insight-card h3{font-family:var(--serif);font-size:22px;margin-bottom:8px}
-.insight-card p{font-size:13px;color:var(--wd);line-height:1.72;margin-bottom:10px}
-.insight-card ul{margin-left:18px}
-.insight-card li{font-size:13px;color:var(--wd);line-height:1.7;margin-bottom:5px}
-
-.table-wrap{overflow:auto}
-.table-head{padding:18px 18px 0}
-table{width:100%;border-collapse:collapse;min-width:980px}
-th,td{padding:12px 14px;border-bottom:1px solid var(--wff);vertical-align:top;text-align:left}
-th{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amberl);background:rgba(200,137,26,.06)}
-td{font-size:12.5px;color:var(--wd);line-height:1.65}
-tr:last-child td{border-bottom:none}
-.td-main{color:var(--cream);font-weight:600}
-
-.cta-box{padding:26px;position:relative;overflow:hidden}
-.cta-title{font-family:var(--serif);font-size:30px;line-height:1.08;margin-bottom:8px}
-.cta-text{max-width:900px;font-size:14px;color:var(--wd);line-height:1.8;margin-bottom:16px}
+.cta-box{position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--amber),transparent)}
+.cta-title{font-family:var(--serif);font-size:28px;line-height:1.08;margin:8px 0}
+.cta-text{max-width:880px;font-size:14px;color:var(--wd);line-height:1.8;margin-bottom:16px}
 .cta-actions{display:flex;flex-wrap:wrap;gap:10px}
 
 footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
@@ -169,17 +121,15 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 .footer-disc{font-size:10.5px;color:rgba(240,232,213,.25);line-height:1.65;max-width:640px}
 .footer-copy{font-family:var(--mono);font-size:10px;color:rgba(240,232,213,.28);white-space:nowrap}
 
-@media(max-width:1180px){
-  .hero,.focus-grid,.nav-grid,.insight-grid{grid-template-columns:1fr 1fr}
-  .sector-grid{grid-template-columns:1fr}
+@media(max-width:1100px){
+  .sectors-grid,.simple-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:920px){
   nav ul{display:none}
   .hamburger{display:flex}
   nav.open ul{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(7,11,22,.98);border-bottom:1px solid var(--wf);padding:8px 14px 14px;gap:2px;z-index:298}
   nav.open ul a{padding:10px 12px;font-size:12px}
-  .hero,.hero-flow,.hero-metrics,.focus-grid,.nav-grid,.insight-grid,.sector-meta,.sector-points{grid-template-columns:1fr}
-  .focus-strip{grid-template-columns:1fr}
+  .sectors-grid,.simple-grid{grid-template-columns:1fr}
   .nav-r .btn-ghost{display:none}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
@@ -194,7 +144,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .btn-fill{font-size:8px;padding:7px 10px;letter-spacing:.05em;white-space:nowrap}
   .page-shell{padding:26px 0 48px}
   .container{padding:0 12px}
-  .hero-panel,.hero-side,.section-card,.sector-card,.insight-card,.cta-box{padding:18px}
+  .hero,.section-box,.cta-box,.sector-card{padding:18px}
   .footer-grid{grid-template-columns:1fr}
 }
 </style>
@@ -204,6 +154,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   <div class="t-label"><div class="t-dot"></div>Live</div>
   <div class="t-wrap"><div class="t-track" id="ticker-track"><div class="t-item"><span class="t-sym">S&P 500</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">ACMR</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">KTOS</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">LMT</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">AVAV</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">PANW</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">S&P 500</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NASDAQ</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">DOW</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">NVDA</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">ACMR</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">KTOS</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">LMT</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">AVAV</span><span class="t-px" style="opacity:.35">...</span></div><div class="t-item"><span class="t-sym">PANW</span><span class="t-px" style="opacity:.35">...</span></div></div></div>
 </div>
+
 <nav id="nav" aria-label="Hlavna navigacia" aria-expanded="false">
   <a href="/" class="logo" aria-label="InvestRadar">
     <img src="data:image/png;base64,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" alt="Logo InvestRadar">
@@ -213,7 +164,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
     <li><a href="/novinky/" class="nav-link" data-page="novinky">Novinky</a></li>
     <li><a href="/analyzy/" class="nav-link" data-page="analyzy">Analyzy</a></li>
     <li><a href="/alerty/" class="nav-link" data-page="alerty">Trade Alerty</a></li>
-    <li><a href="/sektory/" class="nav-link" data-page="sektory">Sektory</a></li>
+    <li><a href="/sektory/" class="nav-link active" data-page="sektory">Sektory</a></li>
     <li><a href="/earnings/" class="nav-link" data-page="earnings">Earnings</a></li>
     <li><a href="/vzdelavanie/" class="nav-link" data-page="vzdelavanie">Vzdelavanie</a></li>
     <li><a href="/o-nas/" class="nav-link" data-page="onas">O nas</a></li>
@@ -229,543 +180,174 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 <main class="page-shell">
   <div class="container">
     <section class="hero">
-      <div class="hero-panel">
-        <div class="eyebrow">InvestRadar · sektorovy hub</div>
-        <h1 class="hero-title">Sektory, firmy a <em>watchlisty</em> bez chaosu</h1>
-        <p class="hero-sub">Sekciu som preusporiadal na rychly pracovy hub. Najprv vidis, kde je momentum, potom sa jednym klikom dostanes na konkretny sektor a v kazdej karte mas rovnaku logiku: preco sledovat, co kontrolovat, ake ETF pouzit a ktore tickery mat na radare.</p>
-        <div class="hero-flow">
-          <div class="flow-step">
-            <strong>1. Vyber temu</strong>
-            <p>Pozri fokus sektory a vyfiltruj si len to, co dava zmysel pre aktualny rezim trhu.</p>
-          </div>
-          <div class="flow-step">
-            <strong>2. Skenuj kartu</strong>
-            <p>Na jednom mieste mas ETF, lidrov, satelity, katalyzatory aj hlavne rizika.</p>
-          </div>
-          <div class="flow-step">
-            <strong>3. Prejdi na analyzu</strong>
-            <p>Zo sektora si vytiahni 3 az 5 mien a az potom chod do detailu alebo trade alertu.</p>
-          </div>
-        </div>
+      <div class="eyebrow">InvestRadar · sektory</div>
+      <h1 class="hero-title">Jedna stranka, <em>12 sektorov</em>, rychly vyber</h1>
+      <p class="hero-sub">Tato verzia je schvalne jednoducha. Pri kazdom sektore vidis len tri veci: ETF, lidrov a co sledovat. Ciel nie je precitat vsetko, ale rychlo sa zorientovat a vybrat si 3 az 5 mien na dalsiu analyzu.</p>
+      <div class="hero-chips">
+        <span class="hero-chip on">Polovodice</span>
+        <span class="hero-chip on">AI infra</span>
+        <span class="hero-chip on">Obrana</span>
+        <span class="hero-chip">Energia</span>
+        <span class="hero-chip">Cyber</span>
+        <span class="hero-chip">Utility</span>
       </div>
-
-      <aside class="hero-side">
-        <div class="eyebrow">Rychly scan</div>
-        <div class="hero-metrics">
-          <div class="metric">
-            <div class="metric-value">12</div>
-            <div class="metric-label">hlavnych sektorov</div>
-            <div class="metric-note">Rozdelene na prioritne a doplnkove, aby oko neskenovalo vsetko naraz.</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">90+</div>
-            <div class="metric-label">tickerov</div>
-            <div class="metric-note">Lidri su oddeleni od 2. linie, takze rychlo vidis jadro sektora.</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">6</div>
-            <div class="metric-label">fokus tem</div>
-            <div class="metric-note">Najdolezitejsie sektory pre aktualne investicne narativy.</div>
-          </div>
-          <div class="metric">
-            <div class="metric-value">1</div>
-            <div class="metric-label">jednotna sablona</div>
-            <div class="metric-note">Kazda karta ma rovnaky format, preto je orientacia ovela rychlejsia.</div>
-          </div>
-        </div>
-      </aside>
     </section>
-
-    <div class="quick-links">
-      <a href="#fokus">Fokus sektory</a>
-      <a href="#navigator">Rychly vyber</a>
-      <a href="#detaily">Sektorove karty</a>
-      <a href="#matica">Porovnanie ETF</a>
-      <a href="#rezimy">Rezim trhu</a>
-      <a href="#watchlist">Watchlisty</a>
-    </div>
 
     <section class="section">
-      <div class="section-card">
+      <div class="section-box">
         <div class="section-head">
           <div>
-            <div class="section-label">Co sa zmenilo</div>
-            <h2 class="section-title">Menej balastu, viac orientacie</h2>
+            <div class="section-label">Prehlad</div>
+            <h2 class="section-title">Sektory na jednom mieste</h2>
           </div>
-          <p class="section-sub">Povodna verzia mala vela textu a malo hierarchie. Teraz ide stranka od najdolezitejsieho k menej dolezitemu: najprv fokus, potom navigacia, potom standardizovane detailne karty a az nakoniec porovnavacia tabulka.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="fokus">
-      <div class="section-card">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Prva vrstva</div>
-            <h2 class="section-title">Fokus sektory</h2>
-          </div>
-          <p class="section-sub">Toto je najpraktickejsi vstup do stranky. Najprv si zisti, kde je aktualne najviac sily, kde je najlepsi narativ a kde sa oplati hladat konkretne akcie.</p>
+          <p class="section-sub">Kazda karta je kratka. Ak ta sektor nezaujme do 5 sekund, chod dalej.</p>
         </div>
 
-        <div class="focus-grid">
-          <article class="focus-card">
-            <div class="focus-top">
-              <h3 class="focus-title">Polovodice</h3>
-              <div class="pill">Top momentum</div>
+        <div class="sectors-grid">
+          <article class="sector-card">
+            <h3>Polovodice</h3>
+            <p class="sector-copy">Najdolezitejsi growth sektor. Citlivy na AI capex, HBM a foundry vyuzitie.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>SMH, SOXX, SOX</span></div>
+              <div class="mini-row"><b>Lidri</b><span>NVDA, AMD, AVGO, TSM</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>capex, supply, valuation</span></div>
             </div>
-            <p class="focus-copy">Jadro growth trhu. Najcitlivejsie na AI capex, HBM memory, foundry utilization a equipment spend.</p>
-            <div class="focus-strip">
-              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">SMH, SOXX, SOX</div></div>
-              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">capex, supply, valuation</div></div>
-            </div>
-            <div class="chip-row"><span class="chip on">NVDA</span><span class="chip">AMD</span><span class="chip">AVGO</span><span class="chip">TSM</span><span class="chip">ASML</span></div>
           </article>
 
-          <article class="focus-card">
-            <div class="focus-top">
-              <h3 class="focus-title">AI infra & cloud</h3>
-              <div class="pill">Compounder</div>
+          <article class="sector-card">
+            <h3>AI infra & cloud</h3>
+            <p class="sector-copy">Vrstva nad chipmi. Tu sa rozhoduje, ci sa AI meni na realny biznis.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>QQQ, IGV, SRVR</span></div>
+              <div class="mini-row"><b>Lidri</b><span>MSFT, AMZN, META, GOOGL</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>cloud growth, capex guide</span></div>
             </div>
-            <p class="focus-copy">Vrstva nad polovodicmi, kde sa rozhoduje o monetizacii AI cez cloud, networking a datacentra.</p>
-            <div class="focus-strip">
-              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">QQQ, IGV, SRVR</div></div>
-              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">cloud growth, capex guide</div></div>
-            </div>
-            <div class="chip-row"><span class="chip on">MSFT</span><span class="chip">AMZN</span><span class="chip">META</span><span class="chip">ANET</span><span class="chip">VRT</span></div>
           </article>
 
-          <article class="focus-card">
-            <div class="focus-top">
-              <h3 class="focus-title">Obrana & drony</h3>
-              <div class="pill">Headline beta</div>
+          <article class="sector-card">
+            <h3>Kyberbezpecnost</h3>
+            <p class="sector-copy">Kvalitny rast a odolny spend. Casto drzi lepsie ako bezny software.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>HACK, CIBR, BUG</span></div>
+              <div class="mini-row"><b>Lidri</b><span>PANW, CRWD, FTNT</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>billings, platform play</span></div>
             </div>
-            <p class="focus-copy">Silny geopoliticky narativ, backlog, NATO spending a rastuci vyznam dronov, ISR a defense electronics.</p>
-            <div class="focus-strip">
-              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">ITA, PPA, XAR</div></div>
-              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">rozpocty, backlog, kontrakty</div></div>
-            </div>
-            <div class="chip-row"><span class="chip on">LMT</span><span class="chip">RTX</span><span class="chip">NOC</span><span class="chip">KTOS</span><span class="chip">AVAV</span></div>
           </article>
 
-          <article class="focus-card">
-            <div class="focus-top">
-              <h3 class="focus-title">Energia</h3>
-              <div class="pill">Macro lever</div>
+          <article class="sector-card">
+            <h3>Obrana & drony</h3>
+            <p class="sector-copy">Silny geopoliticky sektor. Backlog, kontrakty a rozpocty rozhoduju viac nez headline.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>ITA, PPA, XAR</span></div>
+              <div class="mini-row"><b>Lidri</b><span>LMT, RTX, NOC, GD</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>NATO spend, backlog, drony</span></div>
             </div>
-            <p class="focus-copy">Cash flow, buybacky a geopolitika. Sektor, ktory vie rychlo prebrat leadership pri rope a LNG.</p>
-            <div class="focus-strip">
-              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">XLE, XOP, OIH</div></div>
-              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">ropa, OPEC, FCF</div></div>
-            </div>
-            <div class="chip-row"><span class="chip on">XOM</span><span class="chip">CVX</span><span class="chip">COP</span><span class="chip">SLB</span><span class="chip">OXY</span></div>
           </article>
 
-          <article class="focus-card">
-            <div class="focus-top">
-              <h3 class="focus-title">Kyberbezpecnost</h3>
-              <div class="pill">Quality growth</div>
+          <article class="sector-card">
+            <h3>Energia</h3>
+            <p class="sector-copy">Cash flow, buybacky a geopolitika. Rychlo prebera leadership, ked rastie ropa.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>XLE, XOP, OIH</span></div>
+              <div class="mini-row"><b>Lidri</b><span>XOM, CVX, COP, OXY</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>ropa, OPEC, FCF</span></div>
             </div>
-            <p class="focus-copy">Odolnejsi spend nez bezny enterprise software. Dobry sektor na hladanie kvalitneho rastu.</p>
-            <div class="focus-strip">
-              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">HACK, CIBR, BUG</div></div>
-              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">billings, platform play</div></div>
-            </div>
-            <div class="chip-row"><span class="chip on">PANW</span><span class="chip">CRWD</span><span class="chip">ZS</span><span class="chip">FTNT</span><span class="chip">NET</span></div>
           </article>
 
-          <article class="focus-card">
-            <div class="focus-top">
-              <h3 class="focus-title">Utility & power</h3>
-              <div class="pill">Defenziva+</div>
+          <article class="sector-card">
+            <h3>Utility & power</h3>
+            <p class="sector-copy">Uz nie len defenziva. AI datacentra a grid investicie menia profil sektora.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>XLU, GRID, URNM</span></div>
+              <div class="mini-row"><b>Lidri</b><span>CEG, VST, NEE</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>power demand, yields</span></div>
             </div>
-            <p class="focus-copy">Uz to nie je len nudna utility story. AI datacentra a grid investicie menia profil rastu.</p>
-            <div class="focus-strip">
-              <div class="focus-box"><div class="scan-label">ETF</div><div class="scan-value">XLU, GRID, URNM</div></div>
-              <div class="focus-box"><div class="scan-label">Sleduj</div><div class="scan-value">power demand, yields</div></div>
-            </div>
-            <div class="chip-row"><span class="chip on">CEG</span><span class="chip">VST</span><span class="chip">NEE</span><span class="chip">DUK</span><span class="chip">BWXT</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="navigator">
-      <div class="section-card">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Druha vrstva</div>
-            <h2 class="section-title">Rychly vyber sektorov</h2>
-          </div>
-          <p class="section-sub">Kazda karta ta posunie na detail. Najprv su prioritne temy, pod nimi doplnkove sektory pre sirsi watchlist a rotaciu.</p>
-        </div>
-
-        <div class="nav-grid">
-          <a class="nav-card" href="#semis"><strong>Polovodice</strong><span>AI capex, foundries, equipment</span></a>
-          <a class="nav-card" href="#ai"><strong>AI infra & cloud</strong><span>Hyperscaleri, networking, datacentra</span></a>
-          <a class="nav-card" href="#cyber"><strong>Kyberbezpecnost</strong><span>Cloud security, XDR, identity</span></a>
-          <a class="nav-card" href="#defence"><strong>Obrana & drony</strong><span>Backlog, kontrakty, geopolitika</span></a>
-          <a class="nav-card" href="#energy"><strong>Energia</strong><span>Ropa, LNG, buybacky, FCF</span></a>
-          <a class="nav-card" href="#utility"><strong>Utility & power</strong><span>Grid, nuclear, datacentra</span></a>
-          <a class="nav-card" href="#healthcare"><strong>Healthcare</strong><span>Pharma, devices, managed care</span></a>
-          <a class="nav-card" href="#financials"><strong>Financie</strong><span>Rates, credit, capital markets</span></a>
-          <a class="nav-card" href="#industrials"><strong>Priemysel</strong><span>Automation, infra, backlog</span></a>
-          <a class="nav-card" href="#consumer"><strong>Consumer</strong><span>Retail, travel, e-commerce</span></a>
-          <a class="nav-card" href="#materials"><strong>Materialy</strong><span>Med, zlato, uran, ocel</span></a>
-          <a class="nav-card" href="#space"><strong>Space tech</strong><span>Launch, satcom, frontier risk</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="detaily">
-      <div class="section-card">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Hlavna cast</div>
-            <h2 class="section-title">Standardizovane sektorove karty</h2>
-          </div>
-          <p class="section-sub">Kazdy sektor ma rovnaky format: co je tema, co sledovat, ETF, lidri, satelity, katalyzatory a rizika. To je hlavny dovod, preco je tato verzia ovela prehladnejsia.</p>
-        </div>
-
-        <div class="sector-grid">
-          <article class="sector-card" id="semis">
-            <div class="sector-head">
-              <div><div class="sector-kind">Growth leader</div><h3 class="sector-title">Polovodice</h3></div>
-              <div class="pill">High beta</div>
-            </div>
-            <p class="sector-summary">Najdolezitejsi sektor dnesneho growth trhu. Driverom je AI capex, HBM memory, foundry utilization a wafer fab equipment.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>SMH, SOXX, SOX</span></div>
-              <div class="sector-box"><b>Lidri</b><span>NVDA, AMD, AVGO, TSM</span></div>
-              <div class="sector-box"><b>Satelity</b><span>ASML, MU, MRVL, ACMR</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>hyperscaler capex</li><li>HBM supply</li><li>enterprise AI adoption</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>export controls</li><li>inventory correction</li><li>prilis vysoke valuacie</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">NVDA</span><span class="company">AMD</span><span class="company">AVGO</span><span class="company">TSM</span><span class="company">ASML</span><span class="company">LRCX</span><span class="company">AMAT</span><span class="company">MU</span><span class="company">MRVL</span><span class="company">ACMR</span></div>
           </article>
 
-          <article class="sector-card" id="ai">
-            <div class="sector-head">
-              <div><div class="sector-kind">Secular compounder</div><h3 class="sector-title">AI infra & cloud</h3></div>
-              <div class="pill">Core theme</div>
+          <article class="sector-card">
+            <h3>Healthcare</h3>
+            <p class="sector-copy">Mix stability a inovacie. Dobre funguje, ked trh hlada kvalitu alebo defenzivu.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>XLV, IBB, XBI</span></div>
+              <div class="mini-row"><b>Lidri</b><span>LLY, JNJ, MRK, ISRG</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>pipeline, GLP-1, pricing</span></div>
             </div>
-            <p class="sector-summary">Vrstva nad polovodicmi, kde sa AI investicie menia na realne revenue cez cloud, networking, servery a datacentra.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>QQQ, IGV, SRVR</span></div>
-              <div class="sector-box"><b>Lidri</b><span>MSFT, AMZN, META, GOOGL</span></div>
-              <div class="sector-box"><b>Satelity</b><span>ANET, VRT, DLR, DELL</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>rast cloud divizii</li><li>inference workloads</li><li>AI software attach</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>slaba monetizacia AI</li><li>tlak na marze</li><li>capex bez ROI</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">MSFT</span><span class="company">AMZN</span><span class="company">GOOGL</span><span class="company">META</span><span class="company">ANET</span><span class="company">VRT</span><span class="company">DLR</span><span class="company">EQIX</span><span class="company">SMCI</span><span class="company">DELL</span></div>
           </article>
 
-          <article class="sector-card" id="cyber">
-            <div class="sector-head">
-              <div><div class="sector-kind">Quality growth</div><h3 class="sector-title">Kyberbezpecnost</h3></div>
-              <div class="pill">Resilient spend</div>
+          <article class="sector-card">
+            <h3>Financie</h3>
+            <p class="sector-copy">Sadzby, kredit a aktivita na trhu. Inak sa hybu banky, inak asset manageri.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>XLF, KRE, KBE</span></div>
+              <div class="mini-row"><b>Lidri</b><span>JPM, GS, MS, BLK</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>yield curve, credit, trading</span></div>
             </div>
-            <p class="sector-summary">Jedna z najcistejsich sekularnych tem. Security spend je casto odolnejsi nez bezny enterprise software.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>HACK, CIBR, BUG</span></div>
-              <div class="sector-box"><b>Lidri</b><span>PANW, CRWD, FTNT</span></div>
-              <div class="sector-box"><b>Satelity</b><span>ZS, NET, OKTA, S</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>rast utokov</li><li>platform consolidation</li><li>AI security</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>slabsie billings</li><li>drahe multiple</li><li>silna konkurencia</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">PANW</span><span class="company">CRWD</span><span class="company">FTNT</span><span class="company">ZS</span><span class="company">NET</span><span class="company">OKTA</span><span class="company">S</span><span class="company">CYBR</span></div>
           </article>
 
-          <article class="sector-card" id="defence">
-            <div class="sector-head">
-              <div><div class="sector-kind">Geopolitical premium</div><h3 class="sector-title">Obrana & drony</h3></div>
-              <div class="pill">Narrative strong</div>
+          <article class="sector-card">
+            <h3>Priemysel</h3>
+            <p class="sector-copy">Dobry sektor na citanie realnej ekonomiky, objednavok a podnikovych investicii.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>XLI, PAVE, AIRR</span></div>
+              <div class="mini-row"><b>Lidri</b><span>GE, CAT, ETN, PH</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>PMI, backlog, infra spend</span></div>
             </div>
-            <p class="sector-summary">Mix dlhych kontraktov, backlogu a headline-driven pohybov. Popri legacy primes rastie vyznam dronov, elektroniky a missile defense.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>ITA, PPA, XAR</span></div>
-              <div class="sector-box"><b>Lidri</b><span>LMT, RTX, NOC, GD</span></div>
-              <div class="sector-box"><b>Satelity</b><span>KTOS, AVAV, LDOS, HII</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>NATO spend</li><li>doplnenie zasob</li><li>dronove kontrakty</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>oneskorenie kontraktov</li><li>program risk</li><li>ostre valuacie po rally</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">LMT</span><span class="company">RTX</span><span class="company">NOC</span><span class="company">GD</span><span class="company">KTOS</span><span class="company">AVAV</span><span class="company">LDOS</span><span class="company">HII</span></div>
           </article>
 
-          <article class="sector-card" id="energy">
-            <div class="sector-head">
-              <div><div class="sector-kind">Macro sensitive</div><h3 class="sector-title">Energia</h3></div>
-              <div class="pill">Cash flow</div>
+          <article class="sector-card">
+            <h3>Consumer</h3>
+            <p class="sector-copy">Ukazuje zdravie spotrebitela a pricing power v retaile, traveli a e-commerce.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>XLY, XLP, ONLN</span></div>
+              <div class="mini-row"><b>Lidri</b><span>AMZN, COST, WMT, MELI</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>consumer health, travel, ads</span></div>
             </div>
-            <p class="sector-summary">Energia je mix cash flow, geopolitiky a discipliny na strane ponuky. Da sa hrat cez majors, E&P aj oil services.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>XLE, XOP, OIH</span></div>
-              <div class="sector-box"><b>Lidri</b><span>XOM, CVX, COP</span></div>
-              <div class="sector-box"><b>Satelity</b><span>OXY, SLB, HAL, LNG</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>OPEC politika</li><li>LNG kontrakty</li><li>buybacky a dividendy</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>pad ropy</li><li>recesia</li><li>slabsi China demand</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">XOM</span><span class="company">CVX</span><span class="company">COP</span><span class="company">OXY</span><span class="company">EOG</span><span class="company">SLB</span><span class="company">HAL</span><span class="company">LNG</span></div>
           </article>
 
-          <article class="sector-card" id="utility">
-            <div class="sector-head">
-              <div><div class="sector-kind">Defensive with upside</div><h3 class="sector-title">Utility & power</h3></div>
-              <div class="pill">Grid story</div>
+          <article class="sector-card">
+            <h3>Materialy</h3>
+            <p class="sector-copy">Makro a komoditny sektor. Velmi citlivy na Cinu, dolar a ceny surovin.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>XLB, COPX, GDX, URNM</span></div>
+              <div class="mini-row"><b>Lidri</b><span>FCX, NEM, NUE, CCJ</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>med, zlato, uran, China</span></div>
             </div>
-            <p class="sector-summary">Segment sa meni z cistej defenzivy na rastovejsiu temu vdaka energetickemu dopytu datacentier, jadru a modernizacii siete.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>XLU, GRID, URNM</span></div>
-              <div class="sector-box"><b>Lidri</b><span>CEG, VST, NEE</span></div>
-              <div class="sector-box"><b>Satelity</b><span>DUK, SO, AEP, BWXT</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>rast spotreby elektriny</li><li>jadrove kontrakty</li><li>grid spend</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>vyssie vynosy</li><li>regulacne zasahy</li><li>execution risk</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">CEG</span><span class="company">VST</span><span class="company">NEE</span><span class="company">DUK</span><span class="company">SO</span><span class="company">AEP</span><span class="company">BWXT</span><span class="company">CCJ</span></div>
           </article>
 
-          <article class="sector-card" id="healthcare">
-            <div class="sector-head">
-              <div><div class="sector-kind">Defensive + innovation</div><h3 class="sector-title">Healthcare</h3></div>
-              <div class="pill">Stability</div>
+          <article class="sector-card">
+            <h3>Space tech</h3>
+            <p class="sector-copy">Najviac spekulativny sektor. Mensie pozicie, vacsi respekt k volatilite.</p>
+            <div class="mini-list">
+              <div class="mini-row"><b>ETF</b><span>ARKX</span></div>
+              <div class="mini-row"><b>Lidri</b><span>RKLB, ASTS, LUNR</span></div>
+              <div class="mini-row"><b>Sleduj</b><span>launches, kontrakty, cash burn</span></div>
             </div>
-            <p class="sector-summary">Pharma, medtech, biotech aj managed care v jednom baliku. Vie ponuknut defenzivu aj inovacny rast.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>XLV, IBB, XBI</span></div>
-              <div class="sector-box"><b>Lidri</b><span>LLY, JNJ, MRK, ISRG</span></div>
-              <div class="sector-box"><b>Satelity</b><span>NVO, BSX, VRTX, UNH</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>pipeline data</li><li>GLP-1 adoption</li><li>M&A v biotech</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>patent cliffs</li><li>pricing pressure</li><li>klinicke neuspechy</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">LLY</span><span class="company">NVO</span><span class="company">JNJ</span><span class="company">MRK</span><span class="company">ISRG</span><span class="company">ABT</span><span class="company">BSX</span><span class="company">VRTX</span><span class="company">UNH</span></div>
-          </article>
-
-          <article class="sector-card" id="financials">
-            <div class="sector-head">
-              <div><div class="sector-kind">Rates & credit</div><h3 class="sector-title">Financie</h3></div>
-              <div class="pill">Macro read</div>
-            </div>
-            <p class="sector-summary">Banky, brokers, asset manageri a payment rails maju rozne drivere, no vsetko stoji na sadzbach, kredite a aktivite kapitalovych trhov.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>XLF, KRE, KBE, IAI</span></div>
-              <div class="sector-box"><b>Lidri</b><span>JPM, GS, MS, BLK</span></div>
-              <div class="sector-box"><b>Satelity</b><span>KKR, BX, APO, MA</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>steepening krivky</li><li>trading activity</li><li>IPO/M&A restart</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>CRE expozicia</li><li>vyssie rezervy</li><li>regulacny tlak</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">JPM</span><span class="company">GS</span><span class="company">MS</span><span class="company">BLK</span><span class="company">KKR</span><span class="company">BX</span><span class="company">APO</span><span class="company">MA</span><span class="company">V</span></div>
-          </article>
-
-          <article class="sector-card" id="industrials">
-            <div class="sector-head">
-              <div><div class="sector-kind">Broad cycle</div><h3 class="sector-title">Priemysel</h3></div>
-              <div class="pill">PMI play</div>
-            </div>
-            <p class="sector-summary">Siroky kos aerospace, automation, logistics a machinery. Vyborny sektor na citanie realnej ekonomiky a firemneho capexu.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>XLI, PAVE, AIRR</span></div>
-              <div class="sector-box"><b>Lidri</b><span>GE, CAT, ETN, PH</span></div>
-              <div class="sector-box"><b>Satelity</b><span>DE, HON, URI, ROK</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>objednavky a backlog</li><li>infra projekty</li><li>factory automation</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>slaby PMI</li><li>nizsi capex</li><li>vstupne naklady</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">GE</span><span class="company">CAT</span><span class="company">ETN</span><span class="company">PH</span><span class="company">DE</span><span class="company">HON</span><span class="company">URI</span><span class="company">ROK</span></div>
-          </article>
-
-          <article class="sector-card" id="consumer">
-            <div class="sector-head">
-              <div><div class="sector-kind">Demand pulse</div><h3 class="sector-title">Consumer</h3></div>
-              <div class="pill">Pricing test</div>
-            </div>
-            <p class="sector-summary">Dava citanie zdravia spotrebitela, pricing power a ochoty minut peniaze na retail, travel a premium sluzby.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>XLY, XLP, ONLN</span></div>
-              <div class="sector-box"><b>Lidri</b><span>AMZN, COST, WMT, MELI</span></div>
-              <div class="sector-box"><b>Satelity</b><span>BKNG, ABNB, NKE, LULU</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>silny consumer</li><li>digital ads</li><li>travel demand</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>slabsi discretionary spend</li><li>promo tlak</li><li>FX a cla</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">AMZN</span><span class="company">MELI</span><span class="company">COST</span><span class="company">WMT</span><span class="company">BKNG</span><span class="company">ABNB</span><span class="company">NKE</span><span class="company">LULU</span></div>
-          </article>
-
-          <article class="sector-card" id="materials">
-            <div class="sector-head">
-              <div><div class="sector-kind">Commodity leverage</div><h3 class="sector-title">Materialy</h3></div>
-              <div class="pill">Reflation</div>
-            </div>
-            <p class="sector-summary">Dobry sektor na hranie reflacie, infra spendu a nedostatku surovin, ale s vysokou citlivostou na Cinu, dolar a ceny komodit.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>XLB, COPX, GDX, URNM</span></div>
-              <div class="sector-box"><b>Lidri</b><span>FCX, NEM, NUE</span></div>
-              <div class="sector-box"><b>Satelity</b><span>SCCO, STLD, MOS, CCJ</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>rast medi</li><li>slabsi dolar</li><li>jadrove kontrakty</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>China slowdown</li><li>prebytok zasob</li><li>prudke zmeny cien</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">FCX</span><span class="company">NEM</span><span class="company">NUE</span><span class="company">SCCO</span><span class="company">STLD</span><span class="company">MOS</span><span class="company">CF</span><span class="company">CCJ</span></div>
-          </article>
-
-          <article class="sector-card" id="space">
-            <div class="sector-head">
-              <div><div class="sector-kind">Speculative frontier</div><h3 class="sector-title">Space tech</h3></div>
-              <div class="pill">High risk</div>
-            </div>
-            <p class="sector-summary">Viac venture-like nez klasicke large-cap akcie. Oplati sa mensia pozicia, disciplina a jasne definovane riziko.</p>
-            <div class="sector-meta">
-              <div class="sector-box"><b>ETF</b><span>ARKX</span></div>
-              <div class="sector-box"><b>Lidri</b><span>RKLB, ASTS</span></div>
-              <div class="sector-box"><b>Satelity</b><span>LUNR, PL, SPIR, BKSY</span></div>
-            </div>
-            <div class="sector-points">
-              <div><div class="scan-label">Katalyzatory</div><ul><li>uspesne misie</li><li>vladne kontrakty</li><li>zlepsenie economics</li></ul></div>
-              <div><div class="scan-label">Rizika</div><ul><li>cash burn</li><li>dilucia</li><li>technicke zlyhanie</li></ul></div>
-            </div>
-            <div class="company-list"><span class="company">RKLB</span><span class="company">ASTS</span><span class="company">LUNR</span><span class="company">PL</span><span class="company">SPIR</span><span class="company">BKSY</span><span class="company">IRDM</span></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="matica">
-      <div class="table-wrap">
-        <div class="table-head">
-          <div class="table-label">Porovnanie</div>
-          <h2 class="section-title">Matica sektorov, ETF a lidrov</h2>
-          <p class="section-sub">Ked chces uplne rychlo prepojit makro pribeh s konkretnym nastrojom, tu mas najkratsiu verziu celej stranky.</p>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>Sektor</th>
-              <th>ETF / benchmark</th>
-              <th>Lidri</th>
-              <th>2. linia</th>
-              <th>Co sledovat</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="td-main">Polovodice</td><td>SMH, SOXX, SOX</td><td>NVDA, AMD, AVGO, TSM</td><td>ASML, MU, MRVL, ACMR</td><td>AI capex, HBM, foundry utilization, valuation</td></tr>
-            <tr><td class="td-main">AI infra & cloud</td><td>QQQ, IGV, SRVR</td><td>MSFT, AMZN, META, GOOGL</td><td>ANET, VRT, DLR, DELL</td><td>cloud growth, capex guide, networking, AI monetizacia</td></tr>
-            <tr><td class="td-main">Kyberbezpecnost</td><td>HACK, CIBR, BUG</td><td>PANW, CRWD, FTNT</td><td>ZS, NET, OKTA, S</td><td>billings, platform consolidation, federal spend</td></tr>
-            <tr><td class="td-main">Obrana & drony</td><td>ITA, PPA, XAR</td><td>LMT, RTX, NOC, GD</td><td>KTOS, AVAV, LDOS, HII</td><td>backlog, NATO spend, kontrakty, drony</td></tr>
-            <tr><td class="td-main">Energia</td><td>XLE, XOP, OIH</td><td>XOM, CVX, COP</td><td>OXY, SLB, HAL, LNG</td><td>ropa, OPEC, LNG, FCF, buybacky</td></tr>
-            <tr><td class="td-main">Utility & power</td><td>XLU, GRID, URNM</td><td>CEG, VST, NEE</td><td>DUK, SO, AEP, BWXT</td><td>power demand, AI datacentra, yields, nuclear</td></tr>
-            <tr><td class="td-main">Healthcare</td><td>XLV, IBB, XBI</td><td>LLY, JNJ, MRK, ISRG</td><td>NVO, BSX, VRTX, UNH</td><td>pipeline data, GLP-1, pricing, medtech volumes</td></tr>
-            <tr><td class="td-main">Financie</td><td>XLF, KRE, KBE, IAI</td><td>JPM, GS, MS, BLK</td><td>KKR, BX, APO, MA</td><td>NII, credit, trading, yield curve</td></tr>
-            <tr><td class="td-main">Priemysel</td><td>XLI, PAVE, AIRR</td><td>GE, CAT, ETN, PH</td><td>DE, HON, URI, ROK</td><td>orders, PMI, backlog, infra spend</td></tr>
-            <tr><td class="td-main">Consumer</td><td>XLY, XLP, ONLN</td><td>AMZN, COST, WMT, MELI</td><td>BKNG, ABNB, NKE, LULU</td><td>consumer health, promo pressure, travel, ads</td></tr>
-            <tr><td class="td-main">Materialy</td><td>XLB, COPX, GDX, URNM</td><td>FCX, NEM, NUE</td><td>SCCO, STLD, MOS, CCJ</td><td>med, zlato, uran, China demand</td></tr>
-            <tr><td class="td-main">Space tech</td><td>ARKX</td><td>RKLB, ASTS</td><td>LUNR, PL, SPIR, BKSY</td><td>launch cadence, kontrakty, financovanie</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="section" id="rezimy">
-      <div class="section-card">
+    <section class="section">
+      <div class="section-box">
         <div class="section-head">
           <div>
-            <div class="section-label">Kontext</div>
-            <h2 class="section-title">Ktore sektory zvyknu fungovat v roznych rezimoch trhu</h2>
+            <div class="section-label">Pouzitie</div>
+            <h2 class="section-title">Ako to citat</h2>
           </div>
-          <p class="section-sub">Nie je to tvrde pravidlo, ale velmi prakticka mapa na prve rozhodnutie, kam sa pozerat najskor.</p>
+          <p class="section-sub">Jednoduchy filter, aby si sa v tom nestratil.</p>
         </div>
-
-        <div class="insight-grid">
-          <article class="insight-card">
-            <h3>Risk-on rast</h3>
-            <p>Pri nizkej volatilite a viere v rast ziskov zvyknu dominovat high-beta temy.</p>
-            <ul>
-              <li>Polovodice</li>
-              <li>AI infra & cloud</li>
-              <li>Kyberbezpecnost</li>
-              <li>Space tech</li>
-            </ul>
+        <div class="simple-grid">
+          <article class="simple-card">
+            <h3>1. Vyber sektor</h3>
+            <p>Nehraj vsetko naraz. Vyber si len 1 alebo 2 sektory, kde je momentalne najlepsi setup.</p>
           </article>
-          <article class="insight-card">
-            <h3>Reflacia a capex</h3>
-            <p>Ked sa zlepsuju PMI a objednavky, casto vedu hmotnejsie biznisy a komoditne temy.</p>
-            <ul>
-              <li>Priemysel</li>
-              <li>Energia</li>
-              <li>Materialy</li>
-              <li>Obrana</li>
-            </ul>
+          <article class="simple-card">
+            <h3>2. Pozri lidrov</h3>
+            <p>Najprv sleduj najvacsie mena. Az ked sektor funguje, chod do mensich a rizikovejsich mien.</p>
           </article>
-          <article class="insight-card">
-            <h3>Defenziva</h3>
-            <p>Ked je trh nervozny alebo rast slabne, kapital sa casto presuva do stabilnejsich cash flow.</p>
-            <ul>
-              <li>Healthcare</li>
-              <li>Utility & power</li>
-              <li>Consumer staples cez XLP</li>
-              <li>Vybrane large-cap financie</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="watchlist">
-      <div class="section-card">
-        <div class="section-head">
-          <div>
-            <div class="section-label">Prakticke pouzitie</div>
-            <h2 class="section-title">Watchlisty podla stylu</h2>
-          </div>
-          <p class="section-sub">Ak nechces sledovat prilis vela mien naraz, toto je jednoduchsi a rychlejsi sposob ako si stranku realne pouzivat.</p>
-        </div>
-
-        <div class="insight-grid">
-          <article class="insight-card">
-            <h3>Core kvalita</h3>
-            <p>Firmy vhodne na dlhsie sledovanie a opakovane vstupy, ked sektor znovu dostane momentum.</p>
-            <ul>
-              <li>MSFT, NVDA, TSM, ASML</li>
-              <li>PANW, CRWD</li>
-              <li>LLY, ISRG</li>
-              <li>JPM, BLK</li>
-            </ul>
-          </article>
-          <article class="insight-card">
-            <h3>Cyklicky trade</h3>
-            <p>Mena, ktore sa hyria podla makra, komodit a sentimentu a potrebuju lepsie nacasovanie.</p>
-            <ul>
-              <li>SLB, OXY, FCX, NUE</li>
-              <li>CAT, ETN, PH, URI</li>
-              <li>KTOS, AVAV</li>
-              <li>GS, COF</li>
-            </ul>
-          </article>
-          <article class="insight-card">
-            <h3>Vyssi rast / vyssie riziko</h3>
-            <p>Satelitne pozicie, kde treba vacsi respekt k volatilite a prisnejsie riadenie rizika.</p>
-            <ul>
-              <li>ACMR, MRVL, ARM, UCTT</li>
-              <li>S, NET, OKTA</li>
-              <li>RKLB, ASTS, LUNR</li>
-              <li>SMCI, VRT, DELL</li>
-            </ul>
+          <article class="simple-card">
+            <h3>3. Potom analyza</h3>
+            <p>Z kazdeho sektora si vytiahni 3 az 5 tickerov a tie si otvor v analyzach alebo alertoch.</p>
           </article>
         </div>
       </div>
@@ -773,9 +355,9 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 
     <section class="section">
       <div class="cta-box">
-        <div class="cta-label">InvestRadar workflow</div>
-        <div class="cta-title">Najprv sektor, potom firma, az potom trade</div>
-        <div class="cta-text">Sekcia `Sektory` teraz funguje ako skutocny rozcestnik. Z noviniek alebo makro temy sa sem vratis, rychlo si vyberies sektor, skontrolujes lidrov a satelity a az potom ides do analyz alebo trade alertov.</div>
+        <div class="section-label">InvestRadar workflow</div>
+        <div class="cta-title">Najprv sektor, az potom konkretna akcia</div>
+        <div class="cta-text">Tato stranka ma teraz len jednu ulohu: rychlo ta nasmerovat. Nie vsetko vysvetlit. Akonahle si vyberies sektor, chod dalej do analyz, noviniek alebo trade alertov.</div>
         <div class="cta-actions">
           <a href="/analyzy/" class="btn-fill">Prejst na analyzy</a>
           <a href="/novinky/" class="btn-ghost">Otvorit novinky</a>
@@ -849,9 +431,7 @@ var ROUTES={
   podmienky:'/podmienky/'
 };
 function goTo(id){
-  if(ROUTES[id]){
-    window.location.href=ROUTES[id];
-  }
+  if(ROUTES[id])window.location.href=ROUTES[id];
 }
 function openCookieSettings(){
   var banner=document.getElementById('cookie-banner');
