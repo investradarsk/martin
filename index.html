@@ -54,7 +54,11 @@
   --max:1200px; --r:2px; --r-lg:18px; --shadow:0 24px 60px rgba(0,0,0,.26);
 }
 html{scroll-behavior:smooth}
-body{background:var(--navy);color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden}
+body{background:
+  radial-gradient(circle at top left,rgba(200,137,26,.09),transparent 28%),
+  radial-gradient(circle at 85% 12%,rgba(42,127,196,.08),transparent 24%),
+  linear-gradient(180deg,#09101d 0%,#070b16 24%,#0a1220 100%);
+color:var(--cream);font-family:var(--sans);font-size:15px;line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 b,strong{font-weight:600;color:var(--cream)}
 
@@ -104,6 +108,8 @@ nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .sec-label{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--amberl);margin-bottom:8px}
 .sec-title{font-family:var(--serif);font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.1}
 .sec-sub{font-size:13px;color:var(--wd);line-height:1.7;max-width:560px;margin-top:8px}
+.section-shell{position:relative;overflow:hidden}
+.section-shell::before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(240,232,213,.015),transparent 28%,transparent 72%,rgba(240,232,213,.012))}
 .divider{display:flex;align-items:center;gap:14px;margin:0 0 36px}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--wf)}
 .divider span{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,232,213,.3);white-space:nowrap}
@@ -127,6 +133,11 @@ nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
 .hero-note{font-family:var(--mono);font-size:9px;color:rgba(240,232,213,.32);letter-spacing:.06em}
 .hero-note .live{color:var(--green)}
+.hero-signals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:640px;margin-top:26px}
+.hero-signal{padding:14px 16px;border:1px solid var(--wf);background:linear-gradient(180deg,rgba(240,232,213,.05),rgba(240,232,213,.02));border-radius:14px;backdrop-filter:blur(14px)}
+.hero-signal-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,232,213,.34);margin-bottom:5px}
+.hero-signal-value{font-family:var(--serif);font-size:18px;line-height:1.1;margin-bottom:4px}
+.hero-signal-copy{font-size:12px;color:var(--wd);line-height:1.55}
 .update-bar{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--wf);background:var(--wff);padding:5px 12px;margin-bottom:36px;border-radius:var(--r)}
 .update-bar-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 1.8s ease-in-out infinite}
 .update-bar span{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--wd)}
@@ -165,6 +176,21 @@ nav ul a.active{color:var(--amberl);background:var(--amberd)}
 .stat-name{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,232,213,.38)}
 .stat-val{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--cream)}
 .stat-chg{font-family:var(--mono);font-size:10px}
+
+/* HOME POLISH */
+.editorial-panel{max-width:980px;padding:30px;border:1px solid var(--wf);border-radius:28px;background:linear-gradient(145deg,rgba(18,25,42,.92),rgba(10,16,28,.92));box-shadow:var(--shadow);position:relative;overflow:hidden}
+.editorial-panel::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(200,137,26,.12),transparent 32%);pointer-events:none}
+.editorial-grid{display:grid;grid-template-columns:minmax(0,1.35fr) 240px;gap:26px;align-items:start}
+.editorial-copy p{font-size:15px;line-height:1.82;color:var(--wd);margin-bottom:14px}
+.editorial-copy p:last-child{margin-bottom:0}
+.editorial-side{display:grid;gap:10px}
+.editorial-stat{padding:16px 18px;border:1px solid var(--wf);border-radius:18px;background:rgba(240,232,213,.035)}
+.editorial-stat-k{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,232,213,.34);margin-bottom:7px}
+.editorial-stat-v{font-family:var(--serif);font-size:24px;line-height:1.05;margin-bottom:5px}
+.editorial-stat-p{font-size:12px;color:var(--wd);line-height:1.55}
+.topics-panel{padding:26px;border:1px solid var(--wf);border-radius:24px;background:linear-gradient(180deg,rgba(16,23,39,.88),rgba(10,15,26,.9))}
+.cta-surface{position:relative;overflow:hidden}
+.cta-surface::after{content:'';position:absolute;inset:auto -10% -55% 45%;height:180px;background:radial-gradient(circle,rgba(200,137,26,.16),transparent 60%);pointer-events:none}
 
 /* TODAY SECTION */
 #today{padding:60px 0;background:var(--navy2);border-bottom:1px solid var(--wf)}
@@ -250,7 +276,7 @@ nav ul a.active{color:var(--amberl);background:var(--amberd)}
 #topics{padding:48px 0}
 .topics-wrap{display:flex;gap:10px;flex-wrap:wrap}
 .topic-pill{display:flex;align-items:center;gap:8px;padding:9px 16px;background:var(--wff);border:1px solid var(--wf);cursor:pointer;transition:all .2s;border-radius:var(--r)}
-.topic-pill:hover{border-color:var(--amberb);background:var(--amberd)}
+.topic-pill:hover{border-color:var(--amberb);background:linear-gradient(180deg,rgba(200,137,26,.14),rgba(200,137,26,.06));transform:translateY(-1px)}
 .tp-n{font-family:var(--mono);font-size:8px;color:var(--amber)}
 .tp-t{font-size:13px;font-weight:500}
 
@@ -402,7 +428,9 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
 @media(max-width:1020px){
   .hero-grid{grid-template-columns:1fr;gap:32px}
   .hcard{max-width:480px}
+  .hero-signals{grid-template-columns:1fr 1fr}
   .trust-bar{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .editorial-grid{grid-template-columns:1fr}
   .today-layout{grid-template-columns:1fr}
   .index-panel{display:none}
   .novinky-layout{grid-template-columns:1fr}
@@ -473,6 +501,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .strip-grid{grid-template-columns:1fr 1fr}
   .sectors-grid{grid-template-columns:1fr}
   .trust-bar{grid-template-columns:1fr}
+  .hero-signals{grid-template-columns:1fr}
   .why-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
   section,#today,#articles,#sectors,#book,#newsletter,#why{padding:44px 0}
@@ -490,6 +519,7 @@ footer{background:var(--navy2);border-top:1px solid var(--wf);padding:48px 0 0}
   .why-grid{grid-template-columns:1fr}
   .strip-grid{grid-template-columns:1fr}
   .cta-row{flex-direction:column;align-items:flex-start}
+  .editorial-panel,.topics-panel{padding:20px}
 }
 
 
@@ -862,13 +892,13 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     <li><a href="/analyzy/" class="nav-link" data-page="analyzy">Analýzy</a></li>
     <li><a href="/alerty/" class="nav-link" data-page="alerty">Trade Alerty</a></li>
     <li><a href="/sektory/" class="nav-link" data-page="sektory">Sektory</a></li>
-    <li><a href="/earnings/" class="nav-link" data-page="earnings" onclick="goTo('earnings');return false;" onclick="goTo('earnings');return false;">Earnings</a></li>
+    <li><a href="/earnings/" class="nav-link" data-page="earnings">Earnings</a></li>
     <li><a href="/vzdelavanie/" class="nav-link" data-page="vzdelavanie">Vzdelávanie</a></li>
     <li><a href="/o-nas/" class="nav-link" data-page="onas">O nás</a></li>
   </ul>
   <div class="nav-r">
     <a href="/kontakt/" class="btn-ghost btn-sm">Kontakt</a>
-    <a href="/novinky/" onclick="goTo('newsletter');return false;" class="btn-ghost btn-sm">Newsletter</a>
+    <a href="/newsletter/" class="btn-ghost btn-sm">Newsletter</a>
     <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-fill btn-sm">📖 Kúpiť knihu</a>
   </div>
   <button class="hamburger" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -876,7 +906,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 <main id="main-content">
 <div class="page active" id="page-home">
   <!-- HERO -->
-  <section id="hero">
+  <section id="hero" class="section-shell">
     <div class="container">
       <div class="update-bar"><div class="update-bar-dot"></div><span id="today-str">Posledná redakčná aktualizácia</span><span style="color:rgba(240,232,213,.2)">·</span><span class="live" id="live-status-note">Live ticker · Finnhub dáta</span></div>
       <div class="hero-grid">
@@ -885,11 +915,28 @@ document.addEventListener('DOMContentLoaded', loadPrices);
           <h1>Investuj ako inštitúcie.<br><em>Mysli o krok</em><br>vpredu.</h1>
           <p class="hero-sub">Denné analýzy akcií, earnings a investičné príležitosti pre investorov, ktorí chcú rozumieť trhu skôr než mainstream. Jasný podpis autora, slovenský kontext a dôraz na riziko aj disciplínu.</p>
           <div class="cta-row">
-            <a href="/analyzy/" onclick="goTo('analyzy');return false;" class="btn-fill">Čítať analýzy</a>
-            <a href="/novinky/" onclick="goTo('newsletter');return false;" class="btn-ghost">Newsletter</a>
+            <a href="/analyzy/" class="btn-fill">Čítať analýzy</a>
+            <a href="/newsletter/" class="btn-ghost">Newsletter</a>
             <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener" class="btn-ghost">📖 Kúpiť knihu</a>
           </div>
           <p class="hero-note">Pre začiatočníkov aj pokročilých &nbsp;·&nbsp; Slovensky &nbsp;·&nbsp; Nezávisle &nbsp;·&nbsp; <span class="live">Bez zbytočného šumu</span></p>
+          <div class="hero-signals" aria-label="Prehľad InvestRadar formátu">
+            <div class="hero-signal">
+              <div class="hero-signal-label">Denný rytmus</div>
+              <div class="hero-signal-value">Ráno až close</div>
+              <div class="hero-signal-copy">Novinky, makro a earnings v jednej čitateľnej línii.</div>
+            </div>
+            <div class="hero-signal">
+              <div class="hero-signal-label">Redakčný filter</div>
+              <div class="hero-signal-value">Menej šumu</div>
+              <div class="hero-signal-copy">Nie headline spam, ale výber toho, čo mení trhový príbeh.</div>
+            </div>
+            <div class="hero-signal">
+              <div class="hero-signal-label">Pre investora</div>
+              <div class="hero-signal-value">Kontext + riziko</div>
+              <div class="hero-signal-copy">Každá téma je zasadená do portfólia, nie len do feedu.</div>
+            </div>
+          </div>
         </div>
         <div class="hcard" onclick="goToArticle('microsoft')" style="cursor:pointer">
           <div class="hc-top"><div class="hc-alert-tag">⬤ Nový Trade Alert</div><div class="hc-dt" id="hero-dt">Apr 24, 2026</div></div>
@@ -932,14 +979,35 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     <div class="stat-item"><div class="stat-name">GLD (zlato)</div><div class="stat-val dn" id="sb-gld">$431.34</div><div class="stat-chg dn" id="sbc-gld">▼ −1.99%</div></div>
     <div class="stat-item"><div class="stat-name">Bitcoin</div><div class="stat-val up">$77 769</div><div class="stat-chg up">▲ +5.30%</div></div>
   </div></div></div>
-  <section style="padding:44px 0 24px;background:linear-gradient(180deg, rgba(11,14,26,0) 0%, rgba(15,20,34,.72) 100%)">
+  <section class="section-shell" style="padding:44px 0 24px;background:linear-gradient(180deg, rgba(11,14,26,0) 0%, rgba(15,20,34,.72) 100%)">
     <div class="container">
-      <div style="max-width:920px;padding:28px;border:1px solid var(--wf);border-radius:var(--r-lg);background:rgba(16,21,36,.84);box-shadow:var(--shadow)">
-        <div class="sec-label">O InvestRadar</div>
-        <h2 class="sec-title" style="font-size:30px;margin-bottom:14px">Slovenský investičný portál pre akcie, makro a finančné vzdelávanie</h2>
-        <p style="font-size:15px;line-height:1.78;color:var(--wd);margin-bottom:14px">InvestRadar je slovenský investičný portál zameraný na akcie, makroekonomiku, geopolitiku a finančné vzdelávanie. Prinášame denne investičné novinky, akciové analýzy, komentáre k trhom, sektorové prehľady, earnings update-y a praktické trade alerty pre investorov, ktorí chcú rozumieť tomu, čo sa na trhoch skutočne deje.</p>
-        <p style="font-size:15px;line-height:1.78;color:var(--wd);margin-bottom:14px">Na jednom mieste spájame spravodajstvo o amerických akciách, pohľad na S&amp;P 500, Nasdaq, úrokové sadzby, infláciu, komodity, energiu aj globálne geopolitické udalosti, ktoré môžu ovplyvniť finančné trhy. Obsah pripravujeme v slovenčine, zrozumiteľne, bez zbytočného šumu a s dôrazom na kontext, riziká a dlhodobé investičné myslenie.</p>
-        <p style="font-size:15px;line-height:1.78;color:var(--wd);margin:0">Ak hľadáte slovenský web o investovaní, akciách, burze, makre a finančnom vzdelávaní, InvestRadar ponúka kombináciu aktuálnych noviniek, hlbších analýz a edukatívneho obsahu pre začiatočníkov aj pokročilejších investorov.</p>
+      <div class="editorial-panel">
+        <div class="editorial-grid">
+          <div class="editorial-copy">
+            <div class="sec-label">O InvestRadar</div>
+            <h2 class="sec-title" style="font-size:30px;margin-bottom:14px">Slovenský investičný portál pre akcie, makro a finančné vzdelávanie</h2>
+            <p>InvestRadar je slovenský investičný portál zameraný na akcie, makroekonomiku, geopolitiku a finančné vzdelávanie. Prinášame denne investičné novinky, akciové analýzy, komentáre k trhom, sektorové prehľady, earnings update-y a praktické trade alerty pre investorov, ktorí chcú rozumieť tomu, čo sa na trhoch skutočne deje.</p>
+            <p>Na jednom mieste spájame spravodajstvo o amerických akciách, pohľad na S&amp;P 500, Nasdaq, úrokové sadzby, infláciu, komodity, energiu aj globálne geopolitické udalosti, ktoré môžu ovplyvniť finančné trhy. Obsah pripravujeme v slovenčine, zrozumiteľne, bez zbytočného šumu a s dôrazom na kontext, riziká a dlhodobé investičné myslenie.</p>
+            <p>Ak hľadáte slovenský web o investovaní, akciách, burze, makre a finančnom vzdelávaní, InvestRadar ponúka kombináciu aktuálnych noviniek, hlbších analýz a edukatívneho obsahu pre začiatočníkov aj pokročilejších investorov.</p>
+          </div>
+          <div class="editorial-side" aria-label="Silné stránky projektu">
+            <div class="editorial-stat">
+              <div class="editorial-stat-k">Focus</div>
+              <div class="editorial-stat-v">US akcie</div>
+              <div class="editorial-stat-p">Mega-cap tech, makro a sektory s reálnym dopadom na portfólio.</div>
+            </div>
+            <div class="editorial-stat">
+              <div class="editorial-stat-k">Prístup</div>
+              <div class="editorial-stat-v">Podpísaný názor</div>
+              <div class="editorial-stat-p">Jeden hlas, jasná téza a otvorene pomenované riziká.</div>
+            </div>
+            <div class="editorial-stat">
+              <div class="editorial-stat-k">Výstup</div>
+              <div class="editorial-stat-v">Akcia</div>
+              <div class="editorial-stat-p">Nie len vedieť, čo sa stalo, ale čo s tým urobiť ďalej.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1006,15 +1074,17 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     </div>
   </section>
   <!-- TOPICS -->
-  <section style="padding:40px 0;background:var(--navy2);border-top:1px solid var(--wf);border-bottom:1px solid var(--wf)">
+  <section class="section-shell" style="padding:40px 0;background:var(--navy2);border-top:1px solid var(--wf);border-bottom:1px solid var(--wf)">
     <div class="container">
-      <div class="divider"><span>Top témy týždňa</span></div>
-      <div class="topics-wrap">
-        <div class="topic-pill" onclick="goTo('novinky')" style="cursor:pointer"><span class="tp-n">01</span><span class="tp-t">TSMC earnings beat — WFE cyklus sa prebúdza</span></div>
-        <div class="topic-pill" onclick="goTo('analyzy')" style="cursor:pointer"><span class="tp-n">02</span><span class="tp-t">Geopolitické riziká a War Beta v obrannom sektore</span></div>
-        <div class="topic-pill" onclick="goTo('analyzy')" style="cursor:pointer"><span class="tp-n">03</span><span class="tp-t">Ropa nad $88 — energetika vs inflácia</span></div>
-        <div class="topic-pill" onclick="goTo('analyzy')" style="cursor:pointer"><span class="tp-n">04</span><span class="tp-t">NVDA Blackwell — rekordné objednávky vs valuácia</span></div>
-        <div class="topic-pill" onclick="goTo('novinky')" style="cursor:pointer"><span class="tp-n">05</span><span class="tp-t">Fed rétoriky a výnosy dlhopisov: tlak na growth akcie</span></div>
+      <div class="topics-panel">
+        <div class="divider"><span>Top témy týždňa</span></div>
+        <div class="topics-wrap">
+          <div class="topic-pill" onclick="goTo('novinky')" style="cursor:pointer"><span class="tp-n">01</span><span class="tp-t">TSMC earnings beat — WFE cyklus sa prebúdza</span></div>
+          <div class="topic-pill" onclick="goTo('analyzy')" style="cursor:pointer"><span class="tp-n">02</span><span class="tp-t">Geopolitické riziká a War Beta v obrannom sektore</span></div>
+          <div class="topic-pill" onclick="goTo('analyzy')" style="cursor:pointer"><span class="tp-n">03</span><span class="tp-t">Ropa nad $88 — energetika vs inflácia</span></div>
+          <div class="topic-pill" onclick="goTo('analyzy')" style="cursor:pointer"><span class="tp-n">04</span><span class="tp-t">NVDA Blackwell — rekordné objednávky vs valuácia</span></div>
+          <div class="topic-pill" onclick="goTo('novinky')" style="cursor:pointer"><span class="tp-n">05</span><span class="tp-t">Fed rétoriky a výnosy dlhopisov: tlak na growth akcie</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -1045,7 +1115,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
     </div>
   </section>
   <!-- BOOK + NEWSLETTER -->
-  <section style="padding:68px 0;background:var(--navy2);border-top:1px solid var(--wf)">
+  <section class="cta-surface section-shell" style="padding:68px 0;background:var(--navy2);border-top:1px solid var(--wf)">
     <div class="container">
       <div class="book-grid">
         <div>
@@ -2231,7 +2301,7 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       <p>Prevádzkovateľ stránky nenesie zodpovednosť za prípadné straty, škody alebo ušlý zisk vzniknuté použitím informácií uvedených na tejto stránke. Každé investičné rozhodnutie robí návštevník samostatne a na vlastnú zodpovednosť.</p>
 
       <h2>8. Kontakt</h2>
-      <p>Ak máš otázku k tomuto upozorneniu alebo k fungovaniu stránky, môžeš nás kontaktovať cez stránku <a href="/kontakt/" onclick="goTo('kontakt');return false;">Kontakt</a> alebo e-mailom na <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>.</p>
+      <p>Ak máš otázku k tomuto upozorneniu alebo k fungovaniu stránky, môžeš nás kontaktovať cez stránku <a href="/kontakt/">Kontakt</a> alebo e-mailom na <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>.</p>
     </div>
   </div>
 </div>
@@ -2304,17 +2374,17 @@ document.addEventListener('DOMContentLoaded', loadPrices);
       </div>
       <div class="footer-col">
         <h4>Obsah</h4>
-        <a href="/novinky/" onclick="goTo('novinky');return false;">Novinky</a>
-        <a href="/analyzy/" onclick="goTo('analyzy');return false;">Analýzy</a>
+        <a href="/novinky/">Novinky</a>
+        <a href="/analyzy/">Analýzy</a>
         <a href="/alerty/">Trade alerty</a>
         <a href="/sektory/">Sektory</a>
         <a href="/earnings/">Earnings</a>
       </div>
       <div class="footer-col">
         <h4>Platforma</h4>
-        <a href="/vzdelavanie/" onclick="goTo('vzdelavanie');return false;">Vzdelávanie</a>
+        <a href="/vzdelavanie/">Vzdelávanie</a>
         <a href="/o-nas/">O nás</a>
-        <a href="/novinky/" onclick="goTo('newsletter');return false;">Newsletter</a>
+        <a href="/newsletter/">Newsletter</a>
         <a href="https://zabransky.gumroad.com/l/investradar" target="_blank" rel="noopener">Kúpiť knihu</a>
         <a href="/kontakt/">Kontakt</a>
       </div>
@@ -2323,8 +2393,8 @@ document.addEventListener('DOMContentLoaded', loadPrices);
         <a href="mailto:investradarsk@gmail.com">investradarsk@gmail.com</a>
         <a href="/disclaimer/">Disclaimer</a>
         <a href="/privacy-policy/">Ochrana osobných údajov</a>
-        <a href="/podmienky/" onclick="goTo('podmienky');return false;">Podmienky používania</a>
-        <a href="javascript:void(0)" onclick="document.getElementById('cookie-banner').style.display='flex'" onclick="openCookieSettings();return false;">Nastavenie cookies</a>
+        <a href="/podmienky/">Podmienky používania</a>
+        <button type="button" onclick="openCookieSettings()" style="background:none;border:0;padding:0;color:inherit;font:inherit;text-align:left;cursor:pointer">Nastavenie cookies</button>
       </div>
     </div>
     <div class="footer-bottom">
@@ -2335,11 +2405,11 @@ document.addEventListener('DOMContentLoaded', loadPrices);
 </footer>
 <div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Nastavenie cookies">
   <div class="sec-label" style="margin-bottom:10px">InvestRadar · Cookies</div>
-  <p class="cookie-copy">Používame nevyhnutné cookies na fungovanie stránky a analytické cookies Google Analytics na meranie návštevnosti. Analytika sa aktivuje až po tvojom súhlase. Viac nájdeš v sekciách <a href="/privacy-policy/" class="cookie-link" onclick="goTo('privacy');hideCookieBanner();return false;">Ochrana osobných údajov</a> a <a href="/privacy-policy/" class="cookie-link" onclick="goTo('disclaimer');hideCookieBanner();return false;">Disclaimer</a>.</p>
+  <p class="cookie-copy">Používame nevyhnutné cookies na fungovanie stránky a analytické cookies Google Analytics na meranie návštevnosti. Analytika sa aktivuje až po tvojom súhlase. Viac nájdeš v sekciách <a href="/privacy-policy/" class="cookie-link">Ochrana osobných údajov</a> a <a href="/disclaimer/" class="cookie-link">Disclaimer</a>.</p>
   <div class="cookie-actions">
     <button class="btn-fill btn-sm" onclick="acceptCookies()">Prijať analytické cookies</button>
     <button class="btn-ghost btn-sm" onclick="declineCookies()">Len nevyhnutné</button>
-    <a href="/kontakt/" class="cookie-link" onclick="goTo('kontakt');hideCookieBanner();return false;">Kontakt</a>
+    <a href="/kontakt/" class="cookie-link">Kontakt</a>
   </div>
 </div>
 <div class="modal-overlay" id="modal" role="dialog" aria-modal="true">
