@@ -2241,8 +2241,8 @@ function setActivePage(pageId){
 
 function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
-  if(ROUTES[id] && id !== 'earnings'){
-    window.location.href = ROUTES[id];
+  if(ROUTES[id]){
+    if(window.location.pathname !== ROUTES[id]) window.location.href = ROUTES[id];
     return;
   }
   var pg=setActivePage('page-'+id);

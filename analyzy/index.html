@@ -894,7 +894,7 @@ function setActivePage(pageId){
 function goTo(id){
   if(!id||!PAGES.includes(id))id='home';
   if(ROUTES[id]){
-    window.location.href = ROUTES[id];
+    if(window.location.pathname !== ROUTES[id]) window.location.href = ROUTES[id];
     return;
   }
   var pg=setActivePage('page-'+id);
