@@ -1,6 +1,9 @@
 exports.handler = async () => {
   try {
     const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      return { statusCode: 500, body: 'GEMINI_API_KEY nie je nastavený' };
+    }
 
     const prompt = `
 Si InvestRadar editor.
