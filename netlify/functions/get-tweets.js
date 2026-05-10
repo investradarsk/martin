@@ -18,10 +18,13 @@ exports.handler = async function(event, context) {
   for (const host of hosts) {
     try {
       const url = 'https://' + host + '/InvestRadarSK/rss';
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 5000);
       const res = await fetch(url, {
         headers: { 'User-Agent': 'Mozilla/5.0 (compatible; InvestRadar/1.0)' },
-        signal: AbortSignal.timeout(5000)
+        signal: controller.signal
       });
+      clearTimeout(timer);
       
       if (!res.ok) continue;
       
